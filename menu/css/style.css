@@ -1,0 +1,13 @@
+body{
+    background-image: url(../img/fondoMenu.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.boton{
+    background-color: #2f355f;
+    border-radius: 20px;
+    width: 70px;
+    height: 70px;
+    border: none;
+}
