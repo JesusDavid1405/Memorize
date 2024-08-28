@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+    margin: 0;
+    background-image: url(../img/sap.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.progress-container {
+    width: 80%;
+    background-color: #414141;
+    border-radius: 85px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0;
+    height: 30px;
+    background-color: #d36408;
+    border-radius: 25px;
+}
