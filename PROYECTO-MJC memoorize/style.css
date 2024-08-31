@@ -9,6 +9,8 @@ body{
     height: 60px;
     background-image: url(img/boton.jpg);   
     transition: 600ms;
+    position: relative;
+    left: 27%;
 }
 .btnText{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -18,15 +20,27 @@ body{
     transform: scale(1.1);
 }
 
+/*logo*/
+.imgLogo{
+    transition: 500ms;
+}
+.imgLogo:hover{
+    transform: scale(1.1);
+}
+
 /*sonido*/
 #playButton {
     font-size: 20px;
     padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: rgba(73, 20, 20, 0);
     border: none;
     cursor: pointer;
+    transition: 1s;
+}
+.imgSonido{
+    width: 60px;
+    height: 60px;
 }
 #playButton:hover {
-    background-color: #45a049;
+    transform: scale(1.1);
 }

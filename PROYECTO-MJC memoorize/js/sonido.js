@@ -5,10 +5,10 @@ var isPlaying = false
 playButton.addEventListener('click', function() {
     if (isPlaying) {
         audio.pause();
-        playButton.textContent = 'Reproducir Música';
+        playButton.innerHTML = `<img class="imgSonido" src="img/icon/noSonido.png" alt="">`;
     } else {
         audio.play();
-        playButton.textContent = 'Pausar Música';
+        playButton.innerHTML =  `<img class="imgSonido" src="img/icon/sonido.png" alt="">`;
     }
     isPlaying = !isPlaying;
 });
