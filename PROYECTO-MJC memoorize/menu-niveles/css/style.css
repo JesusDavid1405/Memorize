@@ -15,9 +15,9 @@ body{
     width: 100px;
     height: 100px;
     margin: auto;
-    background: rgb(255,63,0);background: radial-gradient(circle, rgba(255,63,0,1) 0%, rgba(0,0,0,1) 100%);
+    background-color: #900c0c88;
     border-radius: 30%;
-    border: 1px solid white;
+    border: 1px solid rgb(0, 0, 0);
 
 }
 .container-nivel{
@@ -34,3 +34,30 @@ body{
     margin-top: 3%;
     margin-bottom: 3%;
 }
+
+/* animacion*/
+.animacion{
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.animacion:hover{
+    transform: scale(1.2);
+}
+
+    
+    .ol-a{
+        text-shadow: 1px 1px 1px rgb(244, 244, 244);
+        text-align: center;
+        margin-top: 15%;
+        font-size: 15px;
+        font-family: serif;
+    
+    }
+    .o-l{
+        text-shadow: 1px 1px 1px rgb(244, 244, 244);
+        text-align: center;
+        margin-top: 15%;
+        font-size: 30px;
+        font-family: serif;
+    
+    }
