@@ -9,19 +9,17 @@ body{
     width: 100px;
     height: 100px;
     margin: auto;
-    background-color: #900c0c88;
+    background-color: orange;
     border-radius: 30%;
     border: 1px solid rgb(0, 0, 0);
 
 }
 
 .niveles.locked {
-    background-color: gray;
     cursor: not-allowed;
 }
 
 .niveles.unlocked {
-    background-color: orange;
     cursor: pointer;
 }
 
