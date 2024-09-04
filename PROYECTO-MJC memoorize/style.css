@@ -40,8 +40,8 @@ body{
     transition: 1s;
 }
 .imgSonido{
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
 }
 #playButton:hover {
     transform: scale(1.1);

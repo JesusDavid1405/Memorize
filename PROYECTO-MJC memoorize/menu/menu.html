@@ -9,11 +9,21 @@
 </head>
 <body>
     <div class="container-fluid">
-        <audio id="miCancion" src="../audio/sonidoFondo.mp3" preload="auto" loop></audio>
-        
-        <button id="playButton">
-            <img class="imgSonido" src="../img/icon/noSonido.png" alt="">
-        </button>
+        <div class="col-12 row">
+            <div class="col-2">
+                <audio id="miCancion" src="../audio/sonidoFondo.mp3" preload="auto" loop></audio>
+                
+                <button id="playButton">
+                    <img class="imgSonido" src="../img/icon/noSonido.png" alt="">
+                </button>
+            </div>
+            <div class="col-8"></div>
+            <div class="col-2">
+                <button id="configuracion" >
+                    <img class="imgConfiguracion" src="../img/icon/configuracion.png" alt="">
+                </button>
+            </div>
+        </div>
     </div>
 
     <script src="../js/sonido.js"></script>

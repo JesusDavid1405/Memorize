@@ -13,11 +13,34 @@ body{
     border: none;
     cursor: pointer;
     transition: 1s;
+    position: relative;
+    left: 10%;
+    top: 2%;
 }
 .imgSonido{
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
 }
 #playButton:hover {
+    transform: scale(1.1);
+}
+
+/*configuracion*/
+#configuracion{
+    font-size: 20px;
+    padding: 10px 10%;
+    background-color: rgba(73, 20, 20, 0);
+    border: none;
+    cursor: pointer;
+    transition: 1s;
+    position: relative;
+    left: 50%;
+    top: 2%;
+}
+.imgConfiguracion{
+    width: 70px;
+    height: 70px;
+}
+#configuracion:hover {
     transform: scale(1.1);
 }
