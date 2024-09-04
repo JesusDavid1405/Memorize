@@ -13,8 +13,10 @@ body{
     left: 27%;
 }
 .btnText{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Times New Roman', Times, serif;
     color: black;
+    padding-top: 7px;
+    
 }
 .btnJugar:hover{
     transform: scale(1.1);
