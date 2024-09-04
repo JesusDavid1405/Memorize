@@ -26,7 +26,7 @@ body{
 }
 
 /*configuracion*/
-#configuracion{
+#configuracionBtn{
     font-size: 20px;
     padding: 10px 10%;
     background-color: rgba(73, 20, 20, 0);
@@ -41,6 +41,21 @@ body{
     width: 70px;
     height: 70px;
 }
-#configuracion:hover {
+#configuracionBtn:hover {
     transform: scale(1.1);
+}
+
+/*modal*/
+#configuracion{
+    background-color: rgba(250, 235, 215, 0);
+}
+.close{
+    position: relative;
+    left: 97%; 
+}
+#cuerpo{
+    background-color: rgba(240, 248, 255, 0.379) !important;
+}
+#cuerpo h1{
+    text-align: center;
 }
