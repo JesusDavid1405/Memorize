@@ -5,49 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row mt-2">
-            <div class="col-1">
-
-                <button class="boton" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">
-
-                </button>
-            </div>
-            <div class="col">
-                <div class="tablaPosicion"></div>
-            </div>
-            <div class="col-3">
-                
-            </div>
-        </div>
-        <div class="row m-auto">
-            <div class="col">
-                <img class="juegos" src="img/juegos.jpg" alt="...">
-            </div>
-            <div class="col">
-                <img class="juegos" src="img/juegos.jpg" alt="...">
-            </div>
-            <div class="col">
-                <img class="juegos" src="img/juegos.jpg" alt="...">
-            </div>
-        </div>
+        <audio id="miCancion" src="../audio/sonidoFondo.mp3" preload="auto" loop></audio>
+        
+        <button id="playButton">
+            <img class="imgSonido" src="../img/icon/noSonido.png" alt="">
+        </button>
     </div>
 
-
-    <div class="col">
-        <div class="collapse" id="multiCollapseExample2">
-            <div class="card-usuario">
-                <p>
-                    Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.mi mama  me mima mi mama me mima mi mama me mima mi mama me mima 
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <script src="bootstrap/js/bootstrap.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../js/sonido.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>    
+    <script src="../bootstrap/js/bootstrap.bundle.js"></script>
 </body>
 </html>

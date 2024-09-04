@@ -10,7 +10,7 @@ body{
     background-image: url(img/boton.jpg);   
     transition: 600ms;
     position: relative;
-    left: 27%;
+    left: 23.5%;
 }
 .btnText{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

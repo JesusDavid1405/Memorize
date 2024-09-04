@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJC memorize</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <audio id="miCancion" src="../audio/sonidoFondo.mp3" preload="auto" loop></audio>
+        
+        <button id="playButton">
+            <img class="imgSonido" src="../img/icon/noSonido.png" alt="">
+        </button>
+
+        <div id="formulario">
+            <form action="" method="post" class="row g-3">
+                <div class="col-md-11 inputIcon">
+                    <label for="validationCustom01" class="form-label">First name</label>
+                    <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                    <span id="icon"> 
+                        <img src="../img/icon/user.png" alt="">
+                    </span>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                </div>
+            
+                <div class="col-md-11 inputIcon">
+                    <label for="validationCustom01" class="form-label">First name</label>
+                    <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                    <span id="icon"> 
+                        <img src="../img/icon/password.png" alt="">
+                    </span>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <button class="btn btnLogin" type="submit">Submit form</button>
+                </div>
+            </form>
+        </div>        
+    </div>
+    
+    <script src="../js/sonido.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>    
+    <script src="../bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+</html>

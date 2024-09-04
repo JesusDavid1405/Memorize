@@ -1,41 +1,23 @@
 body{
-    background-image: url(../img/menu.png);
+    background-image: url(../../img/fondoMenu.jpg);
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+    background-size: 100% 100%;
 }
-.boton{
-    background-color: #3f3841;
-    border-radius: 100%;
-    width: 60px;
-    height: 60px ;
+
+/*sonido*/
+#playButton {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: rgba(73, 20, 20, 0);
     border: none;
+    cursor: pointer;
+    transition: 1s;
 }
-.card-usuario{
-    background-color: #231f24;
-    position: relative;
-    left: 18px;
-    top:-50px;
-    border-radius: 10px;
-    color: aliceblue;
-    width: 250px;
-    height: 200px;
-    overflow-y: auto;
-    scrollbar-color: #231f24 #3f3841;
-}
-.tablaPosicion{
-    background-color: #3f3841;
-    border-radius: 100px;
+.imgSonido{
     width: 60px;
-    height: 60px ;
-    border: none;
+    height: 60px;
 }
-.juegos{
-    margin-left: 50px;
-    width: 200px;
-    height: 200px;
-    transition: 600ms;
-}
-.juegos:hover{
+#playButton:hover {
     transform: scale(1.1);
 }
