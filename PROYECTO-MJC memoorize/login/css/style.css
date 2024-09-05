@@ -45,6 +45,8 @@ body{
     transition: 200ms;
     margin: auto;
     border: 1px solid rgb(155, 155, 155);
+    position: relative;
+    top: -40px;
 }
 #formulario:hover{
     transform: none;
@@ -54,8 +56,12 @@ body{
     margin: auto;
 }
 .logoForm img{
-    width: 98%;
-    height: 98%;
+    width: 200px;
+    height: 200px;
+    transition: 200ms;
+}
+.logoForm img:hover{
+    transform: scale(1.1);
 }
 
 /*iconoInput*/
@@ -100,6 +106,8 @@ input.input:hover {
 .linea{
     border-top: 1px solid black;
 }
+
+/*iconosRedes*/
 .logoRedes{
     margin: auto;
 }
@@ -118,4 +126,16 @@ input.input:hover {
 .gitHub{
     position: relative;
     left: 40%;
+}
+
+/*texto*/
+.textCrear{
+    font-size: medium;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.textCrear a{
+    color: rgb(94, 5, 5) !important; 
+    font-size: larger;
 }
