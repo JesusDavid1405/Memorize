@@ -41,9 +41,10 @@ body{
     width: 30%;
     height: auto;
     border-radius: 10px;
-    background-color: rgba(237, 178, 134, 0.337);
+    background-color: rgba(168, 168, 168, 0.096);
     transition: 200ms;
     margin: auto;
+    border: 1px solid rgb(155, 155, 155);
 }
 #formulario:hover{
     transform: none;
@@ -79,4 +80,42 @@ body{
 }
 input.input{    
   padding-right: 2.5rem;
+  background-color: orange;
+  border: 1px solid black;
+  transition: 100ms;
+}
+input.input:focus{
+    background-color: orange;
+    border: 1px solid black;
+    box-shadow: 0px 0px 5px black;
+}
+input.input:hover {  
+    background-color: rgb(255, 145, 0);
+    
+}
+.text{
+    color: aliceblue;
+    text-align: center;
+}
+.linea{
+    border-top: 1px solid black;
+}
+.logoRedes{
+    margin: auto;
+}
+.logoRedes img{
+    width: 45%;
+    height: 45%;
+    transition: 200ms;
+}
+.logoRedes img:hover{
+    transform: scale(1.2);
+}
+.facebook{
+    position: relative;
+    left: 75%;
+}
+.gitHub{
+    position: relative;
+    left: 40%;
 }
