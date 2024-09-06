@@ -9,8 +9,6 @@ body{
     height: 60px;
     background-image: url(img/boton.jpg);   
     transition: 600ms;
-    position: relative;
-    left: 23.5%;
 }
 .btnText{
     font-family: 'Times New Roman', Times, serif;
@@ -24,6 +22,8 @@ body{
 
 /*logo*/
 .imgLogo{
+    position: relative;
+    right: 7%;
     transition: 500ms;
 }
 .imgLogo:hover{
