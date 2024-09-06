@@ -59,3 +59,25 @@ body{
 #cuerpo h1{
     text-align: center;
 }
+/* Estilo de los botones personalizados */
+.btn-custom {
+    width: 250px;
+    height: 250px;
+    border: none;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+    margin: 30px; /* Espaciado entre los botones */
+}
+
+/* Estilo de los logos de los juegos */
+.game-logo {
+    width: 100%;
+    height: 100%;
+    border: none;   
+}
+
+/* Animación al pasar el mouse */
+.game-button:hover {
+    transform: scale(1.2);
+    border: none;
+}
