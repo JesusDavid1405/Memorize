@@ -12,8 +12,6 @@ body{
     background-image: url(../../img/boton.jpg);   
     transition: 600ms;
     margin-bottom: 3%;
-    position: relative;
-    left: 23.5%;
 }
 .btnLogin:hover{
     transform: scale(1.1);
@@ -38,7 +36,7 @@ body{
 
 /*Formulario*/
 #formulario{
-    width: 30%;
+    width: 25%;
     height: auto;
     border-radius: 10px;
     background-color: rgba(168, 168, 168, 0.096);
@@ -112,8 +110,8 @@ input.input:hover {
     margin: auto;
 }
 .logoRedes img{
-    width: 45%;
-    height: 45%;
+    width: 25%;
+    height: 25%;
     transition: 200ms;
 }
 .logoRedes img:hover{
@@ -136,6 +134,23 @@ input.input:hover {
     text-align: center;
 }
 .textCrear a{
-    color: rgb(94, 5, 5) !important; 
+    color: rgb(255, 0, 0) !important; 
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.textOlvide{
+    font-size: medium;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.textOlvide a{
+    color: rgb(161, 123, 7) !important; 
     font-size: larger;
+}
+
+/*quitar link*/
+a:link, a:visited, a:active {
+    text-decoration:none;
 }
