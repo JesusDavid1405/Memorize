@@ -6,8 +6,9 @@
     <title>MJC memorize</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
-</head>
+</head>   
 <body>
+    
     <div class="container-fluid">
         <div class="col-12 row">
             <div class="col-2">
@@ -25,7 +26,29 @@
             </div>
         </div>  
     </div>
-
+    <div class="container-fluid main-container d-flex justify-content-center align-items-center">
+        <!-- Botones con imágenes dentro -->
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a href="../dificultad-rompe/index.html">
+                <button class="btn btn-custom game-button" onclick="navigateToGame(1)" style="margin-top: 200px; border: none;">
+                    <img src="img/r.png" alt="Juego 1" class="game-logo">
+                    
+                </button>
+            </a>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-custom game-button" onclick="navigateToGame(2)"style="margin-top: 200px; border: none;" >
+                    <img src="img/nuevo.png" alt="Juego 2" class="game-logo">
+                </button>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-custom game-button" onclick="navigateToGame(3)" style="margin-top: 200px; border: none;"> 
+                    <img src="img/mrr.png" alt="Juego 3" class="game-logo">
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="configuracion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
