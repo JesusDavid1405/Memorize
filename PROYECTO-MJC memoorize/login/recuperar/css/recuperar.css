@@ -17,7 +17,7 @@
 	 min-height: 80vh;
 	 align-items: center;
 	 justify-content: center;
-	background-image: url(images/ola.jpg);
+	background-image: url(../../../img/fondo.jpg);
  
 	 font-family: sans-serif;
  }
@@ -36,10 +36,10 @@
  }
 
  section .color:nth-child(1){
-top: -350px;
-width: 600px;
-height: 600px;
-background-image: url(images/logo2.png);
+	top: -350px;
+	width: 600px;
+	height: 600px;
+	background-image: url(images/logo2.png);
 
  }
 
