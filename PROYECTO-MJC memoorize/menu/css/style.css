@@ -12,7 +12,6 @@ body{
     background-color: rgba(73, 20, 20, 0);
     border: none;
     cursor: pointer;
-    transition: 1s;
     position: relative;
     left: 10%;
     top: 2%;
@@ -25,6 +24,25 @@ body{
     transform: scale(1.1);
 }
 
+/*usuario*/
+#usuarioBtn{
+    font-size: 20px;
+    background-color: rgba(73, 20, 20, 0);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 10%;
+    top: 2%;
+}
+.imgUsuario{
+    width: 70px;
+    height: 70px;
+}
+#usuarioBtn:hover{
+    transform: scale(1.1);
+}
+
+
 /*configuracion*/
 #configuracionBtn{
     font-size: 20px;
@@ -32,9 +50,8 @@ body{
     background-color: rgba(73, 20, 20, 0);
     border: none;
     cursor: pointer;
-    transition: 1s;
     position: relative;
-    left: 50%;
+    left: 10%;
     top: 2%;
 }
 .imgConfiguracion{
@@ -47,8 +64,9 @@ body{
 
 /*modal*/
 #configuracion{
-    background-color: rgba(250, 235, 215, 0);
+    background-color: rgba(250, 235, 215, 0) !important;
 }
+
 .close{
     position: relative;
     left: 97%; 
@@ -59,6 +77,32 @@ body{
 #cuerpo h1{
     text-align: center;
 }
+    /*sliderModal*/
+.slider{
+    -webkit-appearance: none; 
+    width: 100%;
+    height: 15% !important;
+    border-radius: 25px;
+    background-color: brown !important;
+}  
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: brown;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.slider::-webkit-slider-thumb:hover{
+    background: rgb(121, 33, 33);
+}
+.volumen{
+    width: 20px;
+    height: 20px;
+    margin: auto;
+}
+
+
 /* Estilo de los botones personalizados */
 .btn-custom {
     width: 250px;

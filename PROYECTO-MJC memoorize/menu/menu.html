@@ -9,72 +9,120 @@
 </head>   
 <body>
     
-    <div class="container-fluid">
+    <div class="container-fluid main-container d-flex justify-content-center align-items-center">
         <div class="col-12 row">
-            <div class="col-2">
-                <audio id="miCancion" src="../audio/sonidoFondo.mp3" preload="auto" loop></audio>
+            <div class="col-1">
+                <audio id="miCancion" preload="auto" loop>
+                    <source src="../audio/sonidoFondo.mp3" type="audio/mpeg">
+                </audio>
                 
                 <button id="playButton">
                     <img class="imgSonido" src="../img/icon/noSonido.png" alt="">
                 </button>
+
+                <button id="usuarioBtn" data-bs-toggle="offcanvas" data-bs-target="#usuario" aria-controls="offcanvasExample">
+                    <img class="imgUsuario" src="../img/icon/usuario.png" alt="">
+                </button>
             </div>
-            <div class="col-8"></div>
-            <div class="col-2">
+            <div class="col-10">
+                <!-- Botones con imágenes dentro -->
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <a href="../dificultad-rompe/index.html">
+                        <button class="btn btn-custom game-button" onclick="navigateToGame(1)" style="margin-top: 200px; border: none;">
+                            <img src="img/r.png" alt="Juego 1" class="game-logo">
+                            
+                        </button>
+                    </a>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-custom game-button" onclick="navigateToGame(2)"style="margin-top: 200px; border: none;" >
+                            <img src="img/nuevo.png" alt="Juego 2" class="game-logo">
+                        </button>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-custom game-button" onclick="navigateToGame(3)" style="margin-top: 200px; border: none;"> 
+                            <img src="img/mrr.png" alt="Juego 3" class="game-logo">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
                 <button id="configuracionBtn" data-bs-toggle="modal" data-bs-target="#configuracion" >
                     <img class="imgConfiguracion" src="../img/icon/configuracion.png" alt="">
                 </button>
             </div>
-        </div>  
+        </div>   
     </div>
     <div class="container-fluid main-container d-flex justify-content-center align-items-center">
         
-        <!-- Botones con imágenes dentro -->
-        <div class="row justify-content-center">
-            <div class="col-auto">
-                <a href="../dificultad-rompe/index.html">
-                <button class="btn btn-custom game-button" onclick="navigateToGame(1)" style="margin-top: 200px; border: none;">
-                    <img src="img/r.png" alt="Juego 1" class="game-logo">
-                    
-                </button>
-            </a>
+        
+    </div>
+
+    
+      
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="usuario" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
             </div>
-            <div class="col-auto">
-                <button class="btn btn-custom game-button" onclick="navigateToGame(2)"style="margin-top: 200px; border: none;" >
-                    <img src="img/nuevo.png" alt="Juego 2" class="game-logo">
+            <div class="dropdown mt-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Dropdown button
                 </button>
-            </div>
-            <div class="col-auto">
-                <button class="btn btn-custom game-button" onclick="navigateToGame(3)" style="margin-top: 200px; border: none;"> 
-                    <img src="img/mrr.png" alt="Juego 3" class="game-logo">
-                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
             </div>
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal configuracion-->
     <div class="modal fade" id="configuracion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
         <div id="cuerpo" class="modal-content">
             <div class="modal-body">
-                <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
-                <div class="col-12 row">
-                    <h1>
-                        configuracion
-                    </h1>
-                    <div class="col-4">
-                        <h4>musica</h4>
+                <div class="container">
+                    <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="col-12 row">
+                        <h1>
+                            configuracion
+                        </h1>
+                        <div id="iconVolumen" class="col-1">
+                            
+                        </div>
+                        <div class="col-9">
+                            <input class="slider" type="range" min="0" max="1" step="0.01" id="volume">
+                        </div>
+                        <div class="col-2">
+                            <h4>Musica</h4>
+                        </div>
                     </div>
-                    <div class="col-8">
-                        
+                    
+                    <div class="col-12 row">
+                        <div id="iconVolumen" class="col-1">
+                            
+                        </div>
+                        <div class="col-9">
+                            <input class="slider" type="range" min="0" max="1" step="0.01" id="volume">
+                        </div>
+                        <div class="col-2">
+                            <h4>Juego</h4>
+                        </div>
                     </div>
                 </div>
-                
             </div>
         </div>
         </div>
     </div>
 
-    <script src="../js/sonido.js"></script>
+    <script src="js/sonido.js"></script>
     <script src="../bootstrap/js/bootstrap.js"></script>    
     <script src="../bootstrap/js/bootstrap.bundle.js"></script>
 </body>
