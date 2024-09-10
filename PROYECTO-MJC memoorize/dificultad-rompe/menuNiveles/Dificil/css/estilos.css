@@ -1,5 +1,9 @@
 body{
+<<<<<<< HEAD:PROYECTO-MJC memoorize/dificultad-rompe/menuNiveles/Dificil/css/estilos.css
     background-image: url('../../../img/juegoRompe.jpeg');
+=======
+    background-image: url('../../img/juegoRompe.jpeg');
+>>>>>>> 443480b76656c27d11d6664bf384a73ec175ae19:PROYECTO-MJC memoorize/dificultad-rompe/menuNiveles/css/estilos.css
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
