@@ -1,5 +1,5 @@
 body{
-    background-image: url(../../img/menu1.jpg);
+    background-image: url(../../img/fondoMenu.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -128,6 +128,7 @@ body{
     border: none;
 }
 
+<<<<<<< HEAD
 @media (min-width = 1000px){
 
     body{
@@ -144,3 +145,23 @@ body{
         background-position: top;
     }
 }
+=======
+/*barra de carga*/
+#loading-bar {
+    width: 0;
+    height: 20px;
+    background-color: rgb(121, 33, 33);
+    border-radius: 20px;
+    transition: width 1s ease;
+}
+#containere {
+    width: 70%;
+    height: 20px;
+    background-color: rgba(240, 248, 255, 0.452);
+    border-radius: 20px;
+}
+.center{
+    margin-top: 200px;
+
+}
+>>>>>>> f5490a2469371f086066280e307f46c4d2771aef
