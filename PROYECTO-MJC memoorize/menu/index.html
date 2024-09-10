@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/offcanvas.css">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.6.0-web/css/all.min.css">
 </head>   
 <body>
     
@@ -19,7 +20,7 @@
                 </button>
 
                 <button id="usuarioBtn" data-bs-toggle="offcanvas" data-bs-target="#usuario" aria-controls="offcanvasExample">
-                    <img class="imgUsuario" src="../img/icon/usuario.png" alt="">
+                    <i class="fa-solid fa-user-astronaut"></i>
                 </button>
             </div>
             <div class="col-10">
@@ -35,9 +36,12 @@
                     </a>
                     </div>
                     <div class="col-auto">
-                        <button class="btn btn-custom game-button" onclick="navigateToGame(2)"style="margin-top: 200px; border: none;" >
-                            <img src="img/nuevo.png" alt="Juego 2" class="game-logo">
-                        </button>
+                        <a href="../dificultad-OrderNumbers/index.html">
+                            <button class="btn btn-custom game-button" onclick="navigateToGame(2)"style="margin-top: 200px; border: none;" >
+                                <img src="img/logoN.png" alt="Juego 2" class="game-logo">
+                            </button>
+                        </a>
+                     
                     </div>
                     <div class="col-auto">
                         <button class="btn btn-custom game-button" onclick="navigateToGame(3)" style="margin-top: 200px; border: none;"> 
@@ -67,7 +71,7 @@
 
     <!-- Modal configuracion-->
     <div class="modal fade" id="configuracion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
+        <div class="modal-dialog modal-x">
         <div id="cuerpo" class="modal-content">
             <div class="modal-body">
                 <div class="container">
