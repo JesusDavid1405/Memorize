@@ -1,0 +1,9 @@
+/*usuarioOffca*/
+.fondoUsuario{
+    background-color: rgb(43, 5, 0) !important;
+}
+.closeOff{
+    color: black !important;
+    position: relative;
+    left: 90%; 
+}

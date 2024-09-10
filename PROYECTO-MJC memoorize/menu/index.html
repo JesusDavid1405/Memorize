@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MJC memorize</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/offcanvas.css">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 </head>   
 <body>
     
     <div class="container-fluid main-container d-flex justify-content-center align-items-center">
         <div class="col-12 row">
-            <div class="col-1">
-                <audio id="miCancion" preload="auto" loop>
-                    <source src="../audio/sonidoFondo.mp3" type="audio/mpeg">
-                </audio>
-                
+            <div class="col-1">                
                 <button id="playButton">
                     <img class="imgSonido" src="../img/icon/noSonido.png" alt="">
                 </button>
@@ -25,7 +23,7 @@
                 </button>
             </div>
             <div class="col-10">
-                
+
                 <!-- Botones con imágenes dentro -->
                 <div class="row justify-content-center">
                     <div class="col-auto">
@@ -55,31 +53,14 @@
             </div>
         </div>   
     </div>
-    <div class="container-fluid main-container d-flex justify-content-center align-items-center">
-        
-        
-    </div>
 
-    
       
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="usuario" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
+    <div class="offcanvas fondoUsuario offcanvas-start" tabindex="-1" id="usuario" aria-labelledby="offcanvasExampleLabel">
+        
         <div class="offcanvas-body">
-            <div>
-                Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-            </div>
-            <div class="dropdown mt-3">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                    Dropdown button
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
+            <button type="button" class="btn-close closeOff" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <div class="col-12">
+                
             </div>
         </div>
     </div>
@@ -122,6 +103,10 @@
         </div>
         </div>
     </div>
+
+    <audio id="miCancion" preload="auto" loop>
+                    <source src="../audio/sonidoFondo.mp3" type="audio/mpeg">
+                </audio>
 
     <script src="js/sonido.js"></script>
     <script src="../bootstrap/js/bootstrap.js"></script>    
