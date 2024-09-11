@@ -4,6 +4,9 @@ body{
     background-size: cover;
     background-attachment: fixed;
 }
+
+/*jugar*/
+
 .btnJugar{
     width: 250px;
     height: 60px;
@@ -25,7 +28,7 @@ body{
 /*logo*/
 .imgLogo{
     position: relative;
-    right: 7%;
+    right: 6vh;
     transition: 500ms;
 }
 .imgLogo:hover{
@@ -47,4 +50,323 @@ body{
 }
 #playButton:hover {
     transform: scale(1.1);
+}
+
+/*mobiles pequeños*/
+@media(width= 320px){
+    body{
+        background-size: 100% 100%;
+        background-attachment: fixed;
+    }
+    /*sonido*/
+    #playButton {
+        padding: 10px 20px;
+        background-color: rgba(73, 20, 20, 0);
+        border: none;
+        cursor: pointer;
+        transition: 1s;
+    }
+    .imgSonido{
+        width: 50px;
+        height: 50px;
+    }
+    #playButton:hover {
+        transform: scale(1.1);
+    }
+
+    /*logo*/
+    .imgLogo{
+        width: 35vh;
+        right: 35vh;
+        position: relative;
+        left: -4vh;
+    }
+   
+    /*jugar*/
+
+    .btnJugar{
+        width: 25vh;
+        height: 7vh;
+        background-image: url(../img/boton.jpg);   
+        transition: 600ms;
+        position: relative;
+        right: 1vh;
+    }
+    .btnText{
+        font-family: 'Times New Roman', Times, serif;
+        color: rgb(255, 255, 255);
+        padding-top: 1vh;
+        font-size: medium;
+    }
+
+    .centrar{
+        position: relative;
+        top: 15vh;
+    }
+}
+
+/*mobiles pequeños*/
+@media(max-width= 320px) and (min-width=320px){
+    body{
+        background-size: 100% 100%;
+        background-attachment: fixed;
+    }
+    /*sonido*/
+    #playButton {
+        padding: 10px 20px;
+        background-color: rgba(73, 20, 20, 0);
+        border: none;
+        cursor: pointer;
+        transition: 1s;
+    }
+    .imgSonido{
+        width: 50px;
+        height: 50px;
+    }
+    #playButton:hover {
+        transform: scale(1.1);
+    }
+
+    /*logo*/
+    .imgLogo{
+        width: 35vh;
+        right: 35vh;
+        position: relative;
+        left: -4vh;
+    }
+   
+    /*jugar*/
+
+    .btnJugar{
+        width: 25vh;
+        height: 7vh;
+        background-image: url(../img/boton.jpg);   
+        transition: 600ms;
+        position: relative;
+        right: 1vh;
+    }
+    .btnText{
+        font-family: 'Times New Roman', Times, serif;
+        color: rgb(255, 255, 255);
+        padding-top: 1vh;
+        font-size: medium;
+    }
+
+    .centrar{
+        position: relative;
+        top: 15vh;
+    }
+}
+
+/*mobiles medianos*/
+
+@media(width= 375px){
+    body{
+        background-size: 100% 100%;
+        background-attachment: fixed;
+    }
+    /*sonido*/
+    #playButton {
+        padding: 10px 20px;
+        background-color: rgba(73, 20, 20, 0);
+        border: none;
+        cursor: pointer;
+        transition: 1s;
+    }
+    .imgSonido{
+        width: 50px;
+        height: 50px;
+    }
+    #playButton:hover {
+        transform: scale(1.1);
+    }
+
+    /*logo*/
+    .imgLogo{
+        width: 35vh;
+        right: 35vh;
+        position: relative;
+        left: -4vh;
+    }
+   
+    /*jugar*/
+
+    .btnJugar{
+        width: 25vh;
+        height: 7vh;
+        background-image: url(../img/boton.jpg);   
+        transition: 600ms;
+        position: relative;
+        right: 1vh;
+    }
+    .btnText{
+        font-family: 'Times New Roman', Times, serif;
+        color: rgb(255, 255, 255);
+        padding-top: 1vh;
+        font-size: medium;
+    }
+
+    .centrar{
+        position: relative;
+        top: 15vh;
+    }
+}
+
+/*mobiles grandes*/
+
+@media(width= 425px){
+    body{
+        background-size: 100% 100%;
+        background-attachment: fixed;
+    }
+    /*sonido*/
+    #playButton {
+        padding: 10px 20px;
+        background-color: rgba(73, 20, 20, 0);
+        border: none;
+        cursor: pointer;
+        transition: 1s;
+    }
+    .imgSonido{
+        width: 52px;
+        height: 52px;
+    }
+    #playButton:hover {
+        transform: scale(1.1);
+    }
+
+    /*logo*/
+    .imgLogo{
+        width: 45vh;
+        right: 45vh;
+        position: relative;
+        left: -9vh;
+    }
+   
+    /*jugar*/
+
+    .btnJugar{
+        width: 28vh;
+        height: 8vh;
+        background-image: url(../img/boton.jpg);   
+        transition: 600ms;
+        position: relative;
+        right: 1vh;
+    }
+    .btnText{
+        font-family: 'Times New Roman', Times, serif;
+        color: rgb(255, 255, 255);
+        padding-top: 1vh;
+        font-size: medium;
+    }
+
+    .centrar{
+        position: relative;
+        top: 15vh;
+    }
+}
+
+@media(width= 768px){
+    body{
+        background-size: 100% 100%;
+        background-attachment: fixed;
+    }
+    /*sonido*/
+    #playButton {
+        padding: 10px 20px;
+        background-color: rgba(73, 20, 20, 0);
+        border: none;
+        cursor: pointer;
+        transition: 1s;
+    }
+    .imgSonido{
+        width: 50px;
+        height: 50px;
+    }
+    #playButton:hover {
+        transform: scale(1.1);
+    }
+
+    /*logo*/
+    .imgLogo{
+        width: 60vh;
+        right: 60vh;
+        position: relative;
+        left: -4vh;
+    }
+   
+    /*jugar*/
+
+    .btnJugar{
+        width: 30vh;
+        height: 8vh;
+        background-image: url(../img/boton.jpg);   
+        transition: 600ms;
+        position: relative;
+        right: -2vh;
+    }
+    .btnText{
+        font-family: 'Times New Roman', Times, serif;
+        color: rgb(255, 255, 255);
+        padding-top: 1vh;
+        font-size: medium;
+    }
+
+    .centrar{
+        position: relative;
+        top: 10vh;
+    }
+}
+
+@media(width= 1024px){
+    body{
+        background-size: 100% 100%;
+        background-attachment: fixed;
+    }
+
+    /*sonido*/
+    #playButton {
+        padding: 10px 20px;
+        background-color: rgba(73, 20, 20, 0);
+        border: none;
+        cursor: pointer;
+        transition: 1s;
+    }
+    .imgSonido{
+        width: 60px;
+        height: 60px;
+    }
+    #playButton:hover {
+        transform: scale(1.1);
+    }
+
+    /*logo*/
+    .imgLogo{
+        width: 70vh;
+        right: 70vh;
+        position: relative;
+        left: -8.5vh;
+    }
+   
+    /*jugar*/
+
+    .btnJugar{
+        width: 35vh;
+        height: 9vh;
+        background-image: url(../img/boton.jpg);   
+        transition: 600ms;
+        position: relative;
+        right: 4vh;
+    }
+    .btnText{
+        font-family: 'Times New Roman', Times, serif;
+        color: rgb(255, 255, 255);
+        padding-top: 1vh;
+        font-size: 4vh;
+    }
+
+    .centrar{
+        position: relative;
+        top: 9vh;
+    }
 }

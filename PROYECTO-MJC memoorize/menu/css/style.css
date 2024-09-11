@@ -2,7 +2,7 @@ body{
     background-image: url(../../img/menu1.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
     
 }
@@ -88,12 +88,13 @@ body{
     border: none;
 }
 
-@media (min-width = 1000px){
-
-    body{
-
-        background-size: 100% auto;
+@media (width = 320px) and (height:571px){
+   /* .scrolle{
+        margin: auto;
+        width: 100%;
+        overflow-x: scroll;
     }
+    */
 }
 
 @media (max-width = 600px){
