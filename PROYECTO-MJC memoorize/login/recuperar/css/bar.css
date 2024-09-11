@@ -1,0 +1,25 @@
+body{
+    background-image: url(../../../img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*barra de carga*/
+#loading-bar {
+    width: 0;
+    height: 20px;
+    background-color: rgb(73, 0, 0);
+    border-radius: 20px;
+    transition: width 1s ease;
+}
+#containere {
+    width: 70%;
+    height: 20px;
+    background-color: rgba(240, 248, 255, 0.452);
+    border-radius: 20px;
+    margin-left: 27vh;
+}
+.center{
+    margin-top: 15vh;
+}

@@ -25,27 +25,7 @@
                 </button>
             </div>
             <div class="col-10">
-                <!-- Botones con imágenes dentro -->
-                <div class="row justify-content-center">
-                    <div class="col-auto">
-                        <a href="../dificultad-rompe/index.html">
-                        <button class="btn btn-custom game-button" onclick="navigateToGame(1)" style="margin-top: 200px; border: none;">
-                            <img src="img/r.png" alt="Juego 1" class="game-logo">
-                            
-                        </button>
-                    </a>
-                    </div> 
-                    <div class="col-auto">
-                        <button class="btn btn-custom game-button" onclick="navigateToGame(2)"style="margin-top: 200px; border: none;" >
-                            <img src="img/nuevo.png" alt="Juego 2" class="game-logo">
-                        </button>
-                    </div>
-                    <div class="col-auto">
-                        <button class="btn btn-custom game-button" onclick="navigateToGame(3)" style="margin-top: 200px; border: none;"> 
-                            <img src="img/mrr.png" alt="Juego 3" class="game-logo">
-                        </button>
-                    </div>
-                </div>
+                
             </div>
             <div class="col-1">
                 <button id="configuracionBtn" data-bs-toggle="modal" data-bs-target="#configuracion" >
@@ -55,17 +35,37 @@
         </div>   
     </div>
     <div class="container-fluid main-container d-flex justify-content-center align-items-center">
-        
+        <div class=" row logo">
+            <img src="img/logoN.png" alt="" srcset="">
+        </div>
+        <div class="row dificultad">
+            <div class="col">
+                <a href="menuNiveles/nivelesNumero.html " class="btn botones animacion">
+                    <div class="letra">Facil</div>
+                </a>
+            </div>
+
+            <div class="col">
+                <button class="botones animacion">
+                    <div class="letra">Medio</div>
+                </button>
+            </div>
+
+            <div class="col">
+                <button class="botones animacion">
+                    <div class="letra">Dificil</div>
+                </button>
+            </div>
+        </div>
+    </div>
         
     </div>
 
-    <div class="logo">
-        <img src="img/logoN.png" alt="" srcset="">
-    </div>
+    
     <div class="modal fade" id="configuracion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
         <div id="cuerpo" class="modal-content">
-            <div class="modal-body">
+            <div class="modal-body">    
                 <div class="container">
                     <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="col-12 row">
@@ -99,19 +99,7 @@
         </div>
         </div>
     </div>
-    <div class="container">
-        
-            <a href="menuNiveles/nivelesNumero.html " class="btn botones animacion">
-                <div class="letra">Facil</div>
-
-            </a>
-            <button class="botones animacion">
-                <div class="letra">Medio</div>
-            </button>
-            <button class="botones animacion">
-                 <div class="letra">Dificil</div>
-            </button>
-    </div>
+    
 </body>
     <script src="js/script.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.js"></script>

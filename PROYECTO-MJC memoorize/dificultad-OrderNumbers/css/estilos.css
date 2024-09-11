@@ -10,9 +10,7 @@ body{
     width: 280px;
     height: 280px;
     position: relative;
-    left: 800px;
-    margin-top: 3%;
-    margin-bottom: 3%;
+    left: 90vh;
 }
 
 #playButton {
@@ -147,4 +145,9 @@ body{
 
 .button-container:hover .tooltip {
     opacity: 1;
+}
+.dificultad{
+    position: relative;
+    top: 25vh;
+    right: 9vh;
 }
