@@ -1,0 +1,105 @@
+body{
+    background-color: #555;
+}
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    height: 450px;
+    width: 600px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+
+}
+.box{
+    height: 150px;
+    width: 150px;
+}
+img{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.border_img{
+    border: 2px solid red;
+}
+button{
+    padding: 10px 20px;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    outline: none;
+    font-family: sans-serif;
+    color: #fff;
+    background-color: #111;
+    display: block;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+}
+.temporizador-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+}
+
+#temporizador {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed;
+    z-index: 1001; /* Superior a otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.nuevo{
+    position: relative;
+    margin-top: 160px;
+    
+}
+#imagen-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+}
+
+#imagen {
+    max-width: 350px; /* Ajusta el tamaño según sea necesario */
+    max-height: 300px; /* Ajusta el tamaño según sea necesario */
+}

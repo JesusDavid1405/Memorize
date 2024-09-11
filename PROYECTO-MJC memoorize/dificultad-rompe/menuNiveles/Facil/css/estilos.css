@@ -73,3 +73,7 @@ body{
         font-family: serif;
     
     }
+    /*quitar link*/
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
