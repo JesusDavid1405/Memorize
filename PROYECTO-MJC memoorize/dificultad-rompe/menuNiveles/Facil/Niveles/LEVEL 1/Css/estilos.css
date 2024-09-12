@@ -1,5 +1,9 @@
 body{
-    background-color: #555;
+    background-image: url(../../../../../../dificultad-rompe/img/juegoRompe.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .container{
     margin-left: auto;
@@ -44,7 +48,7 @@ button{
     position: fixed;
     top: 10px;
     right: 10px;
-    background-color: white;
+    background-color: rgb(113, 122, 193);
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -97,4 +101,44 @@ button{
 #imagen {
     max-width: 350px; /* Ajusta el tamaño según sea necesario */
     max-height: 300px; /* Ajusta el tamaño según sea necesario */
+}
+
+/* Animaciones para el modal */
+@keyframes modalFadeIn {
+    from {opacity: 0; transform: scale(0.8);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+.modal-content.animated {
+    animation: modalFadeIn 0.5s ease-out;
+}
+
+/* Reutilización del estilo modal existente */
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
 }

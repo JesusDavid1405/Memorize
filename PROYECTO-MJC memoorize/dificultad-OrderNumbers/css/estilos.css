@@ -7,10 +7,11 @@ body{
 }
 
 .logo img{
-    width: 280px;
-    height: 280px;
+    width: 310px;
+    height: 290px;
     position: relative;
-    left: 90vh;
+    left: 73vh;
+    top: 10vh;
 }
 
 #playButton {
@@ -110,11 +111,11 @@ body{
 .button-container {
     position: relative;
     height: 20px;
-    left: 30px;
+    left: 22px;
 }
 
 .hover-button {
-    padding: 10px 20px;
+    padding: 5px 10px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
@@ -148,6 +149,6 @@ body{
 }
 .dificultad{
     position: relative;
-    top: 25vh;
+    top: 40vh;
     right: 9vh;
 }
