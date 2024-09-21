@@ -1,69 +1,11 @@
 body{
-    background-image: url(../../img/menu1.jpg);
+    background-image: url(../../img/view-underwater-sea-life-cartoon-style.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
     
 }
-
-/*sonido*/
-#playButton {
-    font-size: 20px;
-    padding: 10px 20px;
-    background-color: rgba(73, 20, 20, 0);
-    border: none;
-    cursor: pointer;
-    position: relative;
-    left: 10%;
-    top: 2%;
-}
-.imgSonido{
-    width: 70px;
-    height: 70px;
-}
-#playButton:hover {
-    transform: scale(1.1);
-}
-
-/*usuario*/
-#usuarioBtn{
-    font-size: 20px;
-    background-color: rgba(73, 20, 20, 0);
-    border: none;
-    cursor: pointer;
-    position: relative;
-    left: 10%;
-    top: 2%;
-}
-.imgUsuario{
-    width: 70px;
-    height: 70px;
-}
-#usuarioBtn:hover{
-    transform: scale(1.1);
-}
-
-
-/*configuracion*/
-#configuracionBtn{
-    font-size: 20px;
-    padding: 10px 10%;
-    background-color: rgba(73, 20, 20, 0);
-    border: none;
-    cursor: pointer;
-    position: relative;
-    left: 10%;
-    top: 2%;
-}
-.imgConfiguracion{
-    width: 70px;
-    height: 70px;
-}
-#configuracionBtn:hover {
-    transform: scale(1.1);
-}
-
 
 /* Estilo de los botones personalizados */
 .btn-custom {

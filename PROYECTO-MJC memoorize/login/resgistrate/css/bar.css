@@ -16,3 +16,26 @@
 .center{
     margin-top: 15vh;
 }
+.logoI{
+    width: 50vh;
+    height: 50vh;
+}
+@media(width: 320px){
+    .logoI{
+        width: 38vh;
+        height: 38vh;
+    }
+    #containere {
+        width: 80%;
+        height: 2vh;
+        position: relative;
+        right: 20vh;
+    }
+    #loading-bar {
+        height: 2vh;
+    }
+    .center{
+        margin-top: 20vh;
+    }
+
+}

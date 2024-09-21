@@ -23,3 +23,17 @@ body{
 .center{
     margin-top: 15vh;
 }
+@media(width: 320px){
+    .logo{
+        width: 35vh;
+        height: 35vh;
+    }
+    #containere {
+        position: relative;
+        right: 18vh;
+    }
+    .center{
+        margin-top: 20vh;
+    }
+
+}

@@ -107,25 +107,6 @@ body{
     transform: scale(1.1);
 }
 
-/*sonido*/
-#playButton {
-    font-size: 20px;
-    z-index: 999; 
-    position: relative; 
-    padding: 10px 20px;
-    background-color: rgba(73, 20, 20, 0);
-    border: none;
-    cursor: pointer;
-    transition: 1s;
-}
-.imgSonido{
-    width: 70px;
-    height: 70px;
-}
-#playButton:hover {
-    transform: scale(1.1);
-}
-
 /*mobiles pequeños*/
 @media(width= 320px){
     body{

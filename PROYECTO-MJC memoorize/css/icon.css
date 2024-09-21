@@ -1,0 +1,73 @@
+/*sonido*/
+#playButton {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: rgba(73, 20, 20, 0);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 2%;
+    right: 5%;
+    transition: 100ms;
+}
+.imgSonido{
+    width: 70px;
+    height: 70px;
+}
+#playButton:hover {
+    transform: scale(1.1);
+}
+
+/*usuario*/
+#usuarioBtn{
+    font-size: 20px;
+    background-color: rgba(73, 20, 20, 0);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 14%;
+    top: 2%;
+    transition: 100ms;
+}
+.imgUsuario{
+    width: 70px;
+    height: 70px;
+}
+#usuarioBtn:hover{
+    transform: scale(1.1);
+}
+
+
+/*configuracion*/
+#configuracionBtn{
+    font-size: 20px;
+    padding: 10px 10%;
+    background-color: rgba(73, 20, 20, 0);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 10%;
+    top: 2%;
+    transition: 100ms;
+}
+.imgConfiguracion{
+    width: 70px;
+    height: 70px;
+}
+#configuracionBtn:hover {
+    transform: scale(1.1);
+}
+
+/*home*/
+#home{
+    background-color: rgba(73, 20, 20, 0);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 10%;
+    top: 2%;
+    transition: 100ms;
+}
+#home:hover{
+    transform: scale(1.1);
+}
