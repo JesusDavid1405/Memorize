@@ -87,6 +87,25 @@ input.input:hover {
     text-align: center;
 }
 
+/*sonido*/
+#playButton {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: rgba(73, 20, 20, 0);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 2%;
+    transition: 100ms;
+}
+.imgSonido{
+    width: 70px;
+    height: 70px;
+}
+#playButton:hover {
+    transform: scale(1.1);
+}
+
 /*iconosRedes*/
 .logoRedes{
     margin: auto;
