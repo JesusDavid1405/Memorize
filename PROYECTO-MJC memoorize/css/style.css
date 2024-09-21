@@ -70,15 +70,13 @@ body{
 .btnJugar{
     width: 250px;
     height: 60px;
-    background-image: url(../img/4167804.jpg);   
+    background-image: url(../img/boton.jpg);   
     transition: 600ms;
-    bottom: 40px;
     background-size: cover;
-    background-repeat: no-repeat;
-    border: none; 
-    background-color: transparent; 
+    background-repeat: no-repeat; 
     position: relative;
-    right: 4vh;
+    left: 5vh;
+    transition: 400ms;
 }
 .btnText{
     font-family: 'Times New Roman', Times, serif;
@@ -92,8 +90,8 @@ body{
 /*logo*/
 .imgLogo{
     position: relative;
-    right: 3vh;
-    bottom: 90px;
+    right: 5vh;
+    bottom: 4vh;
     transition: 500ms;
     animation: moveLogoVertical 2s infinite alternate ease-in-out;
     margin-bottom: 20px;
