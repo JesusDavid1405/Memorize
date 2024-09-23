@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const creatures = document.querySelectorAll('.creature');
     const porthole = document.querySelector('.porthole');
     
-    readMoreButton.addEventListener('click', function() {
-        alert('¡Bienvenido a **AQUA MEMORY**! 🌊💧 Prepárate para sumergirte en un desafío de memoria lleno de diversión acuática. ¡Pon a prueba tu mente y descubre lo que el océano tiene reservado para ti!');
+    document.getElementById("readMore").addEventListener("click", function() {
+        window.location.href = "bar.html"; 
     });
 
     // Randomly position creatures

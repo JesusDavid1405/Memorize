@@ -2,14 +2,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: url('img/tabla.jpg') repeat;
-    background-size: 200px 200px;
+    background: url('img/view-underwater-sea-life-cartoon-style.jpg') no-repeat center center fixed;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-
 .container {
     display: flex;
     align-items: center;
@@ -17,16 +16,109 @@ body {
     padding: 20px;
     border-radius: 10px;
 }
+.creature {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
+.fish {
+    width: 70px;
+    height: 50px;
+    background-image: url('img/1.png');
+    animation: swimHorizontal 15s linear infinite;
+    top: 20%; 
+    left: -100px; 
+}
+
+.turtle {
+    width: 80px;
+    height: 60px;
+    background-image: url('img/7.png');
+    animation: swimHorizontal 20s linear infinite;
+    top: 60%; 
+    left: -100px;
+}
+
+
+.jellyfish {
+    width: 80px;
+    height: 80px;
+    background-image: url('img/6.png');
+    animation: floatVertical 8s ease-in-out infinite;
+    top: 40%; 
+    left: 20%;
+}
+
+.seahorse {
+    width: 80px;
+    height: 80px;
+    background-image: url('img/4.png');
+    animation: floatVertical 10s ease-in-out infinite;
+    top: 70%;
+    left: 80%;
+}
+.payaso {
+    width: 100px;
+    height: 100px;
+    background-image: url('img/c6b2ee4acc1c3cc273a1d616ec712b89-Photoroom.png') ;
+    bottom: 70px;
+    left: 110px;
+    animation: floatVertical 8s ease-in-out infinite;
+}
+.pulpo{
+    width: 100px;
+    height: 100px;
+    background-image: url('img/pngtree-cute-cartoon-sea-animal-jellyfish-character-png-image_13000376-Photoroom.png') ;
+    bottom: 70px;
+    left: 110px;
+    animation: floatVertical 8s ease-in-out infinite; 
+}
+.lango{
+    width: 100px;
+    height: 100px;
+    background-image: url('img/1726608de2d2d50d116cfc2bd00e5908-Photoroom.png') ;
+    bottom: 70px;
+    left: 110px;
+    animation: floatVertical 8s ease-in-out infinite; 
+}
+
+.starfish {
+    width: 100px;
+    height: 100px;
+    background-image: url('img/3.png');
+    bottom: 20px;
+    left: 910px;
+    animation: floatVertical 8s ease-in-out infinite;
+}
+
+/* Animaciones */
+@keyframes swimHorizontal {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(120vw);
+    }
+}
+
+@keyframes floatVertical {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px); 
+    }
+}
 .porthole {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background: url('img/4211139.jpg') repeat;
-    border: 20px solid #C0C0C0;
+    background: url('img/logo2.png') no-repeat center center;
+    background-size: contain; 
+    border: 20px solid #c0c0c000;
     box-shadow: 0 0 20px rgba(0,0,0,0.5), inset 0 0 50px rgba(0,0,0,0.3);
     position: relative;
-    right: 150px;
     overflow: hidden;
     animation: float 3s ease-in-out infinite;
 }
@@ -45,7 +137,7 @@ body {
 h1 {
     font-size: 4.5em;
     margin-bottom: 10px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 p {
@@ -54,7 +146,7 @@ p {
 }
 
 button {
-    background-color: #7a530a;
+    background-color: #0a607a;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -68,7 +160,7 @@ button {
 }
 
 button:hover {
-    background-color: #FF8C00;
+    background-color: #3284f0;
 }
 
 .creature {
