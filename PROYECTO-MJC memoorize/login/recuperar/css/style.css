@@ -28,7 +28,7 @@ body{
     transition: 200ms;
     margin: auto;
     position: relative;
-    bottom: 6vh;
+    top: 8vh;
 }
 #formulario:hover{
     transform: none;
@@ -42,6 +42,11 @@ body{
     height: 175px;
     margin-bottom: 2%;
     transition: 200ms;
+    animation: moveLogoVertical 2s infinite alternate ease-in-out;
+}
+@keyframes moveLogoVertical {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(15px); }
 }
 .logoForm img:hover{
     transform: scale(1.1);

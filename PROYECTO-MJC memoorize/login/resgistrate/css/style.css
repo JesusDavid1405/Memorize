@@ -45,6 +45,11 @@ body{
     left: 15%;
     bottom: 10%;
     transition: 200ms;  
+    animation: moveLogoVertical 2s infinite alternate ease-in-out;
+}
+@keyframes moveLogoVertical {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(15px); }
 }
 .logo:hover{
     transform: scale(1.1);
