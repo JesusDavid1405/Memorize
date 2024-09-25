@@ -1,52 +1,78 @@
 body{
+    background-image: url(../../../../img/view-underwater-sea-life-cartoon-style.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.imgLogo{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    left: 27%;
+}
+.conteinerJuego{
+    background-color: rgba(240, 248, 255, 0.527);
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    border-radius: 15px;
 }
 .main-container{
     display: flex;
     flex-direction: column;
-    gap: 2vh;
-    align-items: center;
+    gap: 3px;
+    align-items: center !important;
+    padding-top: 2vh;
 }
 .row{
     display: flex;
-    gap: 2vh;
-    margin-bottom: 2vh;
+    gap: 3px;
 }
 .square{
+    background-image: url(../../../../img/input/vacio.png);
+    background-repeat: no-repeat;
+    background-size: 100% 99%;
     width: 80px;
     height: 80px;
     border: none;
-    background-color: darkgray;
     outline: none;
-    font-size: 50px;
+    font-size: 35px;
     text-transform: uppercase;
-    color: #fff;
+    color: rgb(0, 0, 0);
+    -webkit-text-fill-color: rgb(255, 255, 255); /* Will override color (regardless of order) */
+    -webkit-text-stroke: 3px rgb(255, 255, 255);
     text-align: center;
 }
 .result{
     text-align: center;
-    font-size: 36px;
+    font-size: 25px;
 }
 .button{
-    width: 170px;
-    height: 60px;
+    width: 100px;
+    height: 40px;
     border-radius: 16px;
     border: none;
-    background-color: aqua;
-    font-size: 32px;
+    background-color: rgb(31, 122, 31);
+    font-size: 20px;
     color: #fff;
+    text-decoration: double;
 }
 .button:hover{
     cursor: pointer;
-    background-color: rgb(7, 226, 226);
+    background-color: rgb(24, 83, 24);
 }
 
 .gold{
-    background-color: #c9b458;
+    background-image:url(../../../../img/input/oro.png);
+    background-repeat: no-repeat;
+    background-size: 99% 110%;
 }
 .green{
-    background-color: #6AAA64;
+    background-image:url(../../../../img/input/esmeralda.png);
+    background-repeat: no-repeat;
+    background-size: 99% 110%;
 }
-.gray{
-    background-color: darkgray;
+.no{
+    background-color: transparent;
 }

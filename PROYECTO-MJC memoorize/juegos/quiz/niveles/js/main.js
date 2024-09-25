@@ -22,59 +22,73 @@ let word = datos =>{
     drawSquaers(actualRow)
     listenInput(actualRow)
     
-   
-    let focusElement = document.querySelector(".focus")
-    focusElement.focus()
-
+    addFocus(actualRow)
+    
     function listenInput(actualRow){
-        let square= document.querySelectorAll('.square')
+        let square= actualRow.querySelectorAll('.square')
         square=[...square]
 
         let userInput=[]
 
         square.forEach(element => {
             element.addEventListener('input',event=>{
-                //recoger el ingreso del usuario
-                userInput.push(event.target.value.toUpperCase())
-    
-                console.log(userInput)
-    
-                if(event.target.nextElementSibling){
-                    event.target.nextElementSibling.focus()
-                }else{
-    
-                    //comparar arreglos para cambiar estilos
-                    let rightIndex= compareArrays(wordleArray,userInput)
-                    rightIndex.forEach(element=>{
-                        square[element].classList.add('green')
-                    })
-    
-                    // cambiar si existe la letra pero no esta en la posicion correcta
-                    let existIndexArray=existLetter(wordleArray, userInput)
-                    existIndexArray.forEach(element =>{
-                        square[element].classList.add('gold')
-                    })
-                    console.log(existIndexArray)
-                    //si los arreglos son iguales
-                    if(rightIndex.length == wordleArray.length){
-                        resultElement.innerHTML=`
-                        <p>Ganaste!</p>
-                        <button class="button">Reiniciar</button>`
-                    }
-                    //crear una linea
-                    let actualRow=createRow()
-                    drawSquaers(actualRow)
-                    listenInput(actualRow)
+                //si no se ha borrado
+                if(event.inputType !== 'deleteContentBackward'){
+                     //recoger el ingreso del usuario
+                    userInput.push(event.target.value.toUpperCase())
+        
+                    console.log(userInput)
+        
+                    if(event.target.nextElementSibling){
+                        event.target.nextElementSibling.focus()
+                    }else{
+                        let squaresFilled = document.querySelectorAll('.square')
+                        squaresFilled=[...squaresFilled]
+                        let lastFiveSquaresFilled=squaresFilled.slice(-5)
+                        let finalUserInput=[];
 
-                    //let returnBtn= document.querySelector(".button")
-                    //returnBtn.addEventListener('click',()=>{
-                    //    location.reload();
-                    //});
-    
+                        lastFiveSquaresFilled.forEach(element =>{
+                            finalUserInput.push(element.value.toUpperCase())
+                        })
+
+                        // cambiar si existe la letra pero no esta en la posicion correcta
+                        let existIndexArray=existLetter(wordleArray, finalUserInput)
+                        existIndexArray.forEach(element =>{
+                            square[element].classList.add('gold')
+                        })
+                        console.log(existIndexArray)
+                        
+                        //comparar arreglos para cambiar estilos
+                        let rightIndex= compareArrays(wordleArray,finalUserInput)
+                        rightIndex.forEach(element=>{
+                            square[element].classList.add('green')
+                        })
+
+                        //si los arreglos son iguales
+                        if(rightIndex.length == wordleArray.length){
+                            showResult('Ganaste!')
+
+                            return;
+                        }
+                        //crear una linea
+                        let actualRow=createRow()
+
+                        if(!actualRow){
+                            return
+                        }
+                        drawSquaers(actualRow)
+                        listenInput(actualRow)
+                        addFocus(actualRow)
+
+                    
+        
+                    }
+                }else{
+                    userInput.pop();
+                    console.log(userInput)
                 }
             })
         })
-        return actualRow
     }
     //funciones
 
@@ -99,20 +113,38 @@ let word = datos =>{
     }
     function createRow(){
         rowId++
-        let newRow = document.createElement('div');
-        newRow.classList.add('row');
-        newRow.setAttribute('id',rowId)
-        mainContainer.appendChild(newRow)
-
-        return newRow
+        if(rowId <= 5){
+            let newRow = document.createElement('div');
+            newRow.classList.add('row');
+            newRow.setAttribute('id',rowId)
+            mainContainer.appendChild(newRow)
+            return newRow
+        }else{
+            showResult(`Intentalo de nuevo, la palabra correcta es "${wordle.toUpperCase()}"`)
+        }
+        
     }
     function drawSquaers(actualRow){
         wordleArray.forEach((item,index) => {
             if(index === 0){
-                actualRow.innerHTML +=`<input type="text" maxlength="1" class="square focus">`
+                actualRow.innerHTML +=`<input type="text" maxlength="1" class="square no focus">`
             }else{
-                actualRow.innerHTML +=`<input type="text" maxlength="1" class="square">`
+                actualRow.innerHTML +=`<input type="text" maxlength="1" class="square no">`
             }
+        });
+    }
+    function addFocus(actualRow){
+        let focusElement = actualRow.querySelector(".focus")
+        focusElement.focus()
+    }
+    function showResult(textMsg){
+        resultElement.innerHTML=`
+        <p>${textMsg}</p>
+        <button class="button">Reiniciar</button>`
+
+        let returnBtn= document.querySelector(".button")
+        returnBtn.addEventListener('click',()=>{
+            location.reload();
         });
     }
 }
