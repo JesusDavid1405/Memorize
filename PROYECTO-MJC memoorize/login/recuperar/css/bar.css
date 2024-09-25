@@ -5,9 +5,9 @@ body{
     background-attachment: fixed;
 }
 .container {
-    width: 980%;
-    max-width: 1300px;
-    left: 30px;
+    width: 1280%;
+    max-width: 1500px;
+    left: 0px;
     height: 50px;
     background-color: rgba(255, 255, 255, 0.3); 
     border-radius: 25px;
