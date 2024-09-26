@@ -76,12 +76,10 @@ let word = datos =>{
                         if(!actualRow){
                             return
                         }
+                        
                         drawSquaers(actualRow)
                         listenInput(actualRow)
                         addFocus(actualRow)
-
-                    
-        
                     }
                 }else{
                     userInput.pop();
@@ -93,6 +91,7 @@ let word = datos =>{
     //funciones
 
     function compareArrays(arrayUno,arrayDos){
+    
         let iqualsIndex =[]
         arrayUno.forEach((element,index)=>{
             if(element == arrayDos[index]){

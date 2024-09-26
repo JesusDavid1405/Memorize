@@ -4,7 +4,7 @@ body{
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
-    
+    overflow: hidden;
 }
 
 /* Estilo de los botones personalizados */
@@ -21,13 +21,47 @@ body{
 .game-logo {
     width: 100%;
     height: 100%;
-    border: none;   
+    border: none;
+    animation: moveLogoVertical 2s infinite alternate ease-in-out;
+}
+@keyframes moveLogoVertical {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(25px); }
 }
 
 /* Animación al pasar el mouse */
 .game-button:hover {
     transform: scale(1.2);
     border: none;
+}
+.burbuja {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../../img/realistic-style-soap-bubbles-background.png') repeat;
+    opacity: 0.8;
+    animation: moveStars 95s linear infinite;
+    animation: pulse 6s infinite;
+}
+
+@keyframes moveStars {
+    
+    from { background-position: 0 0; }
+    to { background-position: -1000px 0; }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 @media (width = 320px) and (height:571px){
