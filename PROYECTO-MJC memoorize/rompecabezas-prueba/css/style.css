@@ -1,8 +1,10 @@
-﻿body {
-    font-family: 'Segoe UI', Calibri, Arial;
-    margin:0px;
-    background-image: url(../images/playa.jpg);
-   
+﻿body{
+    background-image: url(../../img/view-underwater-sea-life-cartoon-style.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    overflow: hidden;
 }
 h2{
     font-weight:normal;
