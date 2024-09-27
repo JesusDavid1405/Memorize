@@ -38,7 +38,7 @@ body{
 .btnLogin{
     width: 200px;
     height: 40px;
-    background-color: rgb(10, 97, 82) !important;   
+    background-color: rgb(55, 33, 121) !important;   
     transition: 600ms;
     margin-bottom: 3%;
 }
@@ -88,12 +88,15 @@ body{
 #formulario{
     width: 30%;
     height: auto;
-    border-radius: 10px;
-    background-image: url(../../../img/login.jpg);
-    transition: 200ms;
+    border-radius: 30px;
+    background-image: url(../../../img/deco.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    transition: 400ms;
     margin: auto;
     position: relative;
-    top: -40px;
+    bottom: 0vh;
 }
 #formulario:hover{
     transform: none;
@@ -101,9 +104,14 @@ body{
 }
 .text{
     color: aliceblue;
+    font-size: 20px;
     text-align: center;
 }
-
+.text2{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 30px;
+}
 /*iconoInput*/
 
 .inputIcon{
@@ -127,17 +135,17 @@ body{
 }
 input.input{    
   padding-right: 2.5rem;
-  background-color: rgb(141, 212, 188);
+  background-color: rgba(255, 255, 255, 0.568);
   border: 1px solid black;
   transition: 100ms;
 }
 input.input:focus{
-    background-color: rgb(141, 212, 188);
+    background-color: rgb(255, 255, 255);
     border: 1px solid black;
     box-shadow: 0px 0px 5px black;
 }
 input.input:hover {  
-    background-color: rgb(112, 189, 163);
+    background-color: rgb(253, 253, 253);
     
 }
 .text{
@@ -170,14 +178,14 @@ input.input:hover {
 
 /*texto*/
 .textCrear{
-    font-size: medium;
+    font-size: 1.4em;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
 .textCrear a{
-    color: rgb(81, 179, 81) !important;
-    font-size: 20px;
+    color: rgb(0, 0, 0) !important;
+    font-size: 25px;
     font-family: Arial, Helvetica, sans-serif !important;
 }
 
