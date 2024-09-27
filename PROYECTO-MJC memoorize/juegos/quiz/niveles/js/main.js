@@ -3,6 +3,15 @@ let rowId=1;
 let mainContainer = document.querySelector('.main-container')
 let resultElement = document.querySelector(".result")
 
+let tiempo = 0; 
+    
+const contadorTiempo = setInterval(() => {
+    tiempo++; 
+    document.getElementById('contador').innerHTML = formatoTiempo(tiempo); 
+    
+}, 1000); 
+
+
 
 
 let word = datos =>{
@@ -18,7 +27,7 @@ let word = datos =>{
     console.log(wordleArray)
 
 
-    let actualRow=document.querySelector(".row")
+    let actualRow=document.querySelector(".fila")
     drawSquaers(actualRow)
     listenInput(actualRow)
     
@@ -66,9 +75,10 @@ let word = datos =>{
 
                         //si los arreglos son iguales
                         if(rightIndex.length == wordleArray.length){
-                            showResult('Ganaste!')
-
-                            return;
+                            clearInterval(contadorTiempo);
+                            mostrarModal("Ganaste!");
+                            
+                            return
                         }
                         //crear una linea
                         let actualRow=createRow()
@@ -114,12 +124,13 @@ let word = datos =>{
         rowId++
         if(rowId <= 5){
             let newRow = document.createElement('div');
-            newRow.classList.add('row');
+            newRow.classList.add('fila');
             newRow.setAttribute('id',rowId)
             mainContainer.appendChild(newRow)
             return newRow
         }else{
-            showResult(`Intentalo de nuevo, la palabra correcta es "${wordle.toUpperCase()}"`)
+            clearInterval(contadorTiempo);
+            mostrarModal(`Intentalo de nuevo, la palabra correcta era "${wordle.toUpperCase()}"`)
         }
         
     }
@@ -136,15 +147,72 @@ let word = datos =>{
         let focusElement = actualRow.querySelector(".focus")
         focusElement.focus()
     }
-    function showResult(textMsg){
-        resultElement.innerHTML=`
-        <p>${textMsg}</p>
-        <button class="button">Reiniciar</button>`
 
+    function mostrarModal(textMsg) {
+        var modal = new bootstrap.Modal(document.getElementById('miModal'));  
+        var modalBody = document.querySelector('.modal-body');  
+        
+        if(rowId >= 5){
+            modalBody.innerHTML=`
+                <div class="">
+                    <h1>Perdiste!</h1>
+                    ${textMsg}
+                    <div class="text">
+                        tiempo: ${formatoTiempo(tiempo)}
+                    </div>
+                    <div class="text">
+                        intentos: ${rowId}
+                    </div>
+                    <div class="text">
+                        puntos: ${puntacion(rowId)}
+                    </div>
+                </div>
+                <button class="button">Reiniciar</button>
+            `
+        }else{
+            modalBody.innerHTML=`
+                <div class="">
+                    <h1>${textMsg}</h1>
+                    <div class="text">
+                        tiempo: ${formatoTiempo(tiempo)}
+                    </div>
+                    <div class="text">
+                        intentos: ${rowId}
+                    </div>
+                    <div class="text">
+                        puntos: ${puntacion(rowId)}
+                    </div>
+                </div>
+                <button class="button">Reiniciar</button>
+                <button class="button">Reiniciar</button>
+            `
+        }
         let returnBtn= document.querySelector(".button")
-        returnBtn.addEventListener('click',()=>{
+            returnBtn.addEventListener('click',()=>{
             location.reload();
-        });
+        }); 
+        modal.show(); 
     }
+}
+function formatoTiempo(segundos) {
+    const minutos = Math.floor(segundos / 60);    
+    const segundosRestantes = segundos % 60;
+    let tiempoPantalla;
+    tiempoPantalla=`${minutos.toString().padStart(2, '0')}:${segundosRestantes.toString().padStart(2, '0')}`
+
+    return tiempoPantalla; 
+}
+function puntacion(intentos){
+    let puntosMaximo=1000;
+    let intentosFinal=intentos;
+    let puntos
+
+    if(intentosFinal>=5){
+        puntos =0;
+    }else{
+        puntos =(puntosMaximo/intentosFinal);
+    }
+        
+    return puntos;
 }
 
