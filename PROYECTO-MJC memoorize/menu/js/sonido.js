@@ -67,3 +67,26 @@ window.onload = cargarAvatar;
 function cerrarSesion() {
     window.location.href = '../login/index.html'; 
 }
+document.addEventListener("DOMContentLoaded", function() {
+    const game1 = document.getElementById("game1");
+    const desc1 = document.getElementById("desc1");
+
+    const game2 = document.getElementById("game2");
+    const desc2 = document.getElementById("desc2");
+
+    game1.addEventListener("mouseenter", function() {
+        desc1.style.display = "block";
+    });
+
+    game1.addEventListener("mouseleave", function() {
+        desc1.style.display = "none";
+    });
+
+    game2.addEventListener("mouseenter", function() {
+        desc2.style.display = "block";
+    });
+
+    game2.addEventListener("mouseleave", function() {
+        desc2.style.display = "none";
+    });
+});

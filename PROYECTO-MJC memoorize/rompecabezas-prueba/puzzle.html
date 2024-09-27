@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AQUAC-MEMORY</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/image-puzzle.css" rel="stylesheet" />
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/image-puzzle.js"></script>
+</head>
+<body>
+    <div id="collage">
+        <h2>AQUAC-MEMORY ROMPE</h2>
+        <hr />
+        <div id="playPanel" style="padding:5px;display:none;">
+            <h3 id="imgTitle"></h3> <hr />
+            <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
+                <ul id="sortable" class="sortable"></ul>
+                <div id="actualImageBox">
+                    <div id="stepBox">
+                        <div>MOVIMIENTOS</div><div class="stepCount">0</div>
+                    </div>
+                    <div id="timeBox">
+                        TIEMPO: <span id="timerPanel"></span> SEG
+                    </div>
+                    <img id="actualImage" />
+                    <div>Organícelo para crear una imagen como esta.</div>
+                    <p id="levelPanel">
+                        <input type="radio" name="level" id="easy" checked="checked" value="3" /> <label for="easy">Facil</label>
+                        <input type="radio" name="level" id="medium" value="4" /> <label for="medium">Medio</label>
+                        <input type="radio" name="level" id="hard" value="5" /> <label for="hard">Dificil</label>
+                    </p>
+                    <div>
+                        <button id="btnRule" type="button" class="btn" onclick="rules();">REGLAS</button>
+                        <button id="newPhoto" type="button" class="btn">OTRA IMAGEN</button>
+                        <button id="btnReplay" type="button" class="btn" onclick="about();">ACERCA DE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gameOver" style="display:none;">
+            <div style="background-color: #743333; padding: 5px 10px 20px 10px; text-align: center; ">
+                <h2 style="text-align:center">JUEGO TERMINADO!!</h2>
+                FELICIDADES <br /> HAS COMPLETADO ESTA IMAGEN
+                <br />
+               MOVIMIENTOS <span class="stepCount">0</span> MOVIMIENTOS
+                <br />
+                TIEMPO <span class="timeCount">0</span> SEG<br />
+                <div>
+                    <button type="button" onclick="window.location.reload(true);">JUGAR DE NUEVO</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var images = [
+                { src: 'images/submarino.jpg', title: 'Submarino' },
+                { src: 'images/barco.jpg', title: 'Barco Pirata' },
+                { src: 'images/cangre.jpg', title: 'Cangrejo Pirata' },
+                { src: 'images/pulpo.jpeg', title: 'Pulpo' },
+                { src: 'images/pulpa.jpeg', title: 'Fondo Del Mar' }
+            ];
+
+            $(function () {
+                var gridSize = $('#levelPanel :radio:checked').val();
+                imagePuzzle.startGame(images, gridSize);
+                $('#newPhoto').click(function () {
+                    var gridSize = $('#levelPanel :radio:checked').val();  // Take the updated gridSize from UI.
+                    imagePuzzle.startGame(images, gridSize);
+                });
+
+                $('#levelPanel :radio').change(function (e) {
+                    var gridSize = $(this).val();
+                    imagePuzzle.startGame(images, gridSize);
+                });
+            });
+            function rules() {
+                alert('Vuelva a organizar las partes de la imagen de manera que formen correctamente la imagen. \n TEN UN BUEN JUEGO, DISFRUTALO 🌊');
+            }
+            function about() {
+                alert('"Este juego ha sido desarrollado por AQUAC-MEMORY, Un grupo comprometido con la creación de experiencias innovadoras que estimulan la mente y promueven la diversión. ¡Gracias por elegirnos para acompañarte en cada desafío y aventura ⛵!"\nPuede ser contactado en: cachape64@gmail.com');
+            }
+        </script>
+    </div>
+</body>
+</html>

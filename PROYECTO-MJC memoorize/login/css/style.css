@@ -10,7 +10,7 @@ body{
 .btnLogin{
     width: 200px;
     height: 40px;
-    background-color: rgb(10, 97, 82) !important;  
+    background-color: rgb(25, 68, 102) !important;  
     transition: 600ms;
     margin-bottom: 3%;
 }
@@ -20,10 +20,9 @@ body{
 
 /*Formulario*/
 #formulario{
-    width: 28%;
+    width: 30%;
     height: auto;
-    border-radius: 10px;
-    border-radius: 10px; 
+    border-radius: 30px;
     background-image: url(../../img/deco.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -78,24 +77,29 @@ body{
 }
 input.input{    
   padding-right: 2.5rem;
-  background-color: rgb(141, 212, 188);
+  background-color: rgba(255, 255, 255, 0.427);
   border: 1px solid black;
   transition: 100ms;
 }
 input.input:focus{
-    background-color: rgb(141, 212, 188);
+    background-color: rgb(255, 255, 255);
     border: 1px solid black;
     box-shadow: 0px 0px 5px black;
 }
 input.input:hover {  
-    background-color: rgb(112, 189, 163);
+    background-color: rgb(255, 255, 255);
     
 }
 .text{
     color: aliceblue;
     text-align: center;
+    font-size: 18px;
 }
-
+.text2{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 28px;
+}
 /*sonido*/
 #playButton {
     font-size: 20px;
@@ -138,14 +142,14 @@ input.input:hover {
 
 /*texto*/
 .textCrear{
-    font-size: medium;
-    color: white;
+    font-size: 1.3em;
+    color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
 .textCrear a{
-    color: rgb(228, 127, 127) !important; 
-    font-size: 20px;
+    color: rgb(0, 0, 0) !important; 
+    font-size: 22px;
     font-family: Arial, Helvetica, sans-serif !important;
 }
 
@@ -157,8 +161,8 @@ input.input:hover {
     
 }
 .textOlvide a{
-    color: rgb(81, 179, 81) !important; 
-    font-size: larger;
+    color: rgb(0, 0, 0) !important; 
+    font-size: 1.4em;
     
 }
 

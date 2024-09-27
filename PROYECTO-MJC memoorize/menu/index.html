@@ -12,11 +12,14 @@
     <link rel="stylesheet" href="../css/icon.css">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../fontawesome-free-6.6.0-web/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
 </head>   
 <body>
     <div class="burbuja"></div>
     <div id="mensaje" class="alert alert-success" style="display: none;"></div>
     <div class="container-fluid main-container d-flex justify-content-center align-items-center">
+        
         <div class="col-12 row">
             <div class="col-1">   
                 <button id="home">
@@ -26,23 +29,27 @@
                     <img class="imgConfiguracion" src="../img/icon/configuracion.png" alt="">
                 </button>             
             </div>
+            
             <div class="col-10">
+                <h1 id="titulo-juegos">Juegos</h1>
                 <div class="row justify-content-center scrolle">
-                    <div class="col-auto">
+                    <div class="col-auto game-container">
                         <a href="../dificultad-rompe/index.html">
-                            <button class="btn btn-custom game-button" onclick="navigateToGame(1)" style="margin-top: 200px; border: none;">
-                                <img src="img/54d0c318-c7f0-4437-b026-19a08853810c-Photoroom.png" alt="Juego 1" class="game-logo logoI">
+                            <button class="btn btn-custom game-button" onclick="navigateToGame(1)" style="margin-top: 150px; border: none;">
+                                <img src="img/54d0c318-c7f0-4437-b026-19a08853810c-Photoroom.png" alt="Juego 1" class="game-logo logoI" id="game1">
                             </button>
                         </a>
+                        <div class="game-description" id="desc1">Un divertido juego de rompecabezas.</div>
                     </div>
-                    <div class="col-auto"></div>
-                    <div class="col-auto">
+                    <div class="col-auto game-container">
                         <a href="../juegos/quiz/bar.html">
-                            <button class="btn btn-custom game-button" onclick="navigateToGame(3)" style="margin-top: 200px; border: none;"> 
-                                <img src="../img/logo/wordle.png" alt="Juego 3" class="game-logo">
+                            <button class="btn btn-custom game-button" onclick="navigateToGame(3)" style="margin-top: 150px; border: none;"> 
+                                <img src="../menu/img/logonumero.png" alt="Juego 2" class="game-logo" id="game2">
                             </button>
                         </a>
+                        <div class="game-description" id="desc2">Un emocionante juego de numeros.</div>
                     </div>
+                    
                 </div>
             </div>
             <div class="col-1">
@@ -142,7 +149,7 @@
                 </div>
             </div>
         </div>
-
+        
         <audio id="miCancion" preload="auto" loop>
             <source src="../audio/sonidoFondo.mp3" type="audio/mpeg">
         </audio>
