@@ -31,7 +31,7 @@ body{
     transition: 200ms;
     margin: auto;
     position: relative;
-    bottom: 0vh;
+    bottom: 4vh;
 }
 #formulario:hover{
     transform: none;
