@@ -7,6 +7,47 @@ body{
     overflow: hidden;
 }
 
+.modal-content {
+    border-radius: 10px; 
+    background-image: url(../../menu/img/scene-ocean-underwater-background_1308-29689.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    width: 300px; 
+    height: auto; 
+    min-height: 200px; 
+    overflow: hidden;  
+    color: white; 
+    position: relative; 
+    padding: 20px; 
+}
+.modal-header {
+    background-color: #eaeaea00; 
+    color: white;
+}
+
+.modal-body {
+    font-size: 21px; 
+    text-align: center; 
+}
+.modal-title{
+    color: black;
+}
+.modal-footer .btn-secondary {
+    background-color: #ff4646;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    top: 20px;
+    position: relative;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.modal-footer .btn-secondary:hover {
+    background-color: #ff5b5b;
+    cursor: pointer;
+}
 /* Estilo de los botones personalizados */
 .btn-custom {
     width: 250px;
@@ -14,7 +55,61 @@ body{
     border: none;
     overflow: hidden;
     transition: transform 0.4s ease;
-    margin: 30px; /* Espaciado entre los botones */
+    margin: 30px;
+}
+.perfil-usuario {
+    margin-top: 20px;
+}
+
+.foto-perfil {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+.offcanvas {
+    width: 300px;
+    height: 100%;
+    background-image: url(../../menu/img/scene-ocean-underwater-background_1308-29689.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;  
+    color: rgba(255, 255, 255, 0); 
+    position: relative; 
+}
+
+.offcanvas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0); 
+    z-index: 0; 
+}
+
+.offcanvas .perfil-usuario {
+    position: relative; 
+    z-index: 1; 
+}
+
+.offcanvas-backdrop {
+    background-color: transparent !important; 
+    box-shadow: none !important; 
+}
+.avatar-opcion {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.avatar-opcion:hover {
+    transform: scale(1.1);
 }
 
 /* Estilo de los logos de los juegos */

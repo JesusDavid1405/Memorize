@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJC memorize</title>
+    <link rel="icon" href="img/logo/MJC.png" type="image/icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/icon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>  
+    <div class="burbuja"></div>
+    <div class="container-fluid">
+        <div class="col-12 row"> 
+            <div class="col-1">  
+                <button id="playButton">
+                    <img class="imgSonido" src="img/icon/noSonido.png" alt="">
+                </button>
+            </div>
+            <div class="col-10 centrar">
+                <div class="col-4 m-auto">
+                    <img class="imgLogo m-auto" src="img/logo2.png" alt="">
+                </div>
+                <div class="col-4 m-auto">
+                    <center>
+                        <button class="btn btnJugar m-auto" href="login/bar.html" onclick="createBubbles(event)">
+                            <h3 class="btnText">JUGAR</h3>  
+                            <div class="bubbles"></div> <!-- Contenedor de burbujas -->
+                        </button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <audio id="miCancion" src="audio/sonidoFondo.mp3" preload="auto"></audio>
+    <script src="js/sonido.js"></script>
+    <script src="js/burbujas.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>    
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+</html>

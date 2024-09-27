@@ -23,7 +23,11 @@ body{
     width: 28%;
     height: auto;
     border-radius: 10px;
-    background-image: url(../../img/login.jpg);
+    border-radius: 10px; 
+    background-image: url(../../img/deco.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
     opacity: 2;
     transition: 200ms;
     margin: auto;

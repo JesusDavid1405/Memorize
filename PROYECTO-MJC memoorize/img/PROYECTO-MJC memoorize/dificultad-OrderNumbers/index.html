@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dificultad</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/offcanvas.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+</head>
+<body>
+    <div class="container-fluid main-container d-flex justify-content-center align-items-center">
+        <div class="col-12 row">
+            <div class="col-1">
+                <audio id="miCancion" preload="auto" loop>
+                    <source src="../audio/sonidoFondo.mp3" type="audio/mpeg">
+                </audio>
+                
+                <button id="playButton">
+                    <img class="imgSonido" src="../img/icon/noSonido.png" alt="">
+                </button>
+
+                <button id="usuarioBtn" data-bs-toggle="offcanvas" data-bs-target="#usuario" aria-controls="offcanvasExample">
+                    <img class="imgUsuario" src="../img/icon/usuario.png" alt="">
+                </button>
+            </div>
+            <div class="col-10">
+                <div class="container-fluid main-container d-flex align-items-center">
+                    <div class="col-2 row logo">
+                        <img src="img/logoN.png" alt="" srcset="">
+                    </div>
+                    <div class="col-10 row dificultad">
+                        <div class="col-4">
+                            <a href="menuNiveles/nivelesNumero.html " class="btn botones animacion">
+                                <div class="letra">Facil</div>
+                            </a>
+                        </div>
+            
+                        <div class="col-4">
+                            <button class="botones animacion">
+                                <div class="letra">Medio</div>
+                            </button>
+                        </div>
+            
+                        <div class="col-4">
+                            <button class="botones animacion">
+                                <div class="letra">Dificil</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+                <button id="configuracionBtn" data-bs-toggle="modal" data-bs-target="#configuracion" >
+                    <img class="imgConfiguracion" src="../img/icon/configuracion.png" alt="">
+                </button>
+            </div>
+        </div>   
+    </div>
+    
+    <div class="offcanvas fondoUsuario offcanvas-start" tabindex="-1" id="usuario" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-body">
+            <button type="button" class="btn-close closeOff" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <div class="col-12">
+                
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal fade" id="configuracion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+        <div id="cuerpo" class="modal-content">
+            <div class="modal-body">    
+                <div class="container">
+                    <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="col-12 row">
+                        <h1>
+                            configuracion
+                        </h1>
+                        <div id="iconVolumen" class="col-1">
+                            
+                        </div>
+                        <div class="col-9">
+                            <input class="slider" type="range" min="0" max="1" step="0.01" id="volume">
+                        </div>
+                        <div class="col-2">
+                            <h4>Musica</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 row">
+                        <div id="iconVolumen" class="col-1">
+                            
+                        </div>
+                        <div class="col-9">
+                            <input class="slider" type="range" min="0" max="1" step="0.01" id="volume">
+                        </div>
+                        <div class="col-2">
+                            <h4>Juego</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+</body>
+    <script src="js/script.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../menu/js/sonido.js"></script>
+</html>
