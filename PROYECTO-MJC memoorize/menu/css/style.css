@@ -115,9 +115,9 @@ body{
 /* Estilo de los logos de los juegos */
 .game-logo {
     width: 100%;
-    height: 100%;
+    height: 85%;
     border: none;
-    animation: moveLogoVertical 5s infinite alternate ease-in-out;
+    animation: moveLogoVertical 3s infinite alternate ease-in-out;
 }
 @keyframes moveLogoVertical {
     0% { transform: translateY(0); }
@@ -132,7 +132,7 @@ body{
     position: relative;
     top: 100px;
     text-align: center;
-    background-image: url('../../menu/img/32.png');
+
     background-color: #ffffff00;
     background-size: cover; 
     background-repeat: no-repeat;
@@ -141,12 +141,12 @@ body{
     margin-left: 480px; 
     border-radius: 10px;
     display: inline-block;
-    border: 5px solid #7169ff00; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+
 }
 .game-container {
     position: relative;
     display: inline-block;
+    
 }
 
 .game-description {
@@ -185,7 +185,7 @@ body{
     background: url('../../img/realistic-style-soap-bubbles-background.png') repeat;
     opacity: 0.8;
     animation: moveStars 95s linear infinite;
-    animation: pulse 6s infinite;
+    animation: pulse 7s infinite;
 }
 
 @keyframes moveStars {
