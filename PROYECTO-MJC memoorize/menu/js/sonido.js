@@ -32,7 +32,7 @@ volumeControl.addEventListener('input', updateVolume);
 updateVolume();
 
 
-let avatarSeleccionado = "";
+let avatarSeleccionado = '../img/imagen1.png';
 function seleccionarAvatar(rutaAvatar) {
     avatarSeleccionado = rutaAvatar;  
     document.getElementById('avatarBoton').src = avatarSeleccionado; 
@@ -73,6 +73,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const game2 = document.getElementById("game2");
     const desc2 = document.getElementById("desc2");
+
+    const game3 = document.getElementById("game3");
+    const desc3 = document.getElementById("desc3");
+
+    game3.addEventListener("mouseenter", function() {
+        desc3.style.display = "block";
+    });
+
+    game3.addEventListener("mouseleave", function() {
+        desc3.style.display = "none";
+    });
 
     game1.addEventListener("mouseenter", function() {
         desc1.style.display = "block";
