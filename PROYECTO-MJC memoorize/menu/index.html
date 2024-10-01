@@ -22,14 +22,41 @@
         
         <div class="col-12 row">
             <div class="col-1">   
-                <button id="home">
+                <button id="home" class="btn" data-bs-toggle="modal" data-bs-target="#leaderboardModal">
                     <img class="imgConfiguracion" src="../img/icon/sand-castle_6359048.png" alt="">
-                </button>
+                    <span id="descHome" class="nombre-icono" style="display: none;">Puntuacion</span>  
+                </button>        
+                   
                 <button id="configuracionBtn" data-bs-toggle="modal" data-bs-target="#configuracion">
                     <img class="imgConfiguracion" src="../img/icon/configuraciones.png" alt="">
+                    <span id="descConfiguracion" class="nombre-icono" style="display: none;">Bajar/Subir</span>
                 </button>             
             </div>
-            
+            <div class="modal fade" id="leaderboardModal" tabindex="-1" aria-labelledby="leaderboardModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="leaderboardModalLabel">TABLA DE CLASIFICACIÓN</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Puntuación</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="player-table">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-10">
                 <h1 id="titulo-juegos">Menu</h1>
                 <div class="row justify-content-center scrolle">
@@ -63,10 +90,12 @@
             <div class="col-1">
                 <button id="playButton">
                     <img class="imgSonido" src="../img/icon/noSonido.png" alt="">
+                    <span id="descPlay" class="nombre-icono" style="display: none;">Musica</span>
                 </button>
                 
                 <button id="usuarioBtn" data-bs-toggle="offcanvas" data-bs-target="#usuario" aria-controls="offcanvasExample">
                     <img id="avatarBoton" class="imgSonido" src="img/icon/usuario.png" alt="Avatar">
+                    <span id="descUsuario" class="nombre-icono" style="display: none;">Avatars</span>
                 </button>
 
                 <div class="offcanvas fondoUsuario offcanvas-start" tabindex="-1" id="usuario" aria-labelledby="offcanvasExampleLabel">
@@ -163,6 +192,7 @@
         </audio>
 
         <script src="js/sonido.js"></script>
+        <script src="../tablaclasif/script.js"></script>
         <script src="../bootstrap/js/bootstrap.js"></script>    
         <script src="../bootstrap/js/bootstrap.bundle.js"></script>
     </body>

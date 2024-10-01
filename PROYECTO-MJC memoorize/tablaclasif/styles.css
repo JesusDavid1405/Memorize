@@ -9,7 +9,7 @@ body {
 }
 
 #leaderboard {
-    background: linear-gradient(to bottom, #62b9f0ba, #ff6600);
+    background: linear-gradient(to bottom, #62b9f0ba, #3bd6d8);
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);

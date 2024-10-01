@@ -24,7 +24,7 @@ body{
     height: auto;
     top: 60px;
     border-radius: 30px;
-    background-image: url(../../../img/deco.jpg);
+    background-color: rgba(240, 248, 255, 0.482);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; 
@@ -96,7 +96,7 @@ input.input:hover {
     text-align: center;
 }
 .text2{
-    color: aliceblue;
+    color: rgb(0, 0, 0);
     text-align: center;
     font-size: 30px;
 }

@@ -74,7 +74,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat; 
     position: relative;
-    right: 1vh;
+    left: 5vh;
     transition: 400ms;
 }
 .btnText{

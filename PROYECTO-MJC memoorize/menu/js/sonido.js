@@ -71,11 +71,55 @@ document.addEventListener("DOMContentLoaded", function() {
     const game1 = document.getElementById("game1");
     const desc1 = document.getElementById("desc1");
 
+    const playButton = document.getElementById("playButton");
+    const descPlay = document.getElementById("descPlay");
+
+    const usuarioButton = document.getElementById("usuarioBtn");
+    const descUsuario = document.getElementById("descUsuario");
+
+    const homeButton = document.getElementById("home");
+    const descHome = document.getElementById("descHome");
+
+    const configuracionButton = document.getElementById("configuracionBtn");
+    const descConfiguracion = document.getElementById("descConfiguracion");
+    
     const game2 = document.getElementById("game2");
     const desc2 = document.getElementById("desc2");
 
     const game3 = document.getElementById("game3");
     const desc3 = document.getElementById("desc3");
+
+    playButton.addEventListener("mouseenter", function() {
+        descPlay.style.display = "block"; 
+    });
+
+    playButton.addEventListener("mouseleave", function() {
+        descPlay.style.display = "none"; 
+    });
+
+    usuarioButton.addEventListener("mouseenter", function() {
+        descUsuario.style.display = "block"; 
+    });
+
+    usuarioButton.addEventListener("mouseleave", function() {
+        descUsuario.style.display = "none"; 
+    });
+
+    homeButton.addEventListener("mouseenter", function() {
+        descHome.style.display = "block"; 
+    });
+
+    homeButton.addEventListener("mouseleave", function() {
+        descHome.style.display = "none"; 
+    });
+
+    configuracionButton.addEventListener("mouseenter", function() {
+        descConfiguracion.style.display = "block"; 
+    });
+
+    configuracionButton.addEventListener("mouseleave", function() {
+        descConfiguracion.style.display = "none"; 
+    });
 
     game3.addEventListener("mouseenter", function() {
         desc3.style.display = "block";
