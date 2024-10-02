@@ -74,7 +74,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat; 
     position: relative;
-    left: 5vh;
+    right: 1%;
     transition: 400ms;
 }
 .btnText{
@@ -138,11 +138,10 @@ body{
 
     .btnJugar{
         width: 25vh;
-        height: 7vh;
+        right: 20%;
         background-image: url(../img/boton.jpg);   
         transition: 600ms;
         position: relative;
-        right: 1vh;
     }
     .btnText{
         font-family: 'Times New Roman', Times, serif;
