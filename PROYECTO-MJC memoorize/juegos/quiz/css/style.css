@@ -15,15 +15,34 @@ body{
     margin-top: 3%;
     margin-bottom: 3%;
 }
+.niveles{
+    position: relative;
+    left: 22%;
+}
 
-.botones{
-    background-image: linear-gradient(220deg, #ffe150 0, #ffd250 10%, #ffc252 20%, #ffb053 30%, #ff9d53 40%, #f28953 50%, #e07752 60%, #cf6751 70%, #bf5a51 80%, #b25052 90%, #a74853 100%);
-    margin: 55px;
-    width: 250px;
-    height: 60px;
+.nivel{
+    width: 100px !important;
+    height: 100px;
+    background-image: url(../../../img/wordleNiveles.jpg);
+    background-size: cover;
     border-radius: 10px;
-    border: none;
-
+    margin: 1%;
+    box-shadow: 0px 0px 10px #000;
+    transition: 300ms;
+    cursor: pointer;
+    text-align: center;
+    -webkit-box-direction: unset;
+    color: rgb(0, 0, 0) !important;
+}
+.nivel h1{
+    margin: 20%;
+}
+a:link, a:visited, a:active {
+    text-decoration:none;
+    color: rgb(0, 0, 0);
+}
+.nivel:hover{
+    transform: scale(1.1);
 }
 
 .letra{
