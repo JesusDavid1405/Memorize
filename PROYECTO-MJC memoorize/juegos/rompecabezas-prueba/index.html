@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dificultad</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="../../css/offcanvas.css">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
+</head>
+<body>
+    <div class="burbuja"></div>
+    <div class="col-12 row">
+        <div class="col-1">
+            <button id="playButton">
+                <img class="imgSonido" src="../../img/icon/noSonido.png" alt="">
+            </button>
+
+            <button id="usuarioBtn" data-bs-toggle="offcanvas" data-bs-target="#usuario" aria-controls="offcanvasExample">
+                <img class="imgSonido" src="../../img/icon/usuario.png" alt="">
+            </button>
+        </div>
+        <div class="col-10">
+            <div class="logo">
+                <img src="../../img/logo/wordle.png" alt="" srcset="">
+            </div>
+            <div class="container">
+                <div class="niveles">
+                    <div class="row">
+                        <a class="nivel col-3" href="niveles/puzzle.html"> 
+                            <h1>1</h1>
+                        </a>
+                        <a class="nivel col-3" href="">
+                            <h1>2</h1>
+                        </a>
+                        <a class="nivel col-3" href="">
+                            <h1>3</h1>
+                        </a>
+                        <a class="nivel col-3" href="">
+                            <h1>4</h1>
+                        </a>                  
+                    </div>
+                    <div class="row">
+                        <a  class="nivel col-3" href=""> 
+                            <h1>5</h1>
+                        </a>
+                        <a class="nivel col-3" href="">
+                            <h1>6</h1>
+                        </a>
+                        <a class="nivel col-3" href="">
+                            <h1>7</h1>
+                        </a>
+                        <a class="nivel col-3" href="">
+                            <h1>8</h1>
+                        </a>  
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1">
+            <button id="configuracionBtn" data-bs-toggle="modal" data-bs-target="#configuracion" >
+                <img class="imgConfiguracion" src="../../img/icon/configuracion.png" alt="">
+            </button>
+        </div>
+    </div>
+
+    <div class="offcanvas fondoUsuario offcanvas-start" tabindex="-1" id="usuario" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-body">
+            <button type="button" class="btn-close closeOff" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <div class="col-12">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal configuracion-->
+    <div class="modal fade" id="configuracion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-x">
+        <div id="cuerpo" class="modal-content">
+            <div class="modal-body">
+                <div>
+                    <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="col-12 row">
+                        <h1>
+                            configuracion
+                        </h1>
+                        <div id="iconVolumen" class="col-1">
+                            
+                        </div>
+                        <div class="col-9">
+                            <input class="slider" type="range" min="0" max="1" step="0.01" id="volume">
+                        </div>
+                        <div class="col-2">
+                            <h4>Musica</h4>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <audio id="miCancion" preload="auto" loop></audio>
+        <source src="../audio/sonidoFondo.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="aqui"></div>
+
+    <script src="js/sonido.js"></script>
+    <script src="js/bar.js"></script>
+    <script src="../../bootstrap/js/bootstrap.js"></script>
+    <script src="../../bootstrap/js/bootstrap.bundle.js"></script>
+        
+</body>
+  
+</html>
