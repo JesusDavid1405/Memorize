@@ -32,36 +32,12 @@
                     <span id="descConfiguracion" class="nombre-icono" style="display: none;">Bajar/Subir</span>
                 </button>             
             </div>
-            <div class="modal fade" id="leaderboardModal" tabindex="-1" aria-labelledby="leaderboardModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="leaderboardModalLabel">TABLA DE CLASIFICACIÓN</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Nombre</th>
-                                        <th>Puntuación</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="player-table">
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <div class="col-10">
                 <h1 id="titulo-juegos">Menu</h1>
                 <div class="row justify-content-center scrolle">
                     <div class="col-auto game-container">
-                        <a href="../dificultad-rompe/index.html">
+                        <a href="../juegos/rompecabezas-prueba/puzzle.html">
                             <button class="btn btn-custom game-button" onclick="navigateToGame(1)" style="margin-top: 150px; border: none;">
                                 <img src="img/54d0c318-c7f0-4437-b026-19a08853810c-Photoroom.png" alt="Juego 1" class="game-logo logoI" id="game1">
                             </button>
@@ -69,7 +45,7 @@
                         <div class="game-description" id="desc1">Un divertido juego de rompecabezas.</div>
                     </div>
                     <div class="col-auto game-container">
-                        <a href="../dificultad-rompe/index.html">
+                        <a href="../juegos/rompecabezas-prueba/puzzle.html">
                             <button class="btn btn-custom game-button" onclick="navigateToGame(2)" style="margin-top: 150px; border: none;">
                                 <img src="img/multijugador.png" alt="Juego 3" class="game-logo logoI" id="game3">
                             </button>
@@ -87,6 +63,7 @@
                     
                 </div>
             </div>
+
             <div class="col-1">
                 <button id="playButton">
                     <img class="imgSonido" src="../img/icon/noSonido.png" alt="">
@@ -130,6 +107,33 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="leaderboardModal" tabindex="-1" aria-labelledby="leaderboardModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="leaderboardModalLabel">TABLA DE CLASIFICACIÓN</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Puntuación</th>
+                                </tr>
+                            </thead>
+                            <tbody id="player-table">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -145,6 +149,7 @@
                 </div>
             </div>
         </div>
+
         <div class="modal fade" id="confirmarSalidaModal" tabindex="-1" aria-labelledby="confirmarSalidaModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -192,7 +197,7 @@
         </audio>
 
         <script src="js/sonido.js"></script>
-        <script src="../tablaclasif/script.js"></script>
+        <script src="js/script.js"></script>
         <script src="../bootstrap/js/bootstrap.js"></script>    
         <script src="../bootstrap/js/bootstrap.bundle.js"></script>
     </body>
