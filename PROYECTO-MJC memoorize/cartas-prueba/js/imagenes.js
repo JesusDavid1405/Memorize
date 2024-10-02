@@ -1,7 +1,7 @@
 let coches = [];
 let frutas = [];
 let pokemon = [];
-let reverso = "img/reverso.png";
+let reverso = "img/carta3.png";
 
 function cargarImagenes() {
 
@@ -48,35 +48,35 @@ function cargarImagenes() {
 	coches[40] = "img/coches/volvov40.jpg";
 	coches[41] = "img/coches/volvoxc40.jpg";
 
-	frutas[1] = "img/frutas/ajo.jpg";
-	frutas[0] = "img/frutas/aguacate.jpg";
-	frutas[2] = "img/frutas/alcachofa.jpg";
-	frutas[3] = "img/frutas/apio.jpg";
-	frutas[4] = "img/frutas/apio.png";
-	frutas[5] = "img/frutas/calabaza.png";
-	frutas[6] = "img/frutas/cebolla.jpg";
-	frutas[7] = "img/frutas/cereza.jpg";
-	frutas[8] = "img/frutas/coco.jpg";
-	frutas[9] = "img/frutas/frambuesa.png";
-	frutas[10] = "img/frutas/fresa.png";
-	frutas[11] = "img/frutas/granada.jpeg";
-	frutas[12] = "img/frutas/jengibre.jpg";
-	frutas[13] = "img/frutas/kiwi.jpg";
-	frutas[14] = "img/frutas/lechuga.jpeg";
-	frutas[15] = "img/frutas/lechugaiceberg.png";
-	frutas[16] = "img/frutas/lima.jpg";
-	frutas[17] = "img/frutas/limon.jpeg";
-	frutas[18] = "img/frutas/mandarina.jpeg";
-	frutas[19] = "img/frutas/manzanaroja.jpg";
-	frutas[20] = "img/frutas/manzanaverde.jpg";
-	frutas[21] = "img/frutas/melocoton.png";
-	frutas[22] = "img/frutas/melon.jpeg";
-	frutas[23] = "img/frutas/millo.png";
-	frutas[24] = "img/frutas/mora.jpeg";
-	frutas[25] = "img/frutas/naranja.png";
-	frutas[26] = "img/frutas/papa.jpg";
-	frutas[27] = "img/frutas/pepino.jpeg";
-	frutas[28] = "img/frutas/pepino.png";
+	frutas[1] = "img/frutas/animal1.jpeg";
+	frutas[0] = "img/frutas/cangrejo.jpg";
+	frutas[2] = "img/frutas/animal2.jpeg";
+	frutas[3] = "img/frutas/animal3.jpeg";
+	frutas[4] = "img/frutas/animal4.jpeg";
+	frutas[5] = "img/frutas/animal5.jpeg";
+	frutas[6] = "img/frutas/animal6.jpeg";
+	frutas[7] = "img/frutas/animal7.jpeg";
+	frutas[8] = "img/frutas/animal8.jpeg";
+	frutas[9] = "img/frutas/animal9.jpeg";
+	frutas[10] = "img/frutas/animal10.jpeg";
+	frutas[11] = "img/frutas/animal11.jpeg";
+	frutas[12] = "img/frutas/animal12.jpeg";
+	frutas[13] = "img/frutas/animal13.jpeg";
+	frutas[14] = "img/frutas/animal14.jpeg";
+	frutas[15] = "img/frutas/animal15.jpeg";
+	frutas[16] = "img/frutas/animal16.jpeg";
+	frutas[17] = "img/frutas/animal17.jpeg";
+	frutas[18] = "img/frutas/animal18.jpeg";
+	frutas[19] = "img/frutas/animal19.jpeg";
+	frutas[20] = "img/frutas/animal20.jpeg";
+	frutas[21] = "img/frutas/animal21.jpeg";
+	frutas[22] = "img/frutas/animal22.jpeg";
+	frutas[23] = "img/frutas/animal23.jpeg";
+	frutas[24] = "img/frutas/animal24.jpeg";
+	frutas[25] = "img/frutas/animal25.jpeg";
+	frutas[26] = "img/frutas/animal26.jpeg";
+	frutas[27] = "img/frutas/animal27.jpeg";
+	frutas[28] = "img/frutas/animal28.jpeg";
 	frutas[29] = "img/frutas/pera.jpg";
 	frutas[30] = "img/frutas/pimientoamarillo.jpeg";
 	frutas[31] = "img/frutas/pimientorojo.png";
@@ -89,7 +89,7 @@ function cargarImagenes() {
 	frutas[38] = "img/frutas/uvablanca.jpg";
 	frutas[39] = "img/frutas/uvaroja.jpg";
 	frutas[40] = "img/frutas/zanahoria.png";
-	frutas[41] = "img/frutas/uvaazul.jpeg";
+	
 
 	pokemon[0] = "img/pokemon/aerodactyl.png";
 	pokemon[1] = "img/pokemon/arcanine.png";

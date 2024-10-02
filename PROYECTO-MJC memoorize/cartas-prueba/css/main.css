@@ -1,4 +1,5 @@
 /*VARIABLES*/
+/*VARIABLES*/
 :root {
     --rowNum: 4;
     --colNum: 4;
@@ -23,10 +24,11 @@ html {
 
 /*CUERPO*/
 body {
-    background: #A770EF;
-    background: -webkit-linear-gradient(to bottom, #FDB99B, #CF8BF3, #A770EF);
-    background: linear-gradient(to bottom, #FDB99B, #CF8BF3, #A770EF); 
-    background-repeat: no-repeat;   
+    background-image: url(../../img/view-underwater-sea-life-cartoon-style.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;  
 }
 
 /*CONTAINER ELEMENTS*/
@@ -46,15 +48,21 @@ body {
 /*PARTIDAS*/
 .numPartidas {
     grid-area: numPartidas;   
+    color: rgb(144, 211, 117);
+    border-color: #000;
 }
 
 /*PUNTOS*/
 .maxPuntos {
     grid-area: maxPuntos;
+    color: rgb(144, 211, 117);
+    border-color: #000;
 }
 
 .puntos {
     grid-area: puntos;
+    color: rgb(144, 211, 117);
+    border-color: #000;
 }
 
 /*CRONOMETRO*/
@@ -93,7 +101,7 @@ body {
 
 /* IMAGEN FRONT CARTA */
 input[type='image'] {
-    background: white;    
+    background: rgb(255, 255, 255);    
     border-radius: 12px;     
 }
 
@@ -150,7 +158,7 @@ input[type='image'] {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, .6);
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 .hide {
@@ -161,9 +169,11 @@ input[type='image'] {
     width: 60%;
     margin: 5% auto;
     border-radius: 5px;
-    background: #fff;
+    background-image: url(../../img/agua3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     text-align: center;
-
     display: grid;
     gap: 5px;
 }
@@ -172,6 +182,7 @@ input[type='image'] {
     padding-top: 3%;
     font-family: 'good-times';
     font-weight: bold;
+    color: bisque;
 }
 
 .modal-body {
@@ -199,9 +210,13 @@ input[type='image'] {
     gap: 12px;
 }
 
+.nombrar{
+    color: blanchedalmond;
+}
 .titlePtos {
     font-family: 'good-times';
     font-size: small;
+    color: bisque;
 }
 
 /*MODAL PARTIDAS*/
@@ -218,9 +233,9 @@ input[type='image'] {
 
 /*BOTONES*/
 .btn {
-  background-color: #4CAF50;
+  background-color: #0080ff;
   border: none;
-  color: white;
+  color: bisque;
   padding: 7px 15px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
@@ -230,13 +245,13 @@ input[type='image'] {
 }
 
 .btn:hover {
-    background-color: #4CAF50;
-    border: 3px solid darkgreen;
+    background-color: #1c3599;
+    border: 3px solid rgba(0, 46, 196, 0.685);
     padding: 4px 12px;
 }
 
 .btn.cancel {
-    background-color: firebrick;
+    background-color: rgb(89, 15, 141);
 }
 
 .btn.cancel:hover {
@@ -246,11 +261,11 @@ input[type='image'] {
 }
 
 .btn.neutral {
-    background-color: gray;
+    background-color: rgba(26, 198, 198, 0.507);
 }
 
 .btn.neutral:hover {
-    background-color: gray;
-    border: 3px solid darkslategray;
+    background-color: rgba(123, 200, 245, 0.438);
+    border: 3px solid rgb(44, 159, 209);
     padding: 4px 12px;
 }

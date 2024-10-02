@@ -72,7 +72,9 @@ function carta(contenedor, img, numImg) {
 
 	let imgReverso = document.createElement('INPUT');
 	imgReverso.setAttribute("type", "image");
-	imgReverso.setAttribute("src", "img/reverso.png");
+	imgReverso.setAttribute("src", "img/carta3.png");
+	imgReverso.style.width = "100%";
+	imgReverso.style.height = "100%";
 	back.appendChild(imgReverso);
 
 	carta.onclick = function () {
