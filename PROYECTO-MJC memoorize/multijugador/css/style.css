@@ -1,0 +1,37 @@
+body{
+    background-image: url(../../img/fondoMultijugador.jpg);
+    background-size: 100% 100%;
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.logo{
+    margin: auto;
+    width: 30%;
+    position: relative;
+    top: 10%;
+}
+.logo img{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+}
+.opciones{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin: auto;
+    position: relative;
+    top: 30%;
+}
+.rowes{
+    display: flex;
+    gap: 3px;
+}
+.opcion{
+    width: 30%;
+    height: 65px;
+    background-color: brown;
+    margin: auto;
+    border-radius: 15px;
+}
