@@ -1,6 +1,10 @@
 word([
-    "abaco",
-    "abeja",
+    "mares"{
+        "pista"{
+            "es azul y es salado",
+            "tiene muchos peces"
+        }
+    },
     "abono",
     "abrir",
     "abuso",
