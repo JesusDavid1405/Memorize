@@ -31,7 +31,8 @@ body{
 .opcion{
     width: 30%;
     height: 65px;
-    background-color: brown;
+    background-image: url(../../img/botonMultijugador.jpg);
+    background-size: cover;
     margin: auto;
     border-radius: 15px;
 }
