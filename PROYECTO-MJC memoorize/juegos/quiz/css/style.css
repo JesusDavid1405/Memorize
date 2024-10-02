@@ -71,6 +71,7 @@ body{
 .modal-body {
     font-size: 21px; 
     text-align: center; 
+    right: 100px;
 }
 .modal-title{
     color: black;
@@ -276,6 +277,8 @@ a:link, a:visited, a:active {
 .imgSonido{
     width: 70px;
     height: 70px;
+    margin-left: 30%;
+    
 }
 #playButton:hover {
     transform: scale(1.1);
@@ -314,6 +317,13 @@ a:link, a:visited, a:active {
 .imgConfiguracion{
     width: 70px;
     height: 70px;
+    
+}
+.avatarBoton{
+    width: 70px;
+    height: 70px;
+    position: relative;
+    left: 100%; 
 }
 #configuracionBtn:hover {
     transform: scale(1.1);

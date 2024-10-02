@@ -32,7 +32,7 @@ volumeControl.addEventListener('input', updateVolume);
 updateVolume();
 
 
-let avatarSeleccionado = '../../../img/icon/usuario.png';
+let avatarSeleccionado = '../../img/icon/usuario.pngg';
 function seleccionarAvatar(rutaAvatar) {
     avatarSeleccionado = rutaAvatar;  
     document.getElementById('avatarBoton').src = avatarSeleccionado; 
@@ -52,6 +52,7 @@ function guardarAvatar() {
         const mensajeModal = new bootstrap.Modal(document.getElementById('mensajeModal'));
         mensajeModal.show();
     }
+    
 }
 
 function cargarAvatar() {

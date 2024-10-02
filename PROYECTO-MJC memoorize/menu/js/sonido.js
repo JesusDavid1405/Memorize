@@ -67,6 +67,7 @@ window.onload = cargarAvatar;
 function cerrarSesion() {
     window.location.href = '../login/index.html'; 
 }
+
 document.addEventListener("DOMContentLoaded", function() {
     const game1 = document.getElementById("game1");
     const desc1 = document.getElementById("desc1");
