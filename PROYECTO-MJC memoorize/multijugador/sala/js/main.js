@@ -57,8 +57,20 @@ btnCrearSala.addEventListener('click',function(){
                 <h1>${nombreSala} </h1>
             </div>
             <div class="body-multijugador">
-                
-            </div>
+                <div class="col-12 row">
+                    <div class="col-4">
+                        <div class="players">
+                            <img src="../../img/imagen1.png" alt="">
+                            <img src="../../img/imagen1.png" alt="">
+                            <img src="../../img/imagen1.png" alt="">
+                            <img src="../../img/imagen1.png" alt="">
+                            <img src="../../img/imagen1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-8">
+                    </div>
+                </div>
+            </div>  
         </div>
         `;  
     }
