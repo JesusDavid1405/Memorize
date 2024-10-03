@@ -32,9 +32,9 @@ volumeControl.addEventListener('input', updateVolume);
 updateVolume();
 
 
-let avatarSeleccionado = '../img/icon/usuario.png';
+let avatarSeleccionado = '';
 function seleccionarAvatar(rutaAvatar) {
-    avatarSeleccionado = rutaAvatar;  
+    avatarSeleccionado = rutaAvatar;
     document.getElementById('avatarBoton').src = avatarSeleccionado; 
     document.getElementById('avatarPerfil').src = avatarSeleccionado;  
 }
