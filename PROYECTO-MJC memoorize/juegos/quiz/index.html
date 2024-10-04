@@ -7,20 +7,25 @@
     <title>Dificultad</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/modal.css">
+    
     <link rel="stylesheet" href="../../css/offcanvas.css">
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
 </head>
 <body>
     <div class="burbuja"></div>
+    <div id="mensaje" class="alert alert-success" style="display: none;"></div>
+    
     <div class="col-12 row">
-        <div class="col-1">
-            <button id="playButton">
-                <img class="imgSonido" src="../../img/icon/noSonido.png" alt="">
-            </button>
-
-            <button id="usuarioBtn" data-bs-toggle="offcanvas" data-bs-target="#usuario" aria-controls="offcanvasExample">
-                <img class="imgSonido" src="../../img/icon/usuario.png" alt="">
-            </button>
+        <div class="col-1">   
+            <button id="home" class="btn" data-bs-toggle="modal" data-bs-target="#leaderboardModal">
+                <img class="imgConfiguracion" src="../../img/icon/sand-castle_6359048.png" alt="">
+                <span id="descHome" class="nombre-icono" style="display: none;">Puntuacion</span>  
+            </button>        
+               
+            <button id="configuracionBtn" data-bs-toggle="modal" data-bs-target="#configuracion">
+                <img class="imgConfiguracion" src="../../img/icon/configuraciones.png" alt="">
+                <span id="descConfiguracion" class="nombre-icono" style="display: none;">Volumen</span>
+            </button>             
         </div>
         <div class="col-10">
             <div class="logo">
@@ -60,46 +65,130 @@
             </div>
         </div>
         <div class="col-1">
-            <button id="configuracionBtn" data-bs-toggle="modal" data-bs-target="#configuracion" >
-                <img class="imgConfiguracion" src="../../img/icon/configuracion.png" alt="">
+            <button id="playButton">
+                <img class="imgSonido" src="../../img/icon/noSonido.png" alt="">
+                <span id="descPlay" class="nombre-icono" style="display: none;">Musica</span>
             </button>
-        </div>
-    </div>
+            
+            <button id="usuarioBtn" data-bs-toggle="offcanvas" data-bs-target="#usuario" aria-controls="offcanvasExample">
+                <img id="avatarBoton" class="imgSonido" src="../../img/icon/usuario.png" alt="Avatar">
+                <span id="descUsuario" class="nombre-icono" style="display: none;">Avatars</span>
+            </button>
 
-    <div class="offcanvas fondoUsuario offcanvas-start" tabindex="-1" id="usuario" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-body">
-            <button type="button" class="btn-close closeOff" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            <div class="col-12">
-                
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal configuracion-->
-    <div class="modal fade" id="configuracion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-x">
-        <div id="cuerpo" class="modal-content">
-            <div class="modal-body">
-                <div>
-                    <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="col-12 row">
-                        <h1>
-                            configuracion
-                        </h1>
-                        <div id="iconVolumen" class="col-1">
-                            
-                        </div>
-                        <div class="col-9">
-                            <input class="slider" type="range" min="0" max="1" step="0.01" id="volume">
-                        </div>
-                        <div class="col-2">
-                            <h4>Musica</h4>
+            <div class="offcanvas fondoUsuario offcanvas-start" tabindex="-1" id="usuario" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-body">
+                    
+                    <button type="button" class="btn-close closeOff" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <div class="col-12">
+                        <div class="perfil-usuario text-center">
+                            <h3>Nombre del Usuario</h3>
+                            <p>usuario@correo.com</p>
+                            <hr>
+                            <h5>Tu avatar actual:</h5>
+                            <img id="avatarPerfil" src="../../img/icon/usuario.png" alt="Avatar actual" class="foto-perfil mb-4">
+                            <h5>Elige un nuevo avatar:</h5>
+                            <div class="row">
+                                <div class="col-4">
+                                    <img src="../../menu/img/imagen1.png" alt="Avatar 1" class="avatar-opcion" onclick="seleccionarAvatar('../../menu/img/imagen1.png')">
+                                </div>
+                                <div class="col-4">
+                                    <img src="../../img/icon/usuario.png" alt="Avatar 2" class="avatar-opcion" onclick="seleccionarAvatar('../../img/icon/usuario.png')">
+                                </div>
+                                <div class="col-4">
+                                    <img src="../../menu/img/imagen3.png" alt="Avatar 3" class="avatar-opcion" onclick="seleccionarAvatar('../../menu/img/imagen3.png')">
+                                </div>
+                            </div>
+                            <hr>
+                            <button class="btn btn-primary w-100 mb-3" onclick="guardarAvatar()">Guardar Avatar</button>
+                            <button class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#confirmarSalidaModal">Cerrar Sesión</button>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="modal fade" id="leaderboardModal" tabindex="-1" aria-labelledby="leaderboardModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="leaderboardModalLabel">TABLA DE CLASIFICACIÓN</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Puntuación</th>
+                            </tr>
+                        </thead>
+                        <tbody id="player-table">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mensajeModalLabel">Información</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="mensajeModalBody">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="confirmarSalidaModal" tabindex="-1" aria-labelledby="confirmarSalidaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmarSalidaModalLabel">Confirmación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-beody">
+                    Si sales tendras que volver a iniciar sesion ¿Seguro que quieres salirte? 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="cerrarSesion()">Salir</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Modal configuración-->
+    <div class="modal fade" id="configuracion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-x">
+            <div id="cuerpo" class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="col-12 row">
+                            <h1>Configuración</h1>
+                            <div id="iconVolumen" class="col-1"></div>
+                            <div class="col-9">
+                                <input class="slider" type="range" min="0" max="1" step="0.01" id="volume">
+                            </div>
+                            <div class="col-2">
+                                <h4>Música</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -109,7 +198,9 @@
 
     <div id="aqui"></div>
 
-    <script src="js/sonido.js"></script>
+    <script src="../../menu/js/script.js"></script>
+    <script src="../quiz/niveles/js/avatar.js"></script>
+    
     <script src="js/bar.js"></script>
     <script src="../../bootstrap/js/bootstrap.js"></script>
     <script src="../../bootstrap/js/bootstrap.bundle.js"></script>

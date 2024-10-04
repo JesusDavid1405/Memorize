@@ -1,0 +1,56 @@
+body{
+    background-image: url(../../img/fondoMultijugador.jpg);
+    background-size: 100% 100%;
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.logo{
+    margin: auto;
+    width: 30%;
+    position: relative;
+    top: 10%;
+}
+.logo img{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+}
+.opciones{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin: auto;
+    position: relative;
+    top: 30%;
+}
+.rowes{
+    display: flex;
+    gap: 3px;
+}
+.opcion{
+    width: 30%;
+    height: 70px;
+    background-image: url(../../img/botonMultijugador.jpg);
+    background-size: 100% 190%;
+    background-repeat: no-repeat;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px #000;
+    transition: 200ms;
+}
+.opcion:hover{
+    color: rgb(2, 61, 11);
+    transform: scale(1.1);
+}
+.opcion p{
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    position: relative;
+    top: 10%;
+}
+a:link, a:visited, a:active {
+    text-decoration:none;
+    color: rgb(0, 0, 0);
+}

@@ -123,31 +123,89 @@ body{
     0% { transform: translateY(0); }
     100% { transform: translateY(25px); }
 }
-#titulo-juegos {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 4.0em;
-    color: #ffffff;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-    margin-bottom: -50px;
-    position: relative;
-    top: 100px;
-    text-align: center;
+.menu-juegos {
+    display: flex;
+    flex-direction: column; /* Cambia a row para un menú horizontal */
+    align-items: center;
+    margin: 20px;
+}
 
+.juego {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.miniatura {
+    width: 50px; /* Ajusta el tamaño de la miniatura */
+    height: auto;
+    margin-right: 10px; /* Espacio entre la miniatura y el nombre */
+}
+
+.nombre-juego {
+    font-size: 18px; /* Ajusta el tamaño del texto */
+    font-weight: bold; /* Puedes cambiar a normal si prefieres */
+}
+
+#titulo-juegos {
+    font-size: 140px;
+    font-weight: bold;
+    font-family:initial ;
+    background-image: url(../../menu/img/fondorem.jpg);
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    top: 30px;
+    position: relative;
     background-color: #ffffff00;
     background-size: cover; 
     background-repeat: no-repeat;
     background-position: center;
-    padding: 30px;
-    margin-left: 40%; 
-    border-radius: 10px;
+    padding: 10px;
+    
+    margin-left: 34%; 
+    border-radius: 50px;
     display: inline-block;
 
+}
+#titulo-juegos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../img/boton.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1000; 
+    border-radius: 50px;
+    opacity: 1.5; 
 }
 .game-container {
     position: relative;
     display: inline-block;
+    bottom: 140px;
+    text-align: center;
     
 }
+.animation-container {
+    left: 64px;
+    text-align: center;
+    bottom: 90px;
+    position: relative;
+}
+
+.animal-animation {
+    width: 60px; 
+    height: auto; 
+    animation: bounce 2s infinite; 
+}
+
+
 .nombre-icono {
     display: none; 
     font-size: 1.0em; 
@@ -161,7 +219,7 @@ body{
 .game-description {
     display: none;
     position: absolute;
-    top: 85%;
+    top: 80%;
     left: 20%;
     width: 200px;
     background-image: url('../../menu/img/botonw.png');
@@ -169,12 +227,13 @@ body{
     background-size: cover; 
     background-repeat: no-repeat;
     background-position: center;
-    color: rgb(0, 0, 0); 
+    color: rgb(255, 255, 255); 
     padding: 10px;
     border-radius: 10px;
     text-align: center;
     z-index: 10;
-    font-size: 1.3em; 
+    font-family: initial;
+    font-size: 1.4em; 
     line-height: 1.6em; 
 }
 
@@ -195,6 +254,7 @@ body{
     opacity: 0.8;
     animation: moveStars 95s linear infinite;
     animation: pulse 7s infinite;
+    z-index: -100000;
 }
 
 @keyframes moveStars {

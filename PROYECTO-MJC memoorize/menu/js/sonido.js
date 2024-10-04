@@ -32,9 +32,9 @@ volumeControl.addEventListener('input', updateVolume);
 updateVolume();
 
 
-let avatarSeleccionado = '../img/icon/usuario.png';
+let avatarSeleccionado = '';
 function seleccionarAvatar(rutaAvatar) {
-    avatarSeleccionado = rutaAvatar;  
+    avatarSeleccionado = rutaAvatar;
     document.getElementById('avatarBoton').src = avatarSeleccionado; 
     document.getElementById('avatarPerfil').src = avatarSeleccionado;  
 }
@@ -67,6 +67,7 @@ window.onload = cargarAvatar;
 function cerrarSesion() {
     window.location.href = '../login/index.html'; 
 }
+
 document.addEventListener("DOMContentLoaded", function() {
     const game1 = document.getElementById("game1");
     const desc1 = document.getElementById("desc1");
