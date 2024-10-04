@@ -41,9 +41,9 @@ body{
 }
 
 .btnJugar{
-    width: 250px;
-    height: 60px;
-    background-image: url(../img/boton.jpg);   
+    width: 20vh;
+    height: 25vh;
+    background-image: url(../img/boton.png);   
     transition: 600ms;
     background-size: cover;
     background-repeat: no-repeat; 
