@@ -14,7 +14,7 @@ body{
 .bubbles {
     position: absolute;
     width: 115%;
-    bottom: 4px;
+    bottom: 4%;
     right: 0px;
     height: 115%;
     overflow: hidden;
@@ -41,15 +41,17 @@ body{
 }
 
 .btnJugar{
-    width: 20vh;
-    height: 25vh;
-    background-image: url(../img/boton.png);   
+    
+    background-image: url(../img/boton5.png);   
+    height:20vh;
+    width: 40vh;
     transition: 600ms;
     background-size: cover;
     background-repeat: no-repeat; 
     position: relative;
     right: 1%;
     transition: 400ms;
+    border-color: brown;
 }
 .btnText{
     font-family: 'Times New Roman', Times, serif;
@@ -67,7 +69,7 @@ body{
     bottom: 4vh;
     transition: 500ms;
     animation: moveLogoVertical 2s infinite alternate ease-in-out;
-    margin-bottom: 20px;
+    margin-bottom: 20vh;
 }
 @keyframes moveLogoVertical {
     0% { transform: translateY(0); }
