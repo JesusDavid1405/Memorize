@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>  
-    <div class="burbuja"></div>
     <div class="container-fluid">
         <div class="col-12 row"> 
             <div class="col-1">  
@@ -22,11 +21,12 @@
             </div>
             <div class="col-10 centrar">
                 <div class="col-4 m-auto">
-                    <img class="imgLogo m-auto" src="img/logo2.png" alt="">
+                    <img class="imgLogo m-auto" src="img/logopix.png" alt="">
                 </div>
                 <div class="col-4 m-auto">
                     <center>
-                        <button class="btn btnJugar m-auto" href="login/bar.html" onclick="createBubbles(event)"> 
+                        <button class="button2" href="login/bar.html" onclick="createBubbles(event)">
+                            <h3 class="btnTex">JUGAR</h3>  
                             <div class="bubbles"></div> <!-- Contenedor de burbujas -->
                         </button>
                     </center>
@@ -34,11 +34,27 @@
             </div>
         </div>
     </div>
-</div>
+    <div class="avatar-container" id="avatarContainer">
+        <img src="img/pez.gif" alt="Avatar" class="avatar-image" id="avatar-image">
+        <div class="info" id="info">
+            <p>Bienvenido</p>
+            <ul>
+                <li>¡Espero y conozcas a mis amigos!</li>
+            </ul>
+        </div>
+    </div>    
+    <div class="avatar-container" id="avatarContainer2">
+        <img src="img/estrella.gif" alt="Avatar" class="avatar-image" id="avatar-image2">
+        <div class="info" id="info2">
+            <p>Mucho gusto.</p>
+            <ul>
+                <li>¡Dejame acompañarte!</li>
+            </ul>
+        </div>
+    </div>
     <audio id="miCancion" src="audio/sonidoFondo.mp3" preload="auto"></audio>
     <script src="js/sonido.js"></script>
     <script src="js/burbujas.js"></script>
-    <script src="bootstrap/js/bootstrap.js"></script>    
-    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script> <!-- Asegúrate de que Bootstrap JS esté incluido -->
 </body>
 </html>

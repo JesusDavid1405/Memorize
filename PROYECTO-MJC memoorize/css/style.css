@@ -7,16 +7,63 @@ body{
     overflow: hidden;
 
 }
-/*jugar*/
+/* Avatar container */
+.avatar-container {
+    position: relative;
+    display: inline-block;
+    bottom: 650px;
+    left: 150px;
+}
+#avatarContainer2 {
+    position: relative;
+    display: inline-block;
+    bottom: 350px;
+    left: 800px;
+}
+.info p {
+    color: #333; 
+    font-weight: bold; 
+    text-align: center; 
+}
+.avatar-image:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease; 
+}
 
-
+.avatar-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.info {
+    width: 300px;
+    height: 130px;
+    display: none; 
+    position: absolute; 
+    left: 120px; 
+    top: 50%; 
+    background-image: url(../menu/img/botonw.png);
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    transform: translateY(-50%); 
+    background-color: rgba(255, 255, 255, 0); 
+    border: 1px solid #cccccc00; 
+    border-radius: 5px; 
+    padding: 5px; 
+    font-size: 22px;
+    font-family: cursive;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+}
+.avatar-container:hover .info {
+    display: block; 
+}
 /*jugar*/
 .bubbles {
     position: absolute;
-    width: 115%;
-    bottom: 4%;
+    width: 100%;
+    bottom: 84px;
     right: 0px;
-    height: 115%;
+    height: 100%;
     overflow: hidden;
     pointer-events: none;
 }
@@ -24,7 +71,7 @@ body{
 .bubble {
     position: absolute;
     background: rgba(255, 255, 255, 0.8);
-    border-radius: 190%;
+    border-radius: 90%;
     opacity: 80;
     pointer-events: none;
 }
@@ -40,28 +87,43 @@ body{
     }
 }
 
-.btnJugar{
-    
-    background-image: url(../img/boton5.png);   
-    height:20vh;
-    width: 40vh;
-    transition: 600ms;
-    background-size: cover;
+.button2 {
+    width: 300px;
+    height: 300px;
+    background-image: url(../img/boton.png);
+    background-size: contain; 
+    background-position: center; 
     background-repeat: no-repeat; 
+    image-rendering: pixelated; 
     position: relative;
     right: 1%;
+    bottom: 70px;
     transition: 400ms;
-    border-color: brown;
+    border: none; 
+    background-color: transparent;
+    outline: none;
 }
-.btnText{
+.button2 {
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.button2:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0); 
+}
+
+.btnTex{
     font-family: 'Times New Roman', Times, serif;
     color: rgb(255, 255, 255);
     padding-top: 7px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     
 }
-.btnJugar:hover{
-    transform: scale(1.1);
-}
+
 /*logo*/
 .imgLogo{
     position: relative;
@@ -69,7 +131,7 @@ body{
     bottom: 4vh;
     transition: 500ms;
     animation: moveLogoVertical 2s infinite alternate ease-in-out;
-    margin-bottom: 20vh;
+    margin-bottom: 20px;
 }
 @keyframes moveLogoVertical {
     0% { transform: translateY(0); }
