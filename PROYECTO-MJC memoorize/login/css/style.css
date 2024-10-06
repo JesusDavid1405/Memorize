@@ -17,12 +17,69 @@ body{
 .btnLogin:hover{
     transform: scale(1.1);
 }
+.avatar-container {
+    position: relative;
+    display: inline-block;
+    bottom: 660px;
+    left: 390px;
+}
+#avatarContainer3{
+    position: relative;
+    display: inline-block;
+    bottom: 550px;
+    left: 800px;
+}
+#avatarContainer2 {
+    position: relative;
+    display: inline-block;
+    bottom: 350px;
+    left: 800px;
+}
+.info p {
+    color: #333; 
+    font-weight: bold; 
+    text-align: center; 
+}
+.avatar-image:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease; 
+}
 
+.avatar-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.info {
+    width: 200px;
+    height: 120px;
+    display: none; 
+    position: absolute;
+    flex: 1;
+    display: block;
+    top: 160%;
+    transform: translate(-50%, 30%);    
+    right: -40px;
+    background-image: url(../../menu/img/botonw.png);
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    transform: translateY(-50%); 
+    background-color: rgba(255, 255, 255, 0); 
+    border: 1px solid #cccccc00; 
+    border-radius: 5px; 
+    padding: 15px; 
+    font-size: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+}
+.avatar-container:hover .info {
+    display: block; 
+}
 /*Formulario*/
 #formulario{
     width: 30%;
     height: auto;
     border-radius: 30px;
+    background-image: url(../../img/37631.jpg);
     background-color: rgba(240, 248, 255, 0.541);
     background-repeat: no-repeat;
     background-position: center;

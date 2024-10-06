@@ -12,7 +12,7 @@ playButton.addEventListener('click', function() {
     }
     isPlaying = !isPlaying;
 });
-const sound = new Audio('audio/tap-notification-180637.mp3');
+const sound = new Audio('audio/notification-sound-7062.mp3');
 
 document.querySelector('.button2').addEventListener('mouseenter', () => {
     sound.currentTime = 0;
@@ -33,6 +33,10 @@ document.querySelector('.avatar-container').addEventListener('mouseenter', () =>
     sound.play();
 });
 document.getElementById('toggleInfo').addEventListener('click', function() {
+    var avatarContainer = document.getElementById('avatarContainer');
+    avatarContainer.classList.toggle('active');
+});
+document.getElementById('.avatarContainer3').addEventListener('click', function() {
     var avatarContainer = document.getElementById('avatarContainer');
     avatarContainer.classList.toggle('active');
 });
