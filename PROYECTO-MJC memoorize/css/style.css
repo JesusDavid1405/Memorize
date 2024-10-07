@@ -132,9 +132,11 @@ body{
 
 /*logo*/
 .imgLogo{
+    width: 100%;
+    height: 90%;
     position: relative;
     right: 5vh;
-    bottom: 4vh;
+    top: 5%;
     transition: 500ms;
     animation: moveLogoVertical 2s infinite alternate ease-in-out;
     margin-bottom: 20px;
