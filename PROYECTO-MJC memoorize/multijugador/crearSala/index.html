@@ -4,39 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sala</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="col-12 row">
-            <div class="col-1">
-
-            </div>
-            <div class="col-10">
-                <div class="sala">
-                    <div class="header">
-                        
-                    </div>
-                    <div class="body-multijugador">
-                        <div class="col-12 row">
-                            <div class="col-6 row">
-                                <div id="players">
-                    
-                                </div>
-                            </div>
-                            <div class="col-6">
-                            </div>
-                        </div>
-                    </div>  
-                </div>
-            </div>
-            <div class="col-1">
-
-            </div>
-        </div>
+    <div class="col-12">
+        <img class="logo" src="../../img/logo/multijugador.png" alt="...">
+    <div class="codigoSala">
+        <input class="input" type="text" id="nombreSala" placeholder="nombre de la sala">
     </div>
+    <div class="btnComparar">
+        <button id="crearSala">Crear Sala</button>
+    </div>
+
 
     <div class="modal fade" id="msgError" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -56,7 +37,7 @@
         </div>
     </div>
 
-    <script type="module" src="js/main.js"></script>
+    <script src="js/main.js"></script>
     <script src="../../bootstrap/js/bootstrap.js"></script>
     <script src="../../bootstrap/js/bootstrap.bundle.js"></script>
 </body>
