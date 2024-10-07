@@ -54,3 +54,10 @@ input.input:hover {
     width: 70px;
     height: 70px;
 }
+.header{
+    text-transform:uppercase;
+    text-align: center;
+    font-size: 20px;
+    background-color: aliceblue;
+    border-radius: 15px 15px 0px 0px;
+}
