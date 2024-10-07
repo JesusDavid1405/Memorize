@@ -1,5 +1,5 @@
 body{
-    background-image: url(../img/menu6.jpg); 
+    background-image: url(../../img/menu3.gif); 
     background-repeat: no-repeat;
     background-size: 221vh 100vh;
 
@@ -111,9 +111,15 @@ body{
 }
 
 /* Estilo de los logos de los juegos */
+.game-logo1 {
+    width: 20vh;
+    height: 20vh;
+    border: none;
+    animation: moveLogoVertical 3s infinite alternate ease-in-out;
+}
 .game-logo {
-    width: 100%;
-    height: 85%;
+    width: 23vh;
+    height: 23vh;
     border: none;
     animation: moveLogoVertical 3s infinite alternate ease-in-out;
 }
