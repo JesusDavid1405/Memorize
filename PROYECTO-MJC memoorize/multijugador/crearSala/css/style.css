@@ -1,48 +1,79 @@
 body{
-    background-image: url(../../../img/fondoMultijugador.jpg);
+    background-image: url(../../../img/juegocartas2.gif);
     background-size: 100% 100%;
     background-attachment:fixed;
     background-repeat: no-repeat;
 }
-.btnComparar button{
-    border: none;
-    width: 180px;
-    height: 50px;
-    border-radius: 15px;
-    margin: 2%;
-    position: relative;
-    left: 37%;
-    background-color: green;
-}
+
 .logo{
-    width: 30%;
-    position: relative;
-    left: 33%;
+    width: 30vh;
+    height: 30vh;
+    position:relative;
+    left: 97vh;
+    top: 3vh;  
+    
 }
 
-input.input{    
-    background-color: rgb(255, 255, 255);
-    border: 1px solid black;
-    border-radius: 15px;
-    width: 220px;
-    height: 40px;
-    transition: 100ms;
+.container{
+    background-color: rgb(255, 255, 255,0.5);
+    width: 85vh;
+    height: 60vh;
+    border-radius: 20px;
     position: relative;
-    left: 37.5%;
+    top: 7vh;
 }
+
+.configuracionSala{
+    
+    width: 50vh;
+    height: 9vh;
+    border-radius: 15%;
+    position: relative;
+    top: 6vh;
+    left: 16vh;
+    transition: 100ms;
+    padding: 2vh 3vh;
+}
+
+.configuracionSala2{
+    
+    width: 50vh;
+    height: 9vh;
+    border-radius: 15%;
+    position: relative;
+    top: 6vh;
+    left: 16vh;
+    transition: 100ms;
+    padding: 4vh 3vh;
+}
+
+.configuracionSala1{
+    
+    width: 50vh;
+    height: 9vh;
+    border-radius: 15%;
+    position: relative;
+    top: 9vh;
+    left: 16vh;
+    transition: 100ms;
+    padding: 5vh 3vh;
+}
+
+.btnComparar button{
+    border: none;
+    width: 40vh;
+    height: 8vh;
+    border-radius: 15px;
+    position: relative;
+    bottom: -20vh;
+    left: 20vh;
+    background-color: green;
+}
+
 input.input:focus{
     background-color: rgb(0, 231, 96);
 }
 input.input:hover {  
     background-color: rgb(0, 231, 96);
     box-shadow: 0px 0px 10px black;
-}
-
-/*estilos sala Jugador*/
-.sala{
-    width: 80%;
-    border: 1px solid bisque;
-    margin: auto;
-    position: relative;
-    top: 50px;
 }

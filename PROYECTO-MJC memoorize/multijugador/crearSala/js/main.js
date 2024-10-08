@@ -1,22 +1,23 @@
 let btnCrearSala = document.getElementById('crearSala');
 
+btnCrearSala.addEventListener('click', function() {
+    let nombreSala = document.getElementById('nombreSala').value;
+    let dificultad = document.getElementById('dificultad').value;
+    let rondas = document.getElementById('rondas').value;
 
+    let modalError = new bootstrap.Modal(document.getElementById('msgError'));
+    let modalDisplay = document.querySelector('.modal-body');
 
-btnCrearSala.addEventListener('click',function(){
-    let nombreSala= document.getElementById('nombreSala').value;
-
-    let modalError= new bootstrap.Modal(document.getElementById('msgError'));
-    let modalDisplay= document.querySelector('.modal-body');
-
-    console.log(nombreSala);
-    if(nombreSala.trim() === ""){
-        modalDisplay.innerHTML=`
-            por favor ingrese un nombre
-        `;
-        modalError.show()
-    }else{
-        localStorage.setItem('nombreSala',nombreSala);
-        window.location.href='../sala/index.html';
+    if (nombreSala.trim() === "") {
+        modalDisplay.innerHTML = `Por favor ingrese un nombre`;
+        modalError.show();
+    } else if (rondas < 1 || rondas > 10) {
+        modalDisplay.innerHTML = `El número de rondas debe estar entre 1 y 10`;
+        modalError.show();
+    } else {
+        localStorage.setItem('nombreSala', nombreSala);
+        localStorage.setItem('dificultad', dificultad);
+        localStorage.setItem('rondas', rondas);
+        window.location.href = '../sala/index.html';
     }
-    
-})
+});

@@ -9,15 +9,37 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="col-12">
-        <img class="logo" src="../../img/logo/multijugador.png" alt="...">
-    <div class="codigoSala">
-        <input class="input" type="text" id="nombreSala" placeholder="nombre de la sala">
-    </div>
-    <div class="btnComparar">
-        <button id="crearSala">Crear Sala</button>
-    </div>
 
+    <img class="logo" src="../../img/logoN.png" alt="...">
+
+    <div class="container">
+        
+        <div class="configuracionSala">
+            <label for="rondas">Crea un nombre para la sala</label>
+            <div class="codigoSala">
+                <input class="input" type="text" id="nombreSala" placeholder="Nombre de la sala">
+            </div>
+        </div>
+      
+    
+        <div class="configuracionSala2">
+            <label for="dificultad">Selecciona la dificultad:</label>
+            <select id="dificultad" class="form-select">
+                <option value="facil">Fácil</option>
+                <option value="medio">Medio</option>
+                <option value="dificil">Difícil</option>
+            </select>
+        </div>
+    
+        <div class="configuracionSala1">
+            <label for="rondas">Número de rondas (Máximo 10):</label>
+            <input type="number" id="rondas" class="form-control" min="1" max="10" value="5">
+        </div>
+    
+        <div class="btnComparar">
+            <button id="crearSala" class="btn btn-primary">Crear Sala</button>
+        </div>
+    </div>
 
     <div class="modal fade" id="msgError" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
