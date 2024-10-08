@@ -35,7 +35,7 @@ body {
     width: 100%;
     height: 100%;
     background: rgb(7, 146, 216);
-    border-radius: 50%;
+    border-radius: 15px;
     opacity: 0.6;
     animation: moveWaves 4s infinite linear;
 }

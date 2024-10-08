@@ -1,6 +1,6 @@
 body{
-    background-image: url(../../img/juegocartas2.gif);
-    background-size: 202vh 100vh;
+    background-image: url(../../img/fondo4.gif);
+    background-size: cover;
     background-attachment:fixed;
     background-repeat: no-repeat;
     font-family: Arial, Helvetica, sans-serif;
