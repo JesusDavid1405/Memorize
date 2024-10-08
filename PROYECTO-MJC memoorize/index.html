@@ -11,64 +11,25 @@
     <link rel="stylesheet" href="css/icon.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
-<body>  
+<body> 
+    <header class="header">
+        <div class="container-fluid">
+            <audio id="miCancion" src="audio/sonidoFondo.mp3" preload="auto" loop></audio>
+            <button id="playButton" onclick="toggleSound()">
+                <img class="imgSonido" src="img/icon/noSonido.png" alt="Control de Sonido">
+            </button>
+        </div>
+    </header> 
     <div class="container-fluid">
-        <div class="col-12 row"> 
-            <div class="col-1">  
-                <button id="playButton">
-                    <img class="imgSonido" src="img/icon/noSonido.png" alt="">
-                </button>
-            </div>
-            <div class="col-10 centrar">
-                <div class="col-4 m-auto">
-                    <img class="imgLogo m-auto" src="img/logo/aqua-Memorize.png" alt="">
-                </div>
-                <div class="col-4 m-auto">
-                    <center>
-                        <button class="button2" href="login/bar.html" onclick="createBubbles(event)">
-                            <h3 class="btnTex">JUGAR</h3>  
-                            <div class="bubbles"></div> <!-- Contenedor de burbujas -->
-                        </button>
-                    </center>
-                </div>
-            </div>
-        </div>
+        <img src="img/logo/aqua-Memorize.png" alt="Logo del Juego" class="logo"> 
+        <button class="button2" href="login/bar.html" onclick="createBubbles(event)">
+            <h3 class="btnTex">JUGAR</h3>  
+            <div class="bubbles"></div> <!-- Contenedor de burbujas -->
+        </button>
     </div>
-    <div class="avatar-container" id="avatarContainer">
-        <img src="img/pez.gif" alt="Avatar" class="avatar-image" id="avatar-image">
-        <div class="info" id="info">
-            <p>¡Hola, soy el pez!</p>
-            <ul>
-                <li>¡Espero que recuerdes dónde están mis amigos acuáticos!</li>
-            </ul>
-        </div>
-    </div>    
-    
-    <div class="avatar-container" id="avatarContainer2">
-        <img src="img/estrella.gif" alt="Avatar" class="avatar-image" id="avatar-image2">
-        <div class="info" id="info2">
-            <p>¡Soy el Caballito de mar!</p>
-            <ul>
-                <li>¡Me encanta explorar cada rincón del océano!</li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="avatar-container" id="avatarContainer3">
-        <img src="img/fondi.gif" alt="Avatar" class="avatar-image" id="avatar-image3">
-        <div class="info" id="info3">
-            <p>¡Hola, soy el pez rayado!</p>
-        <ul>
-            <li>¡Con mis colores brillantes, seguro me recordarás fácilmente!</li>
-        </ul>
-        </div>
-    </div>
-    
-    
-    <audio id="miCancion" src="audio/sonidoFondo.mp3" preload="auto"></audio>
+
     <script src="js/sonido.js"></script>
     <script src="js/burbujas.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.js"></script> 
-
 </body>
 </html>

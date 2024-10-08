@@ -4,60 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="60">
-    <title>MJC memorize</title>
+    <title>MJC Memorize</title>
     <link rel="icon" href="../img/logo2.png" type="image/icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 </head>
 <body>
-    <div class="burbuja"></div>
-    <div class="container-fluid">
-        <audio id="miCancion" src="../audio/sonidoFondo.mp3" preload="auto" loop></audio>
-        
+    <!-- Encabezado principal -->
+    <header>
+        <div class="burbuja"></div>
+    </header>
+    
+    <!-- Navegación principal -->
+    <nav class="container-fluid">
         <button id="playButton">
-            <img class="imgSonido" src="../img/icon/noSonido.png" alt="">
+            <img class="imgSonido" src="../img/icon/noSonido.png" alt="Icono de sonido">
         </button>
-
+    </nav>
+    
+    <!-- Contenido principal -->
+    <main>
         <div id="formulario">
             <form action="" method="post" class="row g-3">
                 <div class="logoForm col-md-6">
                     <center>
-                        <img src="../img/logopix.png" alt="">
-                        
+                        <img src="../img/logo/aqua-Memorize.png" alt="Logo">
                     </center>
-                    <h4 class="text2">Inicio de Sesion</h4>
+                    <h4 class="text2">Inicio de Sesión</h4>
                 </div>
+
                 <div class="col-md-11 inputIcon">
                     <input type="email" class="form-control input" id="emailLogin" placeholder="Gmail" required>
                     <span id="icon"> 
-                        <img src="../img/icon/user.png" alt="">
+                        <img src="../img/icon/user.png" alt="Icono de usuario">
                     </span>
-                    <div class="valid-feedback">
-                      Looks good!
-                    </div>
                 </div>
             
                 <div class="col-md-11 inputIcon">
                     <input type="password" class="form-control input" id="validationCustom01" placeholder="Contraseña" required>
                     <span id="icon"> 
-                        <img src="../img/icon/password.png" alt="">
+                        <img src="../img/icon/password.png" alt="Icono de contraseña">
                     </span>
-                    <div class="valid-feedback">
-                      Looks good!
-                    </div>
                 </div>
+                
                 <div class="col-12 textOlvide">
-                    <a href="recuperar/bar.html">¿olvidaste tu contraseña?</a>
+                    <a href="recuperar/bar.html">¿Olvidaste tu contraseña?</a>
                 </div>
 
                 <div class="col-12">
                     <center>
-                        <!--<button class="btn btnLogin" type="submit" >
-                            <h6 class="text">Iniciar Sesion</h6>
-                        </button>
-                        -->
                         <a href="../menu/bar.html" class="btn btnLogin">
-                            <h6 class="text">Iniciar Sesion</h6>
+                            <h6 class="text">Iniciar Sesión</h6>
                         </a>
                     </center>
                 </div>
@@ -65,37 +62,31 @@
                 <div class="col-md-12 row m-auto">
                     <div class="col-md-5 linea"></div>
                     <div class="col-md-2">
-                        <h5 class="text">or</h5>
+                        <h5 class="text">o</h5>
                     </div>
                     <div class="col-md-5 linea"></div>
                 </div>
+
+                <!-- Íconos de redes sociales -->
                 <div class="col-12 row">
                     <div class="col-4 logoRedes">
-                        <img class="facebook" src="../img/icon/facebook.png" alt="">
+                        <img class="facebook" src="../img/icon/facebook.png" alt="Facebook">
                     </div>
                     <div class="col-4 logoRedes">
-                        <img class="gitHub" src="../img/icon/github.png" alt="">
+                        <img class="gitHub" src="../img/icon/github.png" alt="GitHub">
                     </div>
                     <div class="col-4 logoRedes">
-                        <img class="email" src="../img/icon/google.png" alt="">
+                        <img class="email" src="../img/icon/google.png" alt="Google">
                     </div>
                 </div>
+
                 <div class="col-12">
                     <p class="textCrear">¿No tienes una cuenta? <a href="resgistrate/bar.html">Crear Cuenta</a></p>
                 </div>
             </form>
-        </div>        
-    </div>
-    <div class="avatar-container" id="avatar-container">
-        <img src="../img/pez.gif" alt="Avatar" class="avatar-image" id="avatar-image">
-        <div class="info" id="info3">
-            <p>¡Hola, soy el pez!</p>
-            <ul>
-                <li>¡Recuerda iniciar sesion!</li>
-            </ul>
         </div>
-    </div>
-    
+    </main>
+
     <script src="js/sonido.js"></script>
     <script src="../bootstrap/js/bootstrap.js"></script>    
     <script src="../bootstrap/js/bootstrap.bundle.js"></script>

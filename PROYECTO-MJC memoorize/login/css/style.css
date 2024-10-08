@@ -4,82 +4,26 @@ body{
     background-size: cover;
     background-attachment: fixed;
     overflow: hidden;
+    height: 100vh;
 }
 
 /*botones*/
 .btnLogin{
     width: 200px;
     height: 40px;
-    background-color: rgb(25, 68, 102) !important;  
+    background-color: rgb(35, 92, 82) !important;  
     transition: 600ms;
     margin-bottom: 3%;
 }
 .btnLogin:hover{
     transform: scale(1.1);
 }
-.avatar-container {
-    position: relative;
-    display: inline-block;
-    bottom: 660px;
-    left: 390px;
-}
-#avatarContainer3{
-    position: relative;
-    display: inline-block;
-    bottom: 550px;
-    left: 800px;
-}
-#avatarContainer2 {
-    position: relative;
-    display: inline-block;
-    bottom: 350px;
-    left: 800px;
-}
-.info p {
-    color: #333; 
-    font-weight: bold; 
-    text-align: center; 
-}
-.avatar-image:hover {
-    transform: scale(1.1); 
-    transition: transform 0.3s ease; 
-}
-
-.avatar-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
-.info {
-    width: 200px;
-    height: 120px;
-    display: none; 
-    position: absolute;
-    flex: 1;
-    display: block;
-    top: 160%;
-    transform: translate(-50%, 30%);    
-    right: -40px;
-    background-image: url(../../menu/img/botonw.png);
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    transform: translateY(-50%); 
-    background-color: rgba(255, 255, 255, 0); 
-    border: 1px solid #cccccc00; 
-    border-radius: 5px; 
-    padding: 15px; 
-    font-size: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
-}
-.avatar-container:hover .info {
-    display: block; 
-}
 /*Formulario*/
 #formulario{
-    width: 30%;
+    width: 40%;
     height: auto;
     border-radius: 30px;
-    background-image: url(../../img/37631.jpg);
+    background-image: url(../../img/boton2.png);
     background-color: rgba(240, 248, 255, 0.541);
     background-repeat: no-repeat;
     background-position: center;
@@ -166,6 +110,7 @@ input.input:hover {
     cursor: pointer;
     position: relative;
     top: 2%;
+    z-index: 10;
     transition: 100ms;
 }
 .imgSonido{
@@ -229,105 +174,83 @@ a:link, a:visited, a:active {
     text-decoration:none;
 }
 
-@media(width: 320px){
-    body{
-        background-size: 100% 111%;
+/* Para dispositivos móviles */
+@media (max-width: 768px) {
+    #formulario {
+        width: 90%;
+        padding: 20px;
+        margin-top: 0%;
+        margin-left: 5%;
     }
-    /*Formulario*/
-    #formulario{
-        width: 85%;
-        height: 85vh;
+    .btnLogin {
+        width: 100%;
+    }
+    .logoForm img {
+        width: 120px;
+        height: 120px;
+    }#playButton {
+        font-size: 20px;
+        padding: 10px 20px;
+        background-color: rgba(73, 20, 20, 0);
+        border: none;
+        cursor: pointer;
         position: relative;
-        top: 1vh;
-    }
-    input.input{    
-        height: 5vh;
-    }
-    .imgSonido{
-        width: 40px;
-        height: 40px;
-    }
-    #playButton {
-        padding: 1vh 2vh;
-    }
-    .logoForm img{
-        width: 28vh;
-        height: 28vh;
-        margin-bottom: 2%;
-        transition: 200ms;
+        top: 60px;
+        right: 3%;;
+        z-index: 10;
+        transition: 100ms;
     }
     .logoRedes img{
-        width: 5vh;
-        height: 5vh;
+        width: 45%;
+        height: 45%;
         transition: 200ms;
     }
-    .textCrear{
-        font-size: 2vh;
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
+}
+/* Estilos para pantallas de computadora */
+@media (min-width: 769px) {
+    /* Ajuste del formulario */
+    #formulario {
+        width: 40%;
+        padding: 30px;
+        margin: -0% auto;
+        box-shadow: 0px 0px 40px rgb(0, 0, 0, 0.3);
     }
-    .textCrear a{
-        color: rgb(228, 127, 127) !important;   
-        font-size: 15px;
-        font-family: Arial, Helvetica, sans-serif !important;
+
+    /* Botón de inicio de sesión */
+    .btnLogin {
+        width: 200px;
+        height: 40px;
+        font-size: 18px;
+        margin-bottom: 2%;
     }
+
+    /* Logo en el formulario */
+    .logoForm img {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Botón de sonido */
+
+
+    /* Íconos de redes sociales */
+    .logoRedes img {
+        width: 27%;
+        height: 27%;
+        transition: 200ms;
+    } 
     
-    .textOlvide{
-        font-size: 2vh;
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
-        
+    #playButton {
+        font-size: 20px;
+        padding: 10px 20px;
+        position: relative;
+        bottom: 0px;
+        left: 0%;
+        transition: 200ms;
     }
-    .textOlvide a{
-        color: rgb(81, 179, 81) !important;
-        font-size: 15px;
-        
-    }
-    .text{
-        color: aliceblue;
-        text-align: center;
-        font-size: 2vh;
-    }
-    .btnLogin{
-        width: 25vh;
-        height: 6vh;
-        background-image: url(../../img/boton.jpg);   
-        transition: 600ms;
-        margin-bottom: 3%;
-    }
-}
 
-/*burbujas*/
-
-.burbuja {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: url('../../img/realistic-style-soap-bubbles-background.png') repeat;
-    opacity: 0.8;
-    animation: moveStars 95s linear infinite;
-    animation: pulse 6s infinite;
-}
-
-@keyframes moveStars {
-    
-    from { background-position: 0 0; }
-    to { background-position: -1000px 0; }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 0.7;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
+    /* Tamaños de texto */
+    .textCrear, .textOlvide {
+        font-size: 1.2em;
     }
 }

@@ -1,74 +1,71 @@
-body{
+body {
     background-image: url(../img/fondo4.gif);
     background-repeat: no-repeat;
     background-size: cover;
-    background-size: 100% 100%;
     background-attachment: fixed;
     overflow: hidden;
-
-}
-/* Avatar container */
-.avatar-container {
-    position: relative;
-    display: inline-block;
-    bottom: 650px;
-    left: 150px;
-}
-#avatarContainer3{
-    position: relative;
-    display: inline-block;
-    bottom: 550px;
-    left: 800px;
-}
-#avatarContainer2 {
-    position: relative;
-    display: inline-block;
-    bottom: 350px;
-    left: 800px;
-}
-.info p {
-    color: #333; 
-    font-weight: bold; 
-    text-align: center; 
-}
-.avatar-image:hover {
-    transform: scale(1.1); 
-    transition: transform 0.3s ease; 
 }
 
-.avatar-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+.container-fluid {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
 }
-.info {
-    width: 300px;
-    height: 150px;
-    display: none; 
-    position: absolute; 
-    left: 120px; 
-    top: 50%; 
-    background-image: url(../menu/img/botonw.png);
-    background-size: cover; 
+
+.logo {
+    max-width: 100%; 
+    height: auto;
+    margin-bottom: 10px; 
+    animation: moveLogoVertical 2s infinite alternate ease-in-out;
+}
+
+.button2 {
+    background-image: url(../img/boton.png);
+    background-size: contain; 
+    background-position: center; 
     background-repeat: no-repeat; 
-    transform: translateY(-50%); 
+    image-rendering: pixelated; 
+    background-color: transparent;
+    border: none; 
+    padding: 15px 30px; 
+    max-width: 100%; 
+    z-index: 10;
+    font-size: 18px; 
+    cursor: pointer; 
+    position: relative; 
+    width: 220px;
+    height: 160px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.button2:hover {
+    transform: scale(1.1);
     background-color: rgba(255, 255, 255, 0); 
-    border: 1px solid #cccccc00; 
-    border-radius: 5px; 
-    padding: 5px; 
-    font-size: 22px;
-    font-family: cursive;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
 }
-.avatar-container:hover .info {
-    display: block; 
+
+.btnTex {
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(255, 255, 255);
+    padding-top: 7px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
-/*jugar*/
+
+.bubbles {
+    position: relative;
+    overflow: hidden; 
+}
+
 .bubbles {
     position: absolute;
     width: 100%;
-    bottom: 84px;
-    right: 0px;
+    bottom: 34px;
+    right: 0%;
     height: 100%;
     overflow: hidden;
     pointer-events: none;
@@ -93,377 +90,47 @@ body{
     }
 }
 
-.button2 {
-    width: 300px;
-    height: 300px;
-    background-image: url(../img/boton.png);
-    background-size: contain; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    image-rendering: pixelated; 
-    position: relative;
-    right: 1%;
-    bottom: 70px;
-    transition: 400ms;
-    border: none; 
-    background-color: transparent;
-    outline: none;
-}
-.button2 {
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-.button2:hover {
-    transform: scale(1.1);
-    background-color: rgba(255, 255, 255, 0); 
-}
-
-.btnTex{
-    font-family: 'Times New Roman', Times, serif;
-    color: rgb(255, 255, 255);
-    padding-top: 7px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    
-}
-
-/*logo*/
-.imgLogo{
-    width: 100%;
-    height: 90%;
-    position: relative;
-    right: 5vh;
-    top: 5%;
-    transition: 500ms;
-    animation: moveLogoVertical 2s infinite alternate ease-in-out;
-    margin-bottom: 20px;
-}
 @keyframes moveLogoVertical {
     0% { transform: translateY(0); }
     100% { transform: translateY(25px); }
 }
 
-.imgLogo:hover{
+.imgLogo:hover {
     transform: scale(1.1);
 }
 
-/*mobiles pequeños*/
-@media(width= 320px){
-    body{
-        background-size: 100% 100%;
-        background-attachment: fixed;
-    }
-    /*sonido*/
-    #playButton {
-        padding: 10px 20px;
-        background-color: rgba(73, 20, 20, 0);
-        border: none;
-        cursor: pointer;
-        transition: 1s;
-    }
-    .imgSonido{
-        width: 50px;
-        height: 50px;
-    }
-    #playButton:hover {
-        transform: scale(1.1);
-    }
-
-    /*logo*/
-    .imgLogo{
-        width: 35vh;
-        right: 35vh;
-        position: relative;
-        left: -4vh;
-    }
-   
-    /*jugar*/
-
-    .btnJugar{
-        width: 25vh;
-        right: 20%;
-        background-image: url(../img/boton.jpg);   
-        transition: 600ms;
-        position: relative;
-    }
-    .btnText{
-        font-family: 'Times New Roman', Times, serif;
-        color: rgb(255, 255, 255);
-        padding-top: 1vh;
-        font-size: medium;
-    }
-
-    .centrar{
-        position: relative;
-        top: 15vh;
-    }
+.header {
+    background-color: rgba(0, 0, 0, 0); 
+    padding: 10px; 
+    position: fixed;
+    bottom: 44%;
+    left: 50%;
+    width: 100%; 
+    z-index: 10; 
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: center; 
 }
 
-/*mobiles pequeños*/
-@media(max-width= 320px) and (min-width=320px){
-    body{
-        background-size: 100% 100%;
-        background-attachment: fixed;
-    }
-    /*sonido*/
-    #playButton {
-        padding: 10px 20px;
-        background-color: rgba(73, 20, 20, 0);
-        border: none;
-        cursor: pointer;
-        transition: 1s;
-    }
-    .imgSonido{
-        width: 50px;
-        height: 50px;
-    }
-    #playButton:hover {
-        transform: scale(1.1);
-    }
-
-    /*logo*/
-    .imgLogo{
-        width: 35vh;
-        right: 35vh;
-        position: relative;
-        left: -4vh;
-    }
-   
-    /*jugar*/
-
-    .btnJugar{
-        width: 25vh;
-        height: 7vh;
-        background-image: url(../img/boton.jpg);   
-        transition: 600ms;
-        position: relative;
-        right: 1vh;
-    }
-    .btnText{
-        font-family: 'Times New Roman', Times, serif;
-        color: rgb(255, 255, 255);
-        padding-top: 1vh;
-        font-size: medium;
-    }
-
-    .centrar{
-        position: relative;
-        top: 15vh;
-    }
+#playButton {
+    background-color: transparent; 
+    border-radius: 50%;
+    border: none; 
+    cursor: pointer; 
 }
 
-/*mobiles medianos*/
-
-@media(width= 375px){
-    body{
-        background-size: 100% 100%;
-        background-attachment: fixed;
-    }
-    /*sonido*/
-    #playButton {
-        padding: 10px 20px;
-        background-color: rgba(73, 20, 20, 0);
-        border: none;
-        cursor: pointer;
-        transition: 1s;
-    }
-    .imgSonido{
-        width: 50px;
-        height: 50px;
-    }
-    #playButton:hover {
-        transform: scale(1.1);
-    }
-
-    /*logo*/
-    .imgLogo{
-        width: 35vh;
-        right: 35vh;
-        position: relative;
-        left: -4vh;
-    }
-   
-    /*jugar*/
-
-    .btnJugar{
-        width: 25vh;
-        height: 7vh;
-        background-image: url(../img/boton.jpg);   
-        transition: 600ms;
-        position: relative;
-        right: 1vh;
-    }
-    .btnText{
-        font-family: 'Times New Roman', Times, serif;
-        color: rgb(255, 255, 255);
-        padding-top: 1vh;
-        font-size: medium;
-    }
-
-    .centrar{
-        position: relative;
-        top: 15vh;
-    }
+.imgSonido {
+    width: 30px; 
+    height: auto; 
 }
 
-/*mobiles grandes*/
-
-@media(width= 425px){
-    body{
-        background-size: 100% 100%;
-        background-attachment: fixed;
-    }
-    /*sonido*/
-    #playButton {
-        padding: 10px 20px;
-        background-color: rgba(73, 20, 20, 0);
-        border: none;
-        cursor: pointer;
-        transition: 1s;
-    }
-    .imgSonido{
-        width: 52px;
-        height: 52px;
-    }
-    #playButton:hover {
-        transform: scale(1.1);
-    }
-
-    /*logo*/
-    .imgLogo{
-        width: 45vh;
-        right: 45vh;
-        position: relative;
-        left: -9vh;
-    }
-   
-    /*jugar*/
-
-    .btnJugar{
-        width: 28vh;
-        height: 8vh;
-        background-image: url(../img/boton.jpg);   
-        transition: 600ms;
-        position: relative;
-        right: 1vh;
-    }
-    .btnText{
-        font-family: 'Times New Roman', Times, serif;
-        color: rgb(255, 255, 255);
-        padding-top: 1vh;
-        font-size: medium;
-    }
-
-    .centrar{
-        position: relative;
-        top: 15vh;
-    }
+#playButton:hover {
+    transform: scale(1.1); 
 }
+@media (max-width: 768px) {
+    .header {
+        bottom: 45%;
+        left: 38%;
 
-@media(width= 768px){
-    body{
-        background-size: 100% 100%;
-        background-attachment: fixed;
-    }
-    /*sonido*/
-    #playButton {
-        padding: 10px 20px;
-        background-color: rgba(73, 20, 20, 0);
-        border: none;
-        cursor: pointer;
-        transition: 1s;
-    }
-    .imgSonido{
-        width: 50px;
-        height: 50px;
-    }
-    #playButton:hover {
-        transform: scale(1.1);
-    }
-
-    /*logo*/
-    .imgLogo{
-        width: 60vh;
-        right: 60vh;
-        position: relative;
-        left: -4vh;
-    }
-   
-    /*jugar*/
-
-    .btnJugar{
-        width: 30vh;
-        height: 8vh;
-        background-image: url(../img/boton.jpg);   
-        transition: 600ms;
-        position: relative;
-        right: -2vh;
-    }
-    .btnText{
-        font-family: 'Times New Roman', Times, serif;
-        color: rgb(255, 255, 255);
-        padding-top: 1vh;
-        font-size: medium;
-    }
-
-    .centrar{
-        position: relative;
-        top: 10vh;
-    }
-}
-
-@media(width= 1024px){
-    body{
-        background-size: 100% 100%;
-        background-attachment: fixed;
-    }
-
-    /*sonido*/
-    #playButton {
-        padding: 10px 20px;
-        background-color: rgba(73, 20, 20, 0);
-        border: none;
-        cursor: pointer;
-        transition: 1s;
-    }
-    .imgSonido{
-        width: 60px;
-        height: 60px;
-    }
-    #playButton:hover {
-        transform: scale(1.1);
-    }
-
-    /*logo*/
-    .imgLogo{
-        width: 70vh;
-        right: 70vh;
-        position: relative;
-        left: -8.5vh;
-    }
-   
-    /*jugar*/
-
-    .btnJugar{
-        width: 35vh;
-        height: 9vh;
-        background-image: url(../img/boton.jpg);   
-        transition: 600ms;
-        position: relative;
-        right: 4vh;
-    }
-    .btnText{
-        font-family: 'Times New Roman', Times, serif;
-        color: rgb(255, 255, 255);
-        padding-top: 1vh;
-        font-size: 4vh;
-    }
-
-    .centrar{
-        position: relative;
-        top: 9vh;
     }
 }

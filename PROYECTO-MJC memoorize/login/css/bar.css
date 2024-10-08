@@ -1,31 +1,32 @@
-
 body {
     margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to bottom, #87CEEB, #00BFFF); 
+    background-color: #f0f0f0;
 }
 
-.container {
-    width: 980%;
-    max-width: 1300px;
-    right: 384px;
-    height: 50px;
-    background-color: rgba(255, 255, 255, 0.3); 
-    border-radius: 25px;
-    overflow: hidden;
-    position: relative;
+.center {
+    text-align: center;
 }
 
-/* Barra de carga */
+.logo {
+    max-width: 100%; 
+    height: auto;
+    margin-bottom: 10px; 
+    animation: moveLogoVertical 2s infinite alternate ease-in-out;
+}
+
 .loading-bar {
-    width: 200%;
-    height: 200%;
     position: relative;
+    width: 800%;
+    height: 40px;
+    max-width: 600px;
+    border-radius: 15px;
     overflow: hidden;
+    right: 10%;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .wave {
@@ -33,7 +34,7 @@ body {
     bottom: 0;
     width: 100%;
     height: 100%;
-    background: rgb(39, 124, 167);
+    background: rgb(7, 146, 216);
     border-radius: 50%;
     opacity: 0.6;
     animation: moveWaves 4s infinite linear;
@@ -55,13 +56,22 @@ body {
     opacity: 0.3;
     animation-delay: -4s;
 }
-.logoI{
-    position: relative;
-    right: 5vh;
-    bottom: 4vh;
-    transition: 500ms;
-    animation: moveLogoVertical 2s infinite alternate ease-in-out;
-    margin-bottom: 20px;
+.loading-text {
+    position: absolute; 
+    width: 100%;
+    text-align: center; 
+    line-height: 40px; 
+    right: 0%;
+    z-index: 10;
+    color: white; 
+    font-weight: bold;
+    font-size: 35px; 
+}
+.logo {
+    max-width: 100%; 
+    height: auto;
+    margin-bottom: 10px; 
+    animation: moveLogoVertical 1s infinite alternate ease-in-out;
 }
 @keyframes moveLogoVertical {
     0% { transform: translateY(0); }
@@ -81,9 +91,25 @@ body {
     }
 }
 
-@media (max-width: 600px) {
-    .container {
-        width: 90%;
-        height: 40px;
+@media (max-width: 768px) {
+    .loading-bar {
+        width: 80%; /* Ajusta el ancho de la barra de carga en pantallas pequeñas */
+        left: 10%;
+    }
+
+    .logo {
+        max-width: 80%; /* Cambia el tamaño del logo en pantallas pequeñas */
+        margin-bottom: 5px; /* Ajusta el margen inferior en pantallas pequeñas */
+    }
+    .loading-text {
+        position: absolute; 
+        width: 100%;
+        text-align: center; 
+        line-height: 30px; 
+        right: 1%;
+        z-index: 10;
+        color: white; 
+        font-weight: bold; 
+        font-size: 20px; 
     }
 }

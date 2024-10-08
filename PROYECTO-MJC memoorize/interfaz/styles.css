@@ -129,7 +129,7 @@ body {
 }
 
 .content {
-    margin-left: 40px;
+    margin-left: 10%;
     color: rgb(0, 0, 0);
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
 }
@@ -155,6 +155,7 @@ button {
     display: inline-block;
     font-size: 26px;
     margin-top: 20px;
+    margin-left: 0%;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -260,5 +261,75 @@ button:hover {
     100% {
         bottom: 100%;
         opacity: 0;
+    }
+}
+@media (max-width: 768px) {
+    /* Contenedor principal */
+    .container {
+        flex-direction: column;
+        width: 90%;
+        padding: 0px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+    }
+
+    /* Ajuste de tamaño y márgenes para el logo */
+    .porthole {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 20px;
+        margin-top: 8%;
+        border: 15px solid #c0c0c000;
+    }
+
+    /* Ajustes de texto */
+    .content h1 {
+        font-size: 2em;
+        bottom: 30%;
+        text-align: center;
+    }
+
+    .content  {
+        font-size: 1.0em;
+        max-width: 100%;
+        text-align: center;
+        margin-left: 4px;
+        margin: 10px 0;
+    }
+
+    /* Botón de acción */
+    button {
+        font-size: 1.5em;
+        padding: 10px 15px;
+        width: 80%;
+        left: 33px;
+        
+    }
+
+    /* Ajuste de tamaño de criaturas */
+    .fish, .jellyfish, .seahorse, .turtle, .starfish, .payaso, .pulpo, .lango {
+        width: 60px;
+        height: 60px;
+        animation-duration: 12s; /* Aumenta la velocidad de las animaciones */
+    }
+
+    /* Ajuste de posiciones de criaturas */
+    .fish, .turtle {
+        left: -60px; /* Ajustar la posición inicial */
+    }
+
+    .seahorse, .jellyfish {
+        right: 15px; /* Ajustar la posición final */
+    }
+
+    /* Ajuste de animación de burbujas */
+    .bubbles::before {
+        width: 10px;
+        height: 10px;
+    }
+
+    /* Aumento de espaciado general */
+    .content, .container {
+        margin: 15px 0;
     }
 }
