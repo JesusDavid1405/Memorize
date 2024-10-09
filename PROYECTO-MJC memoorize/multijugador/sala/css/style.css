@@ -1,5 +1,5 @@
 body{
-    background-image: url(../../../img/fondoSala.gif);
+    background-image: url(../../../img/juegocartas2.gif);
     background-size: 100% 100%;
     background-attachment:fixed;
     background-repeat: no-repeat;
@@ -40,7 +40,7 @@ input.input:hover {
 
 /*estilos sala Jugador*/
 .sala{
-    background-color: rgba(240, 248, 255, 0.329);
+    background-color: rgba(240, 248, 255, 0.5);
     width: 95%;
     border-radius: 15px;
     margin: auto;
@@ -51,9 +51,25 @@ input.input:hover {
     text-align: center;
 }
 #players img{
-    width: 70px;
-    height: 70px;
+    width: 12vh;
+    height: 12vh;
 }
+
+.boton{
+    background-color: rgb(28, 125, 125);
+    width: 20vh;
+    position: relative;
+    left: 114vh;
+    bottom: 30vh;
+    border-radius: 3%;
+
+}
+
+.iniciar{
+    font-size: 4vh;
+}
+
+
 .header{
     text-transform:uppercase;
     text-align: center;

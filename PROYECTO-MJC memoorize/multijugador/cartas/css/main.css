@@ -24,7 +24,7 @@ html {
 
 /*CUERPO*/
 body {
-    background-image: url(../../img/view-underwater-sea-life-cartoon-style.jpg);
+    background-image: url(../../img/juegocartas2.gif);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -39,6 +39,18 @@ body {
     grid-template-areas: "numPartidas maxPuntos puntos cronometro"
                          "baraja baraja baraja baraja";
     grid-template-columns: 1fr 1fr 1fr 1fr;
+        
+}
+.container1{
+    background-color: rgb(255, 255, 255,0.5);
+    position: relative;
+    left: 70vh;
+    top: 6vh;
+    border-radius: 10%;
+    width: 100vh;
+    height: 100vh;
+    
+    
 }
 
 .numPartidas, .maxPuntos, .puntos, .reloj {    
@@ -48,31 +60,36 @@ body {
 /*PARTIDAS*/
 .numPartidas {
     grid-area: numPartidas;   
-    color: rgb(144, 211, 117);
+    color: rgb(0, 0, 0);
     border-color: #000;
+    margin-top: 2vh;
 }
 
 /*PUNTOS*/
 .maxPuntos {
     grid-area: maxPuntos;
-    color: rgb(144, 211, 117);
+    color: rgb(0, 0, 0);
     border-color: #000;
+    margin-top: 2vh;
 }
 
 .puntos {
     grid-area: puntos;
-    color: rgb(144, 211, 117);
+    color: rgb(0, 0, 0);
     border-color: #000;
+    margin-top: 2vh;
 }
 
 /*CRONOMETRO*/
 .cronometro {
     grid-area: cronometro;
+    margin-top: 2vh;
 }
 
 .reloj {
     display: inline;
     font-weight: bold;
+    margin-top: 2vh;
 }
 
 /* TABLERO */
@@ -97,6 +114,7 @@ body {
     transition: 1s;
     width: var(--gridWidht);
     height: var(--gridHeight);
+    
 }
 
 /* IMAGEN FRONT CARTA */

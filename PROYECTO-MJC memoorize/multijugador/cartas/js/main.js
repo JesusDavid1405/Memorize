@@ -23,13 +23,13 @@ function grid() {
 function dificultad() {
 	switch (this.id) {
 		case "facil":
-			generarCartas(4, 8, frutas);
+			generarCartas(4, 8, animales);
 			break;
 		case "medio":
-			generarCartas(6, 18, pokemon);
+			generarCartas(5, 13, animales);
 			break;
 		case "dificil":
-			generarCartas(8, 32, coches);
+			generarCartas(6, 18, animales);
 			break;
 	}
 	document.getElementById("modal").setAttribute("class", "hide");
@@ -72,7 +72,7 @@ function carta(contenedor, img, numImg) {
 
 	let imgReverso = document.createElement('INPUT');
 	imgReverso.setAttribute("type", "image");
-	imgReverso.setAttribute("src", "img/reversoCarta.jpeg");
+	imgReverso.setAttribute("src", "img/reversoC.jpeg");
 	imgReverso.style.width = "100%";
 	imgReverso.style.height = "100%";
 	back.appendChild(imgReverso);

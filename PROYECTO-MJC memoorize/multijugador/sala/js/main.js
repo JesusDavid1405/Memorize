@@ -53,6 +53,9 @@ if (rol == 1){
     display.innerHTML = 'Error: no se ha especificado un usuario.';
 }
 
+<<<<<<< HEAD
+document.getElementById('configuraciones').innerHTML=configuraciones;
+=======
 document.getElementById('players').innerHTML=players;
 document.querySelector('.header').innerHTML=header;
 document.getElementById('configuraciones').innerHTML=configuraciones;
@@ -81,3 +84,4 @@ async function iniciarSala() {
 }
 
 
+>>>>>>> 8f9ea12b2d8e90cfb7a774a0f8db4621be2f4f45
