@@ -20,4 +20,5 @@ btnCrearSala.addEventListener('click', function() {
         localStorage.setItem('rondas', rondas);
         window.location.href = '../sala/index.html';
     }
+    localStorage.setItem('rol',1);
 });

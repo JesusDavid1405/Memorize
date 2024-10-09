@@ -8,13 +8,11 @@ localStorage.setItem('codigo', parseInt(valorCodigo));
 console.log(localStorage.getItem('codigo'))
 
 btnCrear.addEventListener('click', function(){
-    localStorage.setItem('user', 1);
     window.location.href = 'crearSala/index.html';  
 });
 
 
 btnUnirse.addEventListener('click', function(){
-    localStorage.setItem('user', 2); 
     window.location.href = 'unirseSala/index.html'; 
 });
 

@@ -1,7 +1,8 @@
-const user = localStorage.getItem('user');
+const rol = localStorage.getItem('rol');
 const codigoSala= localStorage.getItem('codigo');
 const nombreSala= localStorage.getItem('nombreSala');
 const rondas= localStorage.getItem('rondas');
+const dificultad= localStorage.getItem('dificultad')
 
 let header = '';
 let players = '';
@@ -27,33 +28,56 @@ header=`
     <p>${nombreSala}</p>
 `; 
 
-document.getElementById('players').innerHTML=players;
-document.querySelector('.header').innerHTML=header;
-
-
-if (user == 1) {
+if (rol == 1){
     configuraciones=`
-    <div>
-        <label for="rondas">rondas</label>
-        <select id="rondas" name="rondas">
-            <option value="3">3</option>
-            <option value="5">5</option>
-            <option value="8">8</option>
-        </select>
-    </div>`;
-    
-} else if (user == 2) {
-    configuraciones=`
-    <div>
-        rondas ${rondas}
-    </div>
+    dificultad: ${dificultad}
+    <br>
+    rondas: ${rondas}
+    <br>
+    codigo: ${codigoSala}
+    <br>
+
+    <button id="jugar" class="btn btn-primary">jugar</button>
     `;
+} else if (rol == 2) {
+    configuraciones=`
+    dificultad: ${dificultad}
+    <br>
+    rondas: ${rondas}
+    <br>
+    codigo: ${codigoSala}
+    
+    `;
+    
 } else {
     display.innerHTML = 'Error: no se ha especificado un usuario.';
 }
 
-
-
+document.getElementById('players').innerHTML=players;
+document.querySelector('.header').innerHTML=header;
 document.getElementById('configuraciones').innerHTML=configuraciones;
+
+let btnJugar = document.getElementById('jugar');
+
+// Verificar si el botón "Jugar" existe antes de agregar el listener
+if (btnJugar) {
+    btnJugar.addEventListener('click', async function () {
+        // Si necesitas realizar tareas en paralelo, usa Promises o async/await
+        await iniciarSala();
+        window.location.href = '../cartas/index.html';
+    });
+}
+
+// Función asíncrona para iniciar la sala, simulando algún proceso adicional
+async function iniciarSala() {
+    // Simulación de una tarea asíncrona (ej. llamada a una API)
+    return new Promise((resolve) => {
+        console.log('Iniciando la sala...');
+        setTimeout(() => {
+            console.log('Sala iniciada');
+            resolve();
+        }, 2000); // Simula un proceso que tarda 2 segundos
+    });
+}
 
 

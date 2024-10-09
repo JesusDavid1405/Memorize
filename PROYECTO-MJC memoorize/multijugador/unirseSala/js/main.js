@@ -18,5 +18,5 @@ btnComparar.addEventListener('click',function() {
         modalDisplay.innerHTML=`el codigo que ingresaste no pertenece a ninguna sala`;
         modalError.show()
     }
-    
+    localStorage.setItem('rol',2)
 })
