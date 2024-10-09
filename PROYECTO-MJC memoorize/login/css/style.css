@@ -30,7 +30,6 @@ body{
     background-position: center;
     background-size: cover; 
     opacity: 1;
-    padding: 20px;
     transition: 200ms;
     margin: 0 auto;
     position: relative;
@@ -229,6 +228,104 @@ a:link, a:visited, a:active {
     .logoForm img {
         width: 150px;
         height: 150px;
+    }
+
+    /* Botón de sonido */
+
+
+    /* Íconos de redes sociales */
+    .logoRedes img {
+        width: 27%;
+        height: 27%;
+        transition: 200ms;
+    } 
+    
+    #playButton {
+        font-size: 20px;
+        padding: 10px 20px;
+        position: relative;
+        bottom: 0px;
+        left: 0%;
+        transition: 200ms;
+    }
+
+    /* Tamaños de texto */
+    .textCrear, .textOlvide {
+        font-size: 1.2em;
+    }
+}
+/*tablet*/
+@media (min-width: 768px) {
+    /* Ajuste del formulario */
+    #formulario {
+        width: 70%;
+        /*padding: 90px;*/       
+        margin: auto;
+        box-shadow: 0px 0px 40px rgb(0, 0, 0, 0.3);
+        margin-top: 20%;
+    }
+
+    /* Botón de inicio de sesión */
+    .btnLogin {
+        width: 200px;
+        height: 40px;
+        font-size: 18px;
+        margin-bottom: 2%;
+    }
+
+    /* Logo en el formulario */
+    .logoForm img {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Botón de sonido */
+
+
+    /* Íconos de redes sociales */
+    .logoRedes img {
+        width: 27%;
+        height: 27%;
+        transition: 200ms;
+    } 
+    
+    #playButton {
+        font-size: 20px;
+        padding: 10px 20px;
+        position: relative;
+        bottom: 0px;
+        left: 0%;
+        transition: 200ms;
+    }
+
+    /* Tamaños de texto */
+    .textCrear, .textOlvide {
+        font-size: 1.2em;
+    }
+}
+/*ipad pro*/
+@media (min-width: 1024px) {
+    /* Ajuste del formulario */
+    #formulario {
+        width: 70%;
+        padding: 30px;
+        margin: auto;
+        box-shadow: 0px 0px 40px rgb(0, 0, 0, 0.3);
+        margin-top: 20%;
+    }
+
+    /* Botón de inicio de sesión */
+    .btnLogin {
+        width: 200px;
+        height: 40px;
+        font-size: 18px;
+        margin-bottom: 2%;
+    }
+
+    /* Logo en el formulario */
+    .logoForm img {
+        width: 180px;
+        height: 180px;
     }
 
     /* Botón de sonido */
