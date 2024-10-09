@@ -4,90 +4,60 @@ body{
     background-size: cover;
     background-attachment: fixed;
     overflow: hidden;
+    height: 100vh;
+    margin: 0;
 }
 
 /*botones*/
 .btnLogin{
     width: 200px;
     height: 40px;
-    background-color: rgb(55, 33, 121) !important;   
+    background-color: rgb(35, 92, 82) !important;  
     transition: 600ms;
     margin-bottom: 3%;
 }
 .btnLogin:hover{
     transform: scale(1.1);
 }
-
-
-/*sonido*/
-#playButton {
-    font-size: 20px;
-    padding: 10px 20px;
-    background-color: rgba(73, 20, 20, 0);
-    border: none;
-    cursor: pointer;
-    position: relative;
-    top: 2%;
-    transition: 100ms;
-}
-.imgSonido{
-    width: 70px;
-    height: 70px;
-}
-#playButton:hover {
-    transform: scale(1.1);
-}
-
-/*logo*/
-
-.logo{
-    width: 75%;
-    position: relative;
-    left: 15%;
-    bottom: 10%;
-    transition: 200ms;  
-    animation: moveLogoVertical 2s infinite alternate ease-in-out;
-}
-@keyframes moveLogoVertical {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(15px); }
-}
-.logo:hover{
-    transform: scale(1.1);
-}
-
 /*Formulario*/
 #formulario{
-    width: 30%;
+    width: 40%;
     height: auto;
     border-radius: 30px;
-    background-image: url(../../../img/37631.jpg);
-
+    background-image: url(../../../img/as.avif);
+    background-color: rgba(240, 248, 255, 0.541);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; 
-    opacity: 2;
+    opacity: 1;
     transition: 200ms;
     margin: auto;
     position: relative;
-    bottom: 4vh;
+    bottom: 9vh;
 }
 #formulario:hover{
     transform: none;
     box-shadow: 0px 0px 40px rgb(0, 0, 0);
 }
-.text{
-    color: rgb(0, 0, 0);
-    font-size: 20px;
-    text-align: center;
+.logoForm{
+    margin: auto;
 }
-.text2{
-    color: rgb(0, 0, 0);
-    text-align: center;
-    font-size: 30px;
+.logoForm img{
+    width: 175px;
+    height: 175px;
+    margin-bottom: 2%;
+    transition: 200ms;
+    animation: moveLogoVertical 2s infinite alternate ease-in-out;
 }
-/*iconoInput*/
+@keyframes moveLogoVertical {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
+}
+.logoForm img:hover{
+    transform: scale(1.1);
+}
 
+/*iconoInput*/
 .inputIcon{
     max-width: 420px;
     position: relative;
@@ -109,7 +79,7 @@ body{
 }
 input.input{    
   padding-right: 2.5rem;
-  background-color: rgba(255, 255, 255, 0.568);
+  background-color: rgba(255, 255, 255, 0.427);
   border: 1px solid black;
   transition: 100ms;
 }
@@ -119,15 +89,38 @@ input.input:focus{
     box-shadow: 0px 0px 5px black;
 }
 input.input:hover {  
-    background-color: rgb(253, 253, 253);
+    background-color: rgb(255, 255, 255);
     
 }
 .text{
     color: aliceblue;
     text-align: center;
-    padding-bottom: 6%;
+    font-size: 18px;
 }
-
+.text2{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 28px;
+}
+/*sonido*/
+#playButton {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: rgba(73, 20, 20, 0);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 2%;
+    z-index: 10;
+    transition: 100ms;
+}
+.imgSonido{
+    width: 70px;
+    height: 70px;
+}
+#playButton:hover {
+    transform: scale(1.1);
+}
 
 /*iconosRedes*/
 .logoRedes{
@@ -148,22 +141,130 @@ input.input:hover {
 .gitHub{
     position: relative;
     left: 40%;
-}   
+}
 
 /*texto*/
 .textCrear{
-    font-size: 1.4em;
-    color: white;
+    font-size: 1.3em;
+    color: rgb(0, 0, 0);
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
 .textCrear a{
-    color: rgb(0, 0, 0) !important;
-    font-size: 25px;
+    color: rgb(255, 255, 255) !important; 
+    font-size: 22px;
     font-family: Arial, Helvetica, sans-serif !important;
 }
+
+.textOlvide{
+    font-size: medium;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    
+}
+.textOlvide a{
+    color: rgb(0, 0, 0) !important; 
+    font-size: 1.3em;
+    
+}
+
 
 /*quitar link*/
 a:link, a:visited, a:active {
     text-decoration:none;
 }
+/* Para dispositivos móviles */
+@media (max-width: 768px) {
+    #formulario {
+        width: 90%;
+        padding: 20px;
+        margin: 0 auto; 
+        margin-right: 7%;
+    }
+    .btnLogin {
+        width: 100%;
+    }
+    .logoForm img {
+        width: 120px;
+        height: 120px;
+    }#playButton {
+        font-size: 20px;
+        padding: 10px 20px;
+        background-color: rgba(73, 20, 20, 0);
+        border: none;
+        cursor: pointer;
+        position: relative;
+        top: 60px;
+        right: 5%;;
+        z-index: 10;
+        transition: 100ms;
+    }
+    .logoRedes img{
+        width: 15%;
+        height: 15%;
+        transition: 200ms;
+    }
+    .facebook{
+        position: relative;
+        left: 75%;
+    }
+    .gitHub{
+        position: relative;
+        left: 40%;
+        bottom: 40px;
+    }
+    .email{
+        position: relative;
+        bottom: 75px;
+    }
+}
+/* Estilos para pantallas de computadora */
+@media (min-width: 769px) {
+    /* Ajuste del formulario */
+    #formulario {
+        width: 40%;
+        padding: 20px;       
+        margin: 0% auto;
+        box-shadow: 0px 0px 40px rgb(0, 0, 0, 0.3);
+    }
+
+    /* Botón de inicio de sesión */
+    .btnLogin {
+        width: 200px;
+        height: 40px;
+        font-size: 18px;
+        margin-bottom: 2%;
+    }
+
+    /* Logo en el formulario */
+    .logoForm img {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Botón de sonido */
+
+
+    /* Íconos de redes sociales */
+    .logoRedes img {
+        width: 27%;
+        height: 27%;
+        transition: 200ms;
+    } 
+    
+    #playButton {
+        font-size: 20px;
+        padding: 10px 20px;
+        position: relative;
+        bottom: 0px;
+        left: 0%;
+        transition: 200ms;
+    }
+
+    /* Tamaños de texto */
+    .textCrear, .textOlvide {
+        font-size: 1.2em;
+    }
+}
+

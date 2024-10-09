@@ -4,35 +4,36 @@ body{
     background-size: cover;
     background-attachment: fixed;
     overflow: hidden;
+    height: 100vh;
+    margin: 0;
 }
 
 /*botones*/
 .btnLogin{
     width: 200px;
     height: 40px;
-    background-color: rgb(34, 34, 126) !important;  
+    background-color: rgb(35, 92, 82) !important;  
     transition: 600ms;
     margin-bottom: 3%;
 }
 .btnLogin:hover{
     transform: scale(1.1);
 }
-
 /*Formulario*/
 #formulario{
-    width: 30%;
+    width: 40%;
     height: auto;
-    top: 60px;
     border-radius: 30px;
-    background-image: url(../../../img/37631.jpg);
+    background-image: url(../../../img/as.avif);
+    background-color: rgba(240, 248, 255, 0.541);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; 
-    opacity: 2;
+    opacity: 1;
     transition: 200ms;
-    margin: auto;
+    margin: 0 auto;
     position: relative;
-    bottom: 0vh;
+    bottom: 8vh;
 }
 #formulario:hover{
     transform: none;
@@ -50,7 +51,7 @@ body{
 }
 @keyframes moveLogoVertical {
     0% { transform: translateY(0); }
-    100% { transform: translateY(15px); }
+    100% { transform: translateY(10px); }
 }
 .logoForm img:hover{
     transform: scale(1.1);
@@ -78,7 +79,7 @@ body{
 }
 input.input{    
   padding-right: 2.5rem;
-  background-color: rgba(255, 255, 255, 0.397);
+  background-color: rgba(255, 255, 255, 0.427);
   border: 1px solid black;
   transition: 100ms;
 }
@@ -94,16 +95,31 @@ input.input:hover {
 .text{
     color: aliceblue;
     text-align: center;
+    font-size: 18px;
 }
 .text2{
     color: rgb(0, 0, 0);
     text-align: center;
-    font-size: 30px;
+    font-size: 28px;
 }
-.text1{
-    color: rgb(0, 0, 0);
-    text-align: center;
-    font-size: 18px;
+/*sonido*/
+#playButton {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: rgba(73, 20, 20, 0);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 2%;
+    z-index: 10;
+    transition: 100ms;
+}
+.imgSonido{
+    width: 70px;
+    height: 70px;
+}
+#playButton:hover {
+    transform: scale(1.1);
 }
 
 /*iconosRedes*/
@@ -129,27 +145,27 @@ input.input:hover {
 
 /*texto*/
 .textCrear{
-    font-size: medium;
-    color: white;
+    font-size: 1.3em;
+    color: rgb(0, 0, 0);
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
 .textCrear a{
-    color: rgb(228, 127, 127) !important; 
-    font-size: 20px;
+    color: rgb(255, 255, 255) !important; 
+    font-size: 22px;
     font-family: Arial, Helvetica, sans-serif !important;
 }
 
 .textOlvide{
     font-size: medium;
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     
 }
 .textOlvide a{
-    color: rgb(255, 255, 255) !important; 
-    font-size: larger;
+    color: rgb(0, 0, 0) !important; 
+    font-size: 1.3em;
     
 }
 
@@ -158,127 +174,84 @@ input.input:hover {
 a:link, a:visited, a:active {
     text-decoration:none;
 }
-
-@media(width: 320px){
-    body{
-        background-size: 100% 111%;
+/* Para dispositivos móviles */
+@media (max-width: 768px) {
+    #formulario {
+        width: 90%;
+        padding: 20px;
+        margin: 0 auto; 
+        top: 100px;
     }
-    /*Formulario*/
-    #formulario{
-        width: 85%;
-        height: 85vh;
+    .btnLogin {
+        width: 100%;
+    }
+    .logoForm img {
+        width: 120px;
+        height: 120px;
+    }#playButton {
+        font-size: 20px;
+        padding: 10px 20px;
+        background-color: rgba(73, 20, 20, 0);
+        border: none;
+        cursor: pointer;
         position: relative;
-        top: 1vh;
-    }
-    input.input{    
-        height: 5vh;
-    }
-    .imgSonido{
-        width: 40px;
-        height: 40px;
-    }
-    #playButton {
-        padding: 1vh 2vh;
-    }
-    .logoForm img{
-        width: 28vh;
-        height: 28vh;
-        margin-bottom: 2%;
-        transition: 200ms;
+        top: 60px;
+        right: 5%;;
+        z-index: 10;
+        transition: 100ms;
     }
     .logoRedes img{
-        width: 5vh;
-        height: 5vh;
+        width: 45%;
+        height: 45%;
         transition: 200ms;
     }
-    .textCrear{
-        font-size: 2vh;
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
-    }
-    .textCrear a{
-        color: rgb(228, 127, 127) !important;   
-        font-size: 15px;
-        font-family: Arial, Helvetica, sans-serif !important;
-    }
-    
-    .textOlvide{
-        font-size: 2vh;
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
+}
+/* Estilos para pantallas de computadora */
+@media (min-width: 769px) {
+    /* Ajuste del formulario */
+    #formulario {
+        width: 40%;
+        padding: 30px;       
+        margin: 0% auto;
+        box-shadow: 0px 0px 40px rgb(0, 0, 0, 0.3);
         
     }
-    .textOlvide a{
-        color: rgb(81, 179, 81) !important;
-        font-size: 15px;
-        
+
+    /* Botón de inicio de sesión */
+    .btnLogin {
+        width: 200px;
+        height: 40px;
+        font-size: 18px;
+        margin-bottom: 2%;
     }
-    .text{
-        color: aliceblue;
-        text-align: center;
-        font-size: 2vh;
+
+    /* Logo en el formulario */
+    .logoForm img {
+        width: 150px;
+        height: 150px;
     }
-    .btnLogin{
-        width: 25vh;
-        height: 6vh;
-        background-image: url(../../img/boton.jpg);   
-        transition: 600ms;
-        margin-bottom: 3%;
-    }
-}
 
-/*sonido*/
-#playButton {
-    font-size: 20px;
-    padding: 10px 20px;
-    background-color: rgba(73, 20, 20, 0);
-    border: none;
-    cursor: pointer;
-    position: relative;
-    top: 2%;
-
-    transition: 100ms;
-}
-.imgSonido{
-    width: 70px;
-    height: 70px;
-}
-#playButton:hover {
-    transform: scale(1.1);
-}
+    /* Botón de sonido */
 
 
-/*burbujas*/
-
-.burbuja {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: url('../../../img/realistic-style-soap-bubbles-background.png') repeat;
-    opacity: 0.8;
-    animation: moveStars 95s linear infinite;
-    animation: pulse 6s infinite;
-}
-
-@keyframes moveStars {
+    /* Íconos de redes sociales */
+    .logoRedes img {
+        width: 27%;
+        height: 27%;
+        transition: 200ms;
+    } 
     
-    from { background-position: 0 0; }
-    to { background-position: -1000px 0; }
-}
+    #playButton {
+        font-size: 20px;
+        padding: 10px 20px;
+        position: relative;
+        bottom: 0px;
+        left: 0%;
+        transition: 200ms;
+    }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 0.7;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
+    /* Tamaños de texto */
+    .textCrear, .textOlvide {
+        font-size: 1.2em;
     }
 }

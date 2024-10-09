@@ -5,91 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MJC memorize</title>
     <link rel="icon" href="../../img/logo/MJC.png" type="image/icon">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
 </head>
 
 <body>
-    <div class="burbuja"></div>
-    <div class="container-fluid">
-        <audio id="miCancion" src="../../audio/sonidoFondo.mp3" preload="auto" loop></audio>
-        
+    <header>
+        <div class="burbuja"></div>
+    </header>
+    
+    <nav>
         <button id="playButton">
             <img class="imgSonido" src="../../img/icon/noSonido.png" alt="">
         </button>
-        <div class="col-12 row">
-            <div class="col-6">
-                <img class="logo" src="../../img/logopix.png" alt="">
-            </div>
-            <div id="formulario" class="col-6">
-                <form class="row g-3" action="send.php" method="post">
-                    <h4 class="text2">Registro</h4>
-                    <div class="col-md-11 inputIcon">
-                        <input type="text" class="form-control input" id="nombreUsuario" placeholder="usuario" required>
-                        <span id="icon"> 
-                            <img src="../../img/icon/user.png" alt="">
-                        </span>
-                        <div class="valid-feedback">
-                        Looks good!
-                        </div>
-                    </div>
-                
-                    <div class="col-md-11 inputIcon">
-                        <input type="email" class="form-control input" id="email" placeholder="Gmail" required>
-                        <span id="icon"> 
-                            <img src="../../img/icon/arroba.png" alt="">
-                        </span>
-                        <div class="valid-feedback">
-                        Looks good!
-                        </div>
-                    </div>
+    </nav>
 
-                    <div class="col-md-11 inputIcon">
-                        <input type="password" class="form-control input" id="Contraseña" placeholder="Contraseña" required>
-                        <span id="icon"> 
-                            <img src="../../img/icon/password.png" alt="">
-                        </span>
-                        <div class="valid-feedback">
-                        Looks good!
-                        </div>
-                    </div>
+    <main>
+        <div id="formulario" class="col-6">
+            <form class="row g-3" method="post" class="row g-3">
+                <div class="logoForm col-md-6">
+                    <center>
+                        <img src="../../img/logo/aqua-Memorize.png" alt="Logo">
+                    </center>
+                    <h4 class="text2">registro</h4>
+                </div>
+                <div class="col-md-11 inputIcon">
+                    <input type="text" class="form-control input" id="nombreUsuario" placeholder="usuario" required>
+                    <span id="icon"> 
+                        <img src="../../img/icon/user.png" alt="">
+                    </span>
+                </div>
+            
+                <div class="col-md-11 inputIcon">
+                    <input type="email" class="form-control input" id="email" placeholder="Gmail" required>
+                    <span id="icon"> 
+                        <img src="../../img/icon/arroba.png" alt="">
+                    </span>
+                </div>
 
-                    <div class="col-12">
-                        <center>
-                            <form class="container" action="send.php" method="post"></form>
-                            <button class="btn btnLogin" type="submit">
-                                <h6 class="text">Registrate</h6>
-                            </button>
-                        </center>
-                    </div>
+                <div class="col-md-11 inputIcon">
+                    <input type="password" class="form-control input" id="Contraseña" placeholder="Contraseña" required>
+                    <span id="icon"> 
+                        <img src="../../img/icon/password.png" alt="">
+                    </span>
+                </div>
 
-                    <div class="col-md-12 row m-auto">
-                        <div class="col-md-5 linea"></div>
-                        <div class="col-md-2">
-                            <h5 class="text">or</h5>
-                        </div>
-                        <div class="col-md-5 linea"></div>
-                    </div>
+                <div class="col-12">
+                    <center>
+                        <a href="../index.html" class="btn btnLogin">
+                            <h6 class="text">Registrarte</h6>
+                        </a>
+                    </center>
+                </div>
 
-                    <div class="col-12 row pb-3">
-                        <div class="col-md-4 logoRedes">
-                            <img class="facebook" src="../../img/icon/facebook.png" alt="">
-                        </div>
-                        <div class="col-md-4 logoRedes">
-                            <img class="gitHub" src="../../img/icon/github.png" alt="">
-                        </div>
-                        <div class="col-md-4 logoRedes">
-                            <img class="" src="../../img/icon/google.png" alt="">
-                        </div>
+                <div class="col-12 row">
+                    <div class="col-md-4 logoRedes">
+                        <img class="facebook" src="../../img/icon/facebook.png" alt="">
                     </div>
+                    <div class="col-md-4 logoRedes">
+                        <img class="gitHub" src="../../img/icon/github.png" alt="">
+                    </div>
+                    <div class="col-md-4 logoRedes">
+                        <img class="email" src="../../img/icon/google.png" alt="">
+                    </div>
+                </div>
 
-                    <div class="col-12">
-                        <p class="textCrear">¿Ya tienes cuenta? <a href="../index.html">Iniciar Sesion</a></p>
-                    </div>
-                </form>
-            </div>
+                <div class="col-12">
+                    <p class="textCrear">¿Ya tienes cuenta? <a href="../index.html">Iniciar Sesion</a></p>
+                </div>
+            </form>
         </div>
-    </div>
+    </main>
+
+
+    <audio id="miCancion" src="../../audio/sonidoFondo.mp3" preload="auto" loop></audio>
+
 
     <script src="js/sonido.js"></script>
     <script src="../../bootstrap/js/bootstrap.js"></script>
