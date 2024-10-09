@@ -146,3 +146,7 @@ document.addEventListener("DOMContentLoaded", function() {
         desc2.style.display = "none";
     });
 });
+document.getElementById('menuButton').addEventListener('click', function() {
+    const submenu = document.getElementById('submenu');
+    submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex';
+});

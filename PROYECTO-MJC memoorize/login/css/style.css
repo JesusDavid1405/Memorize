@@ -5,6 +5,7 @@ body{
     background-attachment: fixed;
     overflow: hidden;
     height: 100vh;
+    margin: 0;
 }
 
 /*botones*/
@@ -23,14 +24,15 @@ body{
     width: 40%;
     height: auto;
     border-radius: 30px;
-    background-image: url(../../img/boton2.png);
+    background-image: url(../../img/as.avif);
     background-color: rgba(240, 248, 255, 0.541);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; 
-    opacity: 2;
+    opacity: 1;
+    padding: 20px;
     transition: 200ms;
-    margin: auto;
+    margin: 0 auto;
     position: relative;
     bottom: 4vh;
 }
@@ -173,14 +175,13 @@ input.input:hover {
 a:link, a:visited, a:active {
     text-decoration:none;
 }
-
 /* Para dispositivos móviles */
 @media (max-width: 768px) {
     #formulario {
         width: 90%;
         padding: 20px;
-        margin-top: 0%;
-        margin-left: 5%;
+        margin: 0 auto; 
+        margin-right: 7%;
     }
     .btnLogin {
         width: 100%;
@@ -196,7 +197,7 @@ a:link, a:visited, a:active {
         cursor: pointer;
         position: relative;
         top: 60px;
-        right: 3%;;
+        right: 5%;;
         z-index: 10;
         transition: 100ms;
     }
@@ -211,8 +212,8 @@ a:link, a:visited, a:active {
     /* Ajuste del formulario */
     #formulario {
         width: 40%;
-        padding: 30px;
-        margin: -0% auto;
+        padding: 90px;       
+        margin: 0% auto;
         box-shadow: 0px 0px 40px rgb(0, 0, 0, 0.3);
     }
 

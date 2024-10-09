@@ -1,214 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MJC memorize</title>
-    <link rel="shortcut icon" href="../img/logo2.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="../css/modal.css">
-    <link rel="stylesheet" href="../css/offcanvas.css">
-    <link rel="stylesheet" href="../css/icon.css">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-
-</head>   
+    <link rel="stylesheet" href="css/style.css"> 
+    <title>Navegación Inferior con Bootstrap</title>
+</head>
 <body>
-    <div class="burbuja"></div>
-    <div id="mensaje" class="alert alert-success" style="display: none;"></div>
-    <div class="container-fluid main-container d-flex justify-content-center align-items-center">
-        
-        <div class="col-12 row">
-            <div class="col-1">   
-                <button id="home" class="btn" data-bs-toggle="modal" data-bs-target="#leaderboardModal">
-                    <img class="imgConfiguracion" src="../img/icon/sand-castle_6359048.png" alt="">
-                    <span id="descHome" class="nombre-icono" style="display: none;">Puntuacion</span>  
-                </button>        
-                   
-                <button id="configuracionBtn" data-bs-toggle="modal" data-bs-target="#configuracion">
-                    <img class="imgConfiguracion" src="../img/icon/configuraciones.png" alt="">
-                    <span id="descConfiguracion" class="nombre-icono" style="display: none;">Volumen</span>
-                </button>             
-            </div>
-            <div class="col-10">
-                <h1 id="titulo-juegos">Menu</h1>
-                <div class="row justify-content-center scrolle">
-                    <div class="col-auto game-container">
-                        <a href="../juegos/rompecabezas-prueba/index.html">
-                            <button class="btn btn-custom game-button" onclick="navigateToGame(1)" style="margin-top: 150px; border: none;">
-                                <img src="img/54d0c318-c7f0-4437-b026-19a08853810c-Photoroom.png" alt="Juego 1" class="game-logo logoI" id="game1">
-                            </button>
-                        </a>
-                        <div class="animation-container">
-                            <img src="../menu/img/orca_536581.png" alt="Animación de Animal" class="animal-animation">
-                        </div>
-                        <div class="game-description" id="desc1">Un divertido juego de rompecabezas.</div>
-                    </div>
-                    <div class="col-auto game-container">
 
-                        <a href="../cartas-prueba/index.html">
+    <div class="contenido">
+        <h1>Bienvenido a mi sitio web</h1>
+        <p>Este es un ejemplo de barra de navegación de Bootstrap en la parte inferior.</p>
+    </div>
 
-                        <a href="../multijugador/index.html">
-
-                            <button class="btn btn-custom game-button" onclick="navigateToGame(2)" style="margin-top: 150px; border: none;">
-                                <img src="img/logoN.png" alt="Juego 3" class="game-logo1 logoI" id="game3">
-                            </button>
-                        </a>
-                        <div class="animation-container">
-                            <img src="../menu/img/robin-hood_4545199.png" alt="Animación de Animal" class="animal-animation">
-                        </div>
-                        <div class="game-description" id="desc3">Aca puedes unirte a sala o crearla.</div>
-                    </div>
-                    <div class="col-auto game-container">
-                        <a href="../juegos/quiz/bar.html">
-                            <button class="btn btn-custom game-button" onclick="navigateToGame(3)" style="margin-top: 150px; border: none;"> 
-                                <img src="../img/logo/wordle.png" alt="Juego 2" class="game-logo" id="game2">
-                            </button>
-                        </a>
-                        <div class="animation-container">
-                            <img src="../menu/img/danger_12405009.png" alt="Animación de Animal" class="animal-animation">
-                        </div>
-                        <div class="game-description" id="desc2">Un emocionante juego de letras.</div>
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="col-1">
-                <button id="playButton">
-                    <img class="imgSonido" src="../img/icon/noSonido.png" alt="">
-                    <span id="descPlay" class="nombre-icono" style="display: none;">Musica</span>
-                </button>
-                
-                <button id="usuarioBtn" data-bs-toggle="offcanvas" data-bs-target="#usuario" aria-controls="offcanvasExample">
-                    <img id="avatarBoton" class="imgSonido" src="../img/icon/usuario.png" alt="Avatar">
-                    <span id="descUsuario" class="nombre-icono" style="display: none;">Avatars</span>
-                </button>
-
-                <div class="offcanvas fondoUsuario offcanvas-start" tabindex="-1" id="usuario" aria-labelledby="offcanvasExampleLabel">
-                    <div class="offcanvas-body">
-                        
-                        <button type="button" class="btn-close closeOff" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        <div class="col-12">
-                            <div class="perfil-usuario text-center">
-                                <h3>Nombre del Usuario</h3>
-                                <p>usuario@correo.com</p>
-                                <hr>
-                                <h5>Tu avatar actual:</h5>
-                                <img id="avatarPerfil" src="../img/icon/usuario.png" alt="Avatar actual" class="foto-perfil mb-4">
-                                <h5>Elige un nuevo avatar:</h5>
-                                <div class="row">
-                                    <div class="col-4">
-                                        <img src="../img/icon/usuario.png" alt="Avatar 1" class="avatar-opcion" onclick="seleccionarAvatar('../img/icon/usuario.png')">
-                                    </div>
-                                    <div class="col-4">
-                                        <img src="img/imagen1.png" alt="Avatar 2" class="avatar-opcion" onclick="seleccionarAvatar('img/imagen1.png')">
-                                    </div>
-                                    <div class="col-4">
-                                        <img src="img/imagen3.png" alt="Avatar 3" class="avatar-opcion" onclick="seleccionarAvatar('img/imagen3.png')">
-                                    </div>
-                                </div>
-                                <hr>
-                                <button class="btn btn-primary w-100 mb-3" onclick="guardarAvatar()">Guardar Avatar</button>
-                                <button class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#confirmarSalidaModal">Cerrar Sesión</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="container">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <button id="playButton">
+                        <img class="imgSonido" src="../img/icon/noSonido.png" alt="Icono de sonido">
+                        <p>musica</p>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button id="playButton">
+                        <img class="imgSonido" src="../img/icon/noSonido.png" alt="Icono de sonido">
+                        <p>musica</p>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button id="playButton">
+                        <img class="imgSonido" src="../img/icon/noSonido.png" alt="Icono de sonido">
+                        <p>musica</p>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button id="playButton">
+                        <img class="imgSonido" src="../img/icon/noSonido.png" alt="Icono de sonido">
+                        <p>musica</p>
+                    </button>
+                </li>
+            </ul>
         </div>
+    </nav>
 
-        <div class="modal fade" id="leaderboardModal" tabindex="-1" aria-labelledby="leaderboardModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="leaderboardModalLabel">TABLA DE CLASIFICACIÓN</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Puntuación</th>
-                                </tr>
-                            </thead>
-                            <tbody id="player-table">
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="mensajeModalLabel">Información</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body" id="mensajeModalBody">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="confirmarSalidaModal" tabindex="-1" aria-labelledby="confirmarSalidaModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="confirmarSalidaModalLabel">Confirmación</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        Si sales tendras que volver a iniciar sesion ¿Seguro que quieres salirte? 
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" onclick="cerrarSesion()">Salir</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-
-        <!-- Modal configuración-->
-        <div class="modal fade" id="configuracion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-x">
-                <div id="cuerpo" class="modal-content">
-                    <div class="modal-body">
-                        <div class="container">
-                            <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            <div class="col-12 row">
-                                <h1>Configuración</h1>
-                                <div id="iconVolumen" class="col-1"></div>
-                                <div class="col-9">
-                                    <input class="slider" type="range" min="0" max="1" step="0.01" id="volume">
-                                </div>
-                                <div class="col-2">
-                                    <h4>Música</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <audio id="miCancion" preload="auto" loop>
-            <source src="../audio/sonidoFondo.mp3" type="audio/mpeg">
-        </audio>
-
-        <script src="js/sonido.js"></script>
-        <script src="js/script.js"></script>
-        <script src="../bootstrap/js/bootstrap.js"></script>    
-        <script src="../bootstrap/js/bootstrap.bundle.js"></script>
-    </body>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.js"></script>
+</body>
 </html>

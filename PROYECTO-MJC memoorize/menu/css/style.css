@@ -1,270 +1,94 @@
-body{
-    background-image: url(../../img/fondo4.gif); 
+body {
+    background-image: url(../../img/fondo4.gif);
     background-repeat: no-repeat;
-    background-size: 221vh 100vh;
-
-}
-
-.modal-content {
-    border-radius: 10px; 
-    background-image: url(../../menu/img/scene-ocean-underwater-background_1308-29689.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; 
-    width: 300px; 
-    height: auto; 
-    min-height: 200px; 
-    overflow: hidden;  
-    color: white; 
-    position: relative; 
-    padding: 20px; 
-}
-.modal-header {
-    background-color: #eaeaea00; 
-    color: white;
-}
-
-.modal-body {
-    font-size: 21px; 
-    text-align: center; 
-}
-.modal-title{
-    color: black;
-}
-.modal-footer .btn-secondary {
-    background-color: #ff4646;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    top: 20px;
-    position: relative;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-.modal-footer .btn-secondary:hover {
-    background-color: #ff5b5b;
-    cursor: pointer;
-}
-/* Estilo de los botones personalizados */
-.btn-custom {
-    width: 250px;
-    height: 250px;
-    border: none;
-    overflow: hidden;
-    transition: transform 0.4s ease;
-    margin: 30px;
-}
-.perfil-usuario {
-    margin-top: 20px;
-}
-
-.foto-perfil {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-}
-.offcanvas {
-    width: 300px;
-    height: 100%;
-    background-image: url(../../menu/img/scene-ocean-underwater-background_1308-29689.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
     background-size: cover;
-    overflow: hidden;  
-    color: rgba(255, 255, 255, 0); 
-    position: relative; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
 }
 
-.offcanvas::before {
-    content: '';
-    position: absolute;
-    top: 0;
+.contenido {
+    flex: 1; 
+    padding: 20px;
+}
+
+.navbar {
+    position: fixed; 
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0); 
-    z-index: 0; 
 }
-
-.offcanvas .perfil-usuario {
-    position: relative; 
-    z-index: 1; 
-}
-
-.offcanvas-backdrop {
-    background-color: transparent !important; 
-    box-shadow: none !important; 
-}
-.avatar-opcion {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+/*sonido*/
+#playButton {
+    font-size: 20px;
+    padding: 10px 10px;
+    background-color: rgba(73, 20, 20, 0);
+    border: none;
     cursor: pointer;
-    transition: transform 0.3s ease;
-}
+    position: relative;
+    top: 2%;
+    right: 5%;
 
-.avatar-opcion:hover {
+    transition: 100ms;
+}
+.imgSonido{
+    width: 50px;
+    height: 50px;
+}
+#playButton:hover {
     transform: scale(1.1);
 }
 
-/* Estilo de los logos de los juegos */
-.game-logo1 {
-    width: 20vh;
-    height: 20vh;
+/*usuario*/
+#usuarioBtn{
+    font-size: 20px;
+    background-color: rgba(73, 20, 20, 0);
     border: none;
-    animation: moveLogoVertical 3s infinite alternate ease-in-out;
-}
-.game-logo {
-    width: 23vh;
-    height: 23vh;
-    border: none;
-    animation: moveLogoVertical 3s infinite alternate ease-in-out;
-}
-@keyframes moveLogoVertical {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(25px); }
-}
-.menu-juegos {
-    display: flex;
-    flex-direction: column; /* Cambia a row para un menú horizontal */
-    align-items: center;
-    margin: 20px;
-}
-
-.juego {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-}
-
-.miniatura {
-    width: 50px; /* Ajusta el tamaño de la miniatura */
-    height: auto;
-    margin-right: 10px; /* Espacio entre la miniatura y el nombre */
-}
-
-.nombre-juego {
-    font-size: 18px; /* Ajusta el tamaño del texto */
-    font-weight: bold; /* Puedes cambiar a normal si prefieres */
-}
-
-#titulo-juegos {
-    font-size: 140px;
-    font-weight: bold;
-    font-family:initial ;
-    background-image: url(../../menu/img/fondorem.jpg);
-    background-size: cover;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    text-align: center;
-    top: 30px;
+    cursor: pointer;
     position: relative;
-    background-color: #ffffff00;
-    background-size: cover; 
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 10px;
-    margin-left: 34%; 
-    border-radius: 50px;
-    display: inline-block;
-
+    left: 14%;
+    top: 2%;
+    transition: 100ms;
 }
-#titulo-juegos::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: -1000; 
-    border-radius: 50px;
-    opacity: 1.5; 
+.imgUsuario{
+    width: 70px;
+    height: 70px;
 }
-.game-container {
-    position: relative;
-    display: inline-block;
-    bottom: 140px;
-    text-align: center;
-    
-}
-.animation-container {
-    left: 64px;
-    text-align: center;
-    bottom: 90px;
-    position: relative;
-}
-
-.animal-animation {
-    width: 60px; 
-    height: auto; 
-    animation: bounce 2s infinite; 
-}
-
-
-.nombre-icono {
-    display: none; 
-    font-size: 1.0em; 
-    color: #ffffff; 
-    margin-top: 0px; 
-    left: 0px;
-    position: relative;
-    text-align: center; 
-}
-
-.game-description {
-    display: none;
-    position: absolute;
-    top: 80%;
-    left: 20%;
-    width: 200px;
-    background-image: url('../../menu/img/botonw.png');
-    background-color: rgba(255, 255, 255, 0); 
-    background-size: cover; 
-    background-repeat: no-repeat;
-    background-position: center;
-    color: rgb(255, 255, 255); 
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    z-index: 10;
-    font-family: initial;
-    font-size: 1.4em; 
-    line-height: 1.6em; 
-}
-
-.game-button:hover {
-    transform: scale(1.2);
-    border: none;
-}
-.game-logo:hover {
+#usuarioBtn:hover{
     transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
 }
 
 
-@media (width = 320px) and (height:571px){
-   /* .scrolle{
-        margin: auto;
-        width: 100%;
-        overflow-x: scroll;
-    }
-    */
+/*configuracion*/
+#configuracionBtn{
+    font-size: 20px;
+    padding: 10px 10%;
+    background-color: rgba(73, 20, 20, 0);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 10%;
+    top: 2%;
+    transition: 100ms;
+}
+.imgConfiguracion{
+    width: 70px;
+    height: 70px;
+}
+#configuracionBtn:hover {
+    transform: scale(1.1);
 }
 
-@media (max-width = 600px){
-
-    body{
-
-        background-size: contain;
-        background-position: top;
-    }
+/*home*/
+#home{
+    background-color: rgba(73, 20, 20, 0);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 10%;
+    top: 2%;
+    transition: 100ms;
 }
-
-
+#home:hover{
+    transform: scale(1.1);
+}
