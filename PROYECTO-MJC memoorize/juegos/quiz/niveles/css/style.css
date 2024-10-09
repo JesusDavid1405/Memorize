@@ -38,6 +38,7 @@ body{
     background-image: url(../../../../img/input/vacio.png);
     background-repeat: no-repeat;
     background-size: 100% 99%;
+    background-color: transparent;
     width: 85px;
     height: 85px;
     border: none;
@@ -104,4 +105,23 @@ body{
 }
 .text{
     font-size: 20px;
+}
+#pista{
+    display:flex;
+    justify-content: flex-end;
+    color: black;
+    font-size: medium !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.pistas{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 250px;
+    height: 200px;
+    background-image: url(../../../../img/mapa.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    border-radius: 15px 15px 0px 15px;
 }
