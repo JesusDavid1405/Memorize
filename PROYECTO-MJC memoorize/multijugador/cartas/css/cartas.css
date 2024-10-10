@@ -70,20 +70,20 @@ body {
     grid-area: maxPuntos;
     color: rgb(0, 0, 0);
     border-color: #000;
-    margin-top: 2vh;
+    
 }
 
 .puntos {
     grid-area: puntos;
     color: rgb(0, 0, 0);
     border-color: #000;
-    margin-top: 2vh;
+    
 }
 
 /*CRONOMETRO*/
 .cronometro {
     grid-area: cronometro;
-    margin-top: 2vh;
+    
 }
 
 .reloj {
