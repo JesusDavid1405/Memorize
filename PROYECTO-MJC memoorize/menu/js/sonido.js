@@ -3,7 +3,6 @@
         const musicIcon = musicButton.querySelector('img');
         const backgroundMusic = document.getElementById('backgroundMusic');
         let isPlaying = false;
-       //  backgroundMusic.play(); 
         musicButton.addEventListener('click', function() {
             if (isPlaying) {
                 backgroundMusic.pause();
