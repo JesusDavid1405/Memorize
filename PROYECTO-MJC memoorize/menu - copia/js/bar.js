@@ -17,7 +17,7 @@ function simulateLoading() {
             clearInterval(interval);  
 
             setTimeout(function() {
-                window.location.href = 'index.html'; 
+                window.location.href = '../interfaz/index.html'; 
             }, 1000);
         }
     }, 30); 

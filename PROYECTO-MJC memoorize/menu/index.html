@@ -5,47 +5,286 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css"> 
-    <title>Navegación Inferior con Bootstrap</title>
+    <title>Menu</title>
 </head>
 <body>
-
-    <div class="contenido">
-        <h1>Bienvenido a mi sitio web</h1>
-        <p>Este es un ejemplo de barra de navegación de Bootstrap en la parte inferior.</p>
+    <div class="game-menu">
+        <h1 class="menu-title">Menú de Juegos</h1>
+        <div class="games-container">
+           
+            <div class="game-option">
+                <img src="../img/logoN.png" alt="Juego 1" class="game-image">
+                <a href="../juegos/rompecabezas-prueba/index.html" class="play-button">Rompecabezas</a>
+                <p class="game-description">Resuelve rompecabezas y pon a prueba tus habilidades.</p>
+            </div>
+            
+            <div class="game-option2">
+                <img src="../img/pruebamar.png" alt="Juego 2" class="game-image">
+                <a href="../juegos/quiz/index.html" class="play-button">Trivia de palabras</a>
+                <p class="game-description">Encuentra palabras en base al oceano y demuestra tu conocimiento.</p>
+            </div>
+            
+            <div class="game-option3">
+                <img src="../img/logo/multijugador.png" alt="Multijugador" class="game-image">
+                <a href="../multijugador/index.html" class="play-button">Multijugador</a>
+                <p class="game-description">Conéctate con amigos y disfruta de un juego de cartas.</p>
+            </div>
+            
+        </div>
     </div>
-
     <nav class="navbar navbar-expand navbar-dark bg-dark">
         <div class="container">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <li class="nav-item btn" class="btn" data-bs-toggle="modal" data-bs-target="#leaderboardModal">
                     <button id="playButton">
-                        <img class="imgSonido" src="../img/icon/noSonido.png" alt="Icono de sonido">
-                        <p>musica</p>
+                        <img class="imgSonido" src="../img/icon/sand-castle_6359048.png" alt="Icono de sonido">
+                        <p>Puntuaciones</p>
                     </button>
                 </li>
-                <li class="nav-item">
-                    <button id="playButton">
+                <li class="nav-item btn" data-bs-toggle="modal" data-bs-target="#configuracion">
+                    <button id="soundButton">
+                        <img class="imgSonido" src="../img/icon/configuraciones.png" alt="Icono de sonido">
+                        <p>Sonido</p>
+                    </button>
+                </li>                        
+                <li class="nav-item btn" class="btn">
+                    <button id="musicButton">
                         <img class="imgSonido" src="../img/icon/noSonido.png" alt="Icono de sonido">
-                        <p>musica</p>
+                        <p>Musica</p>
                     </button>
                 </li>
-                <li class="nav-item">
-                    <button id="playButton">
-                        <img class="imgSonido" src="../img/icon/noSonido.png" alt="Icono de sonido">
-                        <p>musica</p>
+                <li class="nav-item btn" data-bs-toggle="offcanvas" data-bs-target="#usuario" aria-controls="offcanvasExample">
+                    <button id="playButton2">
+                        <img id="profileAvatar" class="imgSonido" src="../img/icon/usuario.png" alt="Icono de usuario">
+                        <p>Perfil</p>
                     </button>
-                </li>
-                <li class="nav-item">
-                    <button id="playButton">
-                        <img class="imgSonido" src="../img/icon/noSonido.png" alt="Icono de sonido">
-                        <p>musica</p>
-                    </button>
-                </li>
+                </li>                
             </ul>
         </div>
     </nav>
+<!-- Modal para Clasificaciones -->
+<div class="modal fade" id="leaderboardModal" tabindex="-1" aria-labelledby="leaderboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="leaderboardModalLabel">Clasificaciones</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Jugador</th>
+                            <th>Puntuación</th>
+                            <th>Cambiar</th> 
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard">
+                      
+                        <tr>
+                            <td>
+                                <div class="player-info">
+                                    <img src="../img/avatar1.png" alt="Avatar 1" class="avatar">
+                                    <span>Jugador 1</span>
+                                </div>
+                            </td>
+                            <td>150</td>
+                            <td>
+                                <button class="btn change-avatar" data-index="0"></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="player-info">
+                                    <img src="../img/avatar2.png" alt="Avatar 2" class="avatar">
+                                    <span>Jugador 2</span>
+                                </div>
+                            </td>
+                            <td>200</td>
+                            <td>
+                                <button class="btn change-avatar" data-index="1"></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="player-info">
+                                    <img src="../img/avatar3.png" alt="Avatar 3" class="avatar">
+                                    <span>Jugador 3</span>
+                                </div>
+                            </td>
+                            <td>100</td>
+                            <td>
+                                <button class="btn change-avatar" data-index="2"></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="player-info">
+                                    <img src="../img/avatar4.png" alt="Avatar 4" class="avatar">
+                                    <span>Jugador 4</span>
+                                </div>
+                            </td>
+                            <td>75</td>
+                            <td>
+                                <button class="btn change-avatar" data-index="3"></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="player-info">
+                                    <img src="../img/avatar5.png" alt="Avatar 5" class="avatar">
+                                    <span>Jugador 5</span>
+                                </div>
+                            </td>
+                            <td>50</td>
+                            <td>
+                                <button class="btn change-avatar" data-index="4"></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
+<div class="modal fade" id="changeAvatarModal" tabindex="-1" aria-labelledby="changeAvatarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="changeAvatarModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Personas</p>
+                <div class="avatar-options">
+                    <img src="../img/avatar1.png" class="avatar-option" data-avatar="../img/avatar1.png" alt="Avatar 1">
+                    <img src="../img/avatar2.png" class="avatar-option" data-avatar="../img/avatar2.png" alt="Avatar 2">
+                    <img src="../img/avatar3.png" class="avatar-option" data-avatar="../img/avatar3.png" alt="Avatar 3">
+                    <img src="../img/avatar4.png" class="avatar-option" data-avatar="../img/avatar4.png" alt="Avatar 4">
+                    <img src="../img/avatar5.png" class="avatar-option" data-avatar="../img/avatar5.png" alt="Avatar 5">
+                    <img src="../img/avatar6.png" class="avatar-option" data-avatar="../img/avatar6.png" alt="Avatar 6">
+                    <img src="../img/avatar7.png" class="avatar-option" data-avatar="../img/avatar7.png" alt="Avatar 7">
+                </div>
+                <p>Animales</p>
+                <div class="avatar-options">
+                    <img src="../img/avatar8.png" class="avatar-option" data-avatar="../img/avatar8.png" alt="Avatar 8">
+                    <img src="../img/avatar9.png" class="avatar-option" data-avatar="../img/avatar9.png" alt="Avatar 9">
+                    <img src="../img/avatar10.png" class="avatar-option" data-avatar="../img/avatar10.png" alt="Avatar 10">
+                    <img src="../img/avatar11.png" class="avatar-option" data-avatar="../img/avatar11.png" alt="Avatar 11">
+                    <img src="../img/avatar12.png" class="avatar-option" data-avatar="../img/avatar12.png" alt="Avatar 12">
+                    <img src="../img/avatar13.png" class="avatar-option" data-avatar="../img/avatar13.png" alt="Avatar 13">
+                </div>
+                <p>Alienigenas</p>
+                <div class="avatar-options">
+                    <img src="../img/avatar14.png" class="avatar-option" data-avatar="../img/avatar14.png" alt="Avatar 14">
+                    <img src="../img/avatar15.png" class="avatar-option" data-avatar="../img/avatar15.png" alt="Avatar 15">
+                    <img src="../img/avatar16.png" class="avatar-option" data-avatar="../img/avatar16.png" alt="Avatar 16">
+                    <img src="../img/avatar17.png" class="avatar-option" data-avatar="../img/avatar17.png" alt="Avatar 17">
+                    <img src="../img/avatar18.png" class="avatar-option" data-avatar="../img/avatar18.png" alt="Avatar 18">
+                    <img src="../img/avatar19.png" class="avatar-option" data-avatar="../img/avatar19.png" alt="Avatar 19">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="configuracion" tabindex="-1" aria-labelledby="configuracionLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="configuracionLabel">Configuración de Sonido</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="volumeControl">Volumen:</label>
+                <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="usuario" aria-labelledby="usuarioLabel">
+    <div class="offcanvas-header">
+        <h5 id="usuarioLabel">Perfil del Jugador</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="player-info">
+            <img src="../img/avatar1.png" alt="Avatar" class="avatar" id="currentAvatar">
+            <span id="playerName">Jugador 1</span>
+        </div>
+        <p>Puntuación Total: <span id="totalScore">1500</span></p>
+        <button id="editProfileButton" data-bs-toggle="modal" data-bs-target="#editProfileModal">Editar Perfil</button>
+
+        <h6>Información Personal:</h6>
+        <p id="personalInfoDisplay">Aquí irá la información personal.</p> 
+
+        <h6>Cambiar Avatar</h6>
+        <p>Personas</p>
+        <div class="avatar-options2">
+            <img src="../img/avatar1.png" class="avatar-option2" data-avatar="../img/avatar1.png" alt="Avatar 1">
+            <img src="../img/avatar4.png" class="avatar-option2" data-avatar="../img/avatar4.png" alt="Avatar 4">
+            <img src="../img/avatar5.png" class="avatar-option2" data-avatar="../img/avatar5.png" alt="Avatar 5">
+            <img src="../img/avatar6.png" class="avatar-option2" data-avatar="../img/avatar6.png" alt="Avatar 6">
+            <img src="../img/avatar7.png" class="avatar-option2" data-avatar="../img/avatar7.png" alt="Avatar 7">
+        </div>
+        <p>Animales</p>
+        <div class="avatar-options2">
+            <img src="../img/avatar8.png" class="avatar-option2" data-avatar="../img/avatar8.png" alt="Avatar 8">
+            <img src="../img/avatar9.png" class="avatar-option2" data-avatar="../img/avatar9.png" alt="Avatar 9">
+            <img src="../img/avatar10.png" class="avatar-option2" data-avatar="../img/avatar10.png" alt="Avatar 10">
+            <img src="../img/avatar11.png" class="avatar-option2" data-avatar="../img/avatar11.png" alt="Avatar 11">
+            <img src="../img/avatar12.png" class="avatar-option2" data-avatar="../img/avatar12.png" alt="Avatar 12">
+            <img src="../img/avatar13.png" class="avatar-option2" data-avatar="../img/avatar13.png" alt="Avatar 13">
+        </div>
+        <p>Alienigenas</p>
+        <div class="avatar-options2">
+            <img src="../img/avatar14.png" class="avatar-option2" data-avatar="../img/avatar14.png" alt="Avatar 14">
+            <img src="../img/avatar15.png" class="avatar-option2" data-avatar="../img/avatar15.png" alt="Avatar 15">
+            <img src="../img/avatar16.png" class="avatar-option2" data-avatar="../img/avatar16.png" alt="Avatar 16">
+            <img src="../img/avatar17.png" class="avatar-option2" data-avatar="../img/avatar17.png" alt="Avatar 17">
+            <img src="../img/avatar18.png" class="avatar-option2" data-avatar="../img/avatar18.png" alt="Avatar 18">
+            <img src="../img/avatar19.png" class="avatar-option2" data-avatar="../img/avatar19.png" alt="Avatar 19">
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Editar Perfil -->
+<div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editProfileModalLabel">Editar Perfil</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="newUsername" class="form-label">Nuevo Nombre de Usuario:</label>
+                    <input type="text" class="form-control" id="newUsername" placeholder="Ingrese nuevo nombre">
+                </div>
+                <div class="mb-3">
+                    <label for="personalInfo" class="form-label">Información Personal:</label>
+                    <textarea class="form-control" id="personalInfo" rows="3" placeholder="Ingrese información personal"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="modal-title" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="modal-title" id="saveUsername">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<audio id="backgroundMusic" src="../audio/no-copyright-music-181373.mp3" loop></audio>
     <script src="../bootstrap/js/bootstrap.js"></script>
-    <script src="../bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/perfil.js"></script>
+    <script src="js/sonido.js"></script>
+ 
+    
 </body>
 </html>

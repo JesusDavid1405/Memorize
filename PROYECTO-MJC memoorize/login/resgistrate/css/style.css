@@ -24,16 +24,18 @@ body{
     width: 40%;
     height: auto;
     border-radius: 30px;
-    background-image: url(../../../img/as.avif);
+    background-image: url(../../../img/fondo-acuarela-dia-mundial-oceanos_23-2149391657.png);
     background-color: rgba(240, 248, 255, 0.541);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; 
     opacity: 1;
-    transition: 200ms;
+    padding: 0%;
+    box-shadow: 20px 0px 40px rgb(0, 0, 0, 0.3);
+    transition: 600ms;
     margin: auto;
     position: relative;
-    bottom: 9vh;
+    bottom: 7vh;
 }
 #formulario:hover{
     transform: none;
@@ -195,8 +197,8 @@ a:link, a:visited, a:active {
         border: none;
         cursor: pointer;
         position: relative;
-        top: 60px;
-        right: 5%;;
+        top: 0%;
+        right: 2%;;
         z-index: 10;
         transition: 100ms;
     }
@@ -207,15 +209,16 @@ a:link, a:visited, a:active {
     }
     .facebook{
         position: relative;
-        left: 75%;
+        left: 80%;
     }
     .gitHub{
         position: relative;
-        left: 40%;
+        left: 45%;
         bottom: 40px;
     }
     .email{
         position: relative;
+        left: 10%;
         bottom: 75px;
     }
 }

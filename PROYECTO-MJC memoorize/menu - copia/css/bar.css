@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.center {
+    text-align: center;
+}
+
+.logo {
+    max-width: 100%; 
+    height: auto;
+    margin-bottom: 10px; 
+    animation: moveLogoVertical 2s infinite alternate ease-in-out;
+}
+
+.loading-bar {
+    position: relative;
+    width: 800%;
+    height: 40px;
+    max-width: 600px;
+    border-radius: 15px;
+    overflow: hidden;
+    right: 10%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(7, 146, 216);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: moveWaves 4s infinite linear;
+}
+
+.wave1 {
+    z-index: 3;
+    animation-delay: 0s;
+}
+
+.wave2 {
+    z-index: 2;
+    opacity: 0.5;
+    animation-delay: -2s;
+}
+
+.wave3 {
+    z-index: 1;
+    opacity: 0.3;
+    animation-delay: -4s;
+}
+.loading-text {
+    position: absolute; 
+    width: 100%;
+    text-align: center; 
+    line-height: 40px; 
+    right: 0%;
+    z-index: 10;
+    color: white; 
+    font-weight: bold;
+    font-size: 35px; 
+}
+.logo {
+    max-width: 100%; 
+    height: auto;
+    margin-bottom: 10px; 
+    animation: moveLogoVertical 1s infinite alternate ease-in-out;
+}
+@keyframes moveLogoVertical {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(25px); }
+}
+
+.logoI:hover{
+    transform: scale(1.1);
+}
+/* Animación de las olas */
+@keyframes moveWaves {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .loading-bar {
+        width: 80%; /* Ajusta el ancho de la barra de carga en pantallas pequeñas */
+        left: 10%;
+    }
+
+    .logo {
+        max-width: 80%; /* Cambia el tamaño del logo en pantallas pequeñas */
+        margin-bottom: 5px; /* Ajusta el margen inferior en pantallas pequeñas */
+    }
+    .loading-text {
+        position: absolute; 
+        width: 100%;
+        text-align: center; 
+        line-height: 30px; 
+        right: 1%;
+        z-index: 10;
+        color: white; 
+        font-weight: bold; 
+        font-size: 20px; 
+    }
+}

@@ -1,35 +1,62 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const playerTable = document.getElementById('player-table');
-
-    const players = [
-        {"name": "Isabella", "score": 340000},
-        {"name": "Jhoan", "score": 340000},
-        {"name": "Marcos", "score": 290000},
-        {"name": "Camilo", "score": 270000},
-        {"name": "Jesus", "score": 250000},
-        {"name": "Juan", "score": 230000},
-        {"name": "Carlos", "score": 200000},
-        {"name": "Blessd", "score": 170000},
-
+    const leaderboard = document.getElementById('leaderboard');
+    const changeAvatarModal = document.getElementById('changeAvatarModal');
+    const avatarOptions = document.querySelectorAll('.avatar-option');
+    let scores = JSON.parse(localStorage.getItem('scores')) || [
+        { name: 'Jugador 1', score: 150, avatar: '../img/avatar1.png' },
+        { name: 'Jugador 2', score: 200, avatar: '../img/avatar2.png' },
+        { name: 'Jugador 3', score: 180, avatar: '../img/avatar3.png' },
+        { name: 'Jugador 4', score: 220, avatar: '../img/avatar4.png' },
+        { name: 'Jugador 5', score: 300, avatar: '../img/avatar5.png' },
     ];
 
-    function loadPlayers() {
-        playerTable.innerHTML = ''; 
+    function updateLeaderboard() {
+        leaderboard.innerHTML = '';
+        scores.sort((a, b) => b.score - a.score);
 
-        players.forEach(player => {
-            const row = document.createElement('tr'); 
-            const nameCell = document.createElement('td');
-            nameCell.textContent = player.name; 
+        scores.forEach((score, index) => {
+            const row = document.createElement('tr');
 
-            const scoreCell = document.createElement('td');
-            scoreCell.textContent = player.score; 
+            row.innerHTML = `
+                <td>
+                    <div class="player-info">
+                        <div class="avatar-container">
+                            <img src="${score.avatar}" alt="${score.name}" class="avatar">
+                            <span class="avatar-number">${index + 1}</span> <!-- Número sobre el avatar -->
+                        </div>
+                        <span>${score.name}</span>
+                    </div>
+                </td>
+                <td>${score.score}</td>
+                <td>
+                    <button class="btn btn-secondary change-avatar" data-index="${index}">Cambiar Avatar</button>
+                </td>
+            `;
+            leaderboard.appendChild(row);
+        });
 
-            row.appendChild(nameCell); 
-            row.appendChild(scoreCell);
-            playerTable.appendChild(row); 
+        const changeAvatarButtons = document.querySelectorAll('.change-avatar');
+        changeAvatarButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const index = button.dataset.index;
+                changeAvatarModal.dataset.index = index;
+                const modal = new bootstrap.Modal(changeAvatarModal);
+                modal.show();
+            });
         });
     }
 
-    const leaderboardModal = document.getElementById('leaderboardModal');
-    leaderboardModal.addEventListener('show.bs.modal', loadPlayers);
+    avatarOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const selectedAvatar = option.dataset.avatar;
+            const index = changeAvatarModal.dataset.index;
+            scores[index].avatar = selectedAvatar;
+            localStorage.setItem('scores', JSON.stringify(scores)); 
+            updateLeaderboard();
+            const modal = bootstrap.Modal.getInstance(changeAvatarModal);
+            modal.hide();
+        });
+    });
+
+    updateLeaderboard(); 
 });
