@@ -55,13 +55,12 @@ input.input:hover {
     height: 12vh;
 }
 
-.boton{
-    background-color: rgb(28, 125, 125);
-    width: 20vh;
+.configuracion{
     position: relative;
-    left: 114vh;
-    bottom: 30vh;
-    border-radius: 3%;
+    left: 25vh;
+    font-size: 4vh;
+    font-family: Arial, Helvetica, sans-serif;
+    
 
 }
 
@@ -76,4 +75,9 @@ input.input:hover {
     font-size: 20px;
     background-color: aliceblue;
     border-radius: 15px 15px 0px 0px;
+}
+
+.body-multijugador{
+    position: relative;
+    left: 10vh;
 }

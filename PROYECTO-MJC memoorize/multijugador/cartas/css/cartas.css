@@ -24,7 +24,7 @@ html {
 
 /*CUERPO*/
 body {
-    background-image: url(../../img/juegocartas2.gif);
+    background-image: url(../../../img/juegocartas2.gif);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -96,7 +96,6 @@ body {
 .wrapper {
     grid-area: baraja;
     padding: 2%;
-
     display: grid;
     justify-content: center;
     grid-template-rows: repeat(var(--rowNum), var(--gridHeight));

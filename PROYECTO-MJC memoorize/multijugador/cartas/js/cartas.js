@@ -7,54 +7,50 @@ let partidaIniciada = false;
 window.onload = grid;
 
 function grid() {
-	cargarImagenes();
-	getMaxPuntos();
+    cargarImagenes();
+    getMaxPuntos();
 
-	//NIVEL DIFICULTAD
-	let modal = document.getElementById("dificultadBtn");
-	let buttons = modal.childNodes;
-	buttons.forEach(button => {
-		button.onclick = dificultad;
-	});
-	document.getElementById("tablaPuntuaciones").onclick = historialPartidas;
-	document.getElementById("ayuda").onclick = startIntro;
+    // Obtener la dificultad desde localStorage
+    const dificultad = localStorage.getItem('dificultad');
+
+    // Ajustar el tablero según la dificultad
+    switch (dificultad) {
+        case "facil":
+            generarCartas(4, 8, animales); // 4x4 tablero, 8 parejas de animales
+            break;
+        case "medio":
+            generarCartas(5, 13, animales); // 5x5 tablero, 13 parejas de animales
+            break;
+        case "dificil":
+            generarCartas(6, 18, animales); // 6x6 tablero, 18 parejas de animales
+            break;
+        default:
+            console.log('Dificultad no reconocida');
+    }
 }
 
-function dificultad() {
-	switch (this.id) {
-		case "facil":
-			generarCartas(4, 8, animales);
-			break;
-		case "medio":
-			generarCartas(5, 13, animales);
-			break;
-		case "dificil":
-			generarCartas(6, 18, animales);
-			break;
-	}
-	document.getElementById("modal").setAttribute("class", "hide");
-}
 
 function generarCartas(valorDificultad, numImg, tematica) {
-	cronometrar();
-	cargarNumPartidas();
+    cronometrar();  // Iniciar el cronómetro
+    cargarNumPartidas();  // Cargar número de partidas
 
-	let parentElement = document.getElementById("wrapper");
-	let numElements = valorDificultad * valorDificultad;
-	let listaImagenes = imagenes(numImg, tematica);
+    let parentElement = document.getElementById("wrapper");
+    let numElements = valorDificultad * valorDificultad;  // Determinar el número de cartas
+    let listaImagenes = imagenes(numImg, tematica);  // Obtener las imágenes según la dificultad
 
-	for (let i = 0; i < numElements; i++) {
-		let img = document.createElement('INPUT');
-		img.setAttribute("type", "image");
-		img.setAttribute("class", "imagenCarta");
-		img.setAttribute("visible", false);
-		img.setAttribute("src", listaImagenes[i]);
-		carta(parentElement, img, numImg);
-	}
+    for (let i = 0; i < numElements; i++) {
+        let img = document.createElement('INPUT');
+        img.setAttribute("type", "image");
+        img.setAttribute("class", "imagenCarta");
+        img.setAttribute("visible", false);
+        img.setAttribute("src", listaImagenes[i]);
+        carta(parentElement, img, numImg);  // Asignar las imágenes a las cartas
+    }
 
-	parentElement.style.setProperty('--rowNum', valorDificultad);
-	parentElement.style.setProperty('--colNum', valorDificultad);
+    parentElement.style.setProperty('--rowNum', valorDificultad);  // Ajustar el número de filas
+    parentElement.style.setProperty('--colNum', valorDificultad);  // Ajustar el número de columnas
 }
+
 
 function carta(contenedor, img, numImg) {
 	let carta = document.createElement('DIV');

@@ -37,9 +37,9 @@
   /**
    * IntroJs main class
    *
-   * @class IntroJs
+   * @class introJs
    */
-  function IntroJs(obj) {
+  function introJs(obj) {
     this._targetElement = obj;
     this._introItems = [];
 
