@@ -391,7 +391,10 @@ nav {
     background-repeat: no-repeat; 
     background-position: center;
     text-decoration: none; 
+    position: relative;
+    z-index: 1;
     color: inherit;
+    pointer-events: auto;
     color: rgb(0, 0, 0);
     flex-direction: row;
     border: none;
