@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ROMPE CABEZA</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/image-puzzle.css" rel="stylesheet" />
+    <script src="js/image-puzzle.js"></script>
+    <script src="js/img.js"></script>
+    <link rel="shortcut icon" href="images/rompecabeza.png"> 
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/offcanvas.css">
+    <link rel="stylesheet" href="../css/bar.css">
+    <link rel="stylesheet" href="../css/icon.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    
+</head>
+
+<body>
+    <div id="collage">
+        <h2>AQUAC-MEMORY ROMPE CABEZA</h2>
+        <hr />
+        <div id="playPanel" style="padding:5px;display:none;">
+            <h3 id="imgTitle"></h3>
+            <hr />
+            <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
+                <ul id="sortable" class="sortable"></ul>
+                <div id="actualImageBox">
+                    <div id="stepBox">
+                        <div>Movimientos</div>
+                        <div id="stepCount" class="stepCount">0</div>
+                    </div>
+                    <div id="timeBox">
+                        TIEMPO TOMADO: <span id="timerPanel"></span> SEG:
+                    </div>
+                    <img id="actualImage" />
+                    <div>Reorganizar para crear una imagen como ésta.</div>
+                    <p id="levelPanel">
+                        <input type="radio" name="level" id="easy" checked="checked" value="3" onchange="imagePuzzle.startGame(images, this.value);"
+                        /> <label for="easy">Facil</label>
+                        <input type="radio" name="level" id="medium" value="4" onchange="imagePuzzle.startGame(images, this.value);" />                        <label for="medium">Medio</label>
+                        <input type="radio" name="level" id="hard" value="5" onchange="imagePuzzle.startGame(images, this.value);" />                        <label for="hard">Dificil</label>
+                    </p>
+                    <div>
+                        <button id="btnRule" type="button" class="btn" onclick="rules();">Reglas</button>
+                        <button id="newPhoto" type="button" class="btn" onclick="restart();">Otra Imagen</button>
+                        <button id="btnReplay" type="button" class="btn" onclick="about();">Acerca de:</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gameOver" style="display:none;">
+            <div style="background-color: #da00003f; padding: 5px 10px 20px 10px; text-align: center; ">
+                <h2 style="text-align:center">¡¡Juego terminado!!</h2>
+                ¡¡Felicidades!! <br /> Has completado este nivel
+                <br /> Movimientos: <span id="stepCount" class="stepCount">0</span> Movimientos:
+                <br /> TIEMPO TOMADO: <span class="timeCount">0</span> SEG: <br />
+                <div>
+                    <button type="button" onclick="window.location.reload(true);">Jugar de nuevo</button>
+                </div>
+            </div>
+        </div>
+        <script src="bootstrap/js/bootstrap.js"></script>    
+        <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    </body>
+    </div>
+</body>
+</html>
