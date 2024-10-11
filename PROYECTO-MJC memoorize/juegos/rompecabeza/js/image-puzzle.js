@@ -1,21 +1,21 @@
 ﻿
-var timerFunction;
+var timerFunction; /**para almacenar la función del temporizado */
 
 var imagePuzzle = {
-    stepCount: 0,
-    startTime: new Date().getTime(),
-    startGame: function (images, gridSize) {
+    stepCount: 0, /** Cuenta el número de movimientos realizados por el jugador */
+    startTime: new Date().getTime(), /**Registra el tiempo en que comienza el juego */
+    startGame: function (images, gridSize) { /**Inicializa el juego, seleccionando una imagen y configurando el tamaño del grid */
         this.setImage(images, gridSize);
-        helper.doc('playPanel').style.display = 'block';
-        helper.shuffle('sortable');
+        helper.doc('playPanel').style.display = 'block'; /** aqui es donde muestra el panel del juego */
+        helper.shuffle('sortable'); /**para barajar cartas */
         this.stepCount = 0;
         this.startTime = new Date().getTime();
         this.tick();
     },
-    tick: function () {
+    tick: function () { /**para iniciar el temporizador. */
         var now = new Date().getTime();
         var elapsedTime = parseInt((now - imagePuzzle.startTime) / 1000, 10);
-        helper.doc('timerPanel').textContent = elapsedTime;
+        helper.doc('timerPanel').textContent = elapsedTime; /**Actualiza el contenido del panel de temporizador */
         timerFunction = setTimeout(imagePuzzle.tick, 1000);
     },
     setImage: function (images, gridSize = 4) {
@@ -28,7 +28,7 @@ var imagePuzzle = {
             var xpos = (percentage * (i % gridSize)) + '%';
             var ypos = (percentage * Math.floor(i / gridSize)) + '%';
 
-            let li = document.createElement('li');
+            let li = document.createElement('li'); /**Cada li tiene un fondo que es una parte de la imagen */
             li.id = i;
             li.setAttribute('data-value', i);
             li.style.backgroundImage = 'url(' + image.src + ')';
@@ -36,7 +36,7 @@ var imagePuzzle = {
             li.style.backgroundPosition = xpos + ' ' + ypos;
             li.style.width = 400 / gridSize + 'px';
             li.style.height = 400 / gridSize + 'px';
-
+/**Cada li tiene un fondo que es una parte de la imagen */
             li.setAttribute('draggable', 'true');
             li.ondragstart = (event) => event.dataTransfer.setData('data', event.target.id);
             li.ondragover = (event) => event.preventDefault();
