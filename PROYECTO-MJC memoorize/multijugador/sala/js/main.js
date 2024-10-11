@@ -53,9 +53,8 @@ if (rol == 1){
     display.innerHTML = 'Error: no se ha especificado un usuario.';
 }
 
-<<<<<<< HEAD
+
 document.getElementById('configuraciones').innerHTML=configuraciones;
-=======
 document.getElementById('players').innerHTML=players;
 document.querySelector('.header').innerHTML=header;
 document.getElementById('configuraciones').innerHTML=configuraciones;
@@ -65,15 +64,15 @@ let btnJugar = document.getElementById('jugar');
 // Verificar si el botón "Jugar" existe antes de agregar el listener
 if (btnJugar) {
     btnJugar.addEventListener('click', async function () {
-        // Si necesitas realizar tareas en paralelo, usa Promises o async/await
+        
         await iniciarSala();
         window.location.href = '../cartas/index.html';
     });
 }
 
-// Función asíncrona para iniciar la sala, simulando algún proceso adicional
+
 async function iniciarSala() {
-    // Simulación de una tarea asíncrona (ej. llamada a una API)
+    
     return new Promise((resolve) => {
         console.log('Iniciando la sala...');
         setTimeout(() => {
@@ -83,5 +82,3 @@ async function iniciarSala() {
     });
 }
 
-
->>>>>>> 8f9ea12b2d8e90cfb7a774a0f8db4621be2f4f45

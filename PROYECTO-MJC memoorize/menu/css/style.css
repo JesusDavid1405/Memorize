@@ -230,7 +230,7 @@ img.imgSonido {
     margin: 0;
     font-size: 20px;
     margin-top: 0%;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 .avatar {
     width: 40px; 
@@ -385,8 +385,8 @@ nav {
     100% { transform: translateY(10px); }
 }
 .play-button {
-    padding: 10px 20px;
-    background-image: url(../../img/fondo-acuarela-dia-mundial-oceanos_23-2149391657.png);
+    padding: 10px 30px;
+    background-image: url(../../img/boton.png);
     background-size: cover;
     background-repeat: no-repeat; 
     background-position: center;
@@ -395,7 +395,7 @@ nav {
     z-index: 1;
     color: inherit;
     pointer-events: auto;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     flex-direction: row;
     border: none;
     border-radius: 5px;
@@ -403,10 +403,36 @@ nav {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 }
-
+.play-button2 {
+    padding: 10px 60px;
+    background-image: url(../../img/boton.png);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center;
+    text-decoration: none; 
+    position: relative;
+    z-index: 1;
+    color: inherit;
+    pointer-events: auto;
+    color: rgb(255, 255, 255);
+    flex-direction: row;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
 .play-button:hover {
     background-color: #0056b3;
     transform: translateY(-3px);
+    color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+.play-button2:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    color: rgb(255, 255, 255);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
 }
@@ -414,14 +440,15 @@ nav {
     font-size: 14px;
     color: #333;
     text-align: center;
-    background-image: url(../../img/fondo-acuarela-dia-mundial-oceanos_23-2149391657.png);  
+    background-image: url(../../img/boton.png); 
+     
     background-size: cover;
     background-repeat: no-repeat; 
     background-position: center;
     padding: 10px;
     border-radius: 5px;
     line-height: 1.4;
-    width: 200%;
+    width: 100%;
     font-size: 18px;
     opacity: 0; 
     transition: opacity 0.3s ease; 
