@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="../css/offcanvas.css">
     <link rel="stylesheet" href="../css/bar.css">
     <link rel="stylesheet" href="../css/icon.css">
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
-    
 </head>
 
 <body>
@@ -36,15 +34,14 @@
                     <img id="actualImage" />
                     <div>Reorganizar para crear una imagen como ésta.</div>
                     <p id="levelPanel">
-                        <input type="radio" name="level" id="easy" checked="checked" value="3" onchange="imagePuzzle.startGame(images, this.value);"
-                        /> <label for="easy">Facil</label>
+                        <input type="radio" name="level" id="easy" checked="checked" value="3" onchange="imagePuzzle.startGame(images, this.value);"/> <label for="easy">Facil</label>
                         <input type="radio" name="level" id="medium" value="4" onchange="imagePuzzle.startGame(images, this.value);" />                        <label for="medium">Medio</label>
                         <input type="radio" name="level" id="hard" value="5" onchange="imagePuzzle.startGame(images, this.value);" />                        <label for="hard">Dificil</label>
                     </p>
                     <div>
-                        <button id="btnRule" type="button" class="btn" onclick="rules();">Reglas</button>
+                        <button id="regla" type="button" class="btn">Reglas</button>
                         <button id="newPhoto" type="button" class="btn" onclick="restart();">Otra Imagen</button>
-                        <button id="btnReplay" type="button" class="btn" onclick="about();">Acerca de:</button>
+                        <button id="acercaDe" type="button" class="btn">Acerca de:</button>
                     </div>
                 </div>
             </div>
@@ -60,9 +57,68 @@
                 </div>
             </div>
         </div>
-        <script src="bootstrap/js/bootstrap.js"></script>    
-        <script src="bootstrap/js/bootstrap.bundle.js"></script>
-    </body>
     </div>
+
+        <!-- Fondo del modal y contenido -->
+    <div id="myModal" class="modal-background">
+        <div class="modal-content">
+            ...
+        <button class="close-button" onclick="closeModal()">Cerrar</button>
+        </div>
+    </div>
+
+
+    <script>
+
+        let btnReglas = document.getElementById("regla");
+        let btnAcercaDe = document.getElementById("acercaDe");
+
+        let contenidoModal = document.querySelector(".modal-content")
+
+        btnReglas.addEventListener('click', function(){
+            contenidoModal.innerHTML=`
+            <p>
+                Une todas las piezas hasta completar la imagen. 
+                Comienza por los bordes y sigue hacia el centro. 
+                ¡La paciencia y el enfoque te llevarán a la meta! \n ¡Disfruta el desafío!🧩
+            </p>`
+
+            openModal();
+        })
+
+        btnAcercaDe.addEventListener('click', function(){
+            contenidoModal.innerHTML=`
+            <p>
+                El rompecabezas es un juego que consiste en unir diversas piezas para formar una imagen completa. 
+                Cada pieza tiene una forma única, y su ensamblaje requiere atención y habilidades de resolución de problemas.
+                \nEste juego no solo es entretenido, sino que también estimula la mente, mejora la concentración y fomenta la paciencia. 
+                Los rompecabezas pueden variar en dificultad, desde simples hasta complejos, lo que los hace adecuados para todas las edades.🧩🌊
+            </p>`
+
+            openModal();
+        })
+
+
+        // Función para abrir el modal
+        function openModal() {
+            document.getElementById('myModal').style.display = 'block';
+        }
+
+
+
+        // Función para cerrar el modal
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        // Cerrar modal al hacer clic fuera del contenido
+        window.onclick = function(event) {
+            const modal = document.getElementById('myModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+
 </body>
 </html>
