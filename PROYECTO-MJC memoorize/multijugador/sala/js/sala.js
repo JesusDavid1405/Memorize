@@ -70,7 +70,7 @@ if (btnJugar) {
     btnJugar.addEventListener('click', async function () {
         // Si necesitas realizar tareas en paralelo, usa Promises o async/await
         await iniciarSala();
-        window.location.href = '../cartas/index.html';
+        window.location.href = '../../cartas/index.html';
     });
 }
 
