@@ -4,6 +4,7 @@ let pistas=[]
 let rowId=1;
 let mainContainer = document.querySelector('.main-container')
 let resultElement = document.querySelector(".result")
+let pistaIndex = 0; 
 
 let tiempo = 0; 
     
@@ -55,7 +56,6 @@ fetch('libreria/palabras.php', {
 
         let actualRow=document.querySelector(".fila")
 
-        addPista()
         drawSquaers(actualRow)
         listenInput(actualRow)
         
@@ -116,7 +116,6 @@ fetch('libreria/palabras.php', {
                             }
                             
                             
-                            addPista()
                             drawSquaers(actualRow)
                             listenInput(actualRow)
                             addFocus(actualRow)
@@ -149,20 +148,25 @@ fetch('libreria/palabras.php', {
             });
             return existIndex;
         }
-        function createRow(){
-            rowId++
-
-            if(rowId <= 5){
+        function createRow() {
+            rowId++;  // Incrementar rowId
+        
+            if (rowId <= 5) {
                 let newRow = document.createElement('div');
                 newRow.classList.add('fila');
-                newRow.setAttribute('id',rowId)
-                mainContainer.appendChild(newRow)
-                return newRow
-            }else{
+                newRow.setAttribute('id', rowId);
+                mainContainer.appendChild(newRow);
+                
+                console.log("Fila creada, rowId es:", rowId);  // Depuración para ver si se crea la fila
+        
+                // Verificar si hay que mostrar una pista
+                checkRowAndAddPista();  
+        
+                return newRow;  // Continuar la ejecución
+            } else {
                 clearInterval(contadorTiempo);
-                mostrarModal(`Intentalo de nuevo, la palabra correcta era "${wordle.toUpperCase()}"`)
+                mostrarModal(`Inténtalo de nuevo, la palabra correcta era "${wordle.toUpperCase()}"`);
             }
-            
         }
         function drawSquaers(actualRow){
             wordleArray.forEach((item,index) => {
@@ -214,26 +218,44 @@ fetch('libreria/palabras.php', {
                         </div>
                     </div>
                     <button class="button">Reiniciar</button>
-                    <button class="button">Reiniciar</button>
+                    <button class="button" id="salir">salir</button>
                 `
+
+                let returnSalir= document.querySelector("#salir")
+                returnSalir.addEventListener('click',()=>{
+                    window.location.href= '../index.html';
+                }); 
             }
             let returnBtn= document.querySelector(".button")
                 returnBtn.addEventListener('click',()=>{
                 location.reload();
             }); 
+
+            
+
             modal.show(); 
         }
-        function addPista(){
-            let displayPistas = document.querySelector('.pistas');
-            let ayuda;
+        
+        function addPista() {
+            let displayPistas = document.getElementById('displayPista');
+            let classPista = document.querySelector('.pistas').style.display='flex';
             
-            wordlePistas.forEach(item =>{
-                ayuda=item
-                displayPistas.innerHTML=`<p>${ayuda}<p>`
+            if (pistaIndex < wordlePistas.length) {
+                displayPistas.innerHTML += `
+                <li>
+                    <p>${wordlePistas[pistaIndex]}</p>
+                </li>`;
                 
-            });
+                pistaIndex++; 
+            }
+            console.log(pistaIndex)
         }
         
+        function checkRowAndAddPista() {
+            if (rowId === 2 || rowId === 4 || rowId === 5) {  
+                addPista();
+            }
+        }
     }
     
 }).catch(error => {
