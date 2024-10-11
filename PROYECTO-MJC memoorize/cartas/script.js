@@ -3,12 +3,12 @@ const selectors = {
     board: document.querySelector('.board'),
     movimiento: document.querySelector('.moves'),
     tiempo: document.querySelector('.timer'),
-    start: document.querySelector('button'),
+    Iniciar: document.querySelector('button'),
     win: document.querySelector('.win')
 }
 
 const state = {
-    gameStarted: false,
+    gameIniciar: false,
     flippedCards: 0,
     totalFlips: 0,
     totalTime: 0,
@@ -74,9 +74,9 @@ const generateGame = () => {
     selectors.board.replaceWith(parser.querySelector('.board'))
 }
 
-const startGame = () => {
-    state.gameStarted = true
-    selectors.start.classList.add('disabled')
+const IniciarGame = () => {
+    state.gameIniciar = true
+    selectors.Iniciar.classList.add('disabled')
 
     state.loop = setInterval(() => {
         state.totalTime++
@@ -96,8 +96,8 @@ const flipCard = card => {
     state.flippedCards++
     state.totalFlips++
 
-    if (!state.gameStarted) {
-        startGame()
+    if (!state.gameIniciar) {
+        IniciarGame()
     }
 
     if (state.flippedCards <= 2) {
@@ -120,9 +120,9 @@ const flipCard = card => {
             selectors.boardContainer.classList.add('flipped')
             selectors.win.innerHTML = `
                 <span class="win-text">
-                    You won!<br />
-                    with <span class="highlight">${state.totalFlips}</span> moves<br />
-                    under <span class="highlight">${state.totalTime}</span> seconds
+                    Felicidades, Ganaste!<br />
+                    Con <span class="highlight">${state.totalFlips}</span> movimientos<br />
+                    En <span class="highlight">${state.totalTime}</span> segundos
                 </span>
             `
             clearInterval(state.loop)
@@ -138,7 +138,7 @@ const attachEventListeners = () => {
         if (eventTarget.className.includes('card') && !eventParent.className.includes('flipped')) {
             flipCard(eventParent)
         } else if (eventTarget.nodeName === 'BUTTON' && !eventTarget.className.includes('disabled')) {
-            startGame()
+            IniciarGame()
         }
     })
 }
