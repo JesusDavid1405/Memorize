@@ -43,7 +43,7 @@ const generateGame = () => {
         throw new Error("The dimension of the board must be an even number.")
     }
     const images = [
-        'img/animal17.jpg',
+        'img/animal7.jpg',
         'img/animal18.jpg',
         'img/animal9.jpg',
         'img/animal10.jpg',

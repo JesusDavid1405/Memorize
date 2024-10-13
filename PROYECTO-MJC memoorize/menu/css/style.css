@@ -41,7 +41,7 @@ body{
     font-size: 55px;
     top: 0%;
     color: #333;
-    background-image: url(../../img/fondo-acuarela-dia-mundial-oceanos_23-2149391657.png);
+    background-image: url(../../img/img9.jpg);
     text-align: center;
     
 }
@@ -51,14 +51,16 @@ nav.navbar {
     align-items: center;
     width: 100%;
 }
+
 .navbar-expand {
-    background-image: url(../../img/fondo-acuarela-dia-mundial-oceanos_23-2149391657.png);
+   
     background-size: cover;
     background-repeat: no-repeat;
 }
 .navbar {
     position: fixed; 
     bottom: 0;
+    
     left: 0;
 
     right: 0;
@@ -79,6 +81,7 @@ li.nav-item {
     align-items: center;    
     width: 60px;
     height: 60px;
+    background-image: url(../../img/img9.jpg);
     margin: 0 5px;
     flex: 1;
     
@@ -502,6 +505,7 @@ nav {
     transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
 }
 
+
 .game-image:hover {
     animation-play-state: paused;
     transform: scale(1.05);
@@ -513,16 +517,17 @@ nav {
     #playButton {
         flex-direction: column;
         margin-bottom: 5px;
-        margin-left: 40%;
+        margin-left: 9%;
     }
     #playButton2 {
         flex-direction: column;
         margin-bottom: 5px;
-        margin-right: 100%;
+        margin-right: 60%;
     }
     #playButton2 p {
-        font-size: 14px;
-        margin-top: 5px;
+        font-size: 15px;
+        margin-top: 3px;
+        color: #000;
     }
     .imgSonido {
         width: 40px;
@@ -530,8 +535,9 @@ nav {
     }
 
     #playButton p {
-        font-size: 14px;
-        margin-top: 5px;
+        font-size: 15px;
+        margin-top: 3px;
+        color: #000;
     }
     .playButton {
         display: flex;
@@ -546,14 +552,16 @@ nav {
         height: 40px;
         flex-direction: column;
         margin-top: 15px;
-        margin-right: 70%;
+        margin-right: 10%;
     }
     #musicButton p {
-        font-size: 14px;
-        margin-top: 5px;
+        font-size: 15px;
+        margin-top: 3px;
+        color: #000;
     }
     li.nav-item {
         flex-basis: 25%;
+        
     }
     #soundButton {
         font-size: 14px;
@@ -562,18 +570,14 @@ nav {
     }
 
     #soundButton p {
-        font-size: 14px;
-        margin-top: 2px;
-    }
-    .menu-title {
-        font-size: 40px;
-        margin-bottom: -20px;
-        margin-right: 0%;
+        font-size: 15px;
+        margin-top: 3px;
+        color: #000;
     }
     .game-image {
         width: 120px;
         height: auto;
-        margin-top: -5px;
+        margin-top: 5px;
     }
     .game-option {
         display: flex;
@@ -582,7 +586,7 @@ nav {
         justify-content: flex-start;
         margin: 0px;
         margin-right: 90%;
-        margin-bottom: 10%;
+        margin-bottom: -80%;
         padding: 10px;
         width: 40%; 
     }
@@ -594,7 +598,7 @@ nav {
         margin: 0px;
         padding: 10px;
         width: 40%; 
-        margin-top: -16%;
+        margin-top: 60%;
         margin-right: 90%;
     }
     .game-option3 {
@@ -605,7 +609,7 @@ nav {
         margin: 0px;
         padding: 10px;
         width: 40%; 
-        margin-top: -0%;
+        margin-top: -210%;
         margin-right: 90%;
     }
     .game-description {
@@ -615,5 +619,9 @@ nav {
         margin: 25px;
         margin-right: 0%; 
     }
+    .menu-title{
+        font-size: 300%;
+    }
+   
     
 }
