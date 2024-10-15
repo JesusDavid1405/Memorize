@@ -92,6 +92,10 @@ input.input:hover {
     background-color: rgb(255, 255, 255);
     
 }
+p.tex1{
+    text-align: center;
+    font-size: 18%;
+}
 .text{
     color: aliceblue;
     text-align: center;

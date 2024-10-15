@@ -240,22 +240,6 @@ a:link, a:visited, a:active {
         margin-bottom: 2%;
     }
 
-    /* Logo en el formulario */
-    .logoForm img {
-        width: 150px;
-        height: 150px;
-    }
-
-    /* Botón de sonido */
-
-
-    /* Íconos de redes sociales */
-    .logoRedes img {
-        width: 27%;
-        height: 27%;
-        transition: 200ms;
-    } 
-    
     #playButton {
         font-size: 20px;
         padding: 10px 20px;

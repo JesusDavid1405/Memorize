@@ -18,9 +18,12 @@ body {
     max-width: 100%; 
     height: auto;
     margin-bottom: 10px; 
-    animation: moveLogoVertical 2s infinite alternate ease-in-out;
+    animation: movelogoVertical 2s ease-in-out infinite alternate forwards running;
 }
-
+@keyframes movelogoVertical {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(25px); }
+}
 .button2 {
     background-image: url(../img/boton.png);
     background-size: contain; 
@@ -38,8 +41,20 @@ body {
     width: 220px;
     height: 160px;
     transition: transform 0.2s, background-color 0.2s;
-}
+    animation: swashIn 1s ease-in-out;
 
+
+}
+@keyframes swashIn {
+    0% {
+        opacity: 0;
+        transform: rotate(-30deg) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
 .button2:hover {
     transform: scale(1.1);
     background-color: rgba(255, 255, 255, 0); 
@@ -90,10 +105,7 @@ body {
     }
 }
 
-@keyframes moveLogoVertical {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(25px); }
-}
+
 
 .imgLogo:hover {
     transform: scale(1.1);

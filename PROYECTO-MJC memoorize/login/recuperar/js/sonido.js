@@ -12,3 +12,51 @@ playButton.addEventListener('click', function() {
     }
     isPlaying = !isPlaying;
 });
+
+const sound = new Audio('../../audio/notification-sound-7062.mp3');
+document.querySelector('#formulario').addEventListener('mouseenter', () => {
+    sound.currentTime = 0;
+    sound.play();
+});
+document.querySelector('img').addEventListener('mouseenter', () => {
+    sound.currentTime = 0;
+    sound.play();
+});
+
+document.querySelector('.logoForm img').addEventListener('mouseenter', () => {
+    sound.currentTime = 0;
+    sound.play();
+});
+
+document.querySelector('#playButton').addEventListener('mouseenter', () => {
+    sound.currentTime = 0;
+    sound.play();
+});
+document.querySelector('.imgSonido').addEventListener('mouseenter', () => {
+    sound.currentTime = 0;
+    sound.play();
+});
+document.querySelector('.logoRedes').addEventListener('mouseenter', () => {
+    sound.currentTime = 0;
+    sound.play();
+});
+document.querySelector('.facebook').addEventListener('mouseenter', () => {
+    sound.currentTime = 0;
+    sound.play();
+});
+document.querySelector('.gitHub').addEventListener('mouseenter', () => {
+    sound.currentTime = 0;
+    sound.play();
+});
+document.querySelector('.email').addEventListener('mouseenter', () => {
+    sound.currentTime = 0;
+    sound.play();
+});
+document.querySelector('.textCrear').addEventListener('mouseenter', () => {
+    sound.currentTime = 0;
+    sound.play();
+});
+document.querySelector('a').addEventListener('mouseenter', () => {
+    sound.currentTime = 0;
+    sound.play();
+});
