@@ -6,6 +6,18 @@ body{
     overflow: hidden;
     height: 100vh;
     margin: 0;
+    animation: puffIn 1s ease-in-out
+}
+
+@keyframes puffIn {
+    0% {
+        opacity: 0;
+        transform: scale(2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 .contenido {
     flex: 1; 
@@ -41,7 +53,7 @@ body{
     font-size: 55px;
     top: 0%;
     color: #333;
-    background-image: url(../../img/img9.jpg);
+    background-image: url(../../img/elegant-marble-multipurpose-background.jpg);
     text-align: center;
     
 }
@@ -81,10 +93,12 @@ li.nav-item {
     align-items: center;    
     width: 60px;
     height: 60px;
-    background-image: url(../../img/img9.jpg);
-    margin: 0 5px;
+    background-image: url(../../img/elegant-marble-multipurpose-background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 9px;
     flex: 1;
-    
     text-align: center;
 }
 .offcanvas-backdrop.fade.show{
@@ -108,14 +122,14 @@ li.nav-item {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-image: url(../../img/fondo-acuarela-dia-mundial-oceanos_23-2149391657.png);
+    background-image: url(../../img/elegant-marble-multipurpose-background.jpg);
     background-repeat: no-repeat;
     background-color: transparent !important; 
     background-size: cover;
     background-position: center;
 }
 .offcanvas-header {
-    background-image: url(../../img/fondo-acuarela-dia-mundial-oceanos_23-2149391657.png);
+    background-image: url(../../img/elegant-marble-multipurpose-background.jpg);
     background-repeat: no-repeat;
     box-shadow: none; 
     
@@ -200,9 +214,10 @@ li.nav-item {
 }
 #musicButton p {
     margin: 0;
-    font-size: 16px;
+    font-size: 19px;
     color: white;
 }
+
 img.imgSonido {
     width: 40px;
     height: auto;
@@ -305,6 +320,9 @@ img.imgSonido {
 .avatar-option:hover {
     border: 2px solid blue; 
 }
+.avatar-option2:hover {
+    border: 2px solid blue; 
+}
 .modal,
 .modal-dialog {
     box-shadow: none !important;
@@ -315,11 +333,12 @@ img.imgSonido {
 }
 
 .change-avatar {
-    background-image: url(../../img/devolver.png);
+    background-image: url(../../img/slide_14447667.gif);
     background-size: cover;
     background-repeat: no-repeat;
     width: 10px;
     height: 10px;
+    clip-path: circle(50% at center);
     display: inline-block; 
     border: none; 
     border-radius: 5px; 
@@ -336,7 +355,7 @@ img.imgSonido {
 }
 .modal-content {
     padding: 20px;
-    background-image: url(../../img/fondo-acuarela-dia-mundial-oceanos_23-2149391657.png);
+    background-image: url(../../img/elegant-marble-multipurpose-background.jpg);
     background-size: cover;
     background-repeat: no-repeat; 
     background-position: center;
@@ -383,10 +402,7 @@ nav {
     gap: 10px;
     margin-top: 10%;
 }
-@keyframes gameVertical {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(10px); }
-}
+
 .play-button {
     padding: 10px 30px;
     background-image: url(../../img/boton.png);
@@ -396,7 +412,9 @@ nav {
     text-decoration: none; 
     position: relative;
     z-index: 1;
+    left: 5%;
     color: inherit;
+    top: 30px;
     pointer-events: auto;
     color: rgb(255, 255, 255);
     flex-direction: row;
@@ -413,6 +431,8 @@ nav {
     background-repeat: no-repeat; 
     background-position: center;
     text-decoration: none; 
+    top: 30px;
+    left: 5%;
     position: relative;
     z-index: 1;
     color: inherit;
@@ -444,18 +464,17 @@ nav {
     color: #333;
     text-align: center;
     background-image: url(../../img/boton.png); 
-     
+    position: absolute;
+    bottom: 22px;
+    left: 12%;
+    right: 0;
+    padding: 10px;
+    text-align: center;
     background-size: cover;
     background-repeat: no-repeat; 
     background-position: center;
-    padding: 10px;
-    border-radius: 5px;
-    line-height: 1.4;
-    width: 100%;
-    font-size: 18px;
     opacity: 0; 
-    transition: opacity 0.3s ease; 
-    margin-top: 10px;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .game-option:hover .game-description {
@@ -469,6 +488,9 @@ nav {
 }
 .game-option {
     display: flex;
+    position: relative;
+    display: inline-block;
+    margin: 15px;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start; 
@@ -482,6 +504,9 @@ nav {
     align-items: center;
     justify-content: flex-start; 
     margin: 10px;
+    position: relative;
+    display: inline-block;
+    margin: 15px;
     padding: 10px;
     width: 200px; 
 }
@@ -491,6 +516,9 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start; 
+    position: relative;
+    display: inline-block;
+    margin: 15px;
     margin: 10px;
     padding: 10px;
     width: 200px; 
@@ -501,8 +529,23 @@ nav {
     position: relative;
     animation: glitch 1s infinite;
     margin-top: -30px;
-    animation: gameVertical 2s infinite alternate ease-in-out;
+    animation: swashIn 1s ease-in-out, gameVertical 2s infinite alternate ease-in-out;
     transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+}
+@keyframes swashIn {
+    0% {
+        opacity: 0;
+        transform: rotate(-30deg) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+@keyframes gameVertical {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
 }
 
 
@@ -522,11 +565,12 @@ nav {
     #playButton2 {
         flex-direction: column;
         margin-bottom: 5px;
-        margin-right: 60%;
+        margin-right: 8%;
     }
     #playButton2 p {
-        font-size: 15px;
-        margin-top: 3px;
+        font-size: 17px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-top: 0px;
         color: #000;
     }
     .imgSonido {
@@ -535,8 +579,9 @@ nav {
     }
 
     #playButton p {
-        font-size: 15px;
-        margin-top: 3px;
+        font-size: 17px;
+        margin-top: 0px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         color: #000;
     }
     .playButton {
@@ -555,8 +600,9 @@ nav {
         margin-right: 10%;
     }
     #musicButton p {
-        font-size: 15px;
-        margin-top: 3px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 18px;
+        margin-top: 0px;
         color: #000;
     }
     li.nav-item {
@@ -570,13 +616,15 @@ nav {
     }
 
     #soundButton p {
-        font-size: 15px;
-        margin-top: 3px;
+        font-size: 17px;
+        margin-top: 0px;
         color: #000;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
     .game-image {
         width: 120px;
         height: auto;
+        cursor: pointer;
         margin-top: 5px;
     }
     .game-option {
@@ -586,6 +634,7 @@ nav {
         justify-content: flex-start;
         margin: 0px;
         margin-right: 90%;
+        
         margin-bottom: -80%;
         padding: 10px;
         width: 40%; 
@@ -614,14 +663,32 @@ nav {
     }
     .game-description {
         display: flex;
+        text-align: center;
         flex-direction: column; 
         align-items: center;
-        margin: 25px;
+        margin: 10px;
         margin-right: 0%; 
     }
+    
     .menu-title{
         font-size: 300%;
     }
-   
+    li.nav-item {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;    
+        width: 60px;
+        height: 60px;
+        background-image: url(../../img/elegant-marble-multipurpose-background.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin: 0 10px;
+        flex: 1;
+        border-radius: 20%;
+        margin-left: -1%;
+        text-align: center;
+    }
     
 }

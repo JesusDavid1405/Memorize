@@ -6,10 +6,10 @@
         musicButton.addEventListener('click', function() {
             if (isPlaying) {
                 backgroundMusic.pause();
-                musicIcon.src = "../img/icon/noSonido.png";
+                musicIcon.src = "../img/icon/musica.png";
             } else {
                 backgroundMusic.play();
-                musicIcon.src = "../img/icon/sonido.png";
+                musicIcon.src = "../img/icon/noMusica.png";
             }
             isPlaying = !isPlaying;
         });
@@ -22,3 +22,15 @@
             music.volume = volumeControl.value;
         });
     });
+    const sound = new Audio('../audio/notification-sound-7062.mp3');
+
+    // Simplificación para asegurar que los selectores sean válidos
+    document.querySelectorAll('.play-button, .play-button2, #playButton, #musicButton, .game-image, #soundButton, .imgSonido, .avatar-option, .avatar-option2').forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            sound.currentTime = 0;
+            sound.play().catch(error => {
+                console.error('Error al reproducir el sonido:', error);
+            });
+        });
+    });
+    
