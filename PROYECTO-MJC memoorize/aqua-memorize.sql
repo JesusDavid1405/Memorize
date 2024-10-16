@@ -1,27 +1,13 @@
-/*CREATE DATABASE TESTAQUA;*/
-USE TESTAQUA;
 
 /*AVATAR*/
 
-CREATE TABLE avatars (
+CREATE TABLE avatar(
     id INT NOT NULL,
     nombre VARCHAR(100) NOT NULL,
     imagen VARCHAR(255) NOT NULL,
     precio DECIMAL(10, 2) NOT NULL,
-    es_gratuito BOOLEAN NOT NULL,
+    es_gratuito BOOLEAN,
     PRIMARY KEY (id)
-);
-
-/*TIENDA*/
-
-CREATE TABLE compras (
-    id INT NOT NULL,
-    usuarioId INT NOT NULL,
-    avatarId INT NOT NULL,
-    fecha_compra TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (id),
-    FOREIGN KEY (usuarioId) REFERENCES usuario(id),
-    FOREIGN KEY (avatarId) REFERENCES avatars(id)
 );
 
 /*LOGIN 100%*/
@@ -29,7 +15,7 @@ CREATE TABLE compras (
 CREATE TABLE usuario(
     id INT NOT NULL UNIQUE,
     nickName VARCHAR(50) NOT NULL UNIQUE,
-    avatarId VARCHAR(150) NOT NULL,
+    avatarId INT NOT NULL,
     correo VARCHAR(150) NOT NULL UNIQUE,
     contraseña VARCHAR(20) NOT NULL,
     PRIMARY KEY (id),
@@ -47,6 +33,18 @@ CREATE TABLE olvidasteContraseña(
     codigo BIGINT NOT NULL UNIQUE,
     PRIMARY KEY (usuarioId),
     FOREIGN KEY (usuarioId) REFERENCES usuario(id)
+);
+
+/*TIENDA*/
+
+CREATE TABLE compras (
+    id INT NOT NULL,
+    usuarioId INT NOT NULL,
+    avatarId INT NOT NULL,
+    fecha_compra TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    FOREIGN KEY (usuarioId) REFERENCES usuario(id),
+    FOREIGN KEY (avatarId) REFERENCES avatar(id)
 );
 
 /*MULTIJUGADOR 90%*/
