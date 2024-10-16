@@ -8,7 +8,78 @@ body{
     margin: 0;
     animation: puffIn 1s ease-in-out
 }
+.back-button {
+    width: 10%;
+    height: 10%;
+    right: 3%;
+    bottom: 170px;
+    position: relative; 
 
+
+}
+.back-button-text{
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size: 16px;
+    color: #FFFFFF;
+    bottom: 50px;
+    border: none;
+    left: 32%;
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+.back-button:hover {
+    transform: scale(1.1);
+}
+.back-button-img{
+    width: 40%;
+    flex-direction: row;
+    height: 40%;
+}
+.tienda-text{
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size: 16px;
+    color: #FFFFFF;
+    bottom: 50px;
+    flex-direction: row;
+    border: none;
+    left: 90%;
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.tienda{
+    width: 10%;
+    height: 10%;
+    left: 93%;
+    bottom: 280px;
+    position: relative; 
+}
+.tienda-img:hover {
+    transform: scale(1.1);
+}
+.tienda-img{
+    width: 40%;
+    height: 40%;
+}
+.game-description {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    background-image: url(../../img/boton.png); 
+    position: absolute;
+    bottom: 22px;
+    left: 12%;
+    right: 0;
+    padding: 10px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center;
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out;
+}
 @keyframes puffIn {
     0% {
         opacity: 0;
@@ -50,12 +121,34 @@ body{
     margin-bottom: 100px;
     padding: 0%;
     min-height: 0vh;
+    display: flex;
+    align-items: center;  
+    flex: 1;
+    flex-direction: column;
     font-size: 55px;
     top: 0%;
     color: #333;
-    background-image: url(../../img/elegant-marble-multipurpose-background.jpg);
+    background-image: url(../../img/mapa.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     text-align: center;
     
+}
+li.nav-item {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    width: 60px;
+    height: 60px;
+    background-image: url(../../img/mapa.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 9px;
+    flex: 1;
+    text-align: center;
 }
 nav.navbar {
     display: flex;
@@ -85,21 +178,6 @@ ul.navbar-nav {
     justify-content: space-around;
     width: 100%;
     padding: 0;
-}
-li.nav-item {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;    
-    width: 60px;
-    height: 60px;
-    background-image: url(../../img/elegant-marble-multipurpose-background.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin: 0 9px;
-    flex: 1;
-    text-align: center;
 }
 .offcanvas-backdrop.fade.show{
     background-color: transparent !important;
@@ -400,9 +478,8 @@ nav {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 10%;
+    margin-bottom: 40%;
 }
-
 .play-button {
     padding: 10px 30px;
     background-image: url(../../img/boton.png);
@@ -459,23 +536,7 @@ nav {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
 }
-.game-description {
-    font-size: 14px;
-    color: #333;
-    text-align: center;
-    background-image: url(../../img/boton.png); 
-    position: absolute;
-    bottom: 22px;
-    left: 12%;
-    right: 0;
-    padding: 10px;
-    text-align: center;
-    background-size: cover;
-    background-repeat: no-repeat; 
-    background-position: center;
-    opacity: 0; 
-    transition: opacity 0.3s ease-in-out;
-}
+
 
 .game-option:hover .game-description {
     opacity: 1;
@@ -625,7 +686,7 @@ nav {
         width: 120px;
         height: auto;
         cursor: pointer;
-        margin-top: 5px;
+        margin-bottom: 0px;
     }
     .game-option {
         display: flex;
@@ -635,7 +696,7 @@ nav {
         margin: 0px;
         margin-right: 90%;
         
-        margin-bottom: -80%;
+        margin-bottom: -55%;
         padding: 10px;
         width: 40%; 
     }
@@ -647,7 +708,7 @@ nav {
         margin: 0px;
         padding: 10px;
         width: 40%; 
-        margin-top: 60%;
+        margin-top: 55%;
         margin-right: 90%;
     }
     .game-option3 {
@@ -666,12 +727,12 @@ nav {
         text-align: center;
         flex-direction: column; 
         align-items: center;
-        margin: 10px;
+        margin: 0px;
         margin-right: 0%; 
     }
     
     .menu-title{
-        font-size: 300%;
+        font-size: 250%;
     }
     li.nav-item {
         list-style: none;
@@ -680,7 +741,7 @@ nav {
         align-items: center;    
         width: 60px;
         height: 60px;
-        background-image: url(../../img/elegant-marble-multipurpose-background.jpg);
+        background-image: url(../../img/mapa.jpg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -689,6 +750,29 @@ nav {
         border-radius: 20%;
         margin-left: -1%;
         text-align: center;
+    }
+    .back-button {
+        width: 25%;
+        height: 25%;
+        right: 3%;
+        bottom: 140px;
+        z-index: 10;
+        position: relative; 
+    
+    }
+    .back-button-text{
+        font-family:Arial, Helvetica, sans-serif; 
+        font-size: 17px;
+        color: #ffffff00;
+        margin-bottom: 0px;
+        flex-direction: row;
+        border: none;
+        left: 30%;
+        bottom: 47px;
+        position: relative;
+        border-radius: 5px;
+        cursor: pointer;
+        
     }
     
 }
