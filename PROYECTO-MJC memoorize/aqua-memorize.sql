@@ -1,13 +1,39 @@
 /*CREATE DATABASE TESTAQUA;*/
 USE TESTAQUA;
-/*LOGIN*/
+
+/*AVATAR*/
+
+CREATE TABLE avatars (
+    id INT NOT NULL,
+    nombre VARCHAR(100) NOT NULL,
+    imagen VARCHAR(255) NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,
+    es_gratuito BOOLEAN NOT NULL,
+    PRIMARY KEY (id)
+);
+
+/*TIENDA*/
+
+CREATE TABLE compras (
+    id INT NOT NULL,
+    usuarioId INT NOT NULL,
+    avatarId INT NOT NULL,
+    fecha_compra TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    FOREIGN KEY (usuarioId) REFERENCES usuario(id),
+    FOREIGN KEY (avatarId) REFERENCES avatars(id)
+);
+
+/*LOGIN 100%*/
 
 CREATE TABLE usuario(
     id INT NOT NULL UNIQUE,
     nickName VARCHAR(50) NOT NULL UNIQUE,
+    avatarId VARCHAR(150) NOT NULL,
     correo VARCHAR(150) NOT NULL UNIQUE,
     contraseña VARCHAR(20) NOT NULL,
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    FOREIGN KEY (avatarId) REFERENCES avatar(id)
 );
 
 CREATE TABLE login(
@@ -23,19 +49,14 @@ CREATE TABLE olvidasteContraseña(
     FOREIGN KEY (usuarioId) REFERENCES usuario(id)
 );
 
-/*MULTIJUGADOR*/
+/*MULTIJUGADOR 90%*/
 
 CREATE TABLE dificultad(
     id INT NOT NULL UNIQUE,
     nombre VARCHAR(20) NOT NULL,
-    descripcion TEXT NOT NULL
+    descripcion TEXT NOT NULL,
+    PRIMARY KEY (id)
 );
-
-INSERT INTO dificultad 
-VALUES
-(1,"Facil","El modo fácil es para los jugadores que están empezando a conocer el juego o que quieren jugar de manera más tranquila. En este modo, hay menos cartas y más tiempo para memorizar, lo que ayuda a los jugadores a recordar dónde están las cartas sin sentirse presionados."),
-(2,"Medio","El modo medio está diseñado para jugadores que ya tienen algo de experiencia con el juego y buscan un desafío moderado. Este modo aumenta la dificultad al introducir más cartas y un tiempo limitado para memorizar, lo que añade emoción y reto a la partida."),
-(3,"Dificil","El modo difícil está diseñado para jugadores que buscan un verdadero desafío. Este modo pone a prueba la memoria y la concentración, con más cartas, menos tiempo para memorizar y sin pistas, ofreciendo una experiencia intensa y competitiva.");
 
 CREATE TABLE configuracion(
     id INT NOT NULL UNIQUE,
@@ -51,8 +72,11 @@ CREATE TABLE sala(
     id INT NOT NULL UNIQUE,
     nombre VARCHAR(50) NOT NULL,
     codigo INT NOT NULL UNIQUE,
+    configuracionId INT NOT NULL,
     fechaCreacion TIMESTAMP NOT NULL,
-    estadoSala VARCHAR(30) NOT NULL
+    estadoSala VARCHAR(30) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (configuracionId) REFERENCES configuracion(id)
 );
 
 CREATE TABLE participacion(
@@ -96,7 +120,7 @@ CREATE TABLE podioFinalSala(
     FOREIGN KEY (jugadorId) REFERENCES usuario(id)
 );
 
-/*JUEGOS*/
+/*JUEGOS  90%*/
 
 CREATE TABLE juego(
     id INT NOT NULL UNIQUE,
@@ -127,4 +151,23 @@ CREATE TABLE procesoNivel(
     FOREIGN KEY (jugadorId) REFERENCES usuario(id)
 );
 
+CREATE TABLE palabras(
+    id INT NOT NULL UNIQUE,
+    palabra VARCHAR(20) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE pistas(
+    id INT NOT NULL UNIQUE,
+    pista TEXT NOT NULL,
+    palabraId INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (palabraId) REFERENCES palabras(id)
+);
+
 /*PODIOS*/
+
+
+
+/*TIENDA*/
+
