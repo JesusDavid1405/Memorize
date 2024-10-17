@@ -11,6 +11,10 @@
 <body>
     <div class="game-menu">
         <h1 class="menu-title">Menú de Juegos</h1>
+        <div class="back-button">
+            <a href="../interfaz/index.html"><img class="back-button-img" src="../img/icon/image.png" alt="Icono de retroceder"></a>
+            <p class="back-button-text">Regresar</p>
+        </div>
         <div class="games-container">
             <div class="game-option">
                 <img src="../img/2.jpeg" alt="Juego 1" class="game-image">
@@ -46,7 +50,7 @@
                 </li>                        
                 <li class="nav-item btn" class="btn">
                     <button id="musicButton">
-                        <img class="imgSonido" src="../img/icon/musica.png" alt="Icono de sonido">
+                        <img class="imgSonido" src="../img/musica.png" alt="Icono de sonido">
                         <p>Musica</p>
                     </button>
                 </li>
@@ -59,16 +63,6 @@
             </ul>
         </div>
     </nav>
-<!-- Modal para Clasificaciones 
-<div class="back-button">
-    <a href="../login/index.html"><img class="back-button-img" src="../img/icon/image.png" alt="Icono de retroceder"></a>
-    <p class="back-button-text">Regresar</p>
-</div>
-<div class="tienda">
-<img class="tienda-img" src="../img/icon/tienda-Photoroom.png" alt="Icono de tienda"></a>
-    <p class="tienda-text">Tienda</p>
-</div> 
--->
 <div class="modal fade" id="leaderboardModal" tabindex="-1" aria-labelledby="leaderboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -82,11 +76,9 @@
                         <tr>
                             <th>Jugador</th>
                             <th>Puntuación</th>
-                            <th>Cambiar</th> 
                         </tr>
                     </thead>
                     <tbody id="leaderboard">
-                      
                         <tr>
                             <td>
                                 <div class="player-info">
@@ -95,9 +87,6 @@
                                 </div>
                             </td>
                             <td>150</td>
-                            <td>
-                                <button class="btn change-avatar" data-index="0"></button>
-                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -107,9 +96,6 @@
                                 </div>
                             </td>
                             <td>200</td>
-                            <td>
-                                <button class="btn change-avatar" data-index="1"></button>
-                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -119,9 +105,6 @@
                                 </div>
                             </td>
                             <td>100</td>
-                            <td>
-                                <button class="btn change-avatar" data-index="2"></button>
-                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -131,9 +114,6 @@
                                 </div>
                             </td>
                             <td>75</td>
-                            <td>
-                                <button class="btn change-avatar" data-index="3"></button>
-                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -143,53 +123,9 @@
                                 </div>
                             </td>
                             <td>50</td>
-                            <td>
-                                <button class="btn change-avatar" data-index="4"></button>
-                            </td>
                         </tr>
                     </tbody>
                 </table>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="changeAvatarModal" tabindex="-1" aria-labelledby="changeAvatarModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="changeAvatarModalLabel">Avatars</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Personas</p>
-                <div class="avatar-options">
-                    <img src="../img/avatar1.png" class="avatar-option" data-avatar="../img/avatar1.png" alt="Avatar 1">
-                    <img src="../img/avatar2.png" class="avatar-option" data-avatar="../img/avatar2.png" alt="Avatar 2">
-                    <img src="../img/avatar3.png" class="avatar-option" data-avatar="../img/avatar3.png" alt="Avatar 3">
-                    <img src="../img/avatar4.png" class="avatar-option" data-avatar="../img/avatar4.png" alt="Avatar 4">
-                    <img src="../img/avatar5.png" class="avatar-option" data-avatar="../img/avatar5.png" alt="Avatar 5">
-                    <img src="../img/avatar6.png" class="avatar-option" data-avatar="../img/avatar6.png" alt="Avatar 6">
-                    <img src="../img/avatar7.png" class="avatar-option" data-avatar="../img/avatar7.png" alt="Avatar 7">
-                </div>
-                <p>Animales</p>
-                <div class="avatar-options">
-                    <img src="../img/avatar8.png" class="avatar-option" data-avatar="../img/avatar8.png" alt="Avatar 8">
-                    <img src="../img/avatar9.png" class="avatar-option" data-avatar="../img/avatar9.png" alt="Avatar 9">
-                    <img src="../img/avatar10.png" class="avatar-option" data-avatar="../img/avatar10.png" alt="Avatar 10">
-                    <img src="../img/avatar11.png" class="avatar-option" data-avatar="../img/avatar11.png" alt="Avatar 11">
-                    <img src="../img/avatar12.png" class="avatar-option" data-avatar="../img/avatar12.png" alt="Avatar 12">
-                    <img src="../img/avatar13.png" class="avatar-option" data-avatar="../img/avatar13.png" alt="Avatar 13">
-                </div>
-                <p>Alienigenas</p>
-                <div class="avatar-options">
-                    <img src="../img/avatar14.png" class="avatar-option" data-avatar="../img/avatar14.png" alt="Avatar 14">
-                    <img src="../img/avatar15.png" class="avatar-option" data-avatar="../img/avatar15.png" alt="Avatar 15">
-                    <img src="../img/avatar16.png" class="avatar-option" data-avatar="../img/avatar16.png" alt="Avatar 16">
-                    <img src="../img/avatar17.png" class="avatar-option" data-avatar="../img/avatar17.png" alt="Avatar 17">
-                    <img src="../img/avatar18.png" class="avatar-option" data-avatar="../img/avatar18.png" alt="Avatar 18">
-                    <img src="../img/avatar19.png" class="avatar-option" data-avatar="../img/avatar19.png" alt="Avatar 19">
-                </div>
             </div>
         </div>
     </div>
@@ -252,9 +188,52 @@
             <img src="../img/avatar18.png" class="avatar-option2" data-avatar="../img/avatar18.png" alt="Avatar 18">
             <img src="../img/avatar19.png" class="avatar-option2" data-avatar="../img/avatar19.png" alt="Avatar 19">
         </div>
+        <div class="tienda text-center mt-4">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tiendaModal">
+                <img class="tienda-img" src="../img/icon/tienda-Photoroom.png" alt="Icono de tienda">
+                <span class="tienda-text">Tienda</span>
+            </button>
+        </div>
+        <div class="cerrar-sesion text-center mt-4">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cerrarModal">
+                <img class="cerrar-img" src="../img/exit.png" alt="Icono de cerrar sesion">
+                <span class="cerrar-text">Cerrar Sesión</span>
+            </button>
+        </div>
     </div>
 </div>
-
+<!-- Modal de Tienda -->
+<div class="modal fade" id="tiendaModal" tabindex="-1" aria-labelledby="tiendaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tiendaModalLabel">Tienda</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Aquí puedes comprar objetos y mejoras para el juego.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal de cerrar sesion -->
+<div class="modal fade" id="cerrarModal" tabindex="-1" aria-labelledby="cerrarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cerrarModalLabel">Cerrar Sesion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>¿Seguro que quieres cerrar tu sesión?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <a href="../login/index.html" class="btn btn-danger">Cerrar</a>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Modal para Editar Perfil -->
 <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
     <div class="modal-dialog">

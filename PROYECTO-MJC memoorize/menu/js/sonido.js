@@ -1,19 +1,21 @@
-    document.addEventListener('DOMContentLoaded', function() {
-        const musicButton = document.getElementById('musicButton');
-        const musicIcon = musicButton.querySelector('img');
-        const backgroundMusic = document.getElementById('backgroundMusic');
-        let isPlaying = false;
-        musicButton.addEventListener('click', function() {
-            if (isPlaying) {
-                backgroundMusic.pause();
-                musicIcon.src = "../img/icon/musica.png";
-            } else {
-                backgroundMusic.play();
-                musicIcon.src = "../img/icon/noMusica.png";
-            }
-            isPlaying = !isPlaying;
-        });
+document.addEventListener('DOMContentLoaded', function() {
+    const musicButton = document.getElementById('musicButton');
+    const musicIcon = musicButton.querySelector('img');
+    const backgroundMusic = document.getElementById('backgroundMusic');
+    let isPlaying = false;
+    
+    musicButton.addEventListener('click', function() {
+        if (isPlaying) {
+            backgroundMusic.pause();
+            musicIcon.src = "../img/musica.png";  
+        } else {
+            backgroundMusic.play();
+            musicIcon.src = "../img/nomusica.png";
+        }
+        isPlaying = !isPlaying;
     });
+});
+
     document.addEventListener('DOMContentLoaded', function() {
         const music = document.getElementById('backgroundMusic');
         const volumeControl = document.getElementById('volumeControl');
@@ -24,7 +26,7 @@
     });
     const sound = new Audio('../audio/notification-sound-7062.mp3');
 
-    // Simplificación para asegurar que los selectores sean válidos
+    // Reproducir el sonido al pasar el cursor por encima
     document.querySelectorAll('.play-button, .play-button2, #playButton, #musicButton, .game-image, #soundButton, .imgSonido, .avatar-option, .avatar-option2').forEach(element => {
         element.addEventListener('mouseenter', () => {
             sound.currentTime = 0;
