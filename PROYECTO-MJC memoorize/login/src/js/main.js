@@ -19,7 +19,9 @@ btnIniciar.addEventListener('click', function() {
     .then(response => response.json())
     .then(data => {
         if (data.status === 'success') {
-            console.log(data.status)
+            
+            localStorage.setItem('token', data.token);
+            
             window.location.href = '../menu/index.html';
         } else {
             // Mostrar mensaje de error si el inicio de sesión falla

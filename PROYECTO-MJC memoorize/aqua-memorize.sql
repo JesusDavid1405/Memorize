@@ -25,16 +25,19 @@ CREATE TABLE usuario(
     FOREIGN KEY (avatarId) REFERENCES avatar(id)
 );
 
-CREATE TABLE login(
-    usuarioId INT NOT NULL,
-    PRIMARY KEY (usuarioId),
-    FOREIGN KEY (usuarioId) REFERENCES usuario(id)
-);
-
 CREATE TABLE olvidasteContraseña(
     usuarioId INT NOT NULL,
     codigo BIGINT NOT NULL UNIQUE,
     PRIMARY KEY (usuarioId),
+    FOREIGN KEY (usuarioId) REFERENCES usuario(id)
+);
+
+CREATE TABLE sesiones (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuarioId INT NOT NULL,
+    token VARCHAR(255) NOT NULL,
+    fechaCreacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fechaExpiracion TIMESTAMP NULL, 
     FOREIGN KEY (usuarioId) REFERENCES usuario(id)
 );
 

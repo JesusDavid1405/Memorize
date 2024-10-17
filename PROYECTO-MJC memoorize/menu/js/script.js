@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     const leaderboard = document.getElementById('leaderboard');
     let scores = JSON.parse(localStorage.getItem('scores')) || [

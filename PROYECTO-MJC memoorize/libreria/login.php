@@ -1,20 +1,19 @@
 <?php
-    // Incluir la clase Database
     include_once 'conexion.php';
 
+    session_start();
     $response = [];
 
+    
     $input = file_get_contents('php://input');
     $data = json_decode($input, true);
-    
-    
+
     if ($data && isset($data['correo']) && isset($data['contraseña'])) {
         
         $correo = $data['correo'];
         $contraseña = $data['contraseña'];
     
         $database = new Database();
-
         $conn = $database->connect();
 
         if ($conn) {
@@ -22,38 +21,47 @@
             $stmt = $conn->prepare($query);
     
             // Vincular parámetros y ejecutar la consulta
-            $stmt->bind_param("ss", $correo, $contraseña); // 'ss' significa dos strings
+            $stmt->bind_param("ss", $correo, $contraseña);
             $stmt->execute();
     
-            // Obtener los resultados
+            
             $result = $stmt->get_result();
     
-            // Verificar si hay resultados
             if ($result && $result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    // Crear respuesta con los datos obtenidos de la base de datos
-                    $response = [
-                        'status' => 'success',
-                        'id' => $row['id'], // Asegúrate que 'id' es el campo correcto en tu tabla
-                        'nickName' => $row['nickName'],
-                        'correo' => $row['correo']
-                    ];
-                }
+            
+                $row = $result->fetch_assoc();
+                $usuarioId = $row['id']; 
+
+                
+                $token = bin2hex(random_bytes(16)); 
+                $fecha_expiracion = date('Y-m-d H:i:s', strtotime('+1 hour'));
+
+                
+                $querySesion = "INSERT INTO sesiones (usuarioId, token, fechaExpiracion) VALUES (?, ?, ?)";
+                $stmtSesion = $conn->prepare($querySesion);
+                $stmtSesion->bind_param("iss", $usuarioId, $token, $fecha_expiracion);
+                $stmtSesion->execute();
+                
+            
+                $response = [
+                    'status' => 'success',
+                    'token' => $token,
+                    'id' => $usuarioId,
+                    'nickName' => $row['nickName'],
+                    'correo' => $row['correo']
+                ];
+
+                $stmtSesion->close();
             } else {
-                // Si no se encontraron registros
                 $response = [
                     'status' => 'error',
                     'message' => 'No se encontraron registros con esas credenciales.'
                 ];
             }
     
-            // Cerrar la consulta
             $stmt->close();
-            
-            // Cerrar la conexión
             $conn->close();
         } else {
-            // Si la conexión a la base de datos falla
             $response = [
                 'status' => 'error',
                 'message' => 'Fallo en la conexión a la base de datos.'
@@ -66,9 +74,7 @@
         ];
     }
     
-    // Configurar el encabezado para la respuesta JSON
     header('Content-Type: application/json');
     
-    // Devolver la respuesta en formato JSON
     echo json_encode($response);
 ?>
