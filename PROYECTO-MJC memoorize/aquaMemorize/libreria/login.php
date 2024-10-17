@@ -2,6 +2,12 @@
     // Incluir la clase Database
     include_once 'conexion.php';
 
+    // Crear una instancia de la clase Database
+    $database = new Database();
+
+    // Conectar a la base de datos
+    $conn = $database->connect();
+
     $response = [];
 
     $input = file_get_contents('php://input');
@@ -13,11 +19,9 @@
         $correo = $data['correo'];
         $contraseña = $data['contraseña'];
     
-        $database = new Database();
-
-        $conn = $database->connect();
-
+        // Conexión a la base de datos (suponiendo que $conn es tu conexión previamente establecida)
         if ($conn) {
+            // Consulta preparada para evitar inyección SQL
             $query = "SELECT * FROM usuario WHERE correo = ? AND contraseña = ?";
             $stmt = $conn->prepare($query);
     
@@ -60,6 +64,7 @@
             ];
         }
     } else {
+        // En caso de que no se reciban datos correctamente desde el JSON
         $response = [
             'status' => 'error',
             'message' => 'Datos no recibidos correctamente. Se requiere correo y contraseña.'

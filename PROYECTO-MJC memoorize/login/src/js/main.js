@@ -12,29 +12,18 @@ btnIniciar.addEventListener('click', function() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            // Este campo se puede omitir si no lo estás usando
-            nickName: "", 
             correo: correo,
             contraseña: contraseña
         })
     })
     .then(response => response.json())
     .then(data => {
-        // Si hay un error en el servidor
-        if (data.error) {
-            alert(data.error);
+        if (data.status === 'success') {
+            console.log(data.status)
+            window.location.href = '../menu/index.html';
         } else {
-            // Verificamos si las credenciales coinciden con alguno de los usuarios
-            let encontrado = data.find(usuario => 
-                usuario.correo === correo && usuario.contraseña === contraseña
-            );
-
-            if (encontrado) {
-                // Redirigir si las credenciales son correctas
-                window.location.href = '../menu/index.html';
-            } else {
-                pantalla.innerHTML = 'Los datos ingresados no se encuentran registrados';
-            }
+            // Mostrar mensaje de error si el inicio de sesión falla
+            pantalla.innerHTML = data.message;
         }
     })
     .catch(error => console.error('Error:', error));
