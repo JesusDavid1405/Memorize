@@ -9,15 +9,15 @@ body{
     animation: puffIn 1s ease-in-out
 }
 .back-button {
-    right: 94%;
-    bottom: 89%;
+    right: 92%;
+    bottom: 85%;
     position: fixed;
 
 
 }
 .back-button-text{
     font-weight: bold;
-    font-size: 80%;
+    font-size: 0%;
     color: #ffffff;
         
 }
@@ -25,17 +25,18 @@ body{
     transform: scale(1.1);
 }
 .back-button-img{
-    width: 50%;
+    width: 70%;
     flex-direction: row;
-    height: 50%;
+    height: 70%;
 }
 .tienda .btn {
     display: flex;
     align-items: center;
-    left: 60%;
+    right: 0%;
     position: absolute;
     justify-content: center;
     gap: 5px;
+    bottom: 82%;
     padding: 10px 15px;
 }
 
@@ -78,13 +79,13 @@ body{
 }
 
 .game-description {
-    font-size: 14px;
+    font-size: 16px;
     color: #333;
     text-align: center;
     background-image: url(../../img/boton.png); 
     position: absolute;
     bottom: 22px;
-    left: 12%;
+    left: -11%;
     right: 0;
     padding: 10px;
     text-align: center;
@@ -132,17 +133,16 @@ body{
 }
 .menu-title {
     font-family: 'Lobster', cursive; 
-    margin-bottom: 10%;
+    margin-bottom: 6%;
     padding: 0%;
     min-height: 0vh;
     display: flex;
     align-items: center;  
     flex: 1;
     flex-direction: column;
-    font-size: 55px;
+    font-size: 80px;
     top: 0%;
-    color: #333;
-    background-image: url(../../img/mapa.jpg);
+    color: #a31919;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -210,6 +210,7 @@ ul.navbar-nav {
     height: 40px; 
 }
 .offcanvas-body {
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -492,7 +493,6 @@ nav {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 0%;
 }
 .play-button {
     padding: 10px 30px;
@@ -503,7 +503,7 @@ nav {
     text-decoration: none; 
     position: relative;
     z-index: 1;
-    left: 5%;
+    right: 10%;
     color: inherit;
     top: 30px;
     pointer-events: auto;
@@ -511,7 +511,7 @@ nav {
     flex-direction: row;
     border: none;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 }
@@ -523,7 +523,7 @@ nav {
     background-position: center;
     text-decoration: none; 
     top: 30px;
-    left: 5%;
+    right: 10%;
     position: relative;
     z-index: 1;
     color: inherit;
@@ -532,7 +532,7 @@ nav {
     flex-direction: row;
     border: none;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 }
@@ -569,7 +569,6 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start; 
-    margin: 10px;
     padding: 10px;
     width: 200px; 
 }
@@ -599,11 +598,12 @@ nav {
     width: 200px; 
 }
 .game-image {
-    width: 200px;
+    width: 120%;
     height: auto;
     position: relative;
     animation: glitch 1s infinite;
-    margin-top: -30px;
+    margin-top: 0px;
+    margin-left: -20%;
     animation: swashIn 1s ease-in-out, gameVertical 2s infinite alternate ease-in-out;
     transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
 }
@@ -710,7 +710,7 @@ nav {
         margin: 0px;
         margin-right: 90%;
         
-        margin-bottom: -55%;
+        margin-bottom: 0%;
         padding: 10px;
         width: 40%; 
     }
@@ -722,7 +722,7 @@ nav {
         margin: 0px;
         padding: 10px;
         width: 40%; 
-        margin-top: 55%;
+        margin-top: 0%;
         margin-right: 90%;
     }
     .game-option3 {
@@ -733,7 +733,7 @@ nav {
         margin: 0px;
         padding: 10px;
         width: 40%; 
-        margin-top: -210%;
+        margin-top: 0%;
         margin-right: 90%;
     }
     .game-description {
@@ -808,4 +808,7 @@ nav {
         font-size: 0px;
         
     }
+}
+@media (max-width: 768px) {
+   
 }
