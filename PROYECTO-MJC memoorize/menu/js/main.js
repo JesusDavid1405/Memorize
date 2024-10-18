@@ -17,15 +17,16 @@ function avatares(){
     .then(data => {
         data.forEach(element => {
             if(element.gratis){
-                perfilAvatar=`
+                perfilAvatar.innerHTML+=`
                 <div>
-                    <img src="../${element.Image}" class="avatar-option2" data-avatar="../img/avatar1.png" alt="Avatar 1">
+                    <img src="../img/${element.Imagen}" class="avatar-option2" data-avatar="../img/avatar1.png" alt="">
                     <p>${element.nombre}</p>
                 </div>
                 `; 
+
             }else{
 
-            }
+            }   
         });
     })
     .catch(error => console.error('Error:', error));

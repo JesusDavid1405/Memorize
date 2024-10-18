@@ -5,32 +5,44 @@ body{
     background-repeat: no-repeat;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .logo{
-    margin: auto;
-    width: 30%;
+    
+    width: 20%;
+    height: auto;
     position: relative;
-    top: 10%;
+    top: 30%;
+    left: 42%;
 }
+
 .logo img{
     width: 80%;
     height: 80%;
     margin: auto;
 }
+
 .opciones{
     display: flex;
     flex-direction: column;
-    width: 85%;
+    width: 100%;
     margin: auto;
     position: relative;
-    top: 30%;
+    top: 80%;
 }
+
 .rowes{
     display: flex;
-    gap: 3px;
+    gap: 3%;
+
 }
+
+.letras{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 250%;
+}
+
 .opcion{
     width: 30%;
-    height: 70px;
     background-image: url(../../../img/botonMultijugador.jpg);
     background-size: 100% 190%;
     background-repeat: no-repeat;
@@ -39,10 +51,12 @@ body{
     box-shadow: 0px 0px 20px #000;
     transition: 200ms;
 }
+
 .opcion:hover{
     color: rgb(2, 61, 11);
     transform: scale(1.1);
 }
+
 .opcion p{
     font-size: 30px;
     font-weight: 900;
