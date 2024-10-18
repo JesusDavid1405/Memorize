@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {
-                window.location.href = '../../interfaz/index.html';
+                window.location.href = '../index.html';
             } else {
                 pantalla.innerHTML = data.message;
             }

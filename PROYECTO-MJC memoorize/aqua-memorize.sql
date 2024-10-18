@@ -5,7 +5,7 @@ USE prueba;
 /*AVATAR*/
 
 CREATE TABLE avatar(
-    id INT NOT NULL,
+    id INT AUTO_INCREMENT NOT NULL,
     nombre VARCHAR(100) NOT NULL,
     imagen VARCHAR(255) NOT NULL,
     precio DECIMAL(10, 2) NOT NULL,

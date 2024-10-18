@@ -11,10 +11,6 @@ VALUES
 (2, 'PlayerTwo', 2, 'playertwo@example.com', 'password456');
 
 
-INSERT INTO login (usuarioId)
-VALUES (1), (2);
-
-
 INSERT INTO olvidasteContraseña (usuarioId, codigo)
 VALUES (1, 123456789012345),
 (2, 987654321098765);
