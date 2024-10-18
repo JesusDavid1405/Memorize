@@ -18,8 +18,7 @@
             *
         FROM 
             avatar
-        WHERE
-            es_gratuito=TRUE;
+        ;
         ";
         $result = $conn->query($query);
 
@@ -30,7 +29,8 @@
                 $response[]= [
                     'id'=>$row['id'],
                     'nombre'=>$row['nombre'],
-                    'imagen'=>$row['imagen']
+                    'imagen'=>$row['imagen'],
+                    'gratis'=>$row['es_gratuito']
                 ];
             }
         } else {

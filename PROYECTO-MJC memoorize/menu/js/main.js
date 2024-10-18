@@ -1,3 +1,5 @@
+let perfilAvatar = document.getElementById("piratas");
+
 function avatares(){
 
     fetch('../libreria/avatar.php', {
@@ -7,16 +9,24 @@ function avatares(){
         },
         body: JSON.stringify({
             nombre: '',
-            Image: ''
+            Image: '',
+            gratis:''
         })
     })
     .then(response => response.json())
     .then(data => {
-        if (data.status === 'success') {
-            window.location.href = '../index.html';
-        } else {
-            pantalla.innerHTML = data.message;
-        }
+        data.forEach(element => {
+            if(element.gratis){
+                perfilAvatar=`
+                <div>
+                    <img src="../${element.Image}" class="avatar-option2" data-avatar="../img/avatar1.png" alt="Avatar 1">
+                    <p>${element.nombre}</p>
+                </div>
+                `; 
+            }else{
+
+            }
+        });
     })
     .catch(error => console.error('Error:', error));
 }
