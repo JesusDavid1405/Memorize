@@ -37,23 +37,20 @@ const pickRandom = (array, items) => {
     return randomPicks
 }
 
-const generateGame = () => {
+// Nueva función para cargar imágenes desde JSON
+const loadImagenes = async () => {
+    const response = await fetch('imagenes.json')
+    const data = await response.json()
+    return data.imagenes
+}
+
+const generateGame = async () => {
     const dimensions = selectors.board.getAttribute('data-dimension')
     if (dimensions % 2 !== 0) {
         throw new Error("The dimension of the board must be an even number.")
     }
-    const images = [
-        'img/animal7.jpg',
-        'img/animal18.jpg',
-        'img/animal9.jpg',
-        'img/animal10.jpg',
-        'img/animal15.jpg',
-        'img/animal16.jpg',
-        'img/animal17.jpg',
-        'img/animal18.jpg',                 
-        'img/animal23.jpg',
-        'img/animal24.jpg',
-    ]
+
+    const images = await loadImagenes() // Carga las imágenes del JSON
     const picks = pickRandom(images, (dimensions * dimensions) / 2)
     const items = shuffle([...picks, ...picks])
 
@@ -113,7 +110,7 @@ const flipCard = card => {
 
         setTimeout(() => {
             flipBackCards()
-        }, 1000)
+        }, 500)
     }
     if (!document.querySelectorAll('.card:not(.flipped)').length) {
         setTimeout(() => {
@@ -143,5 +140,8 @@ const attachEventListeners = () => {
     })
 }
 
-generateGame()
-attachEventListeners()
+// Llamar a la función asincrónica para iniciar el juego
+loadImagenes().then(() => {
+    generateGame()
+    attachEventListeners()
+})
