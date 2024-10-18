@@ -5,10 +5,10 @@ VALUES
 (3, 'Arquero', 'arquero.png', 3.49, FALSE);
 
 
-INSERT INTO usuario (id, nickName, avatarId, correo, contraseña)
+INSERT INTO usuario (nickName, avatarId, correo, contraseña)
 VALUES
-(1, 'PlayerOne', 1, 'playerone@example.com', 'password123'),
-(2, 'PlayerTwo', 2, 'playertwo@example.com', 'password456');
+('PlayerOne', 1, 'playerone@example.com', 'password123'),
+('PlayerTwo', 2, 'playertwo@example.com', 'password456');
 
 
 INSERT INTO olvidasteContraseña (usuarioId, codigo)

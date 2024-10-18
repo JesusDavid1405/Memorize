@@ -41,7 +41,11 @@
                 $stmtSesion = $conn->prepare($querySesion);
                 $stmtSesion->bind_param("iss", $usuarioId, $token, $fecha_expiracion);
                 $stmtSesion->execute();
-                
+
+
+                $_SESSION['id'] = $usuarioId;
+                $_SESSION['nickName'] = $row['nickName'];
+                $_SESSION['correo'] = $row['correo'];           
             
                 $response = [
                     'status' => 'success',
