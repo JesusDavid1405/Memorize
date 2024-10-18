@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MJC memorize</title>
-    <link rel="icon" href="../../img/logo/MJC.png" type="image/icon">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="../../img/logo/aqua-Memorize.png" type="image/icon">
+    <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
 </head>
 
@@ -29,22 +29,25 @@
                     </center>
                     <h4 class="text2">Registrate</h4>
                 </div>
+
+                <div class="alert alert-success" id="resultado"></div>
+
                 <div class="col-md-11 inputIcon">
-                    <input type="text" class="form-control input" id="nombreUsuario" placeholder="usuario" required>
+                    <input type="text" class="form-control input" id="nickName" placeholder="nickName" required>
                     <span id="icon"> 
                         <img src="../../img/icon/user.png" alt="">
                     </span>
                 </div>
             
                 <div class="col-md-11 inputIcon">
-                    <input type="email" class="form-control input" id="email" placeholder="Gmail" required>
+                    <input type="email" class="form-control input" id="email" placeholder="gmail" required>
                     <span id="icon"> 
                         <img src="../../img/icon/arroba.png" alt="">
                     </span>
                 </div>
 
                 <div class="col-md-11 inputIcon">
-                    <input type="password" class="form-control input" id="Contraseña" placeholder="Contraseña" required>
+                    <input type="password" class="form-control input" id="contraseña" placeholder="contraseña" required>
                     <span id="icon"> 
                         <img src="../../img/icon/password.png" alt="">
                     </span>
@@ -52,9 +55,9 @@
 
                 <div class="col-12">
                     <center>
-                        <a href="../../interfaz/index.html" class="btn btnLogin">
+                        <button type="button" class="btn btnLogin" id="registrar">
                             <h6 class="text">Registrarte</h6>
-                        </a>
+                        </button>
                     </center>
                 </div>
 
@@ -79,7 +82,8 @@
 
 
     <audio id="miCancion" src="../../audio/no-copyright-music-181373.mp3" preload="auto" loop></audio>
-    <script src="js/sonido.js"></script>
+    <script src="src/js/main.js"></script>
+    <script src="src/js/sonido.js"></script>
     <script src="../../bootstrap/js/bootstrap.js"></script>
     <script src="../../bootstrap/js/bootstrap.bundle.js"></script>
 </body>
