@@ -19,7 +19,7 @@ function avatares(){
             if(element.gratis){
                 perfilAvatar.innerHTML+=`
                 <div>
-                    <img src="../img/${element.Imagen}" class="avatar-option2" data-avatar="../img/avatar1.png" alt="">
+                    <img src="../img/${element.imagen}" class="avatar-option2" data-avatar="../img/avatar1.png" alt="">
                     <p>${element.nombre}</p>
                 </div>
                 `; 
