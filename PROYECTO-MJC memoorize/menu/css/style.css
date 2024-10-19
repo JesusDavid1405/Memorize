@@ -794,14 +794,14 @@ nav {
     }
     .back-button {
         left: 2%;
-        bottom: 80%;
+        bottom: 79%;
         z-index: 10;
         
     
     }
     .back-button-img{
-        width: 50%;
-        height: 50%;
+        width: 70%;
+        height: 70%;
     }
     .back-button-text{
         color: #ffffff00;
@@ -852,8 +852,8 @@ nav {
       }
       .tienda .btn {
         gap: 0px;
-        top: 0%;
-        right: 0%;
+        top: -2%;
+        right: 4%;
         padding: 0px 5px;
     }
     .tienda .tienda-img {
