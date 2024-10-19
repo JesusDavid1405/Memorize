@@ -20,6 +20,6 @@ function createBubbles(event) {
         });
     }
     setTimeout(function() {
-        window.location.href = '../login/bar.html';
+        window.location.href = '../views/bar.html';
     }, 1400);
 }

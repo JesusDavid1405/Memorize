@@ -12,7 +12,7 @@ playButton.addEventListener('click', function() {
     }
     isPlaying = !isPlaying;
 });
-const sound = new Audio('audio/notification-sound-7062.mp3');
+const sound = new Audio('../audio/notification-sound-7062.mp3');
 
 
 document.querySelector('.button2').addEventListener('mouseenter', () => {

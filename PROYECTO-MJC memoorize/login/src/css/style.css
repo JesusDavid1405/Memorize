@@ -30,12 +30,12 @@ body{
     padding: 18px;
     border: 5px solid #b1891b; 
     border-radius: 30px; 
-    background: radial-gradient(circle, rgba(85, 85, 84, 0.374) 0%, rgba(171, 171, 169, 0.451) 100%);
-    box-shadow: 0 0 15px rgba(255, 162, 0, 0.6),
-                inset 0 0 10px rgb(44, 166, 227); 
+    background: radial-gradient(circle, rgba(209, 209, 32, 0.63) 0%, rgba(38, 28, 104, 0.619) 100%);
+    box-shadow: 0 0 15px rgba(162, 133, 82, 0.6),
+                inset 0 0 10px rgb(0, 170, 255); 
     opacity: 1;
     transition: 200ms;
-    bottom: 12vh;
+    bottom: 5vh;
 }
 #formulario:hover{
     transform: none;
@@ -82,34 +82,36 @@ body{
 input.input{    
   padding-right: 2.5rem;
   background-color: rgba(255, 255, 255, 0.427);
-  border: 1px solid black;
+  border: 1px solid#F28F16;
   transition: 100ms;
 }
 input.input:focus{
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.77);
     border: 1px solid black;
-    box-shadow: 0px 0px 5px black;
+    box-shadow: 0px 0px 5px#F28F16;
 }
 input.input:hover {  
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.692);
     
 }
 .text{
-    color: aliceblue;
+    color: #ffffff;
     text-align: center;
-    font-size: 18px;
+    font-size: 25px;
+    font-family: 'Pirata One', cursive; 
 }
 text:hover{
     transform: scale(1.1);
     
 }
 .text2{
-    color: rgb(44, 230, 183);
+    color:#ffae00; 
     text-align: center;
-    font-size: 28px;
+    font-family: 'Pirata One', cursive; 
+    font-size: 40px;
 }
 .text2:hover{
-    color:#ffae00;
+    color: rgb(167, 225, 32);
 }
 /*sonido*/
 #playButton {
@@ -131,53 +133,40 @@ text:hover{
     transform: scale(1.1);
 }
 
-/*iconosRedes*/
-.logoRedes{
-    margin: auto;
-}
-.logoRedes img{
-    width: 25%;
-    height: 25%;
-    transition: 200ms;
-}
-.logoRedes img:hover{
-    transform: scale(1.2);
-}
-.facebook{
-    position: relative;
-    left: 75%;
-}
-.gitHub{
-    position: relative;
-    left: 40%;
-}
 
 /*texto*/
 .textCrear{
-    font-size: 1.3em;
-    color: rgb(0, 0, 0);
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5em;
+    
+    color:#ffffff;
+    font-family: 'Pirata One', cursive; 
     text-align: center;
 }
 .textCrear a{
-    color: rgb(255, 255, 255) !important; 
+    color: #ffae00; 
     font-size: 22px;
-    font-family: Arial, Helvetica, sans-serif !important;
+    font-family: 'Pirata One', cursive; 
+}
+.textCrear a:hover{
+    color: rgb(167, 225, 32) !important;
 }
 
 .textOlvide{
     font-size: medium;
-    color: rgb(0, 0, 0);
-    font-family: Arial, Helvetica, sans-serif;
+    color: #F28F16;
+    font-family: 'Pirata One', cursive; 
     text-align: center;
     
 }
 .textOlvide a{
-    color: rgb(0, 0, 0) !important; 
+    color:#ffffff; 
     font-size: 1.3em;
     
+    
 }
-
+.textOlvide a:hover{
+    color: rgb(167, 225, 32) !important;
+}
 
 /*quitar link*/
 a:link, a:visited, a:active {

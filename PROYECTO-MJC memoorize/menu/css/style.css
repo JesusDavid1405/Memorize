@@ -13,11 +13,11 @@ body{
     align-items: center;
     position: absolute;
     justify-content: center;
-    background-color: #f7f3e55f;
+    background-color: #ffffff5f;
     border: 3px solid #3b2944;
     border-radius: 10px;
-    padding: 10px 20px;
-    right: 16vh;
+    padding: 8px 8px;
+    right: 13vh;
     bottom: 86vh;
     box-shadow: 0 4px 0 #fdfdfd;
     position: absolute;
@@ -25,8 +25,8 @@ body{
   }
   
   .coin-icon {
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
     margin-right: 10px;
   }
   
@@ -48,7 +48,7 @@ body{
     border-radius: 0 0 10px 10px;
   }
 .back-button {
-    right: 80%;
+    left: 2%;
     bottom: 88%;
     position: fixed;
 
@@ -58,15 +58,15 @@ body{
     transform: scale(0.9);
 }
 .back-button-img{
-    width: 20%;
+    width: 25%;
 
-    height: 20%;
+    height: 25%;
 }
 .tienda .btn {
     display: flex;
     align-items: center;
     right: 0%;
-    background-color:#575656a1;
+    background-color: #f7f3e55f;
     position: absolute;
     box-shadow: 0 4px 0 #fdfdfd;
     justify-content: center;
@@ -546,7 +546,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 20px;
+    margin-top: 50px;
     flex-wrap: wrap;
     gap: 10px;
 
