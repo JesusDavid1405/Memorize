@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJC memorize</title>
+    <link rel="icon" href="../img/logo/MJC.png" type="image/icon">
+    <link rel="stylesheet" href="../stiles/principal.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../stiles/icon.css">
+    <link href="../https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body> 
+    <header class="header">
+        <div class="container-fluid">
+            <audio id="miCancion" src="../audio/no-copyright-music-181373.mp3" preload="auto" loop></audio>
+            <button id="playButton" onclick="toggleSound()">
+                <img class="imgSonido" src="../img/icon/noSonido.png" alt="Control de Sonido">
+            </button>
+        </div>
+        
+    </header> 
+    <div class="container-fluid">
+        <img src="../img/logo/aqua-Memorize.png" alt="Logo del Juego" class="logo"> 
+        <button class="button2" href="../login/bar.html" onclick="createBubbles(event)">
+            <h3 class="btnTex">JUGAR</h3>  
+            <div class="bubbles"></div> <!-- Contenedor de burbujas -->
+        </button>
+    </div>
+
+    <script src="../services/sonido.js"></script>
+    <script src="../services/burbujas.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.js"></script> 
+</body>
+</html>

@@ -17,9 +17,9 @@ body{
     border: 3px solid #3b2944;
     border-radius: 10px;
     padding: 10px 20px;
-    right: 15vh;
+    right: 16vh;
     bottom: 86vh;
-    box-shadow: 0 4px 0 #b33b2e;
+    box-shadow: 0 4px 0 #fdfdfd;
     position: absolute;
     width: max-content;
   }
@@ -48,7 +48,7 @@ body{
     border-radius: 0 0 10px 10px;
   }
 .back-button {
-    right: 81%;
+    right: 80%;
     bottom: 88%;
     position: fixed;
 
@@ -66,17 +66,17 @@ body{
     display: flex;
     align-items: center;
     right: 0%;
-    background-color: transparent;
+    background-color:#575656a1;
     position: absolute;
- 
+    box-shadow: 0 4px 0 #fdfdfd;
     justify-content: center;
     gap: 5px;
     bottom: 84%;
     padding: 10px 15px;
 }
 .tienda .tienda-img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 45px;
 }
 
 .tienda .tienda-text {
@@ -113,12 +113,18 @@ body{
 }
 
 .game-description {
-    font-size: 16px;
-    color: #333;
+    font-family: 'Pirata One', cursive; 
+    font-size: 21px;
     text-align: center;
-    background-image: url(../../img/boton.png); 
+    color: #ffffff; 
+    text-shadow: 3px 3px 0px #ffffff00,   
+                 6px 6px 0px #8b451300; 
+                 border-radius: 30px; 
+                 background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgba(171, 171, 169, 0.451) 100%);
+                 box-shadow: 0 0 15px rgb(255, 166, 0),
+                             inset 0 0 10px rgb(44, 166, 227); 
     position: absolute;
-    bottom: 22px;
+    bottom: -100px;
     left: -15%;
     right: 0;
     padding: 10px;
@@ -146,7 +152,7 @@ body{
 
 
 .nombre-icono {
-    color: white; 
+    color:#012840; 
     font-size: 14px; 
 }
 .btn:hover {
@@ -163,7 +169,6 @@ body{
     min-width: 80px; 
     background-color:#00000000; 
     min-height: 80px; 
-    background-color: #00000000;
     padding: 10px;
     margin: 0 5px; 
     transition: transform 200ms;
@@ -171,17 +176,27 @@ body{
 .menu-title {
     font-family: 'Pirata One', cursive; 
     text-align: center;
-    font-size: 4rem;
+    font-size: 5.0rem;
     color: #ffd700; 
-    text-shadow: 3px 3px 0px #ffffff,   
+    text-shadow: 3px 3px 0px #000000,   
                  6px 6px 0px #8b4513;  
     position: relative;
     padding: 18px;
-    border: 5px solid #8b6d13; 
-    border-radius: 30px; 
-    background: radial-gradient(circle, rgba(85, 85, 84, 0.374) 0%, rgba(171, 171, 169, 0.451) 100%);
-    box-shadow: 0 0 15px rgba(255, 165, 0, 0.6),
-                inset 0 0 10px rgb(44, 166, 227); 
+    animation: vanishIn 1s ease-in-out
+}
+.menu-title:hover {
+    transform: scale(0.9);
+    color: #012840; 
+}
+@keyframes vanishIn {
+    0% {
+        opacity: 0;
+        transform: rotate(-30deg) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
 }
 
 
@@ -342,9 +357,10 @@ ul.navbar-nav {
     background-color: #0057b300;
 }
 #musicButton p {
-    margin: 0;
-    font-size: 19px;
-    color: white;
+    margin: 8px;
+    font-size: 26px;
+    font-family:'Pirata One', cursive; ;
+    color: #012840;
 }
 
 img.imgSonido {
@@ -352,14 +368,16 @@ img.imgSonido {
     height: auto;
 }
 #playButton p {
-    margin: 0;
-    font-size: 20px;
-    color: white;
+    margin: 8px;
+    font-size: 26px;
+    font-family:'Pirata One', cursive; ;
+    color: #012840;
 }
 #playButton2 p {
-    margin: 0;
-    font-size: 20px;
-    color: white;
+    margin: 8px;
+    font-size: 26px;
+    font-family:'Pirata One', cursive; ;
+    color: #012840;
 }
 #soundButton {
     display: flex;
@@ -374,10 +392,10 @@ img.imgSonido {
     
 }
 #soundButton p {
-    margin: 0;
-    font-size: 20px;
-    margin-top: 0%;
-    color: rgb(255, 255, 255);
+    margin: 8px;
+    font-size: 26px;
+    font-family:'Pirata One', cursive; ;
+    color: #012840;
 }
 .avatar {
     width: 40px; 
@@ -528,7 +546,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 80px;
+    margin-top: 20px;
     flex-wrap: wrap;
     gap: 10px;
 
@@ -544,13 +562,14 @@ nav {
     z-index: 1;
     right: 10%;
     color: inherit;
-    top: 30px;
+    top: 20px;
     pointer-events: auto;
-    color: rgb(255, 255, 255);
+    font-size: 26px;
+    font-family:'Pirata One', cursive; ;
+    color: #012840;
     flex-direction: row;
     border: none;
     border-radius: 5px;
-    font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 }
@@ -561,17 +580,18 @@ nav {
     background-repeat: no-repeat; 
     background-position: center;
     text-decoration: none; 
-    top: 30px;
+    top: 20px;
     right: 10%;
     position: relative;
     z-index: 1;
     color: inherit;
     pointer-events: auto;
-    color: rgb(255, 255, 255);
+    font-size: 26px;
+    font-family:'Pirata One', cursive; ;
+    color: #012840;
     flex-direction: row;
     border: none;
     border-radius: 5px;
-    font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 }
@@ -794,20 +814,20 @@ nav {
     }
     .back-button {
         left: 2%;
-        bottom: 79%;
+        bottom: 82%;
         z-index: 10;
         
     
     }
     .back-button-img{
-        width: 70%;
-        height: 70%;
+        width: 60%;
+        height: 60%;
     }
     .back-button-text{
         color: #ffffff00;
     }
     .menu-title {
-        margin-bottom: 0%;
+        margin-bottom: 15%;
         font-size: 2.9em;
         border-radius: 50px; 
         text-align:left;
@@ -834,7 +854,7 @@ nav {
     }
     .coin {
         right: 3vh;
-        bottom: 78vh;
+        bottom: 79vh;
         width: 100px;
         height: 50px;
         
@@ -852,8 +872,10 @@ nav {
       }
       .tienda .btn {
         gap: 0px;
+        box-shadow: 0 4px 0 #fdfdfd00;
         top: -2%;
         right: 4%;
+        background-color: transparent;
         padding: 0px 5px;
     }
     .tienda .tienda-img {

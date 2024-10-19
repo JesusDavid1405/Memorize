@@ -13,28 +13,29 @@ body{
 .btnLogin{
     width: 200px;
     height: 40px;
-    background-color: rgb(35, 92, 82) !important;  
+    background-color: rgb(211, 153, 46) !important;  
     transition: 600ms;
     margin-bottom: 3%;
 }
 .btnLogin:hover{
-    transform: scale(1.1);
+    transform: scale(0.9);
 }
 /*Formulario*/
 #formulario{
     width: 40%;
     height: auto;
-    border-radius: 30px;
-    background-image: url(../../../img/mapa.jpg);
-    background-color: rgba(240, 248, 255, 0.541);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; 
+    text-shadow: 3px 3px 0px #ffffff07,   
+                 6px 6px 0px #8b451300;  
+    position: relative;
+    padding: 18px;
+    border: 5px solid #b1891b; 
+    border-radius: 30px; 
+    background: radial-gradient(circle, rgba(85, 85, 84, 0.374) 0%, rgba(171, 171, 169, 0.451) 100%);
+    box-shadow: 0 0 15px rgba(255, 162, 0, 0.6),
+                inset 0 0 10px rgb(44, 166, 227); 
     opacity: 1;
     transition: 200ms;
-    margin: 0 auto;
-    position: relative;
-    bottom: 8vh;
+    bottom: 12vh;
 }
 #formulario:hover{
     transform: none;
@@ -98,10 +99,17 @@ input.input:hover {
     text-align: center;
     font-size: 18px;
 }
+text:hover{
+    transform: scale(1.1);
+    
+}
 .text2{
-    color: rgb(0, 0, 0);
+    color: rgb(44, 230, 183);
     text-align: center;
     font-size: 28px;
+}
+.text2:hover{
+    color:#ffae00;
 }
 /*sonido*/
 #playButton {
