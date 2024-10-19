@@ -48,25 +48,27 @@ body{
     border-radius: 0 0 10px 10px;
   }
 .back-button {
-    right: 82%;
+    right: 81%;
     bottom: 88%;
     position: fixed;
 
 
 }
 .back-button:hover {
-    transform: scale(1.1);
+    transform: scale(0.9);
 }
 .back-button-img{
     width: 20%;
-    flex-direction: row;
+
     height: 20%;
 }
 .tienda .btn {
     display: flex;
     align-items: center;
     right: 0%;
+    background-color: transparent;
     position: absolute;
+ 
     justify-content: center;
     gap: 5px;
     bottom: 84%;
@@ -117,7 +119,7 @@ body{
     background-image: url(../../img/boton.png); 
     position: absolute;
     bottom: 22px;
-    left: -11%;
+    left: -15%;
     right: 0;
     padding: 10px;
     text-align: center;
@@ -181,6 +183,8 @@ body{
     box-shadow: 0 0 15px rgba(255, 165, 0, 0.6),
                 inset 0 0 10px rgb(44, 166, 227); 
 }
+
+
 li.nav-item {
     list-style: none;
     display: flex;
@@ -790,15 +794,14 @@ nav {
     }
     .back-button {
         left: 2%;
-        bottom: 79%;
+        bottom: 80%;
         z-index: 10;
         
     
     }
     .back-button-img{
-        width: 60%;
-        flex-direction: row;
-        height: 60%;
+        width: 50%;
+        height: 50%;
     }
     .back-button-text{
         color: #ffffff00;
@@ -849,9 +852,9 @@ nav {
       }
       .tienda .btn {
         gap: 0px;
-        bottom: 87vh;
-        right: 2%;
-        padding: 10px 15px;
+        top: 0%;
+        right: 0%;
+        padding: 0px 5px;
     }
     .tienda .tienda-img {
         width: 45px;
