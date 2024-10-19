@@ -15,9 +15,16 @@
 </head>
 
 <body>
+    <div class="imagen-superior">
+        <img id="boton-imagen" src="images/image.png" alt="Imagen Submarino">
+    </div>
+    
+    
     <div id="collage">
         <h2>AQUAC-MEMORY ROMPE CABEZA</h2>
+        
         <hr />
+        
         <div id="playPanel" style="padding:5px;display:none;">
             <h3 id="imgTitle"></h3>
             <hr />
@@ -69,6 +76,7 @@
 
 
     <script>
+        
 
         let btnReglas = document.getElementById("regla");
         let btnAcercaDe = document.getElementById("acercaDe");
@@ -118,7 +126,14 @@
                 modal.style.display = 'none';
             }
         }
+        
     </script>
+    <script>
+        document.getElementById('boton-imagen').addEventListener('click', function() {
+            window.location.href = "../../interfaz/index.html";
+        });
+    </script>
+    
 
 </body>
 </html>

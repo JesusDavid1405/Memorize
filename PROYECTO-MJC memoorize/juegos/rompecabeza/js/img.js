@@ -1,5 +1,5 @@
 var images = [
-    { src: 'images/barco.jpg', title: 'BARCO PIRATA' },
+    { src: 'images/nuevo2.jpg', title: 'BARCO PIRATA' },
     { src: 'images/pulpa.jpeg', title: 'FONDO DEL MAR' },
     { src: 'images/pulpo.jpeg', title: 'PULPO' },
     { src: 'images/tiburon.jpeg', title: 'TIBURON' },
