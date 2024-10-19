@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     const sound = new Audio('../audio/notification-sound-7062.mp3');
 
-    // Reproducir el sonido al pasar el cursor por encima
-    document.querySelectorAll('.play-button, .play-button2, #playButton, #musicButton, .game-image, #soundButton, .imgSonido, .avatar-option, .avatar-option2').forEach(element => {
+    // Reproducir el sonido 
+    document.querySelectorAll('.play-button, .back-button, .tienda .btn, .coin, .play-button2, #playButton, #musicButton, .game-image, #soundButton, .imgSonido, .avatar-option, .avatar-option2').forEach(element => {
         element.addEventListener('mouseenter', () => {
             sound.currentTime = 0;
             sound.play().catch(error => {
@@ -35,4 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-    
+    function updateCoinCount(newCount) {
+        document.getElementById('coin-count').innerText = newCount;
+      }
+      updateCoinCount(12000);

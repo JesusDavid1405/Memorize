@@ -8,26 +8,59 @@ body{
     margin: 0;
     animation: puffIn 1s ease-in-out
 }
+.coin {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    background-color: #f7f3e55f;
+    border: 3px solid #3b2944;
+    border-radius: 10px;
+    padding: 10px 20px;
+    right: 15vh;
+    bottom: 86vh;
+    box-shadow: 0 4px 0 #b33b2e;
+    position: absolute;
+    width: max-content;
+  }
+  
+  .coin-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  #coin-count {
+    font-size: 1.6rem;
+    font-family: 'Arial', sans-serif;
+    color: #000;
+  }
+  .coin:hover{
+    transform: scale(1.1);
+  }
+  .coin:after {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-color: #e8453f00;
+    border-radius: 0 0 10px 10px;
+  }
 .back-button {
-    right: 92%;
-    bottom: 85%;
+    right: 82%;
+    bottom: 88%;
     position: fixed;
 
 
-}
-.back-button-text{
-    font-weight: bold;
-    font-size: 0%;
-    color: #ffffff;
-        
 }
 .back-button:hover {
     transform: scale(1.1);
 }
 .back-button-img{
-    width: 70%;
+    width: 20%;
     flex-direction: row;
-    height: 70%;
+    height: 20%;
 }
 .tienda .btn {
     display: flex;
@@ -36,10 +69,9 @@ body{
     position: absolute;
     justify-content: center;
     gap: 5px;
-    bottom: 82%;
+    bottom: 84%;
     padding: 10px 15px;
 }
-
 .tienda .tienda-img {
     width: 50px;
     height: 50px;
@@ -116,7 +148,8 @@ body{
     font-size: 14px; 
 }
 .btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.10);
+    background-color: #f0f0f000;
 }
 .btn {
     display: flex;
@@ -126,28 +159,27 @@ body{
     border: none;
     cursor: pointer;
     min-width: 80px; 
+    background-color:#00000000; 
     min-height: 80px; 
+    background-color: #00000000;
     padding: 10px;
     margin: 0 5px; 
     transition: transform 200ms;
 }
 .menu-title {
-    font-family: 'Lobster', cursive; 
-    margin-bottom: 6%;
-    padding: 0%;
-    min-height: 0vh;
-    display: flex;
-    align-items: center;  
-    flex: 1;
-    flex-direction: column;
-    font-size: 80px;
-    top: 0%;
-    color: #a31919;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    font-family: 'Pirata One', cursive; 
     text-align: center;
-    
+    font-size: 4rem;
+    color: #ffd700; 
+    text-shadow: 3px 3px 0px #ffffff,   
+                 6px 6px 0px #8b4513;  
+    position: relative;
+    padding: 18px;
+    border: 5px solid #8b6d13; 
+    border-radius: 30px; 
+    background: radial-gradient(circle, rgba(85, 85, 84, 0.374) 0%, rgba(171, 171, 169, 0.451) 100%);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.6),
+                inset 0 0 10px rgb(44, 166, 227); 
 }
 li.nav-item {
     list-style: none;
@@ -490,9 +522,12 @@ nav {
 }
 .games-container {
     display: flex;
+    align-items: center;
     justify-content: space-around;
+    margin-top: 80px;
     flex-wrap: wrap;
     gap: 10px;
+
 }
 .play-button {
     padding: 10px 30px;
@@ -602,7 +637,7 @@ nav {
     height: auto;
     position: relative;
     animation: glitch 1s infinite;
-    margin-top: 0px;
+    margin-bottom: 0px;
     margin-left: -20%;
     animation: swashIn 1s ease-in-out, gameVertical 2s infinite alternate ease-in-out;
     transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
@@ -697,10 +732,10 @@ nav {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
     .game-image {
-        width: 120px;
+        width: 100px;
         height: auto;
         cursor: pointer;
-        margin-bottom: 0px;
+        margin-top: 0px;
     }
     .game-option {
         display: flex;
@@ -708,7 +743,7 @@ nav {
         align-items: center;
         justify-content: flex-start;
         margin: 0px;
-        margin-right: 90%;
+        margin-right: 40%;
         
         margin-bottom: 0%;
         padding: 10px;
@@ -723,7 +758,7 @@ nav {
         padding: 10px;
         width: 40%; 
         margin-top: 0%;
-        margin-right: 90%;
+        margin-right: 40%;
     }
     .game-option3 {
         display: flex;
@@ -734,21 +769,8 @@ nav {
         padding: 10px;
         width: 40%; 
         margin-top: 0%;
-        margin-right: 90%;
+        margin-right: 40%;
     }
-    .game-description {
-        display: flex;
-        text-align: center;
-        background-color: #00000000;
-        color: #00000000;
-        flex-direction: column; 
-        align-items: center;
-        margin: 0px;
-        background: transparent;
-        margin-right: 0%; 
-    }
-    
-
     li.nav-item {
         list-style: none;
         display: flex;
@@ -767,23 +789,27 @@ nav {
         text-align: center;
     }
     .back-button {
-        right: 86%;
-        bottom: 88%;
+        left: 2%;
+        bottom: 79%;
         z-index: 10;
-        position: fixed; 
+        
     
     }
     .back-button-img{
-        width: 70%;
+        width: 60%;
         flex-direction: row;
-        height: 70%;
+        height: 60%;
     }
     .back-button-text{
         color: #ffffff00;
     }
     .menu-title {
-        margin-bottom: 40%;
-        font-size: 3em;
+        margin-bottom: 0%;
+        font-size: 2.9em;
+        border-radius: 50px; 
+        text-align:left;
+        padding: 14px;
+        
         
     }
     .cerrar-sesion .btn {
@@ -791,13 +817,8 @@ nav {
         align-items: center;
         justify-content: center;
         gap: 8px;
-        top: 88%;
-        left: 10%;
-        position: fixed;
-        padding: 10px 15px;
-        font-weight: bold;
-        background-color: #dc354600; 
-        border: none;
+        top: 85%;
+        left: 37%;
     }
     .cerrar-sesion .cerrar-img {
         width: 35px;
@@ -808,7 +829,46 @@ nav {
         font-size: 0px;
         
     }
-}
-@media (max-width: 768px) {
-   
+    .coin {
+        right: 3vh;
+        bottom: 78vh;
+        width: 100px;
+        height: 50px;
+        
+        
+      }
+      #coin-count {
+        font-size: 1.3rem;
+        font-family: 'Arial', sans-serif;
+        color: #000;
+      }
+      .coin-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 0px;
+      }
+      .tienda .btn {
+        gap: 0px;
+        bottom: 87vh;
+        right: 2%;
+        padding: 10px 15px;
+    }
+    .tienda .tienda-img {
+        width: 45px;
+        height: 44px;
+    }
+    .tienda .tienda-text {
+        font-size: 0px;
+    }
+    .play-button {
+        z-index: 1;
+        left: 2%;
+        top: 10px;
+    }
+    .play-button2 {
+        padding: 10px 60px;
+        top: 10px;
+        left: 2%;
+        z-index: 1;
+    }
 }
