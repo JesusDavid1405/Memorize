@@ -5,13 +5,30 @@
 }
 .imagen-superior {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 10px;
+    left: 12px;
 }
 
 .imagen-superior img {
-    width: 70px; /* Ajusta el tamaño según lo que necesites */
+    width: 50px; /* Ajusta el tamaño según lo que necesites */
     height: auto;
+}
+/* Definición de la animación */
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Se mueve hacia arriba */
+    }
+    100% {
+        transform: translateY(0); /* Vuelve a la posición original */
+    }
+}
+
+.imagen-superior img:hover {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
 }
 
 

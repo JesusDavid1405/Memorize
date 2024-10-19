@@ -25,3 +25,10 @@ function generateCode(){
 
     return codigo;
 }
+
+const imagen = document.getElementById("imagen");
+const comentario = document.getElementById("comentario");
+
+imagen.addEventListener("click", function() {
+    comentario.style.display = comentario.style.display === "none" ? "block" : "none";
+});
