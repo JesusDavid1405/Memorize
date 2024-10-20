@@ -24,7 +24,7 @@
 
     <main>
         <div id="formulario" class="col-6">
-            <form class="row g-3" method="post" class="row g-3">
+            <form class="row g-3" method="post" action="../../resources/logic/registrarUsuario.php">
                 <div class="logoForm col-md-6">
                     <center>
                         <img src="../../img/logo/aqua-Memorize.png" alt="Logo">
@@ -35,21 +35,21 @@
                 <div class="alert alert-success" id="resultado"></div>
 
                 <div class="col-md-11 inputIcon">
-                    <input type="text" class="form-control input" id="nickName" placeholder="nickName" required>
+                    <input type="text" class="form-control input" id="nickName" name="nickName" placeholder="nickName" required>
                     <span id="icon"> 
                         <img src="../../img/icon/user.png" alt="">
                     </span>
                 </div>
             
                 <div class="col-md-11 inputIcon">
-                    <input type="email" class="form-control input" id="email" placeholder="gmail" required>
+                    <input type="email" class="form-control input" id="correo" name="correo" placeholder="gmail" required>
                     <span id="icon"> 
                         <img src="../../img/icon/arroba.png" alt="">
                     </span>
                 </div>
 
                 <div class="col-md-11 inputIcon">
-                    <input type="password" class="form-control input" id="contraseña" placeholder="contraseña" required>
+                    <input type="password" class="form-control input" id="contraseña" name="contraseña" placeholder="contraseña" required>
                     <span id="icon"> 
                         <img src="../../img/icon/password.png" alt="">
                     </span>
@@ -57,7 +57,7 @@
 
                 <div class="col-12">
                     <center>
-                        <button type="button" class="btn btnLogin" id="registrar">
+                        <button type="submit" class="btn btnLogin" id="registrar">
                             <h6 class="text">Registrarte</h6>
                         </button>
                     </center>
@@ -142,7 +142,7 @@
 
 
     <audio id="miCancion" src="../../audio/no-copyright-music-181373.mp3" preload="auto" loop></audio>
-    <script src="src/js/main.js"></script>
+    <!--<script src="src/js/main.js"></script>-->
     <script src="src/js/sonido.js"></script>
     <script src="../../bootstrap/js/bootstrap.js"></script>
     <script src="../../bootstrap/js/bootstrap.bundle.js"></script>

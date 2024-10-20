@@ -13,7 +13,7 @@
             
             // Intentar la conexión usando MySQLi
             try {
-                $this->conn = new mysqli($this->host, $this->username, $this->password, $this->dbname);
+                $this->conn = new mysqli($this->host, $this->username, $this->password, $this->dbname); 
                 if ($this->conn->connect_error) {
                     throw new Exception("Error en la conexión: " . $this->conn->connect_error);
                 }
