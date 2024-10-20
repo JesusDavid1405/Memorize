@@ -69,53 +69,10 @@
             </form>
         </div>
     </main>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="usuario" aria-labelledby="usuarioLabel">
-        <div class="offcanvas-header">
-            <h5 id="usuarioLabel">Perfil del Jugador</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div class="player-info">
-                <img src="../../img/avatar1.png" alt="Avatar" class="avatar" id="currentAvatar">
-                <span id="playerName">Jugador 1</span>
-            </div>
-            <p>Puntuación Total: <span id="totalScore">1500</span></p>
-            <button id="editProfileButton" data-bs-toggle="modal" data-bs-target="#editProfileModal">Editar Perfil</button>
+
     
-            <h6>Información Personal:</h6>
-            <p id="personalInfoDisplay">Aquí irá la información personal.</p> 
-    
-            <h6>Cambiar Avatar</h6>
-            <p>Personas</p>
-            <div class="avatar-options2">
-                <img src="../../img/avatar1.png" class="avatar-option2" data-avatar="../../img/avatar1.png" alt="Avatar 1">
-                <img src="../../img/avatar4.png" class="avatar-option2" data-avatar="../../img/avatar4.png" alt="Avatar 4">
-                <img src="../../img/avatar5.png" class="avatar-option2" data-avatar="../../img/avatar5.png" alt="Avatar 5">
-                <img src="../../img/avatar6.png" class="avatar-option2" data-avatar="../../img/avatar6.png" alt="Avatar 6">
-                <img src="../../img/avatar7.png" class="avatar-option2" data-avatar="../../img/avatar7.png" alt="Avatar 7">
-            </div>
-            <p>Animales</p>
-            <div class="avatar-options2">
-                <img src="../../img/avatar8.png" class="avatar-option2" data-avatar="../../img/avatar8.png" alt="Avatar 8">
-                <img src="../../img/avatar9.png" class="avatar-option2" data-avatar="../../img/avatar9.png" alt="Avatar 9">
-                <img src="../../img/avatar10.png" class="avatar-option2" data-avatar="../../img/avatar10.png" alt="Avatar 10">
-                <img src="../../img/avatar11.png" class="avatar-option2" data-avatar="../../img/avatar11.png" alt="Avatar 11">
-                <img src="../../img/avatar12.png" class="avatar-option2" data-avatar="../../img/avatar12.png" alt="Avatar 12">
-                <img src="../../img/avatar13.png" class="avatar-option2" data-avatar="../../img/avatar13.png" alt="Avatar 13">
-            </div>
-            <p>Alienigenas</p>
-            <div class="avatar-options2">
-                <img src="../../img/avatar14.png" class="avatar-option2" data-avatar="../../img/avatar14.png" alt="Avatar 14">
-                <img src="../../img/avatar15.png" class="avatar-option2" data-avatar="../../img/avatar15.png" alt="Avatar 15">
-                <img src="../../img/avatar16.png" class="avatar-option2" data-avatar="../../img/avatar16.png" alt="Avatar 16">
-                <img src="../../img/avatar17.png" class="avatar-option2" data-avatar="../../img/avatar17.png" alt="Avatar 17">
-                <img src="../../img/avatar18.png" class="avatar-option2" data-avatar="../../img/avatar18.png" alt="Avatar 18">
-                <img src="../../img/avatar19.png" class="avatar-option2" data-avatar="../../img/avatar19.png" alt="Avatar 19">
-            </div>
-        </div>
-    </div>
     <!-- Modal para Editar Perfil -->
-<div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -123,13 +80,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="mb-3">
-                    <label for="newUsername" class="form-label">Nuevo Nombre de Usuario:</label>
-                    <input type="text" class="form-control" id="newUsername" placeholder="Ingrese nuevo nombre">
-                </div>
-                <div class="mb-3">
-                    <label for="personalInfo" class="form-label">Información Personal:</label>
-                    <textarea class="form-control" id="personalInfo" rows="3" placeholder="Ingrese información personal"></textarea>
+                <div id="response">
+
                 </div>
             </div>
             <div class="modal-footer">
@@ -142,7 +94,7 @@
 
 
     <audio id="miCancion" src="../../audio/no-copyright-music-181373.mp3" preload="auto" loop></audio>
-    <!--<script src="src/js/main.js"></script>-->
+    <!--<script src="../../services/responseRegistro.js"></script>-->
     <script src="src/js/sonido.js"></script>
     <script src="../../bootstrap/js/bootstrap.js"></script>
     <script src="../../bootstrap/js/bootstrap.bundle.js"></script>

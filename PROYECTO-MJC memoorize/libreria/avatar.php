@@ -43,7 +43,6 @@
         echo "Fallo en la conexión a la base de datos.";
     }
 
-    // Configurar el encabezado para la respuesta JSON
     header('Content-Type: application/json');
 
     // Devolver la respuesta en formato JSON

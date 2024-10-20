@@ -5,60 +5,90 @@ include('../entitys/usuario.php');
 
 $response=[];
 
-class Registrar extends Usuario{
-    
+class Registrar extends Usuario {
+
     private $sqlInsert;
     private $sqlCheck;
 
-    public function registro(){
+    public function registro(&$response) {
         $conexion = new Database();
-        $conn = $conexion->connect(); // Asegúrate de que el método `connect()` te devuelva un objeto mysqli.
+        $conn = $conexion->connect();
 
         // Verificar si el nickName ya existe
         $this->sqlCheck = "SELECT COUNT(*) FROM usuario WHERE nickName = ?";
         $stmtCheck = $conn->prepare($this->sqlCheck);
-
-        // Asignar el valor del nickName a una variable
+        
         $nickName = $this->getNickName();
-
         $stmtCheck->bind_param("s", $nickName);
         $stmtCheck->execute();
-
-        // Definir una variable para almacenar el resultado
+        
         $count = 0;
         $stmtCheck->bind_result($count);
         $stmtCheck->fetch();
         $stmtCheck->close();
 
         if ($count > 0) {
-            echo "El nombre de usuario ya existe. Por favor, elige otro.";
-            return; // Salir del método para evitar la inserción
+            $response = [
+                'success' => 'error',
+                'message' => 'El nombre de usuario ya existe.'
+            ];
+            return;
         }
 
-        // Asignar los valores de los métodos a variables
+        // Verificar si el correo ya existe
+        $this->sqlCheck = "SELECT COUNT(*) FROM usuario WHERE correo = ?";
+        $stmtCheck = $conn->prepare($this->sqlCheck);
         $correo = $this->getCorreo();
+        $stmtCheck->bind_param("s", $correo);
+        $stmtCheck->execute();
+
+        $count = 0;
+        $stmtCheck->bind_result($count);
+        $stmtCheck->fetch();
+        $stmtCheck->close();
+
+        if ($count > 0) {
+            $response = [
+                'success' => 'error',
+                'message' => 'El correo ya está registrado.'
+            ];
+            return;
+        }
+
+        if (empty($this->getNickName()) || empty($this->getCorreo()) || empty($this->getContraseña())) {
+            $response = [
+                'success' => 'error',
+                'message' => 'Todos los campos son obligatorios.'
+            ];
+            return;
+        }
+        
+        
         $contraseña = $this->getContraseña();
-
-        // Insertar el nuevo registro
         $this->sqlInsert = "INSERT INTO usuario (nickName, correo, contraseña) VALUES (?, ?, ?)";
-
-        // Preparar la consulta
         $stmt = $conn->prepare($this->sqlInsert);
-
-        // Enlazar los parámetros usando variables
         $stmt->bind_param("sss", $nickName, $correo, $contraseña);
 
-        // Ejecutar la consulta
+        // Ejecutar la consulta y actualizar el response
         if ($stmt->execute()) {
-            // Redirigir a index.html después de una inserción exitosa
-            header("Location: ../../login/index.html");
-            exit(); // Asegúrate de detener el script después de redirigir
+            $response = [
+                'success' => 'correcto',
+                'message' => 'Usuario registrado correctamente.'
+            ];
         } else {
-            echo "Error al insertar el registro.";
+            $response = [
+                'success' => 'error',
+                'message' => 'Error al insertar el registro.'
+            ];
         }
 
-        // Cerrar la consulta
         $stmt->close();
     }
 }
+$persona = new Registrar();
+$persona->registro($response);  
+
+header('Content-Type: application/json');
+echo json_encode($response);
+
 ?>
