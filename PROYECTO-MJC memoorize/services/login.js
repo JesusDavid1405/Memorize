@@ -6,7 +6,7 @@ btnIniciar.addEventListener('click', function() {
     let pantalla = document.getElementById("resultado");
 
     // Realiza la llamada fetch cuando el botón es presionado
-    fetch('../libreria/login.php', {
+    fetch('../resources/entitys/login.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
