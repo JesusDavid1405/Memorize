@@ -23,6 +23,7 @@ btnIniciar.addEventListener('click', function() {
             pantalla.innerHTML = data.message;
             modal.show();
         } else {
+            localStorage.setItem('usuario', data.usuarioId);
             window.location.href = '../menu/index.html';  // Redirige solo si el login fue exitoso
         }
     })

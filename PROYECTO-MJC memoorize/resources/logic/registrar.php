@@ -22,6 +22,7 @@
                 'message' => 'Todos los campos son obligatorios.'
             ];
         } else {
+            
             $database = new Database();
             $conn = $database->connect();
 

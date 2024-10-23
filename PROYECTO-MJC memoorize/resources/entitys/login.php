@@ -2,7 +2,7 @@
     include_once '../conexion/conexion.php';
 
     $response = [];
-    
+
     $input = file_get_contents('php://input');
     $data = json_decode($input, true);
     
