@@ -68,7 +68,28 @@
         </div>
     </main>
 
-    <script src="src/js/main.js"></script>
+    <!-- Modal para Editar Perfil -->
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileModalLabel">Editar Perfil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="response">
+                    
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="modal-title" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="modal-title" id="saveUsername">Guardar Cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../services/login.js"></script>
     <script src="src/js/sonido.js"></script>
     <script src="../bootstrap/js/bootstrap.js"></script>    
     <script src="../bootstrap/js/bootstrap.bundle.js"></script>

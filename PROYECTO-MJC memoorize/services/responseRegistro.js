@@ -1,7 +1,6 @@
 let btnRegistrar = document.getElementById('registrar');
 
 btnRegistrar.addEventListener('click', function() {
-    console.log('click');
     let pantalla = document.getElementById('response');
     var modal = new bootstrap.Modal(document.getElementById('modal'));
 

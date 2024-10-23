@@ -1,11 +1,12 @@
-let btnIniciar = document.getElementById('iniciarSesion');
+let btnIniciar = document.getElementById('iniciarSesion')
 
 btnIniciar.addEventListener('click', function() {
+    let pantalla = document.getElementById('response');
+    var modal = new bootstrap.Modal(document.getElementById('modal'));
+
     let correo = document.getElementById('emailLogin').value;
     let contraseña = document.getElementById('contraseñaLogin').value;
-    let pantalla = document.getElementById("resultado");
 
-    // Realiza la llamada fetch cuando el botón es presionado
     fetch('../resources/entitys/login.php', {
         method: 'POST',
         headers: {
@@ -18,14 +19,11 @@ btnIniciar.addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
-        if (data.status === 'success') {
-            
-            localStorage.setItem('token', data.token);
-            
-            window.location.href = '../menu/index.html';
-        } else {
-            // Mostrar mensaje de error si el inicio de sesión falla
+        if (data.status && data.status === 'error') {
             pantalla.innerHTML = data.message;
+            modal.show();
+        } else {
+            window.location.href = '../menu/index.html';  // Redirige solo si el login fue exitoso
         }
     })
     .catch(error => console.error('Error:', error));

@@ -1,84 +1,68 @@
 <?php
-    include_once 'conexion.php';
+    include_once '../conexion/conexion.php';
 
     $response = [];
-
     
     $input = file_get_contents('php://input');
     $data = json_decode($input, true);
     
-
+    // Validar si los datos existen y no están vacíos
     if ($data && isset($data['correo']) && isset($data['contraseña'])) {
+    
+        $correo = trim($data['correo']);  // Eliminar espacios en blanco al principio y al final
+        $contraseña = trim($data['contraseña']);  // Eliminar espacios en blanco
+
+        // Validar que los campos no estén vacíos
+        if (empty($correo) || empty($contraseña)) {
+            $response = [
+                'status' => 'error',
+                'message' => 'El correo y la contraseña son obligatorios.'
+            ];
+        } else {
+            // Conectar a la base de datos
+            $database = new Database();
+            $conn = $database->connect();
         
-        $correo = $data['correo'];
-        $contraseña = $data['contraseña'];
-    
-        $database = new Database();
-        $conn = $database->connect();
-
-        if ($conn) {
-            $query = "SELECT * FROM usuario WHERE correo = ? AND contraseña = ?";
-            $stmt = $conn->prepare($query);
-    
-            // Vincular parámetros y ejecutar la consulta
-            $stmt->bind_param("ss", $correo, $contraseña);
-            $stmt->execute();
-    
-            
-            $result = $stmt->get_result();
-    
-            if ($result && $result->num_rows > 0) {
-            
-                $row = $result->fetch_assoc();
-                $usuarioId = $row['id']; 
-
-                
-                $token = bin2hex(random_bytes(16)); 
-                $fecha_expiracion = date('Y-m-d H:i:s', strtotime('+1 hour'));
-
-                
-                $querySesion = "INSERT INTO sesiones (usuarioId, token, fechaExpiracion) VALUES (?, ?, ?)";
-                $stmtSesion = $conn->prepare($querySesion);
-                $stmtSesion->bind_param("iss", $usuarioId, $token, $fecha_expiracion);
-                $stmtSesion->execute();
-
-
-                $_SESSION['id'] = $usuarioId;
-                $_SESSION['nickName'] = $row['nickName'];
-                $_SESSION['correo'] = $row['correo'];           
-            
-                $response = [
-                    'status' => 'success',
-                    'token' => $token,
-                    'id' => $usuarioId,
-                    'nickName' => $row['nickName'],
-                    'correo' => $row['correo']
-                ];
-
-                $stmtSesion->close();
+            if ($conn) {
+                $query = "SELECT * FROM usuario WHERE correo = ?";
+                $stmt = $conn->prepare($query);
+        
+                $stmt->bind_param("s", $correo);
+                $stmt->execute();
+                $result = $stmt->get_result();
+        
+                if ($result && $result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    
+                    $usuarioId = $row['id'];
+                    $response = [
+                        'usuarioId' => $usuarioId,
+                        'status' => 'success'
+                    ];
+                } else {
+                    $response = [
+                        'status' => 'error',
+                        'message' => 'No se encontraron registros con ese correo.'
+                    ];
+                }
+        
+                $stmt->close();
+                $conn->close();
             } else {
                 $response = [
                     'status' => 'error',
-                    'message' => 'No se encontraron registros con esas credenciales.'
+                    'message' => 'Fallo en la conexión a la base de datos.'
                 ];
             }
-    
-            $stmt->close();
-            $conn->close();
-        } else {
-            $response = [
-                'status' => 'error',
-                'message' => 'Fallo en la conexión a la base de datos.'
-            ];
         }
     } else {
+        // Si no se recibieron los datos esperados
         $response = [
             'status' => 'error',
             'message' => 'Datos no recibidos correctamente. Se requiere correo y contraseña.'
         ];
     }
-    
+
     header('Content-Type: application/json');
-    
     echo json_encode($response);
 ?>
