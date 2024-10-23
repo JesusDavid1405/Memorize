@@ -9,6 +9,13 @@ btnRegistrar.addEventListener('click', function() {
     let correo = document.getElementById('correo').value;
     let contraseña = document.getElementById('contraseña').value;
 
+    // Verificar si los campos están vacíos
+    if (!nickName || !correo || !contraseña) {
+        pantalla.innerHTML = 'Por favor, completa todos los campos.';
+        modal.show();
+        return;  // Detener la ejecución si hay campos vacíos
+    }
+
     // Validar el formato del correo electrónico
     if (!esEmailValido(correo)) {
         pantalla.innerHTML = 'Por favor ingresa un correo electrónico válido.';
@@ -46,3 +53,4 @@ function esEmailValido(email) {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);
 }
+
