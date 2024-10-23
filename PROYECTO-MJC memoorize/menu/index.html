@@ -155,7 +155,7 @@
         </div>
     </div>
 </div>
-
+<!-- Modal nuevo 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="usuario" aria-labelledby="usuarioLabel">
     <div class="offcanvas-header">
         <h5 id="usuarioLabel">Perfil del Jugador</h5>
@@ -205,6 +205,23 @@
         </div>
     </div>
 </div>
+-->
+<!-- perfil con imagen de perfil offcanvas -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="usuario" aria-labelledby="usuarioLabel">
+     <div class="offcanvas-header">
+         <h5 id="editProfileModalLabel">Editar Perfil</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+     </div>
+     <div class="offcanvas-body">
+         <div class="player-info">
+             <img src="../img/avatar1.png" alt="Avatar" class="avatar" id="currentAvatar">
+             <span id="playerName">Jugador 1</span>
+         </div>
+         <p>Puntuación Total: <span id="totalScore">1500</span></p>
+         <button id="editProfileButton" data-bs-toggle="modal" data-bs-target="#editProfileModal">Editar Perfil</button>
+     </div>
+ </div>
+ 
 <!-- Modal de Tienda -->
 <div class="modal fade" id="tiendaModal" tabindex="-1" aria-labelledby="tiendaModalLabel" aria-hidden="true">
     <div class="modal-dialog">
