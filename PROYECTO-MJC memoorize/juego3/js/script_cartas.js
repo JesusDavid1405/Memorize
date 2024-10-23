@@ -4,7 +4,8 @@ const selectors = {
     movimiento: document.querySelector('.moves'),
     tiempo: document.querySelector('.timer'),
     Iniciar: document.querySelector('button'),
-    win: document.querySelector('.win')
+    win: document.querySelector('.win'),
+    scoreTable: document.querySelector('.score-table')
 }
 
 const state = {
@@ -39,9 +40,59 @@ const pickRandom = (array, items) => {
 
 // Nueva función para cargar imágenes desde JSON
 const loadImagenes = async () => {
-    const response = await fetch('imagenes.json')
+    const response = await fetch('js/imagenes.json')
     const data = await response.json()
     return data.imagenes
+}
+const saveScore = (playerName, moves, time) => {
+    const scores = JSON.parse(localStorage.getItem('memoryGameScores') || '[]');
+    const newScore = {
+        playerName,
+        moves,
+        time,
+        date: new Date().toISOString()
+    };
+    scores.push(newScore);
+    scores.sort((a, b) => {
+        if (a.moves === b.moves) {
+            return a.time - b.time;
+        }
+        return a.moves - b.moves;
+    });
+    const topScores = scores.slice(0, 10);
+    localStorage.setItem('memoryGameScores', JSON.stringify(topScores));
+    displayScores();
+}
+
+const displayScores = () => {
+    const scores = JSON.parse(localStorage.getItem('memoryGameScores') || '[]');
+    const scoreHTML = `
+        <h2>Mejores Puntuaciones</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Posición</th>
+                    <th>Jugador</th>
+                    <th>Movimientos</th>
+                    <th>Tiempo</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${scores.map((score, index) => `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${score.playerName}</td>
+                        <td>${score.moves}</td>
+                        <td>${score.time}s</td>
+                    </tr>
+                `).join('')}
+            </tbody>
+        </table>
+    `;
+    
+    if (selectors.scoreTable) {
+        selectors.scoreTable.innerHTML = scoreHTML;
+    }
 }
 
 const generateGame = async () => {
@@ -77,9 +128,11 @@ const IniciarGame = () => {
 
     state.loop = setInterval(() => {
         state.totalTime++
-        selectors.movimiento.innerText = `${state.totalFlips} movimiento`
-        selectors.tiempo.innerText = `tiempo: ${state.totalTime} tiempo`
+        selectors.movimiento.innerText = `${state.totalFlips} movimientos`
+        selectors.tiempo.innerText = `tiempo: ${state.totalTime} segundos`
     }, 1000)
+    
+    displayScores(); // AGREGAR ESTA LÍNEA
 }
 
 const flipBackCards = () => {
@@ -115,13 +168,17 @@ const flipCard = card => {
     if (!document.querySelectorAll('.card:not(.flipped)').length) {
         setTimeout(() => {
             selectors.boardContainer.classList.add('flipped')
-            selectors.win.innerHTML = `
-                <span class="win-text">
-                    Felicidades, Ganaste!<br />
-                    Con <span class="highlight">${state.totalFlips}</span> movimientos<br />
-                    En <span class="highlight">${state.totalTime}</span> segundos
-                </span>
-            `
+            const playerName = prompt('¡Felicidades! Has ganado! Por favor, ingresa tu nombre:');
+            if (playerName) {
+                saveScore(playerName, state.totalFlips, state.totalTime);
+                selectors.win.innerHTML = `
+                    <span class="win-text">
+                        ¡Felicidades ${playerName}!<br />
+                        Con <span class="highlight">${state.totalFlips}</span> movimientos<br />
+                        En <span class="highlight">${state.totalTime}</span> segundos
+                    </span>
+                `
+            }
             clearInterval(state.loop)
         }, 1000)
     }
@@ -140,8 +197,10 @@ const attachEventListeners = () => {
     })
 }
 
+
 // Llamar a la función asincrónica para iniciar el juego
 loadImagenes().then(() => {
     generateGame()
     attachEventListeners()
+    displayScores()
 })

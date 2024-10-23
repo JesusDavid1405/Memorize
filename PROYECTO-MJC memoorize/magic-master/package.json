@@ -34,5 +34,8 @@
     "animation",
     "animations",
     "magic"
-  ]
+  ],
+  "dependencies": {
+    "magic.css": "file:"
+  }
 }

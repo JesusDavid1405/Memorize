@@ -5,10 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memoria</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilos/estilo_cartas.css">
  
 </head>
 <body>
+
+    <div id="modalTableScore" class="hide">
+        <div class="modal-content">
+            <div class="score-table"></div>
+            <button id='limpiar' class='btn cancel'>Limpiar historial partidas</button>
+            <button id='cerrar' class='btn cancel'>Cerrar</button>
+        </div>
+    </div>
+
+    
     <div class="game">
         <div class="controls">
             <button>Iniciar</button>
@@ -21,7 +31,8 @@
             <div class="board" data-dimension="4"></div>
             <div class="win">Ganaste!</div>
         </div>
+        
     </div>
-    <script src="script.js"></script>
+    <script src="js/script_cartas.js"></script>
 </body>
 </html>
