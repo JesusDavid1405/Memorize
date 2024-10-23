@@ -20,6 +20,11 @@ body{
 .btnLogin:hover{
     transform: scale(0.9);
 }
+#response{
+    color: #000000;
+    font-size: 1.0em; 
+    
+}
 /*Formulario*/
 #formulario{
     width: 40%;
@@ -35,7 +40,7 @@ body{
                 inset 0 0 10px rgb(0, 170, 255); 
     opacity: 1;
     transition: 200ms;
-    bottom: 5vh;
+    margin-bottom: 0%;
 }
 #formulario:hover{
     transform: none;
@@ -43,6 +48,42 @@ body{
 }
 .logoForm{
     margin: auto;
+}
+.hibtn{
+    background: radial-gradient(circle, rgba(255, 255, 110, 0.699) 0%, rgb(33, 148, 202) 100%) !important;
+}
+.hibtn:hover{
+    background: radial-gradient(circle, rgba(255, 255, 212, 0.699) 0%, rgb(33, 148, 202) 100%) !important;
+}
+.modal-footer {
+    border: none !important;
+}
+.modal-content {
+    padding: 20px;
+    font-family: 'Pirata One', cursive; 
+    font-size: 22px;
+    text-shadow: 3px 3px 0px #ffffff00,   
+    6px 6px 0px #8b451300; 
+    border-radius: 30px; 
+    background: radial-gradient(circle, rgba(255, 255, 110, 0.699) 0%, rgb(33, 148, 202) 100%) !important;
+    box-shadow: 0 0 15px rgb(255, 166, 0),
+    inset 0 0 10px rgb(44, 166, 227); 
+    background-repeat: no-repeat; 
+    background-position: center;
+
+}
+.bodyModal{
+    padding: 20px;
+    font-family: 'Pirata One', cursive; 
+    font-size: 22px;
+    text-shadow: 3px 3px 0px #ffffff00,   
+    6px 6px 0px #8b451300; 
+    border-radius: 30px; 
+    background: radial-gradient(circle, rgba(255, 255, 110, 0.699) 0%, rgb(33, 148, 202) 100%) !important;
+    box-shadow: 0 0 15px rgb(255, 166, 0) !important ;
+    inset: 0 0 10px rgb(44, 166, 227) ; 
+    background-repeat: no-repeat; 
+    background-position: center;
 }
 .logoForm img{
     width: 175px;
@@ -113,6 +154,7 @@ text:hover{
 .text2:hover{
     color: rgb(54, 32, 225)
 }
+
 /*sonido*/
 #playButton {
     font-size: 20px;
