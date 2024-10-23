@@ -26,7 +26,7 @@ CREATE TABLE usuario(
 );
 
 CREATE TABLE olvidasteContraseña(
-    usuarioId INT NOT NULL,
+    usuarioId INT AUTO_INCREMENT NOT NULL,
     codigo BIGINT NOT NULL UNIQUE,
     PRIMARY KEY (usuarioId),
     FOREIGN KEY (usuarioId) REFERENCES usuario(id)
@@ -44,7 +44,7 @@ CREATE TABLE sesiones (
 /*TIENDA*/
 
 CREATE TABLE compras (
-    id INT NOT NULL,
+    id INT AUTO_INCREMENT NOT NULL,
     usuarioId INT NOT NULL,
     avatarId INT NOT NULL,
     fecha_compra TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -56,14 +56,14 @@ CREATE TABLE compras (
 /*MULTIJUGADOR 90%*/
 
 CREATE TABLE dificultad(
-    id INT NOT NULL UNIQUE,
+    id INT AUTO_INCREMENT NOT NULL UNIQUE,
     nombre VARCHAR(20) NOT NULL,
     descripcion TEXT NOT NULL,
     PRIMARY KEY (id)
 );
 
 CREATE TABLE configuracion(
-    id INT NOT NULL UNIQUE,
+    id INT AUTO_INCREMENT NOT NULL UNIQUE,
     dificultadId INT NOT NULL,
     rondas BIGINT NOT NULL,
     maximoJugadores BIGINT NOT NULL,
@@ -73,7 +73,7 @@ CREATE TABLE configuracion(
 
 
 CREATE TABLE sala(
-    id INT NOT NULL UNIQUE,
+    id INT AUTO_INCREMENT NOT NULL UNIQUE,
     nombre VARCHAR(50) NOT NULL,
     codigo INT NOT NULL UNIQUE,
     configuracionId INT NOT NULL,
@@ -84,7 +84,7 @@ CREATE TABLE sala(
 );
 
 CREATE TABLE participacion(
-    id INT NOT NULL UNIQUE,
+    id INT AUTO_INCREMENT NOT NULL UNIQUE,
     salaId INT NOT NULL,
     jugadorId INT NOT NULL,
     PRIMARY KEY (id),
@@ -93,7 +93,7 @@ CREATE TABLE participacion(
 );
 
 CREATE TABLE rondaSala(
-    id INT NOT NULL UNIQUE,
+    id INT AUTO_INCREMENT NOT NULL UNIQUE,
     salaId INT NOT NULL,
     rondaNumero BIGINT NOT NULL,
     fechaIncio TIMESTAMP NOT NULL,
@@ -103,7 +103,7 @@ CREATE TABLE rondaSala(
 );
 
 CREATE TABLE podioRonda(
-    id INT NOT NULL UNIQUE,
+    id INT AUTO_INCREMENT NOT NULL UNIQUE,
     rondaSalaId INT NOT NULL,
     jugadorId INT NOT NULL,
     posicion SMALLINT NOT NULL,
@@ -114,7 +114,7 @@ CREATE TABLE podioRonda(
 );
 
 CREATE TABLE podioFinalSala(
-    id INT NOT NULL UNIQUE,
+    id INT AUTO_INCREMENT NOT NULL UNIQUE,
     salaId INT NOT NULL,
     jugadorId INT NOT NULL,
     posicionFinal SMALLINT NOT NULL,
@@ -127,14 +127,14 @@ CREATE TABLE podioFinalSala(
 /*JUEGOS  90%*/
 
 CREATE TABLE juego(
-    id INT NOT NULL UNIQUE,
+    id INT AUTO_INCREMENT NOT NULL UNIQUE,
     nombre VARCHAR(50) NOT NULL,
     descripcion TEXT NOT NULL,
     PRIMARY KEY (id)
 );
 
 CREATE TABLE niveles(
-    id INT NOT NULL UNIQUE,
+    id INT AUTO_INCREMENT NOT NULL UNIQUE,
     juegoId INT NOT NULL,
     nombre VARCHAR(50) NOT NULL,
     numero BIGINT NOT NULL,
@@ -143,7 +143,7 @@ CREATE TABLE niveles(
 );
 
 CREATE TABLE procesoNivel(
-    id INT NOT NULL UNIQUE,
+    id INT AUTO_INCREMENT NOT NULL UNIQUE,
     nivelId INT NOT NULL,
     jugadorId INT NOT NULL,
     estadoNivel BOOLEAN NOT NULL,
@@ -156,17 +156,19 @@ CREATE TABLE procesoNivel(
 );
 
 CREATE TABLE palabras(
-    id INT NOT NULL UNIQUE,
+    id INT AUTO_INCREMENT NOT NULL UNIQUE,
     palabra VARCHAR(20) NOT NULL,
     PRIMARY KEY (id)
 );
 
 CREATE TABLE pistas(
-    id INT NOT NULL UNIQUE,
+    id INT AUTO_INCREMENT NOT NULL UNIQUE,
     pista TEXT NOT NULL,
     palabraId INT NOT NULL,
+    nivelId INT NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (palabraId) REFERENCES palabras(id)
+    FOREIGN KEY (palabraId) REFERENCES palabras(id),
+    FOREIGN KEY (nivelId) REFERENCES niveles(id)
 );
 
 /*PODIOS*/
