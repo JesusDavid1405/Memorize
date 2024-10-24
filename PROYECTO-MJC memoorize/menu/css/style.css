@@ -8,6 +8,19 @@ body{
     margin: 0;
     animation: puffIn 1s ease-in-out
 }
+
+#tiendaModalLabel {
+    text-align: center;
+    margin-top: 0px;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: 'Pirata One', cursive; 
+    color: #004299; 
+  }
+  #tiendaModalLabel:hover{
+    transform: scale(1.1);
+    color:midnightblue;
+  }
 .coin {
     display: flex;
     align-items: center;
@@ -29,10 +42,10 @@ body{
     height: 34px;
     margin-right: 10px;
   }
-  
+ 
   #coin-count {
     font-size: 1.6rem;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Pirata One', cursive; 
     color: #000;
   }
   .coin:hover{
@@ -54,12 +67,54 @@ body{
 
 
 }
+.comprar-button{
+    background-color: #ffca28;
+    border: none;
+    border-radius: 18px;
+    padding: 8px 18%;
+    position: relative;
+    left: 5%;
+    font-size: 18px;
+    font-weight: bold;    
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.info-producto{
+   font-size: 90%;
+}
+#descripcion-producto1{
+    width: 30px;
+    right: 0%;
+    height: 30px;
+}
+.producto1 img{
+    width: 95%;
+    height: 95%;    
+}
+.producto1{
+    background-color: #ffffff46;
+    border-radius: 10px;
+    width: 32%;
+    height: 20%;
+    margin: 2px;
+    border: 3px solid #3b2944;
+    box-shadow: 0 4px 0 #fdfdfd;
+    transition: 200ms;
+}
+.producto1:hover{
+    background-color: #58585883;
+    transform: scale(1.05);
+}
+.nombre-producto{
+    font-size: 99%;
+    
+}
 .back-button:hover {
     transform: scale(0.9);
 }
 .back-button-img{
     width: 25%;
-
     height: 25%;
 }
 .tienda .btn {
@@ -81,6 +136,7 @@ body{
 
 .tienda .tienda-text {
     font-weight: bold;
+    
     font-size: 14px;
 }
 .cerrar-sesion .btn {
