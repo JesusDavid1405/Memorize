@@ -18,3 +18,4 @@ fetch('../resources/logic/perfil.php', {
 })
 
 .catch(error => console.error('Error:', error));
+
