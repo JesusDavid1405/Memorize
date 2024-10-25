@@ -64,8 +64,6 @@ body{
     left: 2%;
     bottom: 88%;
     position: fixed;
-
-
 }
 .comprar-button{
     background-color: #ffca28;
@@ -232,7 +230,7 @@ body{
 .menu-title {
     font-family: 'Pirata One', cursive; 
     text-align: center;
-    font-size: 5.0rem;
+    font-size: 6.0rem;
     color: #ffd700; 
     text-shadow: 3px 3px 0px #000000,   
                  6px 6px 0px #8b4513;  
@@ -241,7 +239,7 @@ body{
     animation: vanishIn 1s ease-in-out
 }
 .menu-title:hover {
-    transform: scale(0.9);
+    transform: scale(1.0);
     color: #012840; 
 }
 @keyframes vanishIn {
@@ -342,11 +340,14 @@ ul.navbar-nav {
     box-shadow: 0 0 15px rgb(255, 166, 0),
     inset 0 0 10px rgb(44, 166, 227); 
 }
-.avatar {
-    width: 100px; 
-    height: 100px;
-    border-radius: 50%;
+
+
+.avatar:hover {
+    transform: scale(1.10);
+    background-color: #f0f0f000;
 }
+
+
 .profile-card {
     background-color: #34495e00; 
     border-radius: 10px;
@@ -523,8 +524,8 @@ img.imgSonido {
     color: #012840;
 }
 .avatar {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     border: 5px solid #fff; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -742,7 +743,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 50px;
+    margin-top: 40px;
     flex-wrap: wrap;
     gap: 10px;
 
@@ -820,7 +821,7 @@ nav {
     display: flex;
     position: relative;
     display: inline-block;
-    margin: 15px;
+    margin: 110px;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start; 
@@ -1010,7 +1011,7 @@ nav {
     }
     .back-button {
         left: 2%;
-        bottom: 82%;
+        bottom: 84%;
         z-index: 10;
         
     
@@ -1050,7 +1051,7 @@ nav {
     }
     .coin {
         right: 3vh;
-        bottom: 79vh;
+        bottom: 81vh;
         width: 100px;
         height: 50px;
         
