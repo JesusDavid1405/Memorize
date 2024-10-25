@@ -2,11 +2,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     const leaderboard = document.getElementById('leaderboard');
     let scores = JSON.parse(localStorage.getItem('scores')) || [
-        { name: 'Jugador 1', score: 150, avatar: '../img/pruebac.png' },
-        { name: 'Jugador 2', score: 200, avatar: '../img/avatar2.png' },
-        { name: 'Jugador 3', score: 180, avatar: '../img/avatar3.png' },
-        { name: 'Jugador 4', score: 220, avatar: '../img/avatar4.png' },
-        { name: 'Jugador 5', score: 300, avatar: '../img/avatar5.png' },
+        { name: 'Jugador 1', score: 150, avatar: '../img/nose1.png' },
+        { name: 'Jugador 2', score: 200, avatar: '../img/avatar20.png' },
+        { name: 'Jugador 3', score: 180, avatar: '../img/nose2.png' },
+        { name: 'Jugador 4', score: 220, avatar: '../img/nose3.png' },
+        { name: 'Jugador 5', score: 300, avatar: '../img/nose4.png' },
     ];
 
     function updateLeaderboard() {
