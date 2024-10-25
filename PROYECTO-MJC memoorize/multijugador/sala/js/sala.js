@@ -58,10 +58,9 @@ if (rol == 1){
 
 
 document.getElementById('configuraciones').innerHTML=configuraciones;
-
 document.getElementById('players').innerHTML=players;
 document.querySelector('.header').innerHTML=header;
-document.getElementById('configuraciones').innerHTML=configuraciones;
+
 
 let btnJugar = document.getElementById('jugar');
 
@@ -70,7 +69,7 @@ if (btnJugar) {
     btnJugar.addEventListener('click', async function () {
         // Si necesitas realizar tareas en paralelo, usa Promises o async/await
         await iniciarSala();
-        window.location.href = '../../cartas/index.html';
+        window.location.href = '../../juego3/index.html';
     });
 }
 
