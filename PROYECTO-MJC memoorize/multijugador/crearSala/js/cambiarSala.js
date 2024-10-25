@@ -11,10 +11,10 @@ btnCrearSala.addEventListener('click', function() {
     if (nombreSala.trim() === "") {
         modalDisplay.innerHTML = `Por favor ingrese un nombre`;
         modalError.show();
-    } else if (rondas < 1 || rondas > 10) {
-        modalDisplay.innerHTML = `El número de rondas debe estar entre 1 y 10`;
+    } else if (rondas < 1 || rondas >= 6) {
+        modalDisplay.innerHTML = `El número de rondas debe estar entre 1 y 6`;
         modalError.show();
-    } else {
+    } else  {
         localStorage.setItem('nombreSala', nombreSala);
         localStorage.setItem('dificultad', dificultad);
         localStorage.setItem('rondas', rondas);
