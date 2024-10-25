@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const leaderboard = document.getElementById('leaderboard');
     let scores = JSON.parse(localStorage.getItem('scores')) || [
-        { name: 'Jugador 1', score: 150, avatar: '../img/avatar1.png' },
+        { name: 'Jugador 1', score: 150, avatar: '../img/pruebac.png' },
         { name: 'Jugador 2', score: 200, avatar: '../img/avatar2.png' },
         { name: 'Jugador 3', score: 180, avatar: '../img/avatar3.png' },
         { name: 'Jugador 4', score: 220, avatar: '../img/avatar4.png' },
