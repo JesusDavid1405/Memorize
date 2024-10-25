@@ -1,9 +1,9 @@
 var images = [
     { src: 'images/nuevo2.jpg', title: 'BARCO PIRATA' },
-    { src: 'images/pulpa.jpeg', title: 'FONDO DEL MAR' },
-    { src: 'images/pulpo.jpeg', title: 'PULPO' },
-    { src: 'images/tiburon.jpeg', title: 'TIBURON' },
-    { src: 'images/subamarino.jpeg', title: 'SUBMARINO' }
+    { src: 'images/ballena.jpg', title: 'CAZA DE BALLENA' },
+    { src: 'images/oe.jpg', title: 'BUCEO' },
+    { src: 'images/tib.jpg', title: 'BALLENA' },
+    { src: 'images/arrecife.jpg', title: 'ARRECIFE' }
 ];
 
 window.onload = function () {
