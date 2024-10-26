@@ -8,19 +8,41 @@ body{
     margin: 0;
     animation: puffIn 1s ease-in-out
 }
+/*botones de arriba*/
+.back-button {
+    left: 2%;
+    bottom: 88%;
+    position: fixed;
+}
+.back-button:hover {
+    transform: scale(0.9);
+}
+.back-button-img{
+    width: 25%;
+    height: 25%;
+}
+.tienda .btn {
+    display: flex;
+    align-items: center;
+    right: 0%;
+    background-color: #f7f3e55f;
+    position: absolute;
+    box-shadow: 0 4px 0 #fdfdfd;
+    justify-content: center;
+    gap: 5px;
+    bottom: 84%;
+    padding: 10px 15px;
+}
+.tienda .tienda-img {
+    width: 40px;
+    height: 45px;
+}
 
-#tiendaModalLabel {
-    text-align: center;
-    margin-top: 0px;
+.tienda .tienda-text {
     font-weight: bold;
-    font-size: 1.5em;
-    font-family: 'Pirata One', cursive; 
-    color: #004299; 
-  }
-  #tiendaModalLabel:hover{
-    transform: scale(1.1);
-    color:midnightblue;
-  }
+    
+    font-size: 14px;
+}
 .moneda {
     display: flex;
     align-items: center;
@@ -41,6 +63,107 @@ body{
     width: 34px;
     height: 34px;
     margin-right: 10px;
+  }
+  #moneda-moneda {
+    font-size: 1.6rem;
+    font-family: 'Pirata One', cursive; 
+    color: #000;
+  }
+.moneda:hover{
+    transform: scale(1.1);
+}
+.moneda:after {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-color: #e8453f00;
+    border-radius: 0 0 10px 10px;
+}
+/*offcanva*/
+.offcanvas-backdrop.fade.show{
+    background-color: transparent !important;
+}
+.offcanvas-header .btn-close:hover {
+    background-color: rgba(182, 182, 182, 0.7); 
+    color: #FFFFFF; 
+}
+.offcanvas-header .btn-close {
+    color: #000000; 
+    border: none; 
+    font-size: 1.5rem; 
+    border-bottom: 1px solid #34495e;
+    margin-right: 3%;
+    background-color: rgba(255, 255, 255, 0);
+    width: 40px;
+    height: 40px; 
+}
+.offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #000;
+    background-color: rgba(0, 0, 0, 0); 
+}
+
+.offcanvas-header {
+    background-repeat: no-repeat;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+.offcanvas {    
+    color: #ecf0f1;
+    font-size: 24px;
+    text-align: center;
+    text-shadow: 3px 3px 0px #ffffff00,   
+    6px 6px 0px #8b451300; 
+    border-radius: 30px; 
+    background: radial-gradient(circle, rgb(211, 211, 36) 0%, rgb(33, 148, 202) 100%);
+    box-shadow: 0 0 15px rgb(255, 166, 0),
+    inset 0 0 10px rgb(44, 166, 227); 
+}
+.cerrar-sesion .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    bottom: 6%;
+    left: 10%;
+    position: absolute;
+    padding: 10px 15px;
+    font-weight: bold;
+    background-color: #dc354600; 
+    border: none;
+}
+
+.cerrar-sesion .btn:hover {
+    background-color: #c82333; 
+}
+
+.cerrar-sesion .cerrar-img {
+    width: 40px;
+    height: 40px;
+}
+
+.cerrar-sesion .cerrar-text {
+    color: #fff; 
+    font-size: 15px;
+    
+}
+/*modals*/
+#tiendaModalLabel {
+    text-align: center;
+    margin-top: 0px;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: 'Pirata One', cursive; 
+    color: #004299; 
+  }
+  #tiendaModalLabel:hover{
+    transform: scale(1.1);
+    color:midnightblue;
   }
   .modal-header,
   .modal-footer {
@@ -82,37 +205,12 @@ body{
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
     transition: all 0.3s ease; 
 }
+
 .modal-footer .btn-secondary:hover {
     background-color: #ffdf61; 
     color: #333; 
     transform: scale(1.05); 
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); 
-}
-
-#moneda-moneda {
-    font-size: 1.6rem;
-    font-family: 'Pirata One', cursive; 
-    color: #000;
-  }
-.moneda:hover{
-    transform: scale(1.1);
-}
-.moneda:after {
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    right: 0;
-    height: 10px;
-    background-color: #e8453f00;
-    border-radius: 0 0 10px 10px;
-}
-
-.back-button {
-    left: 2%;
-    bottom: 88%;
-    position: fixed;
-
-
 }
 input[type="range"]::-moz-range-thumb:hover {
     background: #3498db; 
@@ -149,6 +247,7 @@ input[type="range"] {
     outline: none;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); 
 }
+/*botones*/
 .comprar-button{
     background-color: #ffca28;
     border: none;
@@ -162,6 +261,7 @@ input[type="range"] {
     cursor: pointer;
     transition: all 0.3s ease;
 }
+/*tienda*/
 .info-producto{
    font-size: 90%;
 }
@@ -192,64 +292,7 @@ input[type="range"] {
     font-size: 99%;
     
 }
-.back-button:hover {
-    transform: scale(0.9);
-}
-.back-button-img{
-    width: 25%;
-    height: 25%;
-}
-.tienda .btn {
-    display: flex;
-    align-items: center;
-    right: 0%;
-    background-color: #f7f3e55f;
-    position: absolute;
-    box-shadow: 0 4px 0 #fdfdfd;
-    justify-content: center;
-    gap: 5px;
-    bottom: 84%;
-    padding: 10px 15px;
-}
-.tienda .tienda-img {
-    width: 40px;
-    height: 45px;
-}
-
-.tienda .tienda-text {
-    font-weight: bold;
-    
-    font-size: 14px;
-}
-.cerrar-sesion .btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    bottom: 6%;
-    left: 10%;
-    position: absolute;
-    padding: 10px 15px;
-    font-weight: bold;
-    background-color: #dc354600; 
-    border: none;
-}
-
-.cerrar-sesion .btn:hover {
-    background-color: #c82333; 
-}
-
-.cerrar-sesion .cerrar-img {
-    width: 40px;
-    height: 40px;
-}
-
-.cerrar-sesion .cerrar-text {
-    color: #fff; 
-    font-size: 15px;
-    
-}
-
+/*descripcion de juegos*/
 .game-description {
     font-family: 'Pirata One', cursive; 
     font-size: 21px;
@@ -311,6 +354,7 @@ input[type="range"] {
     margin: 0 5px; 
     transition: transform 200ms;
 }
+/*titulo*/
 .menu-title {
     font-family: 'Pirata One', cursive; 
     text-align: center;
@@ -334,7 +378,7 @@ input[type="range"] {
     }
 }
 
-
+/*nav*/
 li.nav-item {
     list-style: none;
     display: flex;
@@ -378,48 +422,6 @@ ul.navbar-nav {
     justify-content: space-around;
     width: 100%;
     padding: 0;
-}
-.offcanvas-backdrop.fade.show{
-    background-color: transparent !important;
-}
-.offcanvas-header .btn-close:hover {
-    background-color: rgba(182, 182, 182, 0.7); 
-    color: #FFFFFF; 
-}
-.offcanvas-header .btn-close {
-    color: #000000; 
-    border: none; 
-    font-size: 1.5rem; 
-    border-bottom: 1px solid #34495e;
-    margin-right: 3%;
-    background-color: rgba(255, 255, 255, 0);
-    width: 40px;
-    height: 40px; 
-}
-.offcanvas-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: #000;
-    background-color: rgba(0, 0, 0, 0); 
-}
-
-.offcanvas-header {
-    background-repeat: no-repeat;
-    box-shadow: none;
-    background-color: rgba(0, 0, 0, 0);
-}
-.offcanvas {    
-    color: #ecf0f1;
-    font-size: 24px;
-    text-align: center;
-    text-shadow: 3px 3px 0px #ffffff00,   
-    6px 6px 0px #8b451300; 
-    border-radius: 30px; 
-    background: radial-gradient(circle, rgb(211, 211, 36) 0%, rgb(33, 148, 202) 100%);
-    box-shadow: 0 0 15px rgb(255, 166, 0),
-    inset 0 0 10px rgb(44, 166, 227); 
 }
 .avatar {
     width: 100px; 
@@ -1101,6 +1103,7 @@ nav {
     .back-button-text{
         color: #ffffff00;
     }
+    /*titulo*/
     .menu-title {
         margin-bottom: 15%;
         font-size: 2.9em;
@@ -1171,5 +1174,22 @@ nav {
         left: 2%;
         z-index: 1;
     }
+    .game-description {
+        font-family: 'Pirata One', cursive; 
+        font-size: 0cqmax;
+        text-align: center;
+        color: #ffffff00; 
+        text-shadow: 3px 3px 0px #ffffff00,   
+                     6px 6px 0px #8b451300; 
+        border-radius: 30px; 
+        background: radial-gradient(circle, rgba(214, 214, 16, 0) 0%, rgba(171, 171, 169, 0) 100%);
+        box-shadow: 0 0 15px rgba(255, 166, 0, 0),
+        inset 0 0 10px rgba(44, 166, 227, 0); 
+        position: absolute;
+        
+    }
+   
+    
+    
 }
 
