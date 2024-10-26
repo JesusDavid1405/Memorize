@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
     document.addEventListener('DOMContentLoaded', function() {
         const music = document.getElementById('backgroundMusic');
         const volumeControl = document.getElementById('volumeControl');
@@ -35,7 +36,3 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-    function updateCoinCount(newCount) {
-        document.getElementById('coin-count').innerText = newCount;
-      }
-      updateCoinCount(12000);

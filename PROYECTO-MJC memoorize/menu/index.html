@@ -12,7 +12,7 @@
 <body>
     <h1 class="menu-title">Menú de Juegos</h1>
     <div class="back-button">
-        <a href="../interfaz/index.html"><img class="back-button-img" src="../img/icon/image.png" alt="Icono de retroceder"></a>
+        <a href="../interfaz/index.html"><img class="back-button-img" src="../img/icon/back.png" alt="Icono de retroceder"></a>
     </div>
     <div class="tienda text-center mt-4">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tiendaModal">
@@ -20,12 +20,10 @@
             <span class="tienda-text">Tienda</span>
         </button>
     </div>
-    <div class="coin">
-        <img src="../img/icon/moneda.png" alt="Coin" class="coin-icon">
-        <span id="coin-count"></span> 
-       
+    <div class="moneda" data-bs-toggle="modal" data-bs-target="#monedaModal">
+        <img src="../img/icon/moneda.png" alt="moneda" class="moneda-moneda">
+        <span id="moneda-moneda">100</span>
     </div>
-
     <div class="games-container">
         <div class="game-option">
             <img src="../img/2.jpeg" alt="Juego 1" class="game-image">
@@ -150,62 +148,12 @@
             </div>
             <div class="modal-body">
                 <label for="volumeControl">Volumen:</label>
-                <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
+                <input type="range" id="volumeControl" class="volume-slider" min="0" max="1" step="0.01" value="0.5">
             </div>
         </div>
     </div>
 </div>
-<!-- Modal nuevo 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="usuario" aria-labelledby="usuarioLabel">
-    <div class="offcanvas-header">
-        <h5 id="usuarioLabel">Perfil del Jugador</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        <div class="player-info">
-            <img src="../img/avatar1.png" alt="Avatar" class="avatar" id="currentAvatar">
-            <span id="playerName">Jugador 1</span>
-        </div>
-        <p>Puntuación Total: <span id="totalScore">1500</span></p>
-        <button id="editProfileButton" data-bs-toggle="modal" data-bs-target="#editProfileModal">Editar Perfil</button>
 
-        <h6>Información Personal:</h6>
-        <p id="personalInfoDisplay">Aquí irá la información personal.</p> 
-
-        <h6>Cambiar Avatar</h6>
-        <p>Personas</p>
-
-        <div class="avatar-options2" id="piratas">
-
-        </div>
-
-        <div class="avatar-options2" id="bloqueados">
-            <img src="../img/avatar8.png" class="avatar-option2" data-avatar="../img/avatar8.png" alt="Avatar 8">
-            <img src="../img/avatar9.png" class="avatar-option2" data-avatar="../img/avatar9.png" alt="Avatar 9">
-            <img src="../img/avatar10.png" class="avatar-option2" data-avatar="../img/avatar10.png" alt="Avatar 10">
-            <img src="../img/avatar11.png" class="avatar-option2" data-avatar="../img/avatar11.png" alt="Avatar 11">
-            <img src="../img/avatar12.png" class="avatar-option2" data-avatar="../img/avatar12.png" alt="Avatar 12">
-            <img src="../img/avatar13.png" class="avatar-option2" data-avatar="../img/avatar13.png" alt="Avatar 13">
-
-        </div>
-        <p>Alienigenas</p>
-        <div class="avatar-options2">
-            <img src="../img/avatar14.png" class="avatar-option2" data-avatar="../img/avatar14.png" alt="Avatar 14">
-            <img src="../img/avatar15.png" class="avatar-option2" data-avatar="../img/avatar15.png" alt="Avatar 15">
-            <img src="../img/avatar16.png" class="avatar-option2" data-avatar="../img/avatar16.png" alt="Avatar 16">
-            <img src="../img/avatar17.png" class="avatar-option2" data-avatar="../img/avatar17.png" alt="Avatar 17">
-            <img src="../img/avatar18.png" class="avatar-option2" data-avatar="../img/avatar18.png" alt="Avatar 18">
-            <img src="../img/avatar19.png" class="avatar-option2" data-avatar="../img/avatar19.png" alt="Avatar 19">
-        </div>
-        <div class="cerrar-sesion text-center mt-4">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cerrarModal">
-                <img class="cerrar-img" src="../img/exit.png" alt="Icono de cerrar sesion">
-                <span class="cerrar-text">Cerrar Sesión</span>
-            </button>
-        </div>
-    </div>
-</div>
--->
 <!-- Modal Estadísticas -->
 <div class="modal fade" id="statisticsModal" tabindex="-1" aria-labelledby="statisticsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -292,8 +240,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" id="saveUsername">Guardar Cambios</button>
+                <button type="button" class=" btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn-secondary" id="saveUsername">Guardar Cambios</button>
             </div>
         </div>
     </div>
@@ -315,51 +263,67 @@
                             <h3 class="nombre-producto" id="nombre-producto1">Lincon</h3>
                             <img src="../img/icon/moneda.png"alt="Icono de comprar" class="descripcion-producto-img" id="descripcion-producto1">200</p >
                         </div>
-                        <button class="comprar-button" id="comprar-button1">Comprar</button>
+                        <button class="comprar-button" onclick="comprarProducto(200)">Comprar</button>
                     </div>
                         
                     <div class="producto1">
                         <img src="../img/pruebaxi.png" alt="producto1" class="producto-img" id="producto1">
                         <div class="info-producto">
                             <h3 class="nombre-producto" id="nombre-producto1">Bmo</h3>
-                            <img src="../img/icon/moneda.png"alt="Icono de comprar" class="descripcion-producto-img" id="descripcion-producto1">200</p >
+                            <img src="../img/icon/moneda.png"alt="Icono de comprar" class="descripcion-producto-img" id="descripcion-producto1">100</p >
                         </div>
-                        <button class="comprar-button" id="comprar-button1">Comprar</button>
+                        <button class="comprar-button" onclick="comprarProducto(100)">Comprar</button>
                     </div>
                     <div class="producto1">
                         <img src="../img/pruebaq.png" alt="producto1" class="producto-img" id="producto1">
                         <div class="info-producto">
                             <h3 class="nombre-producto" id="nombre-producto1">Leo</h3>
-                            <img src="../img/icon/moneda.png"alt="Icono de comprar" class="descripcion-producto-img" id="descripcion-producto1">200</p >
+                            <img src="../img/icon/moneda.png"alt="Icono de comprar" class="descripcion-producto-img" id="descripcion-producto1">300</p >
                         </div>
-                        <button class="comprar-button" id="comprar-button1">Comprar</button>
+                        <button class="comprar-button" onclick="comprarProducto(300)">Comprar</button>
                     </div>   
                     <div class="producto1">
                         <img src="../img/pruebaz.png" alt="producto1" class="producto-img" id="producto1">
                         <div class="info-producto">
                             <h3 class="nombre-producto" id="nombre-producto1">Mark</h3>
-                            <img src="../img/icon/moneda.png"alt="Icono de comprar" class="descripcion-producto-img" id="descripcion-producto1">200</p >
+                            <img src="../img/icon/moneda.png"alt="Icono de comprar" class="descripcion-producto-img" id="descripcion-producto1">340</p >
                         </div>
-                        <button class="comprar-button" id="comprar-button1">Comprar</button>
+                        <button class="comprar-button" onclick="comprarProducto(340)">Comprar</button>
                     </div>   
                     <div class="producto1">
                         <img src="../img/pruebac.png" alt="producto1" class="producto-img" id="producto1">
                         <div class="info-producto">
                             <h3 class="nombre-producto" id="nombre-producto1">Lia</h3>
-                            <img src="../img/icon/moneda.png"alt="Icono de comprar" class="descripcion-producto-img" id="descripcion-producto1">200</p >
+                            <img src="../img/icon/moneda.png"alt="Icono de comprar" class="descripcion-producto-img" id="descripcion-producto1">350</p >
                         </div>
-                        <button class="comprar-button" id="comprar-button1">Comprar</button>
+                        <button class="comprar-button" onclick="comprarProducto(350)">Comprar</button>
                     </div>   
                     <div class="producto1">
                         <img src="../img/pruebad.png" alt="producto1" class="producto-img" id="producto1">
                         <div class="info-producto">
                             <h3 class="nombre-producto" id="nombre-producto1">Agua</h3>
-                            <img src="../img/icon/moneda.png"alt="Icono de comprar" class="descripcion-producto-img" id="descripcion-producto1">200</p >
+                            <img src="../img/icon/moneda.png"alt="Icono de comprar" class="descripcion-producto-img" id="descripcion-producto1">100</p >
                         </div>
-                        <button class="comprar-button" id="comprar-button1">Comprar</button>
+                        <button class="comprar-button" onclick="comprarProducto(100)">Comprar</button>
                     </div> 
                          
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal de Confirmación -->
+<div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mensajeModalLabel">Confirmación de compra</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="mensajeContenido">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>
@@ -377,26 +341,41 @@
                 <p>¿Seguro que quieres cerrar tu sesión?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button class="btn btn-danger" id="cerrarSesion">Cerrar Sesión</button>
+                <button type="button" class=" btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button class="btn-secondary" id="cerrarSesion">Cerrar Sesión</button>
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-
-
+    <!-- Modal para "Cómo conseguir monedas" -->
+    <div class="modal fade" id="monedaModal" tabindex="-1" aria-labelledby="monedaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="monedaModalLabel">Cómo conseguir monedas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Puedes conseguir monedas al:</p>
+                    <ul>
+                        <li>Completar misiones diarias.</li>
+                        <li>Jugar.</li>
+                        <li>Invitar a amigos a unirse.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 <audio id="backgroundMusic" src="../audio/no-copyright-music-181373.mp3" loop></audio>
 
     <script src="../services/avatar.js"></script>
     <script src="../services/perfil.js"></script>
     <script src="../services/cambiarAvatar.js"></script>
-    <script src="js/script.js"></script>
     <script src="js/sonido.js"></script>
-    <!--<script src="js/2.js"></script>-->
+    <script src="js/icon.js"></script>
     <script src="../bootstrap/js/bootstrap.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
     

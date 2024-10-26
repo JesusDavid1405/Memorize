@@ -21,7 +21,7 @@ body{
     transform: scale(1.1);
     color:midnightblue;
   }
-.coin {
+.moneda {
     display: flex;
     align-items: center;
     position: absolute;
@@ -37,21 +37,67 @@ body{
     width: max-content;
   }
   
-  .coin-icon {
+  .moneda-moneda {
     width: 34px;
     height: 34px;
     margin-right: 10px;
   }
- 
-  #coin-count {
+  .modal-header,
+  .modal-footer {
+      border: none;
+  }
+  .modal-content {
+      border: none;
+      box-shadow: none; 
+  }
+  
+.modal .btn-close {
+    width: 20px;
+    height: 20px;
+}
+.modal .btn-close {
+    background-color: #333; 
+    color: white;          
+    opacity: 1;             
+}
+.modal .btn-close {
+    border-radius: 50%;         
+    border: 2px solid #555;    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+}
+.modal .btn-close:hover {
+    background-color: #555;
+    color: #ffcc00;
+    border-color: #ffcc00;
+}
+.modal-footer .btn-secondary {
+    background-color: #ffcc00;; 
+    color: #ffffff;
+    
+    font-family: 'MedievalSharp', cursive; 
+    font-size: 18px; 
+    padding: 8px 8px; 
+    border: 2px solid #deb5115b; 
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; 
+}
+.modal-footer .btn-secondary:hover {
+    background-color: #ffdf61; 
+    color: #333; 
+    transform: scale(1.05); 
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); 
+}
+
+#moneda-moneda {
     font-size: 1.6rem;
     font-family: 'Pirata One', cursive; 
     color: #000;
   }
-  .coin:hover{
+.moneda:hover{
     transform: scale(1.1);
-  }
-  .coin:after {
+}
+.moneda:after {
     position: absolute;
     bottom: -10px;
     left: 0;
@@ -59,11 +105,49 @@ body{
     height: 10px;
     background-color: #e8453f00;
     border-radius: 0 0 10px 10px;
-  }
+}
+
 .back-button {
     left: 2%;
     bottom: 88%;
     position: fixed;
+
+
+}
+input[type="range"]::-moz-range-thumb:hover {
+    background: #3498db; 
+}
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 2px solid #3498db;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #3498db; 
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none; 
+    width: 20px; 
+    height: 20px; 
+    background: #ffffff; 
+    border: 2px solid #3498db; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    transition: background 0.3s ease;
+}
+input[type="range"] {
+    -webkit-appearance: none; 
+    width: 35%; 
+    height: 8px; 
+    background: linear-gradient(90deg, #3498db 0%, #9b59b6 100%); 
+    border-radius: 5px; 
+    outline: none;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); 
 }
 .comprar-button{
     background-color: #ffca28;
@@ -238,10 +322,7 @@ body{
     padding: 18px;
     animation: vanishIn 1s ease-in-out
 }
-.menu-title:hover {
-    transform: scale(1.0);
-    color: #012840; 
-}
+
 @keyframes vanishIn {
     0% {
         opacity: 0;
@@ -340,14 +421,11 @@ ul.navbar-nav {
     box-shadow: 0 0 15px rgb(255, 166, 0),
     inset 0 0 10px rgb(44, 166, 227); 
 }
-
-
-.avatar:hover {
-    transform: scale(1.10);
-    background-color: #f0f0f000;
+.avatar {
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%;
 }
-
-
 .profile-card {
     background-color: #34495e00; 
     border-radius: 10px;
@@ -524,11 +602,10 @@ img.imgSonido {
     color: #012840;
 }
 .avatar {
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: 5px solid #fff; 
-    
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .avatar-container {
@@ -744,7 +821,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 40px;
+    margin-top: 50px;
     flex-wrap: wrap;
     gap: 10px;
 
@@ -785,7 +862,7 @@ nav {
     color: inherit;
     pointer-events: auto;
     font-size: 26px;
-    font-family:'Pirata One', cursive; ;
+    font-family:'Pirata One', cursive; 
     color: #012840;
     flex-direction: row;
     border: none;
@@ -822,7 +899,7 @@ nav {
     display: flex;
     position: relative;
     display: inline-block;
-    margin: 110px;
+    margin: 15px;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start; 
@@ -1050,7 +1127,7 @@ nav {
         font-size: 0px;
         
     }
-    .coin {
+    .moneda {
         right: 3vh;
         bottom: 81vh;
         width: 100px;
@@ -1058,12 +1135,12 @@ nav {
         
         
       }
-      #coin-count {
+      #moneda-moneda {
         font-size: 1.3rem;
         font-family: 'Arial', sans-serif;
         color: #000;
       }
-      .coin-icon {
+      .moneda-moneda {
         width: 30px;
         height: 30px;
         margin-right: 0px;
@@ -1072,7 +1149,7 @@ nav {
         gap: 0px;
         box-shadow: 0 4px 0 #fdfdfd00;
         top: -2%;
-        right: 4%;
+        right: 0%;
         background-color: transparent;
         padding: 0px 5px;
     }

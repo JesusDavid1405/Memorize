@@ -6,85 +6,311 @@ body{
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
 }
-
-.logo{
+.modal-header,
+  .modal-footer {
+      border: none;
+  }
+  .modal-content {
+      border: none;
+      box-shadow: none; 
+  }
+  
+.modal .btn-close {
+    width: 20px;
+    height: 20px;
+}
+.modal .btn-close {
+    background-color: #333; 
+    color: white;          
+    opacity: 1;             
+}
+.modal .btn-close {
+    border-radius: 50%;         
+    border: 2px solid #555;    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+}
+.modal .btn-close:hover {
+    background-color: #555;
+    color: #ffcc00;
+    border-color: #ffcc00;
+}
+.modal-footer .btn-secondary {
+    background-color: #ffcc00;; 
+    color: #ffffff;
     
-    width: 20%;
-    height: auto;
-    position: relative;
-    top: 30%;
-    left: 42%;
+    font-family: 'MedievalSharp', cursive; 
+    font-size: 18px; 
+    padding: 8px 8px; 
+    border: 2px solid #deb5115b; 
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; 
+}
+.modal-footer .btn-secondary:hover {
+    background-color: #ffdf61; 
+    color: #333; 
+    transform: scale(1.05); 
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); 
+}
+.modal,
+.modal-dialog {
+    box-shadow: none !important;
 }
 
-.logo img{
-    width: 80%;
-    height: 80%;
-    margin: auto;
+.modal-backdrop {
+    background-color: transparent !important; 
+}
+.modal-content {
+    padding: 20px;
+    font-family: 'Pirata One', cursive; 
+    font-size: 22px;
+    border: 5px solid #ffcc00; 
+    text-shadow: 3px 3px 0px #ffffff00,   
+    6px 6px 0px #8b451300; 
+    border-radius: 30px; 
+    background: radial-gradient(circle, rgba(255, 255, 110, 0.699) 0%, rgb(33, 148, 202) 100%);
+    box-shadow: 0 0 15px rgb(255, 166, 0),
+    inset 0 0 10px rgb(44, 166, 227); 
+    background-repeat: no-repeat; 
+    background-position: center;
+
+}
+.modal-header .btn-close {
+    border: none; 
+    font-size: 1.5rem; 
+    border-bottom: none;
+    width: 40px;
+    height: 40px; 
+    background-color: transparent;
+    border: none;
+    transition: background-color 0.3s;
 }
 
-.opciones{
+
+.modal-header .btn-close:hover {
+    background-color: rgba(182, 182, 182, 0.7); 
+    color: #FFFFFF; 
+}
+input[type="range"]::-moz-range-thumb:hover {
+    background: #3498db; 
+}
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 2px solid #3498db;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #3498db; 
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none; 
+    width: 20px; 
+    height: 20px; 
+    background: #ffffff; 
+    border: 2px solid #3498db; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    transition: background 0.3s ease;
+}
+input[type="range"] {
+    -webkit-appearance: none; 
+    width: 35%; 
+    height: 8px; 
+    background: linear-gradient(90deg, #3498db 0%, #9b59b6 100%); 
+    border-radius: 5px; 
+    outline: none;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); 
+}
+.menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: auto;
-    position: relative;
-    top: 80%;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.gif{
-    position:relative;
-    left: 174vh;
-    top: 35vh;
-}
-
-.comentario{ 
-
-display: none;
-margin-top: 10px;
-padding: 10px;
-width: 20vh;
-border: 1px solid #ccc;
-background-color: #f9f9f94b;
-border-radius: 5px;
-position: relative;
-left: 80%;
-top: 20vh;
-}
-.rowes{
-    display: flex;
-    gap: 3%;
-
-}
-
-.letras{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 250%;
-}
-
-.opcion{
-    width: 30%;
-    background-image: url(../../../img/botonMultijugador.jpg);
-    background-size: 100% 190%;
-    background-repeat: no-repeat;
-    margin: auto;
-    border-radius: 15px;
-    box-shadow: 0px 0px 20px #000;
-    transition: 200ms;
-}
-
-.opcion:hover{
-    color: rgb(2, 61, 11);
+.menu:hover {
     transform: scale(1.1);
+
 }
 
-.opcion p{
-    font-size: 30px;
-    font-weight: 900;
-    text-align: center;
-    position: relative;
-    top: 10%;
+.soundButton, #musicButton {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
-a:link, a:visited, a:active {
-    text-decoration:none;
-    color: rgb(0, 0, 0);
+
+.imgSonido {
+    width: 40px;
+    height: auto;
+}
+
+#musicButton p {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+.container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+}
+.title-box { 
+    border-radius: 10px;
+    padding: 10px 40px;
+    font-weight: bold;
+    font-family:'Pirata One', cursive; 
+    background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);
+    box-shadow: 0 0 15px rgb(255, 166, 0),
+    inset 0 0 10px rgb(44, 166, 227); 
+    font-size: 2.3rem;
+    bottom: 0%;
+    position: relative;
+}
+.title-box img {
+    width: 40px;
+    height: 40px;
+}
+.title-box:hover {
+    transform: scale(1.05);
+}
+.logo {
+    bottom: 5%;
+    position: relative;
+    animation: swashIn 3s ease-in-out infinite;
+}
+@keyframes swashIn {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.logo img {
+    width: 30%;
+}
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 500px;
+}
+.back-button {
+    left: 2%;
+    bottom: 88%;
+    position: fixed;
+}
+.back-button img {
+    width: 70px;
+    height: 70px;
+}
+.back-button:hover {
+    transform: scale(1.05);
+}
+.btn-custom {
+    border: none;
+    color: white;
+    font-family:'Pirata One', cursive; 
+    font-size: 1.8rem;
+    top: 30%;
+    position: relative;
+    padding: 15px 30px;
+    text-decoration: none; 
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-create {
+    background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);
+    box-shadow: 0 0 15px rgb(255, 166, 0),
+    inset 0 0 10px rgb(44, 166, 227); 
+}
+.btn-create img {
+    width: 40px;
+    height: 40px;
+    margin-right: 0px;
+}
+.btn-join img {
+    width: 40px;
+    height: 40px;
+    margin-right: 0px;
+}
+.btn-join {
+    background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);
+    box-shadow: 0 0 15px rgb(255, 166, 0),
+    inset 0 0 10px rgb(44, 166, 227); 
+}
+.btn-custom:hover {
+    transform: scale(1.05);
+}
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 20px;
+    }
+    .back-button {
+        right: 87%;
+        bottom: 92%;
+        position: fixed;
+        
+    }
+    .back-button img {
+        width: 100%;
+        height: 100%;
+    }
+    .menu {
+        position: fixed;
+        right: 6%;
+        background-color: #33333300;
+    }
+
+    .imgSonido {
+        width: 30px;
+    }
+    .logo img {
+        width: 50%;
+    }
+    .logo {
+        margin-top: 30%;
+    }
+    
+    .title-box {
+        font-size: 1.6rem;
+        bottom: 0%;
+        position: relative;
+    }
+    .button-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .btn-create {
+        margin-bottom: 20px;
+        width: 40%;
+        
+    }
+    .btn-join {
+        width: 40%;
+        position: relative;
+        left: 56%;
+        top: -32%;
+    }
+   
 }

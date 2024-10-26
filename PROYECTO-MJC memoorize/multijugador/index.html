@@ -5,43 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>multijugador</title>
     <link rel="stylesheet" href="src/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 </head>
 <body>
     <div class="container-fluid">
-        <div class="col-12 row">
-            <div class="col-1">
-
-            </div>
-            <div class="col-10 container">
-                <div class="logo col">
-                    <img src="../img/4.jpeg" alt="">
+        <div class="back-button">
+            <a href="../menu/index.html"><img class="back-button-img" src="../img/icon/back.png" alt="Icono de retroceder"></a>
+        </div>
+        <div class="menu" onclick="toggleButtons()">
+            <img src="../img/icon/wenu-Photoroom.png" alt="Icono del menú" style="width: 40px; height: auto;">
+            <div class="button-container" style="display: none;">
+                <div class="soundButton" data-bs-toggle="modal" data-bs-target="#configuracion">
+                    <img class="imgSonido" src="../img/sonido.png" alt="Icono de sonido">
                 </div>
-                <div class="opciones">
-                    <div class="rowes">
-                        <button id="crear" class="opcion">
-                            <h1 class="letras">Crear Sala</h1>
-                        </button>
-                        <button id="unirse" class="opcion">
-                            <h1 class="letras">Unirse a Sala</h1>
-                        </button>
-                    </div>    
-                </div>
-            </div>
-            <div class="col-1">
-                <button type="submit" onclick=""></button>
+                <button id="musicButton">
+                    <img class="imgSonido" src="../img/musica.png" alt="Icono de sonido">
+                </button>
             </div>
         </div>
-        <img src="../menu/img/fondoAnimal-unscreen.gif" class="gif" width="300" alt="Imagen" id="imagen" style="cursor: pointer;">
-        
-            <div id="comentario" class="comentario">
-                ¡Este es un comentario aleatorio!
-            </div>
+        <div class="logo">
+            <img src="../img/4.jpeg" alt="">
+        </div>
+        <div class="title-box">
+            Crea tu sala o unete a una
+        </div>
+        <div class="button-container">
+            <a href="crearSala/index.html" class="btn-custom btn-create">
+                <img src="../img/icon/create.png" alt="">
+                <span>Crear</span>
+            </a>
+            <a href="unirseSala/index.html" class="btn-custom btn-join">
+                <img src="../img/icon/join.png" alt="">
+                <span>Unirte</span>
+            </a>
+        </div>
     </div>
+    </div>
+    <div class="modal fade" id="configuracion" tabindex="-1" aria-labelledby="configuracionLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="configuracionLabel">Configuración de Sonido</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="volumeControl">Volumen:</label>
+                    <input type="range" id="volumeControl" class="volume-slider" min="0" max="1" step="0.01" value="0.5">
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="backgroundMusic" src="../audio/no-copyright-music-181373.mp3" loop></audio>
 
-
-    <script src="src/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../bootstrap/js/bootstrap.js"></script>
     <script src="../bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../multijugador/src/js/menu.js"></script>
 </body>
 </html>
