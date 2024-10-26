@@ -7,7 +7,6 @@ const selectors = {
     win: document.querySelector('.win'),
     scoreTable: document.querySelector('.score-table'),
     siguienteRonda: document.getElementById('siguienteRonda')   
-
 };
 
 const state = {
@@ -20,7 +19,17 @@ const state = {
     maxRounds: parseInt(localStorage.getItem('rondas')) || 6
 };
 
-// Función para seleccionar cartas aleatorias
+const updateSelectors = () => {
+    selectors.boardContainer = document.querySelector('.board-container');
+    selectors.board = document.querySelector('.board');
+    selectors.movimiento = document.querySelector('.moves');
+    selectors.tiempo = document.querySelector('.timer');
+    selectors.Iniciar = document.querySelector('button');
+    selectors.win = document.querySelector('.win');
+    selectors.scoreTable = document.querySelector('.score-table');
+    selectors.siguienteRonda = document.getElementById('siguienteRonda');
+};
+
 const pickRandom = (array, items) => {
     const clonedArray = [...array];
     const randomPicks = [];
@@ -30,7 +39,6 @@ const pickRandom = (array, items) => {
         randomPicks.push(clonedArray[randomIndex]);
         clonedArray.splice(randomIndex, 1);
     }
-
     return randomPicks;
 };
 
@@ -72,7 +80,7 @@ const saveScore = (playerName, moves, time) => {
 
 const generateGame = async () => {
     try {
-        const dimensions = selectors.board.getAttribute('data-dimension') || 4; // Valor por defecto
+        const dimensions = selectors.board.getAttribute('data-dimension') || 4;
         if (dimensions % 2 !== 0) {
             throw new Error("La dimensión del tablero debe ser un número par.");
         }
@@ -81,7 +89,6 @@ const generateGame = async () => {
         const picks = pickRandom(images, (dimensions * dimensions) / 2);
         const items = shuffle([...picks, ...picks]);
         
-        // Crear el nuevo contenido del tablero
         const cards = `
             <div class="board" style="grid-template-columns: repeat(${dimensions}, auto)" data-dimension="${dimensions}">
                 ${items.map(item => `   
@@ -94,12 +101,12 @@ const generateGame = async () => {
                 `).join('')}
             </div>
         `;
-
-        // Actualizar el contenido del tablero
-        selectors.board.innerHTML = cards;
         
-        // Actualizar el selector del tablero después de regenerarlo
-        selectors.board = document.querySelector('.board');
+        const boardContainer = document.querySelector('.board-container');
+        boardContainer.innerHTML = cards;
+        
+        // Actualizar selectores después de regenerar el tablero
+        updateSelectors();
         
     } catch (error) {
         console.error('Error al generar el juego:', error);
@@ -132,36 +139,36 @@ const flipCard = card => {
         IniciarGame();
     }
 
-    if (state.flippedCards <= 2) {
+    if (state.flippedCards <= 2) {  // Cambiado de '=' a '<='
         card.classList.add('flipped');
     }
 
     if (state.flippedCards === 2) {
         const flippedCards = document.querySelectorAll('.flipped:not(.matched)');
         
-        // Verificar si las cartas coinciden comparando las URLs de las imágenes
-        const img1 = flippedCards[0].querySelector('.card-back img').src;
-        const img2 = flippedCards[1].querySelector('.card-back img').src;
-        
-        if (img1 === img2) {
-            flippedCards[0].classList.add('matched');
-            flippedCards[1].classList.add('matched');
-        }
+        if (flippedCards.length === 2) {  // Verificar que hay exactamente 2 cartas volteadas
+            const img1 = flippedCards[0].querySelector('.card-back img').src;
+            const img2 = flippedCards[1].querySelector('.card-back img').src;
+            
+            if (img1 === img2) {
+                flippedCards[0].classList.add('matched');
+                flippedCards[1].classList.add('matched');
+            }
 
-        setTimeout(() => {
-            flipBackCards();
-        }, 500);
+            setTimeout(() => {
+                flipBackCards();
+            }, 500);
+        }
     }
 
     // Verificar si todas las cartas están emparejadas
-    const matchedCards = document.querySelectorAll('.card.matched'); // Asegúrate de que sea el selector correcto
-    const totalPairs = selectors.board.children.length / 2; // Total de pares en el tablero
-
-    if (matchedCards.length === totalPairs) {
+    const matchedCards = document.querySelectorAll('.card.matched');
+    const totalCards = document.querySelectorAll('.card').length;
+    
+    if (matchedCards.length === totalCards) {
         setTimeout(endGame, 1000);
     }
 };
-
 
 const resetGame = async () => {
     state.flippedCards = 0;
@@ -171,41 +178,46 @@ const resetGame = async () => {
     
     clearInterval(state.loop);
     
-    // Limpiar el tablero actual
-    selectors.board.innerHTML = '';
-    selectors.boardContainer.classList.remove('flipped');
-    selectors.Iniciar.classList.remove('disabled');
+    const boardContainer = document.querySelector('.board-container');
+    boardContainer.classList.remove('flipped');
     
-    // Generar nuevo juego
     await generateGame();
+    attachEventListeners();
 };
 
 const endGame = () => {
     clearInterval(state.loop);
-    selectors.boardContainer.classList.add('flipped');
+    document.querySelector('.board-container').classList.add('flipped');
 
     const playerName = prompt('¡Felicidades! Has ganado esta ronda! Por favor, ingresa tu nombre:');
     if (playerName) {
         saveScore(playerName, state.totalFlips, state.totalTime);
-        mostrarModal(playerName);
+        if (typeof mostrarModal === 'function') {
+            mostrarModal(playerName);
+        }
     }
 
     state.currentRound++;
+    const siguienteRonda = document.getElementById('siguienteRonda');
+    if (siguienteRonda) {
+        siguienteRonda.classList.remove('oculto');
+    }
 
-    selectors.siguienteRonda.addEventListener('click', async function() {
-        await resetGame(); // Reiniciar el juego para la siguiente ronda
-        selectors.siguienteRonda.classList.add('oculto'); // Ocultar el botón
-    
-        if (state.currentRound < state.maxRounds) {
-            selectors.Iniciar.classList.add('disabled'); // Desactivar el botón Iniciar si ya hay un ganador
-        } else {
-            alert("¡Has completado todas las rondas!");
-            // Reiniciar el contador de rondas
-            state.currentRound = 0;
+    if (state.currentRound < state.maxRounds) {
+        const siguienteRondaBtn = document.getElementById('siguienteRonda');
+        if (siguienteRondaBtn) {
+            siguienteRondaBtn.addEventListener('click', async function siguienteRondaHandler() {
+                await resetGame();
+                siguienteRondaBtn.classList.add('oculto');
+                siguienteRondaBtn.removeEventListener('click', siguienteRondaHandler);
+            });
         }
-    });
-}
-    
+    } else {
+        alert("¡Has completado todas las rondas!");
+        state.currentRound = 0;
+    }
+};
+
 const attachEventListeners = () => {
     document.addEventListener('click', event => {
         const eventTarget = event.target;
@@ -219,7 +231,6 @@ const attachEventListeners = () => {
     });
 };
 
-// Inicialización del juego
 const initGame = async () => {
     try {
         await generateGame();
@@ -232,5 +243,4 @@ const initGame = async () => {
     }
 };
 
-// Iniciar el juego
 initGame();
