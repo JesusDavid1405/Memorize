@@ -7,38 +7,94 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="col-12">
-        <img class="logo" src="../../img/4.jpeg" alt="...">
-        <div class="codigoSala">
-            <input class="input" type="number" id="codigoSala" maxlength="5" minlength="5" placeholder="codigo de la sala">
-        </div>
-        <div class="btnComparar">
-            <button id="comparar">Ingresar a la Sala</button>
+    <div class="back-button">
+        <a href="../../multijugador/index.html"><img class="back-button-img" src="../../img/icon/back.png" alt="Icono de retroceder"></a>
+    </div>
+    <div class="menu" onclick="toggleButtons()">
+        <img src="../../img/icon/wenu-Photoroom.png" alt="Icono del menú" style="width: 40px; height: auto;">
+        <div class="button-container" style="display: none;">
+            <div class="soundButton" data-bs-toggle="modal" data-bs-target="#sonido">
+                <img class="imgSonido" src="../../img/sonido.png" alt="Icono de sonido">
+            </div>
+            <button id="musicButton">
+                <img class="imgSonido" src="../../img/musica.png" alt="Icono de sonido">
+            </button>
         </div>
     </div>
-
-    <div class="modal fade" id="msgError" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <h2>¡Únete a la Sala!</h2>
+            <p>Ingresa el <span class="font-weight-bold">CÓDIGO</span> para acceder:</p>
+        </div>
+        <div class="form-group text-center">
+            <input type="text" id="codigoSala" class="form-control mx-auto" style="width: 300px;" placeholder="Código de la sala">
+        </div>
+        <div class="text-center">
+            <button id="comparar" class="btn-custom btn-join">Únete <img src="../../img/icon/join.png" alt=""></button>
+        </div>
+        <div class="footer-text-center mt-6" data-bs-toggle="modal" data-bs-target="#configuracion">
+            <p>¿No sabes el codigo? <img id="pregunta" src="../../img/icon/signo.png" alt="pregunta"></p>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="configuracion" tabindex="-1" aria-labelledby="modalPreguntaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h5 class="modal-title" id="modalPreguntaLabel">¿No sabes el codigo?</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    hola
+                    <p>El codigo se encuentra en la pantalla de la sala o pidele al creador que lo agregue.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
     </div>
-
+    <div class="modal fade" id="sonido" tabindex="-1" aria-labelledby="configuracionLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="configuracionLabel">Configuración de Sonido</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="volumeControl">Volumen:</label>
+                    <input type="range" id="volumeControl" class="volume-slider" min="0" max="1" step="0.01" value="0.5">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal de error -->
+    <div class="modal fade" id="msgError" tabindex="-1" aria-labelledby="errorLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="errorLabel">Error</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Mensaje de error se inyectará aquí -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="backgroundMusic" src="../../audio/no-copyright-music-181373.mp3" loop></audio>
     <script src="js/main.js"></script>
+    <script src="js/menu.js"></script>
     <script src="../../bootstrap/js/bootstrap.js"></script>
     <script src="../../bootstrap/js/bootstrap.bundle.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

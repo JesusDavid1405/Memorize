@@ -4,68 +4,282 @@ body{
     background-attachment:fixed;
     background-repeat: no-repeat;
 }
-.btnComparar button{
-    padding: 10px 30px;
-    background-image: url(../../../img/boton.png);
-    background-size: cover;
-   
-    background-color: rgba(0, 0, 0, 0);
-    background-repeat: no-repeat; 
+.menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../img/mapa.jpg);
+    background-repeat: no-repeat;
     background-position: center;
-    text-decoration: none; 
-    position: relative;
-    z-index: 1;
-    left: 87vh;
-    color: inherit;
-    top: 28vh;
-    pointer-events: auto;
-    color: rgb(255, 255, 255);
-    flex-direction: row;
+    background-size: cover;
+    /*background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);*/
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.menu:hover {
+    transform: scale(1.1);
+
+}
+.soundButton, #musicButton {
+    background: none;
     border: none;
-    border-radius: 5px;
-    font-size: 18px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
 }
 
-.logo{
-
-    width: 15%;
-    position: relative;
-    left: 41%;
-    top: 10vh;
+.imgSonido {
+    width: 40px;
+    height: auto;
 }
 
-input.input{    
-    background-color: rgb(255, 255, 255);
-    border: 1px solid black;
+#musicButton p {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+.container {
+    width: 500px;
+    height: 400px;
+    background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);
+    box-shadow: 0 0 15px rgb(255, 166, 0),
+    inset 0 0 10px rgb(44, 166, 227); 
     border-radius: 15px;
-    width: 220px;
+    display: flex;
+    font-family:'Pirata One', cursive; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    top: 7vh;
+    padding: 10px;
+}
+.container::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-size: 400%;
+    border-radius: 15px;
+    filter: blur(5px);
+    z-index: -1;
+    animation: animate 20s linear infinite;
+}
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+.form-control  {
+    width: 300px;
+    background-color: #fdfdfd6e;
+}
+.form-control:hover {
+    background-color: #fdfdfd;
+    box-shadow: 0 0 15px rgba(255, 166, 0, 0.445),
+    inset 0 0 10px rgb(44, 166, 227); 
+}
+.form-control:focus {
+    background-color: #fdfdfd;
+    box-shadow: 0 0 15px rgba(255, 166, 0, 0.445),
+    inset 0 0 10px rgb(44, 166, 227); 
+}
+.btn-custom {
+    border: none;
+    color: white;
+    font-family:'Pirata One', cursive; 
+    font-size: 1.4rem;
+    top: 10%;
+    position: relative;
+    padding: 9px 50px;
+    text-decoration: none; 
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-join {
+    background: radial-gradient(circle, rgb(16, 135, 214) 0%, rgb(215, 250, 16) 100%);
+    box-shadow: 0 0 15px rgb(255, 166, 0),
+    inset 0 0 10px rgb(44, 166, 227); 
+}
+.btn-join img {
+    width: 35px;
+    height: 35px;
+    margin-right: 0px;
+}
+.btn-join:hover {
+    transform: scale(0.9);
+}
+.header {
+    background-color: #ff9966;
+    padding: 5px 20px;
+    border-radius: 8px;
+}
+
+.header h2 {
+    color: #4d3a2e;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.code-box {
+    background-color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #4d3a2e;
+}
+
+.code-box p {
+    color: #4d3a2e;
+    font-size: 18px;
+}
+
+.bold-text {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.play-button {
+    width: 40px;
     height: 40px;
-    transition: 100ms;
-    position: relative;
-    left: 40%;
-    top: 20vh;
+    background-color: #ff9966;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
 }
 
-input.input:focus{
-    background-color: rgb(13, 130, 213);
+footer {
+    text-align: center;
+    
+}
+#pregunta {
+    width: 30px;
+    height: 30px;
+}
+#pregunta:hover {
+    transform: scale(1.2);
+}
+.modal-header,
+.modal-footer {
+    border: none;
+}
+.modal,
+.modal-dialog {
+  box-shadow: none !important;
+}
+
+.modal-backdrop {
+  background-color: transparent !important; 
+}
+.modal-content {
+  padding: 20px;
+  font-family: 'Pirata One', cursive; 
+  font-size: 22px;
+  border: 5px solid #ffcc00; 
+  text-shadow: 3px 3px 0px #ffffff00,   
+  6px 6px 0px #8b451300; 
+  border: none;
+    box-shadow: none;
+  border-radius: 30px; 
+  background: radial-gradient(circle, rgba(255, 255, 110, 0.699) 0%, rgb(33, 148, 202) 100%);
+  box-shadow: 0 0 15px rgb(255, 166, 0),
+  inset 0 0 10px rgb(44, 166, 227); 
+  background-repeat: no-repeat; 
+  background-position: center;
 
 }
 
-input.input:hover {  
-    background-color: rgb(13, 130, 213);
-    box-shadow: 0px 0px 10px black;
+.modal .btn-close {
+  width: 20px;
+  height: 20px;
+}
+.modal .btn-close {
+  border-radius: 50%;         
+  border: 2px solid #555;    
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+}
+.modal .btn-close:hover {
+  background-color: #555;
+  color: #ffcc00;
+  border-color: #ffcc00;
+}
+.modal-header .btn-close {
+  border: none; 
+  font-size: 1.5rem; 
+  border-bottom: none;
+  width: 40px;
+  height: 40px; 
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.3s;
+}
+.back-button {
+    left: 1%;
+    bottom: 86%;
+    position: fixed;
+}
+.back-button img {
+    width: 70px;
+    height: 70px;
+}
+.back-button:hover {
+    transform: scale(1.05);
+}
+.modal-header .btn-close:hover {
+  background-color: rgba(182, 182, 182, 0.7); 
+  color: #FFFFFF; 
+}
+.modal-footer .btn-secondary {
+  background-color: #ffcc00;; 
+  color: #ffffff;
+  
+  font-family: 'MedievalSharp', cursive; 
+  font-size: 18px; 
+  padding: 8px 8px; 
+  border: 2px solid #deb5115b; 
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease; 
 }
 
-/*estilos sala Jugador*/
-.sala{
-    width: 80%;
-    border: 1px solid bisque;
-    margin: auto;
-    position: relative;
-    top: 50px;
+.modal-footer .btn-secondary:hover {
+  background-color: #ffdf61; 
+  color: #333; 
+  transform: scale(1.05); 
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); 
 }
-.container{
-    background-color: rgb(255, 255, 255,0.5);
+@media (max-width: 768px) {
+    .container {
+        width: 300px;
+        height: 300px;
+        position: relative;
+        top: 18vh;
+        right: 2%;
+        padding: 10px;
+    }
+    .menu {
+        position: fixed;
+        top: 10px;
+        right: 23px;
+    
+    }
+   
 }
