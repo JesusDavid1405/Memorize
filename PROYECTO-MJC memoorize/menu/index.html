@@ -157,15 +157,26 @@
 <div class="modal fade" id="statisticsModal" tabindex="-1" aria-labelledby="statisticsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="statisticsModalLabel">Estadísticas del Jugador</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         <div class="modal-body">
           <div class="stats-container">
-            <p>Juegos Completados: <span id="gamesCompleted">20</span></p>
-            <p>Puntuación Máxima: <span id="maxScore">5000</span></p>
-            <p>Tiempo Total Jugado: <span id="totalTimePlayed">12h 30m</span></p>
+            <div class="row">
+                <div class="col">
+                    <h5>Información de los juegos:</h5>
+                    <p>Juegos Completados: <span id="gamesCompleted">20</span></p>
+                    <p>Tiempo Total Jugado: <span id="totalTimePlayed">12h 30m</span></p>
+                    <p>Niveles Completados: <span id="levelsCompleted">10</span></p>
+
+
+                </div>
+                <div class="col" >
+                    <h5>Estadisticas:</h5>
+                    <p>Historial de partidas: <span id="averageScore">150</span></p>
+                    <p>Puntuación Máxima: <span id="maxScore">5000</span></p>
+                    <p>Puntuación Mínima: <span id="minScore">0</span></p>
+
+                </div>
+            </div>
           </div>
         </div>
       </div>
