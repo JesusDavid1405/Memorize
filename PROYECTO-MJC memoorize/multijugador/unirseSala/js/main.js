@@ -28,5 +28,5 @@
 
       function iniciarJuego(rondas) {
           console.log(`El juego comenzará con ${rondas} rondas.`);
-          window.location.href = '../crearSala/index.html';
+          window.location.href = '../sala/index.html';
       }

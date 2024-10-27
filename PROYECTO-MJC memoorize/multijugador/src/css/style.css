@@ -271,6 +271,7 @@ body{
         flex-direction: column;
         gap: 20px;
     }
+    
     .btn-create {
        
         width: 40%;

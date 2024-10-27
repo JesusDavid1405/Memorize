@@ -6,56 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sala</title>
     <link rel="stylesheet" href="css/sala.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="col-12 row">
-            <div class="col-1">
-
+    <div class="back-button">
+        <a href="../../multijugador/index.html"><img class="back-button-img" src="../../img/icon/back.png" alt="Icono de retroceder"></a>
+    </div>
+    <div class="menu" onclick="toggleButtons()">
+        <img src="../../img/icon/wenu-Photoroom.png" alt="Icono del menú" style="width: 40px; height: auto;">
+        <div class="button-container" style="display: none;">
+            <div class="soundButton" data-bs-toggle="modal" data-bs-target="#sonido">
+                <img class="imgSonido" src="../../img/sonido.png" alt="Icono de sonido">
             </div>
-            <div class="col-10">
-                <div class="sala">
-                    <div class="header">
-                        
-                    </div>
-                    <div class="body-multijugador">
-                        <div class="col-12 row">
-                            <div class="col-6 row">
-                                <div id="players">
-                                    
-                                </div>
-                            </div>
-                            <div id="configuraciones" class="col-6 configuracion">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> 
+            <button id="musicButton">
+                <img class="imgSonido" src="../../img/musica.png" alt="Icono de sonido">
+            </button>
         </div>
     </div>
-
-    <div class="modal fade" id="msgError" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="multiplayer-container">
+        <h1 class="menu-title">Sala de Espera</h1>
+        <div class="avatars" id="players">
+          <div class="avatar"><img src="../../img/icon/avatar15.png" alt="Avatar 1"></div>
+          <div class="avatar"><img src="../../img/icon/avatar2.png" alt="Avatar 2"></div>
+          <div class="avatar"><img src="../../img/icon/avatar16.png" alt="Avatar 16"></div>
+          <div class="avatar"><img src="../../img/icon/avatar4.png" alt="Avatar 4"></div>
+          <div class="avatar"><img src="../../img/icon/avatar13.png" alt="Avatar 13"></div>
+          <div class="avatar"><img src="../../img/icon/avatar11.png" alt="Avatar 11"></div>
+          <div class="avatar"><img src="../../img/icon/avatar14.png" alt="Avatar 14"></div>
+          <div class="avatar"><img src="../../img/icon/avatar12.png" alt="Avatar 12"></div>
+          <div class="avatar"><img src="../../img/icon/avatar9.png" alt="Avatar 9"></div>
+          <div class="avatar"><img src="../../img/icon/avatar10.png" alt="Avatar 10"></div>
+        </div>
+        <div class="center-content">
+            <div id="configuraciones"></div>
+            <button id="jugar" class="btn btn-primary">Jugar</button>
+        </div>
+        
+        
+      </div>
+      <div class="modal fade" id="sonido" tabindex="-1" aria-labelledby="configuracionLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h5 class="modal-title" id="configuracionLabel">Configuración de Sonido</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <label for="volumeControl">Volumen:</label>
+                    <input type="range" id="volumeControl" class="volume-slider" min="0" max="1" step="0.01" value="0.5">
                 </div>
             </div>
         </div>
     </div>
-
-    
-
+      <audio id="backgroundMusic" src="../../audio/no-copyright-music-181373.mp3" loop></audio>
     <script src="js/sala.js"></script>
+    <script src="../unirseSala/js/menu.js"></script>
     <script src="../../bootstrap/js/bootstrap.js"></script>
     <script src="../../bootstrap/js/bootstrap.bundle.js"></script>
 </body>
