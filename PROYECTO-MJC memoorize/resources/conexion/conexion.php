@@ -1,8 +1,8 @@
- <?php
+     <?php
     class Database {
         // Propiedades de la clase
         private $host = "localhost";
-        private $dbname = "prueba";
+        private $dbname = "prueba2";
         private $username = "root";
         private $password = "";
         private $conn;

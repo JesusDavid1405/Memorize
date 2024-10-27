@@ -1,6 +1,6 @@
 /*CREATE DATABASE prueba;*/
 
-USE prueba;
+USE prueba2;
 
 /*AVATAR*/
 
