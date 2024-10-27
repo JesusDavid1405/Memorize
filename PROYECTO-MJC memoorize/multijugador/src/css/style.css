@@ -118,7 +118,7 @@ input[type="range"]::-webkit-slider-thumb {
     transition: background 0.3s ease;
 }
 input[type="range"] {
-    -webkit-appearance: none; 
+   
     width: 35%; 
     height: 8px; 
     background: linear-gradient(90deg, #3498db 0%, #9b59b6 100%); 
@@ -134,7 +134,11 @@ input[type="range"] {
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);
+    background-image: url(../../../img/mapa.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /*background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);*/
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

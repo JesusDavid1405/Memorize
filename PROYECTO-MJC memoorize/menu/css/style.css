@@ -239,7 +239,7 @@ input[type="range"]::-webkit-slider-thumb {
     transition: background 0.3s ease;
 }
 input[type="range"] {
-    -webkit-appearance: none; 
+    
     width: 35%; 
     height: 8px; 
     background: linear-gradient(90deg, #3498db 0%, #9b59b6 100%); 
@@ -252,10 +252,10 @@ input[type="range"] {
     background-color: #ffca28;
     border: none;
     border-radius: 18px;
-    padding: 8px 18%;
+    padding: 8px 8%;
     position: relative;
-    left: 5%;
-    font-size: 18px;
+    left: 20%;
+    font-size: 16px;
     font-weight: bold;    
     color: #333;
     cursor: pointer;
@@ -271,13 +271,13 @@ input[type="range"] {
     height: 30px;
 }
 .producto1 img{
-    width: 95%;
-    height: 95%;    
+    width: 80%;
+    height: 80%;    
 }
 .producto1{
     background-color: #ffffff46;
     border-radius: 10px;
-    width: 32%;
+    width: 30%;
     height: 20%;
     margin: 2px;
     border: 3px solid #3b2944;
@@ -347,7 +347,7 @@ input[type="range"] {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    min-width: 80px; 
+    min-width: 0px; 
     background-color:#00000000; 
     min-height: 80px; 
     padding: 10px;
@@ -358,12 +358,12 @@ input[type="range"] {
 .menu-title {
     font-family: 'Pirata One', cursive; 
     text-align: center;
-    font-size: 6.0rem;
+    font-size: 5.0rem;
     color: #ffd700; 
     text-shadow: 3px 3px 0px #000000,   
                  6px 6px 0px #8b4513;  
     position: relative;
-    padding: 18px;
+    padding: 0px;
     animation: vanishIn 1s ease-in-out
 }
 
@@ -1152,7 +1152,7 @@ nav {
         gap: 0px;
         box-shadow: 0 4px 0 #fdfdfd00;
         top: -2%;
-        right: 0%;
+        right: 3%;
         background-color: transparent;
         padding: 0px 5px;
     }
@@ -1188,8 +1188,12 @@ nav {
         position: absolute;
         
     }
-   
-    
+    .producto1 img{
+        width: 85%;
+        height: 85%;    
+    }
+    .comprar-button {
+        left: 2%;
+    }   
     
 }
-
