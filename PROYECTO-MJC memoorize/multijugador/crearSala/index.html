@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="css/crearSala.css">
+    <link rel="stylesheet" href="css/crearSala.css"> 
 </head>
 <body>
 
@@ -17,22 +17,23 @@
         <div class="configuracionSala">
             <label for="rondas">Crea un nombre para la sala</label>
             <div class="codigoSala">
-                <input class="form-control type="text" id="nombreSala" placeholder="Nombre de la sala">
+                <input class="form-control" type="text" id="nombreSala" placeholder="Nombre de la sala">
             </div>
         </div>
       
     
-        <div class="configuracionSala2">
-            <label for="dificultad">Selecciona la dificultad:</label>
-            <select id="dificultad" class="form-select">
-                <option value="facil">Fácil</option>
-                <option value="medio">Medio</option>
-                <option value="dificil">Difícil</option>
+        <div class="config">
+            <label for="dificultad">Seleccione la Dificultad:</label>
+            <select id="dificultad">
+                <option value="4">Fácil (4x4)</option>
+                <option value="5">Medio (5x5)</option>
+                <option value="6">Difícil (6x6)</option>
             </select>
+            <button onclick="guardarConfiguracion()">Guardar Configuración</button>
         </div>
     
         <div class="configuracionSala1">
-            <label for="rondas">Número de rondas (Máximo 6):</label>
+            <label for="rondas">Número de rondas (Máximo 6 ):</label>
             <input type="number" id="rondas" class="form-control" minlength="1" maxlength="10" value="5">
         </div>
     

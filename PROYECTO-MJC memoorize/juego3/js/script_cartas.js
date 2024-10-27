@@ -6,7 +6,8 @@ const selectors = {
     Iniciar: document.querySelector('button'),
     win: document.querySelector('.win'),
     scoreTable: document.querySelector('.score-table'),
-    siguienteRonda: document.getElementById('siguienteRonda')   
+    siguienteRonda: document.getElementById('siguienteRonda'),
+    dificultad: document.getElementById('dificultad')
 };
 
 const state = {
@@ -16,7 +17,9 @@ const state = {
     totalTime: 0,
     loop: null,
     currentRound: 0,
-    maxRounds: parseInt(localStorage.getItem('rondas')) || 6
+    maxRounds: parseInt(localStorage.getItem('rondas')) || 7,
+    dificultad: parseInt(localStorage.getItem('dificultad')) || 'facil'
+ 
 };
 
 const updateSelectors = () => {
@@ -28,6 +31,7 @@ const updateSelectors = () => {
     selectors.win = document.querySelector('.win');
     selectors.scoreTable = document.querySelector('.score-table');
     selectors.siguienteRonda = document.getElementById('siguienteRonda');
+    selectors.dificultad = document.getElementById('dificultad');
 };
 
 const pickRandom = (array, items) => {
@@ -80,7 +84,16 @@ const saveScore = (playerName, moves, time) => {
 
 const generateGame = async () => {
     try {
-        const dimensions = selectors.board.getAttribute('data-dimension') || 4;
+
+        let dimensions;
+        if (state.dificultad === 'facil') {
+            dimensions = 4;  // 4x4
+        } else if (state.dificultad === 'medio') {
+            dimensions = 6;  // 5x5
+        } else if (state.dificultad === 'dificil') {
+            dimensions = 8;  // 6x6 
+        }
+
         if (dimensions % 2 !== 0) {
             throw new Error("La dimensión del tablero debe ser un número par.");
         }
@@ -90,7 +103,7 @@ const generateGame = async () => {
         const items = shuffle([...picks, ...picks]);
         
         const cards = `
-            <div class="board" style="grid-template-columns: repeat(${dimensions}, auto)" data-dimension="${dimensions}">
+            <div class="board" style="grid-template-columns: repeat(${dimensions}, auto)"   >
                 ${items.map(item => `   
                     <div class="card">
                         <div class="card-front"></div>
@@ -114,6 +127,9 @@ const generateGame = async () => {
 };
 
 const IniciarGame = () => {
+
+    clearInterval(state.loop);
+
     state.gameIniciar = true;
     selectors.Iniciar.classList.add('disabled');
 
@@ -233,6 +249,8 @@ const attachEventListeners = () => {
 
 const initGame = async () => {
     try {
+
+        state.dificultad = localStorage.getItem('dificultad') || 'facil';   
         await generateGame();
         attachEventListeners();
         if (typeof displayScores === 'function') {
