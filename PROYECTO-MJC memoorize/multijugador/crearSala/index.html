@@ -4,24 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Crear Sala</title>
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/crearSala.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <img class="logo" src="../../img/4.jpeg" alt="...">
-
+    <h1 class="menu-title">Sala de Espera</h1>
     <div class="container">
         
         <div class="configuracionSala">
-            <label for="rondas">Crea un nombre para la sala</label>
+          
+            <label for="nombreSala">Crea un nombre </label>
             <div class="codigoSala">
-                <input class="form-control type="text" id="nombreSala" placeholder="Nombre de la sala">
+                <input class="form-control" type="text" id="nombreSala" placeholder="Nombre de la sala">
             </div>
         </div>
-      
-    
         <div class="configuracionSala2">
             <label for="dificultad">Selecciona la dificultad:</label>
             <select id="dificultad" class="form-select">
@@ -30,14 +28,14 @@
                 <option value="dificil">Difícil</option>
             </select>
         </div>
-    
+
         <div class="configuracionSala1">
-            <label for="rondas">Número de rondas (Máximo 6 ):</label>
-            <input type="number" id="rondas" class="form-control" minlength="1" maxlength="10" value="5">
+            <label for="rondas">Número de rondas (Máximo 6):</label>
+            <input type="number" id="rondas" class="form-control" min="1" max="6" value="5">
         </div>
-    
+
         <div class="btnComparar">
-            <button id="crearSala" class="btn btn-primary">Crear Sala</button>
+            <button id="crearSala" class="btn btn-primary">Crear</button>
         </div>
     </div>
 
@@ -45,22 +43,21 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Error</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     ...
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar cambios</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="js/cambiarSala.js"></script>
-    <script src="../../bootstrap/js/bootstrap.js"></script>
     <script src="../../bootstrap/js/bootstrap.bundle.js"></script>
 </body>
 </html>

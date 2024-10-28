@@ -165,6 +165,7 @@ body{
     transform: scale(1.1);
     color:midnightblue;
   }
+  
   .modal-header,
   .modal-footer {
       border: none;
@@ -485,6 +486,7 @@ ul.navbar-nav {
 }
 .ruler{
     left: 2%;
+    top: 10%;
     position: relative;
 }
 .ruler-img:hover {
