@@ -116,8 +116,8 @@ body {
     text-align: center;
 }
 .multiplayer-container {
-    width: 500px; 
-    height: 500px;
+    width: 600px; 
+    height: 600px;
     background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);
     box-shadow: 0 0 15px rgb(255, 166, 0),
     inset 0 0 10px rgb(44, 166, 227); 
@@ -272,16 +272,16 @@ body {
     height: 100%;
     object-fit: cover;
 }
-.avatar:nth-child(1) { transform: rotate(0deg) translate(200px); }
-.avatar:nth-child(2) { transform: rotate(36deg) translate(200px); }
-.avatar:nth-child(3) { transform: rotate(72deg) translate(200px); }
-.avatar:nth-child(4) { transform: rotate(108deg) translate(200px); }
-.avatar:nth-child(5) { transform: rotate(144deg) translate(200px); }
-.avatar:nth-child(6) { transform: rotate(180deg) translate(200px); }
-.avatar:nth-child(7) { transform: rotate(216deg) translate(200px); }
-.avatar:nth-child(8) { transform: rotate(252deg) translate(200px); }
-.avatar:nth-child(9) { transform: rotate(288deg) translate(200px); }
-.avatar:nth-child(10) { transform: rotate(324deg) translate(200px); }
+.avatar:nth-child(1) { transform: rotate(0deg) translate(250px); }
+.avatar:nth-child(2) { transform: rotate(36deg) translate(250px); }
+.avatar:nth-child(3) { transform: rotate(72deg) translate(250px); }
+.avatar:nth-child(4) { transform: rotate(108deg) translate(250px); }
+.avatar:nth-child(5) { transform: rotate(144deg) translate(250px); }
+.avatar:nth-child(6) { transform: rotate(180deg) translate(250px); }
+.avatar:nth-child(7) { transform: rotate(216deg) translate(250px); }
+.avatar:nth-child(8) { transform: rotate(252deg) translate(250px); }
+.avatar:nth-child(9) { transform: rotate(288deg) translate(250px); }
+.avatar:nth-child(10) { transform: rotate(324deg) translate(250px); }
 
 .center-content {
     text-align: center;
@@ -331,53 +331,53 @@ h2 {
         
     }
     #configuraciones{
-        font-size: 1.8em;
+        font-size: 1.9em;
         left: 0;
         top: 0;
-        margin-bottom: 45%;
+        margin-bottom: 14%;
     }
     #jugar{
         left: 0;
-        top: -20%;
+        top: -8%;
         font-size: 1.6em;
         position: relative;
 
     }
     .menu {
         position: fixed;
-        top: 10%;
-        right: 20px;
+        top: 13%;
+        right: 22px;
     
     }
 
     .menu-title {
         font-size: 2.0rem;
-        bottom: 60%;
-        margin-right: 8%;
+        bottom: 44%;
+        margin-right: 5%;
     }
     .imgSonido {
         width: 30px;
     }
     .multiplayer-container {
-        width: 330px;
+        width: 340px;
         left: -2%;
-        top: 0%;
-        height: 50%;
+        top: 10%;
+        height: 70%;
     }  
-    .avatar:nth-child(1) { transform: rotate(0deg) translate(140px); }
-    .avatar:nth-child(2) { transform: rotate(36deg) translate(145px); }
-    .avatar:nth-child(3) { transform: rotate(72deg) translate(140px); }
-    .avatar:nth-child(4) { transform: rotate(108deg) translate(140px); }
-    .avatar:nth-child(5) { transform: rotate(144deg) translate(138px); }
-    .avatar:nth-child(6) { transform: rotate(180deg) translate(138px); }
-    .avatar:nth-child(7) { transform: rotate(216deg) translate(140px); }
-    .avatar:nth-child(8) { transform: rotate(252deg) translate(139px); }
-    .avatar:nth-child(9) { transform: rotate(288deg) translate(139px); }
-    .avatar:nth-child(10) { transform: rotate(324deg) translate(135px); }
+    .avatar:nth-child(1) { transform: rotate(0deg) translate(143px); }
+    .avatar:nth-child(2) { transform: rotate(36deg) translate(170px); }
+    .avatar:nth-child(3) { transform: rotate(72deg) translate(201px); }
+    .avatar:nth-child(4) { transform: rotate(108deg) translate(171px); }
+    .avatar:nth-child(5) { transform: rotate(144deg) translate(142px); }
+    .avatar:nth-child(6) { transform: rotate(180deg) translate(142px); }
+    .avatar:nth-child(7) { transform: rotate(216deg) translate(173px); }
+    .avatar:nth-child(8) { transform: rotate(252deg) translate(200px); }
+    .avatar:nth-child(9) { transform: rotate(288deg) translate(170px); }
+    .avatar:nth-child(10) { transform: rotate(324deg) translate(142px); }
     .center-content {
         text-align: center;
         color: #333;
-        font-size: 0.8em;
+        font-size: 0.7em;
     }   
     .avatar-name {
         font-size: 0.8em;

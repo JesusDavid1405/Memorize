@@ -6,14 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("readMore").addEventListener("click", function() {
         window.location.href = "bar.html"; 
     });
-
-    // Randomly position creatures
-    creatures.forEach(creature => {
-        creature.style.left = `${Math.random() * 80}%`;
-        creature.style.top = `${Math.random() * 80}%`;
-    });
-
-    // Add more bubbles dynamically
+    // burbujas
     for (let i = 0; i < 10; i++) {
         const bubble = document.createElement('div');
         bubble.classList.add('bubble');

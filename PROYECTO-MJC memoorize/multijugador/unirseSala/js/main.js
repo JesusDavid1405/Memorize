@@ -1,32 +1,20 @@
+let btnUnirseSala = document.getElementById('comparar');
 
-      localStorage.setItem('codigo', '1234'); 
-      localStorage.setItem('rondas', 2); 
+btnUnirseSala.addEventListener('click', function() {
+    let codigoSala = document.getElementById('codigoSala').value.trim();
+    let modalError = new bootstrap.Modal(document.getElementById('msgError'));
+    let modalDisplay = document.querySelector('#msgError .modal-body');
 
-      let btnComparar = document.getElementById('comparar');
-      const codigoSala = localStorage.getItem('codigo');
-
-      btnComparar.addEventListener('click', function() {
-          let codigoUser = document.getElementById('codigoSala').value.trim();  
-          let modalError = new bootstrap.Modal(document.getElementById('msgError'));
-          let modalDisplay = document.querySelector('#msgError .modal-body');
-          if (codigoUser === "") {
-              modalDisplay.innerHTML = `No has ingresado ningún código, por favor ingresa uno.`;
-              modalError.show();
-          } 
-          // Verificamos si el código es correcto
-          else if (codigoUser === codigoSala) {
-              let rondas = localStorage.getItem('rondas');
-              iniciarJuego(rondas);
-          } 
-          // Si el código es incorrecto
-          else {
-              modalDisplay.innerHTML = `El código que ingresaste no pertenece a ninguna sala.`;
-              modalError.show();
-          }
-          localStorage.setItem('rol', 2);
-      });
-
-      function iniciarJuego(rondas) {
-          console.log(`El juego comenzará con ${rondas} rondas.`);
-          window.location.href = '../sala/index.html';
-      }
+    if (codigoSala === "") {
+        modalDisplay.innerHTML = "Por favor ingresa un código de sala";
+        modalError.show();
+    } else {
+        let salaExistente = localStorage.getItem('codigoSala'); // Supongamos que guardas el código de la sala al crearla
+        if (codigoSala === salaExistente) {
+            window.location.href = '../sala/index.html'; // Cambia la URL según sea necesario
+        } else {
+            modalDisplay.innerHTML = "El código de sala ingresado no es válido";
+            modalError.show();
+        }
+    }
+});

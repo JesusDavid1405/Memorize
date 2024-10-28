@@ -5,12 +5,142 @@ body {
     font-family: 'Pirata One', cursive; 
     background-repeat: no-repeat;
 }
-
-@keyframes moveLogoVertical {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(10px); }
+.modal-header,
+  .modal-footer {
+      border: none;
+  }
+  .modal-content {
+      border: none;
+      box-shadow: none; 
+  }
+  
+.modal .btn-close {
+    width: 20px;
+    height: 20px;
+}
+.modal .btn-close {
+    background-color: #333; 
+    color: white;          
+    opacity: 1;             
+}
+.modal .btn-close {
+    border-radius: 50%;         
+    border: 2px solid #555;    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+}
+.modal .btn-close:hover {
+    background-color: #555;
+    color: #ffcc00;
+    border-color: #ffcc00;
+}
+.modal-footer .btn-secondary {
+    background-color: #ffcc00;; 
+    color: #ffffff;
+    
+    font-family: 'MedievalSharp', cursive; 
+    font-size: 18px; 
+    padding: 8px 8px; 
+    border: 2px solid #deb5115b; 
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; 
+}
+.modal-footer .btn-secondary:hover {
+    background-color: #ffdf61; 
+    color: #333; 
+    transform: scale(1.05); 
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); 
+}
+.modal,
+.modal-dialog {
+    box-shadow: none !important;
 }
 
+.modal-backdrop {
+    background-color: transparent !important; 
+}
+.modal-content {
+    padding: 20px;
+    font-family: 'Pirata One', cursive; 
+    font-size: 22px;
+    border: 5px solid #ffcc00; 
+    text-shadow: 3px 3px 0px #ffffff00,   
+    6px 6px 0px #8b451300; 
+    border-radius: 30px; 
+    background: radial-gradient(circle, rgba(255, 255, 110, 0.699) 0%, rgb(33, 148, 202) 100%);
+    box-shadow: 0 0 15px rgb(255, 166, 0),
+    inset 0 0 10px rgb(44, 166, 227); 
+    background-repeat: no-repeat; 
+    background-position: center;
+
+}
+.modal-header .btn-close {
+    border: none; 
+    font-size: 1.5rem; 
+    border-bottom: none;
+    width: 40px;
+    height: 40px; 
+    background-color: transparent;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+
+.modal-header .btn-close:hover {
+    background-color: rgba(182, 182, 182, 0.7); 
+    color: #FFFFFF; 
+}
+.menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    z-index: 10;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../img/mapa.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /*background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);*/
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.menu:hover {
+    transform: scale(1.1);
+
+}
+.soundButton, #musicButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.imgSonido {
+    width: 40px;
+    height: auto;
+}
+
+#musicButton p {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+.back-button {
+    left: 1%;
+    bottom: 86%;
+    z-index: 10;
+    position: fixed;
+}
+.back-button img {
+    width: 70px;
+    height: 70px;
+}
+.back-button:hover {
+    transform: scale(1.05);
+}
 .container {
     width: 40%;
     height: auto;
@@ -24,7 +154,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 30px; 
     background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);
-    top: 15vh;
+    top: 8vh;
 }
 
 .menu-title {
@@ -77,13 +207,17 @@ body {
     border: none;
     width: 30vh;
     height: 8vh;
+    font-size: 1.6em;
     border-radius: 20px;
     background: radial-gradient(circle, rgb(16, 135, 214) 0%, rgb(215, 250, 16) 100%);
     box-shadow: 0 0 15px rgb(255, 166, 0), inset 0 0 10px rgb(44, 166, 227); 
     color: white;
     transition: background-color 0.3s;
 }
-
+#crearSala img{
+    width: 20%;
+    height: 90%;
+}
 .btnComparar button:hover {
     background-color: #fdfdfd6e;
     transform: scale(0.9);

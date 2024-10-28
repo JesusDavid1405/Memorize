@@ -10,11 +10,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 class="menu-title">Sala de Espera</h1>
+    <div class="back-button">
+        <a href="../../multijugador/index.html"><img class="back-button-img" src="../../img/icon/back.png" alt="Icono de retroceder"></a>
+    </div>
+    <div class="menu" onclick="toggleButtons()">
+        <img src="../../img/icon/wenu-Photoroom.png" alt="Icono del menú" style="width: 40px; height: auto;">
+        <div class="button-container" style="display: none;">
+            <button id="musicButton">
+                <img class="imgSonido" src="../../img/musica.png" alt="Icono de sonido">
+            </button>
+        </div>
+    </div>
+    <h2 class="menu-title">Crea tu sala</h2>
     <div class="container">
-        
         <div class="configuracionSala">
-          
+            <label for="nombreSala">Crea un codigo </label>
+            <div class="codigoSala">
+                <input class="form-control" type="text" id="codigoSala" placeholder="Escribe tu código">
+            </div>
+        </div>
+
+        <div class="configuracionSala">
             <label for="nombreSala">Crea un nombre </label>
             <div class="codigoSala">
                 <input class="form-control" type="text" id="nombreSala" placeholder="Nombre de la sala">
@@ -33,9 +49,9 @@
             <label for="rondas">Número de rondas (Máximo 6):</label>
             <input type="number" id="rondas" class="form-control" min="1" max="6" value="5">
         </div>
-
+        
         <div class="btnComparar">
-            <button id="crearSala" class="btn btn-primary">Crear</button>
+            <button id="crearSala" class="btn btn-primary">Crear <img src="../../img/icon/create.png" alt=""></button>
         </div>
     </div>
 
@@ -51,12 +67,12 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Guardar cambios</button>
                 </div>
             </div>
         </div>
     </div>
-
+    <audio id="backgroundMusic" src="../../audio/no-copyright-music-181373.mp3" loop></audio>
+    <script src="js/menu.js"></script>
     <script src="js/cambiarSala.js"></script>
     <script src="../../bootstrap/js/bootstrap.bundle.js"></script>
 </body>

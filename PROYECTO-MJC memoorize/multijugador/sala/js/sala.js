@@ -1,27 +1,18 @@
 const rol = localStorage.getItem('rol');
-const codigoSala = localStorage.getItem('codigo');
 const nombreSala = localStorage.getItem('nombreSala');
-const rondas = localStorage.getItem('rondas');
+const codigoSala = localStorage.getItem('codigoSala');
 const dificultad = localStorage.getItem('dificultad');
+const rondas = localStorage.getItem('rondas');
+// Solo mostrar el título y el código de la sala
+let configuraciones = `
+     <p><strong>Nombre deSala:</strong> ${nombreSala || 'No disponible'}</p>
+      <p><strong>codigo:</strong> ${codigoSala || 'No disponible'}</p>
+      <p><strong>Dificultad:</strong> ${dificultad || 'No disponible'}</p>
+      <p><strong>Rondas:</strong> ${rondas || 'No disponible'}</p>
 
-let configuraciones = '';
+`;
 
-// Configuración de texto dependiendo del rol
-if (rol == 1) {
-    configuraciones = `
-        Dificultad: ${dificultad}<br><br>
-        Rondas: ${rondas}<br><br>    
-        Código: ${codigoSala}<br><br>
-    `;
-} else if (rol == 2) {
-    configuraciones = `
-        Dificultad: ${dificultad}<br>
-        Rondas: ${rondas}<br>
-        Código: ${codigoSala}
-    `;
-} else {
-    configuraciones = 'Error: no se ha especificado un usuario.';
-}
+// Actualizar el contenido en el elemento configuraciones
 document.getElementById('configuraciones').innerHTML = configuraciones;
 
 // Función para iniciar la sala
@@ -37,15 +28,18 @@ async function iniciarSala() {
 
 window.onload = async () => {
     await iniciarSala();
+
+    // Manejar el evento del botón "Jugar" solo si existe
+    const btnJugar = document.getElementById('jugar');
+    if (btnJugar) {
+        btnJugar.addEventListener('click', function() {
+            const message = document.getElementById('joiningMessage');
+            message.style.display = 'flex'; 
+
+            setTimeout(() => {
+                message.style.display = 'none';
+                window.location.href = '../../juego3/index.html'; 
+            }, 1000); 
+        });
+    }
 };
-
-document.getElementById('jugar').addEventListener('click', function() {
-    const message = document.getElementById('joiningMessage');
-    message.style.display = 'flex'; 
-
-    setTimeout(() => {
-        message.style.display = 'none';
-        window.location.href = '../../juego3/index.html'; 
-    }, 1000); 
-});
-
