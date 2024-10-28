@@ -6,16 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memoria</title>
     <link rel="stylesheet" href="estilos/estilo_cartas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
  
 </head>
 <body>
+    <div class="back-button">
+        <a href="#" onclick="showExitWarningModal()"><img class="back-button-img" src="../img/icon/back.png" alt="Icono de retroceder"></a>
+    </div>
+    </div>
     
+    <div class="menu" onclick="toggleButtons()">
+        <img src="../img/icon/wenu-Photoroom.png" alt="Icono del menú" style="width: 40px; height: auto;">
+        <div class="button-container" style="display: none;">
+            <button id="musicButton">
+                <img class="imgSonido" src="../img/musica.png" alt="Icono de sonido">
+            </button>
+        </div>
+    </div>
     
     <div class="score-table oculto"></div>
 
     <div class="game">
         <div class="controls">
             <button class="button">Iniciar</button>
+            <button id="siguienteRonda" class="oculto">Siguiente Ronda</button>
             <div class="stats">
                 <div class="moves">0 movimiento</div>
                 <div class="timer">Tiempo: 0 sec</div>
@@ -27,7 +41,19 @@
         </div>
       
     </div>
-    <button id="siguienteRonda" class="oculto">Siguiente Ronda</button>
+    
+    <div id="exitWarningModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Advertencia</h2>
+            <p>Si sales, no podrás volver a ingresar a la sala y perderás tu progreso.</p>
+            <div class="modal-buttons">
+                <button onclick="hideExitWarningModal()">Cancelar</button>
+                <a href="../multijugador/sala/index.html" class="btn-exit">Salir</a>
+            </div>
+        </div>
+    </div>    
+    <audio id="backgroundMusic" src="../audio/no-copyright-music-181373.mp3" loop></audio>
+    <script src="estilos/alerta.js"></script>
     
     <script src="js/script_cartas.js"></script>
 </body>

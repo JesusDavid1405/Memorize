@@ -159,6 +159,28 @@ body {
     align-items: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0);
 }
+.joining-message {
+    display: none; /* Ocultar inicialmente */
+    position: absolute; /* Para posicionar fuera del círculo */
+    top: 50%; /* Ajusta según sea necesario */
+    left: 50%; /* Ajusta según sea necesario */
+    transform: translate(-50%, -120%); /* Centrar y mover hacia arriba */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    font-size: 18px; /* Tamaño de fuente */
+    display: flex;
+    align-items: center;
+    z-index: 10; /* Asegurarse de que aparezca sobre otros elementos */
+}
+
+.joining-image {
+    margin-right: 10px;
+    width: 60px; 
+    height: auto; /* Espaciado entre la imagen y el texto */
+}
+
 .multiplayer-container::after {
     content: "";
     position: absolute;
@@ -169,6 +191,14 @@ body {
     box-shadow: 0 0 15px rgb(255, 166, 0),
     inset 0 0 10px rgb(0, 255, 76); 
     z-index: -1;
+}
+.yum{
+    background: radial-gradient(circle, rgb(214, 16, 16) 0%, rgb(16, 137, 250) 100%);
+    box-shadow: 0 0 15px rgb(255, 166, 0),
+    inset 0 0 10px rgb(0, 255, 76); 
+}
+.yum:hover {
+    transform: scale(1.1);
 }
 @keyframes animate {
     0% {
@@ -204,7 +234,22 @@ body {
     border-radius: 50%;
     transform: rotate(18deg); 
 }
+.avatar-name {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+}
 
+.avatar:hover .avatar-name {
+    display: block;
+}
 .avatar {
     width: 80px; 
     height: 80px;
@@ -216,6 +261,7 @@ body {
     background-color: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     position: absolute;
+    
 }
 
 .avatar img:hover {
@@ -334,4 +380,7 @@ h2 {
         color: #333;
         font-size: 0.8em;
     }   
+    .avatar-name {
+        font-size: 0.8em;
+    }
 }

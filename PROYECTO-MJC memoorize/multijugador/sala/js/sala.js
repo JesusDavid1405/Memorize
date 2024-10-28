@@ -43,6 +43,16 @@ window.onload = async () => {
 };
 
 // Evento para el botón "Jugar"
-document.getElementById('jugar').onclick = function() {
-    window.location.href = '../../juego3/index.html'; // Cambia la ruta si es necesario
-};
+
+document.getElementById('jugar').addEventListener('click', function() {
+    // Mostrar el mensaje
+    const message = document.getElementById('joiningMessage');
+    message.style.display = 'flex'; // Mostrar el mensaje
+
+    // Ocultar el mensaje después de 1 segundo y redirigir
+    setTimeout(() => {
+        message.style.display = 'none';
+        window.location.href = '../../juego3/index.html'; // Cambia la ruta si es necesario
+    }, 1000); // 1000 ms = 1 second
+});
+

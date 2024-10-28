@@ -5,6 +5,59 @@ body {
     background-attachment: fixed;
     overflow: hidden;
 }
+/* Estilos del modal */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.modal-content {
+    border: 5px solid #ffcc00; 
+    text-shadow: 3px 3px 0px #ffffff00,   
+    6px 6px 0px #8b451300; 
+    border-radius: 30px; 
+    background: radial-gradient(circle, rgba(255, 255, 110, 0.699) 0%, rgb(33, 148, 202) 100%);
+    box-shadow: 0 0 15px rgb(255, 166, 0),
+    inset 0 0 10px rgb(44, 166, 227); 
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.modal-buttons button,
+.modal-buttons .btn-exit {
+    background-color: #336f92;
+    color: #FFF;
+    text-decoration: none;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modal-buttons button:hover,
+.modal-buttons .btn-exit:hover {
+    background-color: #1d1f2a;
+}
 
 .game {
     position: absolute;
@@ -14,11 +67,12 @@ body {
 }
 .controls {
     display: flex;
+    
     gap: 20px;
     margin-bottom: 20px;
 }
 .button {
-    background: #282A3A;
+    background: #2b3792;
     color: #FFF;
     border-radius: 5px;
     padding: 10px 20px;
@@ -32,20 +86,61 @@ body {
     color: #757575;
 }
 .stats {
-    color: #FFF;
-    font-size: 14pt;
+    color: #000000;
+    font-size: 18pt;
     font-weight: bold;
 }
 .board-container {
     position: relative;
 }
+#siguienteRonda{
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 0;
+    cursor: pointer;
+    font-size: 18pt;
+    text-align: center;
+    font-weight: bold;
+}
+#siguienteRonda:hover{
+    transform: scale(1.1)
+}
 .board,
 .win {
     border-radius: 5px;
-    box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
-    background: linear-gradient(135deg,  #03001e 0%,#ffffff 0%,#ffffff 50%, #fdeff9 100%);
-    transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    justify-content: space-around;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; 
+    background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     backface-visibility: hidden;
+}
+.board::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-size: 400%;
+    border-radius: 15px;
+    filter: blur(5px);
+    z-index: -1;
+    animation: animate 20s linear infinite;
+}
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
 }
 .board {
     padding: 20px;
@@ -158,4 +253,94 @@ body {
     font-size: 18pt;
     font-weight: bold;
 }
+.menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../img/mapa.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /*background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);*/
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.menu:hover {
+    transform: scale(1.1);
+
+}
+
+.soundButton, #musicButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.imgSonido {
+    width: 40px;
+    height: auto;
+}
+
+#musicButton p {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+.back-button {
+    left: 2%;
+    bottom: 86%;
+    position: fixed;
+}
+.back-button img {
+    width: 70px;
+    height: 70px;
+}
+.back-button:hover {
+    transform: scale(1.05);
+}
+@media (max-width: 768px) {
+    .game {
+        top: 45%; 
+        left: 48%;
+        transform: translate(-50%, -50%);
+        width: 89vw; 
+    }
+
+    .board {
+        grid-template-columns: repeat(3, auto); 
+        grid-gap: 10px; 
+    }
+
+    .card {
+        width: 60px;
+        height: 60px;
+    }
+    .menu {
+        right: 6%;
+    }
+    .button {
+        padding: 8px 15px;
+        font-size: 16pt;
+    }
+
+    .controls {
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .win-text {
+        font-size: 18pt;
+    }
+    .card-back{
+        width: 64px;
+        height: 64px;
+    }
+}
+
 
