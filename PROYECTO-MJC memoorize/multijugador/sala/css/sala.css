@@ -169,16 +169,15 @@ body {
     border-radius: 5px; /* Bordes redondeados */
     padding: 10px 20px; /* Espaciado interno */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-    font-size: 18px; /* Tamaño de fuente */
+    font-size: 18px; 
     display: flex;
     align-items: center;
-    z-index: 10; /* Asegurarse de que aparezca sobre otros elementos */
+    z-index: 10; 
 }
-
 .joining-image {
     margin-right: 10px;
     width: 60px; 
-    height: auto; /* Espaciado entre la imagen y el texto */
+    height: auto; 
 }
 
 .multiplayer-container::after {

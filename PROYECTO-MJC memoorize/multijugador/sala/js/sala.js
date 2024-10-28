@@ -22,8 +22,6 @@ if (rol == 1) {
 } else {
     configuraciones = 'Error: no se ha especificado un usuario.';
 }
-
-// Mostrar configuraciones
 document.getElementById('configuraciones').innerHTML = configuraciones;
 
 // Función para iniciar la sala
@@ -37,22 +35,17 @@ async function iniciarSala() {
     });
 }
 
-// Iniciar la sala al cargar la página
 window.onload = async () => {
     await iniciarSala();
 };
 
-// Evento para el botón "Jugar"
-
 document.getElementById('jugar').addEventListener('click', function() {
-    // Mostrar el mensaje
     const message = document.getElementById('joiningMessage');
-    message.style.display = 'flex'; // Mostrar el mensaje
+    message.style.display = 'flex'; 
 
-    // Ocultar el mensaje después de 1 segundo y redirigir
     setTimeout(() => {
         message.style.display = 'none';
-        window.location.href = '../../juego3/index.html'; // Cambia la ruta si es necesario
-    }, 1000); // 1000 ms = 1 second
+        window.location.href = '../../juego3/index.html'; 
+    }, 1000); 
 });
 
