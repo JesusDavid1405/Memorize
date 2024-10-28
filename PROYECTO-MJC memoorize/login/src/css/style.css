@@ -51,7 +51,7 @@ body{
     left: -5px;
     right: -5px;
     bottom: -5px;
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #ff0000);
     background-size: 400%;
     border-radius: 15px;
     filter: blur(5px);
@@ -191,17 +191,29 @@ text:hover{
     transition: 100ms;
 }
 .imgSonido{
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
+    
 }
 #playButton:hover {
     transform: scale(1.1);
 }
-
+.back-button {
+    left: 2%;
+    bottom: 75%;
+    position: fixed;
+}
+.back-button:hover {
+    transform: scale(0.9);
+}
+.back-button-img{
+    width: 25%;
+    height: 25%;
+}
 
 /*texto*/
 .textCrear{
-    font-size: 2.5em;
+    font-size: 1.8em;
     
     color:#ffffff;
     font-family: 'Pirata One', cursive; 
@@ -251,7 +263,8 @@ a:link, a:visited, a:active {
     .logoForm img {
         width: 120px;
         height: 120px;
-    }#playButton {
+    }
+    #playButton {
         font-size: 20px;
         padding: 10px 20px;
         background-color: rgba(73, 20, 20, 0);
@@ -313,7 +326,10 @@ a:link, a:visited, a:active {
     }
 
     /* Tamaños de texto */
-    .textCrear, .textOlvide {
+    .textOlvide {
+        font-size: 1.2em;
+    }
+    .textCrear{
         font-size: 1.2em;
     }
 }

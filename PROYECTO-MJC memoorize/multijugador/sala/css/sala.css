@@ -325,8 +325,8 @@ h2 {
         height: 50px;
     }
     .back-button {
-        right: 87%;
-        bottom: 87%;
+        right: 85%;
+        bottom: 82%;
         position: fixed;
         
     }
@@ -345,15 +345,16 @@ h2 {
     }
     .menu {
         position: fixed;
-        top: 13%;
+        top: 8%;
         right: 22px;
     
     }
 
     .menu-title {
         font-size: 2.0rem;
-        bottom: 44%;
-        margin-right: 5%;
+        bottom: 55%;
+        margin-right: 40%;
+        
     }
     .imgSonido {
         width: 30px;
