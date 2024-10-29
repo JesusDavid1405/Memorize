@@ -2,8 +2,21 @@ body {
     background-image: url(../../../img/fondo4.gif);
     background-size: cover;
     background-attachment: fixed;
-    font-family: 'Pirata One', cursive; 
+    overflow: hidden;
+    font-family: 'Pirata One', cursive;
     background-repeat: no-repeat;
+    animation: puffIn 1s ease-in-out
+    
+}
+@keyframes puffIn {
+    0% {
+        opacity: 0;
+        transform: scale(2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 .modal-header,
   .modal-footer {
@@ -99,11 +112,10 @@ body {
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
-    background-image: url(../../../img/mapa.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    /*background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);*/
+    background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

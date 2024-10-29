@@ -1,12 +1,16 @@
 const rol = localStorage.getItem('rol');
 const nombreSala = localStorage.getItem('nombreSala');
+const codigoSala = localStorage.getItem('codigoSala');
+const numeroPersonas = localStorage.getItem('numeroPersonas');
 const dificultad = localStorage.getItem('dificultad');
+const playersContainer = document.getElementById('players');
 const rondas = localStorage.getItem('rondas');
-// Solo mostrar el título y el código de la sala
 let configuraciones = `
      <p><strong>Nombre deSala:</strong> ${nombreSala || 'No disponible'}</p>
+      <p><strong>codigo:</strong> ${codigoSala || 'No disponible'}</p>
       <p><strong>Dificultad:</strong> ${dificultad || 'No disponible'}</p>
       <p><strong>Rondas:</strong> ${rondas || 'No disponible'}</p>
+      <p><strong>Personas:</strong> ${numeroPersonas || 'No disponible'}</p>
 
 `;
 

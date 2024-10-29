@@ -9,7 +9,8 @@ btnUnirseSala.addEventListener('click', function() {
         modalDisplay.innerHTML = "Por favor ingresa un código de sala";
         modalError.show();
     } else {
-        let salaExistente = localStorage.getItem('codigoSala'); // Supongamos que guardas el código de la sala al crearla
+        
+        let salaExistente = localStorage.getItem('codigoSala'); 
         if (codigoSala === salaExistente) {
             window.location.href = '../sala/index.html'; // Cambia la URL según sea necesario
         } else {
@@ -17,4 +18,5 @@ btnUnirseSala.addEventListener('click', function() {
             modalError.show();
         }
     }
+
 });

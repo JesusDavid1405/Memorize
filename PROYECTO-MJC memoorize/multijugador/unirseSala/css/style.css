@@ -3,6 +3,18 @@ body{
     background-size: 100% 100%;
     background-attachment:fixed;
     background-repeat: no-repeat;
+    overflow: hidden;
+    animation: puffIn 1s ease-in-out
+}
+@keyframes puffIn {
+    0% {
+        opacity: 0;
+        transform: scale(2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 .menu {
     position: fixed;
