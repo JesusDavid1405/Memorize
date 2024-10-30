@@ -4,35 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
     <title>Dificultad</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <link rel="shortcut icon" href="../../img/3.jpeg"> 
-    
-    <link rel="stylesheet" href="../../css/offcanvas.css">
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
 </head>
 <body>
-    <h1>Niveles</h1>
-
+    <div class="back-button">
+        <a href="../../menu/index.html"><img class="back-button-img" src="../../img/icon/back.png" alt="Icono de retroceder"></a>
+    </div>
+    <div class="menu" onclick="toggleButtons()">
+        <img src="../../img/icon/wenu-Photoroom.png" alt="Icono del menú" style="width: 40px; height: auto;">
+        <div class="button-container" style="display: none;">
+            <button id="musicButton">
+                <img class="imgSonido" src="../../img/musica.png" alt="Icono de sonido">
+            </button>
+        </div>
+    </div>
     <div class="map-container">
-
-        <div class="level level-1" onclick="goToLevel(1)">1</div>
-        <div class="level level-2" onclick="goToLevel(2)">2</div>
-        <div class="level level-3" onclick="goToLevel(3)">3</div>
-        <div class="level level-4" onclick="goToLevel(4)">4</div>
-        <div class="level level-5" onclick="goToLevel(5)">5</div>
-        <div class="level level-6" onclick="goToLevel(6)">6</div>
-        <div class="level level-7" onclick="goToLevel(7)">7</div>
-        <div class="level level-8" onclick="goToLevel(8)">8</div>
-
-
-        
-
+        <h1 class="menu-title">Niveles</h1>
+        <div class="level level-1" onclick="goToLevel(1)">
+            <div class="level-number">1</div>
+            <span class="level-label">Nivel</span>
+        </div>
+        <div class="level level-2" onclick="goToLevel(2)">
+            <div class="level-number">2</div>
+            <span class="level-label">Nivel</span>
+        </div>
+        <div class="level level-3" onclick="goToLevel(3)">
+            <div class="level-number">3</div>
+            <span class="level-label">Nivel</span>
+        </div>
+        <div class="level level-4" onclick="goToLevel(4)">
+            <div class="level-number">4</div>
+            <span class="level-label">Nivel</span>
+        </div>
+        <div class="level level-5" onclick="goToLevel(5)">
+            <div class="level-number">5</div>
+            <span class="level-label">Nivel</span>
+        </div>
+        <div class="level level-6" onclick="goToLevel(6)">
+            <div class="level-number">6</div>
+            <span class="level-label">Nivel</span>
+        </div>
+        <div class="level level-7" onclick="goToLevel(7)">
+            <div class="level-number">7</div>
+            <span class="level-label">Nivel</span>
+        </div>
+        <div class="level level-8" onclick="goToLevel(8)">
+            <div class="level-number">8</div>
+            <span class="level-label">Nivel</span>
+        </div>
+        <div class="chest" onclick="showModal()">
+            <img src="../../img/icon/cofre.png" alt="Cofre del tesoro" class="chest-img">
+        </div>
         <img src="../../img/icon/barco.png" alt="Barco pirata" class="ship" id="ship" style="top: 50px; left: 50px;">
     </div>
-    
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Oh no, aún no has terminado todos los niveles</p>
+        </div>
+    </div>
 
+    <audio id="backgroundMusic" src="../../audio/no-copyright-music-181373.mp3" loop></audio>
+    <script src="js/barco.js"></script>
+    <script src="js/menu.js"></script>
     <script src="js/sonido.js"></script>
     <script src="../../bootstrap/js/bootstrap.js"></script>
     <script src="../../bootstrap/js/bootstrap.bundle.js"></script>

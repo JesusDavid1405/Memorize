@@ -178,7 +178,7 @@ body{
 .modal-backdrop {
     background-color: transparent !important; 
 }
-  .modal-content {
+.modal-content {
     padding: 20px;
     font-family: 'Pirata One', cursive; 
     font-size: 22px;
@@ -733,30 +733,6 @@ img.imgSonido {
 .avatar-option2:hover {
     border: 2px solid blue; 
 }
-
-
-.change-avatar {
-    background-image: url(../../img/slide_14447667.gif);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 10px;
-    height: 10px;
-    clip-path: circle(50% at center);
-    display: inline-block; 
-    border: none; 
-    border-radius: 5px; 
-    padding: 2px 5px; 
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-size: 0px; 
-    width: 0px; 
-}
-
-
-.change-avatar:hover {
-    background-color: #0056b3;
-}
-
 #editProfileForm .form-label {
     font-size: 1.2rem;
     font-weight: bold;
@@ -933,11 +909,11 @@ nav {
     width: 200px; 
 }
 .game-image {
-    width: 120%;
+    width: 130%;
     height: auto;
     position: relative;
     animation: glitch 1s infinite;
-    margin-top: 0px;
+    margin-top: 70px;
     margin-left: -20%;
     animation: swashIn 1s ease-in-out, gameVertical 2s infinite alternate ease-in-out;
     transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
