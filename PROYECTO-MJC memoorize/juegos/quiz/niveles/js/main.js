@@ -237,19 +237,22 @@ fetch('libreria/palabras.php', {
         }
         
         function addPista() {
-            let displayPistas = document.getElementById('displayPista');
-            let classPista = document.querySelector('.pistas').style.display='flex';
+            var modal = new bootstrap.Modal(document.getElementById('miModal'));
+            var modalBody = document.querySelector('.modal-body');
             
             if (pistaIndex < wordlePistas.length) {
-                displayPistas.innerHTML += `
-                <li>
-                    <p>${wordlePistas[pistaIndex]}</p>
-                </li>`;
-                
+                modalBody.innerHTML = `
+                    <div>
+                        <h3>Pista:</h3>
+                        <p>${wordlePistas[pistaIndex]}</p>
+                    </div>
+                `;
                 pistaIndex++; 
             }
-            console.log(pistaIndex)
+        
+            modal.show();
         }
+        
         
         function checkRowAndAddPista() {
             if (rowId === 2 || rowId === 4 || rowId === 5) {  

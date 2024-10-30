@@ -86,7 +86,7 @@ body{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     display: flex;
-    bottom: 10vh;
+    bottom: 0vh;
 }
 #formulario::after {
     content: "";

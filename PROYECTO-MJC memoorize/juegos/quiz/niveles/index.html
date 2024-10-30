@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pirataWordle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="../../../bootstrap/css/bootstrap.css">
 </head>
 <body>
     <div id="contador"></div>
+    <h1 class="menu-title">Wordle</h1>
     <div id="pista" >
         <div class="pistas">
             <ul id="displayPista">
@@ -18,7 +20,19 @@
         </div>
         <img src="../../../img/icon/pirata.png" alt="">
     </div>
+    <div class="back-button">
+        <a href="../../quiz/index.html"><img class="back-button-img" src="../../../img/icon/back.png" alt="Icono de retroceder"></a>
+    </div>
+    <div class="menu" onclick="toggleButtons()">
+        <img src="../../../img/icon/wenu-Photoroom.png" alt="Icono del menú" style="width: 40px; height: auto;">
+        <div class="button-container" style="display: none;">
+            <button id="musicButton">
+                <img class="imgSonido" src="../../../img/musica.png" alt="Icono de sonido">
+            </button>
+        </div>
+    </div>
     <div class="conteinerJuego">
+        <img src="../../../img/so.avif" alt="Descripción de la imagen" class="imagenFondo">
         <main class="main-container">
             <!--<h2 class="loading">cargando...</h2>-->
             <div class="fila" id="1">
@@ -37,12 +51,31 @@
                 <div class="modal-body">
                     Este es un modal que se muestra automáticamente.
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Cerrar</button>
+                </div>
             </div>
         </div>
     </div>
-
-
+    <div class="modal fade" id="miModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">¡Bienvenido al juego de palabras!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Este juego está diseñado para desafiar tus habilidades  en el fondo del mar. ¡Diviértete!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="backgroundMusic" src="../../../audio/no-copyright-music-181373.mp3" loop></audio>
     <script src="./js/main.js"></script>
+    <script src="js/menu2.js"></script>
     <script src="../../../bootstrap/js/bootstrap.js"></script>
     <script src="../../../bootstrap/js/bootstrap.bundle.js"></script>
 </body>
