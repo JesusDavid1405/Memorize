@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     btnCrearSala.addEventListener('click', function() {
         let nombreSala = document.getElementById('nombreSala').value; 
         let numeroPersonas = parseInt(document.getElementById('numeroPersonas').value); 
-        // let codigoSala = document.getElementById('codigoSala').value; 
+        let codigoSala = generateCode(); 
         let dificultad = document.getElementById('dificultad').value;
         let rondas = parseInt(document.getElementById('rondas').value);
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             modalError.show();
         } else {
             localStorage.setItem('nombreSala', nombreSala);
-            //localStorage.setItem('codigoSala', codigoSala);
+            localStorage.setItem('codigoSala', codigoSala);
             localStorage.setItem('numeroPersonas', numeroPersonas);
             localStorage.setItem('dificultad', dificultad);
             localStorage.setItem('rondas', rondas);
@@ -38,3 +38,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+function generateCode(){
+    let codigo;
+
+    let generate = Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000;
+
+    codigo = generate;
+
+    return codigo;
+}

@@ -2,7 +2,7 @@
     class Database {
         // Propiedades de la clase
         private $host = "localhost";
-        private $dbname = "prueba2";
+        private $dbname = "prueba";
         private $username = "root";
         private $password = "";
         private $conn;

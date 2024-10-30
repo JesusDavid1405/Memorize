@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ROMPE CABEZA</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/image-puzzle.css" rel="stylesheet" />
+    <script src="js/image-puzzle.js"></script>
+    <script src="js/img.js"></script>
+    <link rel="shortcut icon" href="images/rompecabeza.png"> 
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/offcanvas.css">
+    <link rel="stylesheet" href="../css/bar.css">
+    <link rel="stylesheet" href="../css/icon.css">
+</head>
+
+<body>
+    <div class="imagen-superior">
+        <img id="boton-imagen" src="images/back.png" alt="Imagen Submarino">
+    </div>
+    
+    
+    <div id="collage">
+        <h2>AQUAC-MEMORY ROMPE CABEZA</h2>
+        
+        <hr />
+        
+        <div id="playPanel" style="padding:5px;display:none;">
+            <h3 id="imgTitle"></h3>
+            <hr />
+            <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
+                <ul id="sortable" class="sortable"></ul>
+                <div id="actualImageBox">
+                    <div id="stepBox">
+                        <div>Movimientos</div>
+                        <div id="stepCount" class="stepCount">0</div>
+                    </div>
+                    <div id="timeBox">
+                        TIEMPO TOMADO: <span id="timerPanel"></span> SEG:
+                    </div>
+                    <img id="actualImage" />
+                    <div>Reorganizar para crear una imagen como ésta.</div>
+                    <p id="levelPanel">
+                        <input type="radio" name="level" id="easy" checked="checked" value="3" onchange="imagePuzzle.startGame(images, this.value);"/> <label for="easy">Medio</label>
+                      
+                    </p>
+                    <div>
+                        <button id="regla" type="button" class="btn">Reglas</button>
+                        <button id="newPhoto" type="button" class="btn" onclick="restart();">Otra Imagen</button>
+                        <button id="acercaDe" type="button" class="btn">Acerca de:</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gameOver" style="display:none;">
+            <div style="background-color: #da00003f; padding: 5px 10px 20px 10px; text-align: center; ">
+                <h2 style="text-align:center">¡¡Juego terminado!!</h2>
+                ¡¡Felicidades!! <br /> Has completado este nivel
+                <br /> Movimientos: <span id="stepCount" class="stepCount">0</span> Movimientos:
+                <br /> TIEMPO TOMADO: <span class="timeCount">0</span> SEG: <br />
+                <div>
+                    <button type="button" onclick="window.location.reload(true);">Jugar de nuevo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Fondo del modal y contenido -->
+    <div id="myModal" class="modal-background">
+        <div class="modal-content">
+            ...
+        <button class="close-button" onclick="closeModal()">Cerrar</button>
+        </div>
+    </div>
+
+
+    <script>
+        
+
+        let btnReglas = document.getElementById("regla");
+        let btnAcercaDe = document.getElementById("acercaDe");
+
+        let contenidoModal = document.querySelector(".modal-content")
+
+        btnReglas.addEventListener('click', function(){
+            contenidoModal.innerHTML=`
+            <p>
+                Une todas las piezas hasta completar la imagen. 
+                Comienza por los bordes y sigue hacia el centro. 
+                ¡La paciencia y el enfoque te llevarán a la meta! \n ¡Disfruta el desafío!🧩
+            </p>`
+
+            openModal();
+        })
+
+        btnAcercaDe.addEventListener('click', function(){
+            contenidoModal.innerHTML=`
+            <p>
+                El rompecabezas es un juego que consiste en unir diversas piezas para formar una imagen completa. 
+                Cada pieza tiene una forma única, y su ensamblaje requiere atención y habilidades de resolución de problemas.
+                \nEste juego no solo es entretenido, sino que también estimula la mente, mejora la concentración y fomenta la paciencia. 
+                Los rompecabezas pueden variar en dificultad, desde simples hasta complejos, lo que los hace adecuados para todas las edades.🧩🌊
+            </p>`
+
+            openModal();
+        })
+
+
+        // Función para abrir el modal
+        function openModal() {
+            document.getElementById('myModal').style.display = 'block';
+        }
+
+
+
+        // Función para cerrar el modal
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        // Cerrar modal al hacer clic fuera del contenido
+        window.onclick = function(event) {
+            const modal = document.getElementById('myModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+        
+    </script>
+    <script>
+        document.getElementById('boton-imagen').addEventListener('click', function() {
+            window.location.href = "../../menu/index.html";
+        });
+    </script>
+    
+
+</body>
+</html>
