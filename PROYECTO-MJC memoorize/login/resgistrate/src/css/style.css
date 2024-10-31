@@ -7,6 +7,19 @@ body{
     height: 100vh;
     margin: 0;
 }
+#togglePassword{
+    position: absolute;
+    display: block;
+    bottom: .5rem;
+    right: 1rem;
+    
+    user-select: none;
+    cursor: pointer;
+}
+#togglePassword img{
+    width: 15px;
+    height: 15px;
+}
 .modal-content {
     padding: 20px;
     font-family: 'Pirata One', cursive; 
@@ -86,7 +99,7 @@ body{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     display: flex;
-    bottom: 0vh;
+    bottom: 10vh;
 }
 #formulario::after {
     content: "";

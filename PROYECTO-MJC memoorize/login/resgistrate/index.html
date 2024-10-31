@@ -17,7 +17,7 @@
     
     <nav>
         <button id="playButton">
-            <img class="imgSonido" src="../../img/musica.png" alt="Sonido desactivado">
+            <img class="imgSonido" src="../../img/icon/noSonido.png" alt="Sonido desactivado">
         </button>
     </nav>
     
@@ -51,9 +51,9 @@
                 </div>
 
                 <div class="col-md-11 inputIcon">
-                    <input type="password" class="form-control input" id="contraseña" name="contraseña" placeholder="contraseña" required>
-                    <span id="icon"> 
-                        <img src="../../img/icon/password.png" alt="">
+                    <input type="password" class="form-control input" id="contraseñaLogin" placeholder="Contraseña" required>
+                    <span id="togglePassword" style="cursor: pointer;">
+                        <img src="../../img/icon/candado1.png" alt="Icono de contraseña" id="eyeIcon">
                     </span>
                 </div>
 
@@ -94,6 +94,7 @@
     <audio id="miCancion" src="../../audio/no-copyright-music-181373.mp3" preload="auto" loop></audio>
     <script src="../../services/responseRegistro.js"></script>
     <script src="src/js/sonido.js"></script>
+    <script src="src/js/candadore.js"></script>
     <script src="../../bootstrap/js/bootstrap.js"></script>
     <script src="../../bootstrap/js/bootstrap.bundle.js"></script>
     <script src="../../login/resgistrate/js/perfil.js"></script>

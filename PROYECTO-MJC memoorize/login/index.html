@@ -21,7 +21,9 @@
         <button id="playButton">
             <img class="imgSonido" src="../img/musica.png" alt="Icono de sonido">
         </button>
-       
+        <div class="back-button">
+            <a href="../views/principal.html"><img class="back-button-img" src="../img/icon/back.png" alt="Icono de retroceder"></a>
+        </div>
         <audio id="miCancion" src="../audio/no-copyright-music-181373.mp3 "></audio>        
     </nav>
     <!-- Contenido principal -->
@@ -44,10 +46,11 @@
             
                 <div class="col-md-11 inputIcon">
                     <input type="password" class="form-control input" id="contraseñaLogin" placeholder="Contraseña" required>
-                    <span id="icon"> 
-                        <img src="../img/icon/password.png" alt="Icono de contraseña">
+                    <span id="togglePassword" style="cursor: pointer;">
+                        <img src="../img/icon/candado1.png" alt="Icono de contraseña" id="eyeIcon">
                     </span>
                 </div>
+                
                 
                 <div class="col-12 textOlvide">
                     <a href="../login/recuperar/index.html">¿Olvidaste tu contraseña?</a>
@@ -88,6 +91,7 @@
 
     <script src="../services/login.js"></script>
     <script src="src/js/sonido.js"></script>
+    <script src="src/js/candado.js"></script>
     <script src="../bootstrap/js/bootstrap.js"></script>    
     <script src="../bootstrap/js/bootstrap.bundle.js"></script>
 </body>

@@ -139,6 +139,19 @@ body{
     user-select: none;
     cursor: pointer;
 }
+#togglePassword{
+    position: absolute;
+    display: block;
+    bottom: .5rem;
+    right: 1rem;
+    
+    user-select: none;
+    cursor: pointer;
+}
+#togglePassword img{
+    width: 15px;
+    height: 15px;
+}
 #icon img{
     width: 15px;
     height: 15px;
@@ -197,6 +210,18 @@ text:hover{
 }
 #playButton:hover {
     transform: scale(1.1);
+}
+.back-button {
+    left: 2%;
+    bottom: 79%;
+    position: fixed;
+}
+.back-button:hover {
+    transform: scale(0.9);
+}
+.back-button-img{
+    width: 25%;
+    height: 25%;
 }
 
 /*texto*/
