@@ -1,0 +1,297 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../../../img/fondo4.gif);
+    overflow: hidden;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.map-container {
+    position: relative;
+    width: 900px;
+    height: 500px;
+    background-image: url('../../../img/so.avif'); 
+    margin-top: 9%;
+    background-size: cover;
+    border: 4px solid #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.menu-title {
+    font-family: 'Pirata One', cursive; 
+    text-align: left;
+    font-weight: bold;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    left: 0%;    
+    font-size: 2.9rem;
+    color: #ffd700; 
+    bottom: 0%;
+    text-shadow: 3px 3px 0px #000000,   
+                 6px 6px 0px #8b4513;  
+    position: relative;
+    padding: 0px;
+    animation: vanishIn 1s ease-in-out
+}
+.menu-title:hover {
+    transform: scale(1.1);
+}
+@keyframes vanishIn {
+    0% {
+        opacity: 0;
+        transform: rotate(-30deg) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+.logo {
+    animation: swashIn 1s ease-in-out, gameVertical 2s infinite alternate ease-in-out;
+}
+@keyframes gameVertical {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
+}
+
+.logo-img{
+    width: 15%;
+    height: 15%;
+    top: 10px;
+    left: 42%;
+    position: relative;
+}
+.level {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(circle, rgba(214, 214, 16, 0) 0%, rgb(255, 255, 255) 100%);
+    border-radius: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #000000;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s;
+}
+
+.level-number {
+    font-size: 1.2em;
+}
+
+.level-label {
+    font-size: 0.8em;
+    color: #000;
+    margin-top: 5px; 
+}
+
+.level:hover {
+    transform: scale(1.1);
+}
+
+.level:hover {
+    transform: scale(1.1);
+}
+.chest {
+    position: absolute;
+    width: 10%;
+    height: 12%;
+    top: 400px; 
+    
+    left: 80%;
+    cursor: pointer;
+}
+.chest:hover {
+    transform: scale(1.1);
+}
+.chest-img {
+    width: 90%;
+    height: 100%;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: radial-gradient(circle, rgba(255, 255, 110, 0.699) 0%, rgb(33, 148, 202) 100%);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.5rem;
+    width: 80%;
+    max-width: 300px;
+    font-family: 'Pirata One', cursive; 
+}
+.modal .btn-close {
+    width: 20px;
+    height: 20px;
+}
+.modal-footer .btn-secondary {
+    background-color: #ffcc00;; 
+    color: #ffffff;
+    
+    font-family: 'MedievalSharp', cursive; 
+    font-size: 18px; 
+    padding: 8px 8px; 
+    border: 2px solid #deb5115b; 
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; 
+}
+
+.modal .btn-close {
+    border-radius: 50%;         
+    border: 2px solid #555;    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+}
+.modal .btn-close:hover {
+    background-color: #555;
+    color: #ffcc00;
+    border-color: #ffcc00;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.level-1 { top: 100px; left: 80px; }
+.level-2 { top: 100px; left: 410px; }
+.level-3 { top: 100px; left: 720px; }
+.level-4 { top: 250px; left: 720px; }
+.level-5 { top: 250px; left: 410px; } 
+.level-6 { top: 250px; left: 80px; }
+.level-7 { top: 400px; left: 80px; }
+.level-8 { top: 400px; left: 410px; }
+
+.ship {
+    position: absolute;
+    width: 70px;
+    transition: left 2s, top 2s; 
+}
+
+.game-section {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+.game-section.active {
+    display: block;
+}
+.back-button {
+    left: 2%;
+    bottom: 90%;
+    position: fixed;
+}
+.back-button:hover {
+    transform: scale(0.9);
+}
+.back-button-img{
+    width: 25%;
+    height: 25%;
+}
+.menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    z-index: 10;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.menu:hover {
+    transform: scale(1.1);
+
+}
+.soundButton, #musicButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.imgSonido {
+    width: 40px;
+    height: auto;
+}
+
+#musicButton p {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .menu-title {
+        font-size: 2rem;
+        text-align: center;
+        
+    }
+    .map-container {
+        width: 330px;
+        height: 360px; 
+        right: 1%; 
+        margin-top: 40%;
+    }
+    .level {
+        width: 45px; 
+        height: 45px;
+        font-size: 1em; 
+    }
+    .logo {
+        top: 30px;
+        right: 12%;
+        position: relative;
+    }
+    .logo-img {
+        width: 40%; 
+        height: auto;
+       
+
+    }
+    .ship {
+        width: 70px;
+    }
+    .chest {
+        top: 50px;
+        left:15%;
+    }
+    .chest-img {
+        width: 130%;
+        height: 100%;
+    }
+    .level-1 { top: 50px; left: 150px; }
+    .level-2 { top: 50px; left: 250px; }
+    .level-3 { top: 140px; left: 250px; }
+    .level-4 { top: 140px; left: 150px; }
+    .level-5 { top: 140px; left: 50px; } 
+    .level-6 { top: 240px; left: 50px; }
+    .level-7 { top: 240px; left: 150px; }
+    .level-8 { top: 240px; left: 250px; }
+}
