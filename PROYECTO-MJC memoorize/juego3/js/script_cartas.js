@@ -85,25 +85,38 @@ const saveScore = (playerName, moves, time) => {
 const generateGame = async () => {
     try {
 
+        let largo;
+        let ancho;
         let dimensions;
+
         if (state.dificultad === 'facil') {
-            dimensions = 4;  // 4x4
+            largo = 4;
+            ancho = 2; 
+            //4x2
+
         } else if (state.dificultad === 'medio') {
-            dimensions = 6;  // 5x5
+            largo = 4;
+            ancho = 4;
+            //4x4 
         } else if (state.dificultad === 'dificil') {
-            dimensions = 8;  // 6x6 
+            largo = 6;
+            ancho = 4;
+
+            //6x4
         }
+
+        dimensions= largo*ancho;
 
         if (dimensions % 2 !== 0) {
             throw new Error("La dimensión del tablero debe ser un número par.");
         }
 
         const images = await loadImagenes();
-        const picks = pickRandom(images, (dimensions * dimensions) / 2);
+        const picks = pickRandom(images, (largo * ancho) / 2);
         const items = shuffle([...picks, ...picks]);
         
         const cards = `
-            <div class="board" style="grid-template-columns: repeat(${dimensions}, auto)"   >
+            <div class="board" style="grid-template-columns: repeat(${largo}, auto)"   >
                 ${items.map(item => `   
                     <div class="card">
                         <div class="card-front"></div>
