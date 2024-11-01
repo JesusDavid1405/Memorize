@@ -7,7 +7,7 @@ btnIniciar.addEventListener('click', function() {
     let correo = document.getElementById('emailLogin').value;
     let contraseña = document.getElementById('contraseñaLogin').value;
 
-    fetch('../resources/entitys/login.php', {
+    fetch('../resources/usuario/logic/login.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

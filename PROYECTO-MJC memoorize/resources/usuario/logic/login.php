@@ -1,5 +1,7 @@
 <?php
-    include_once '../conexion/conexion.php';
+    include('../../conexion/conexion.php');
+
+    session_start();
 
     $response = [];
 
@@ -32,13 +34,17 @@
                 $result = $stmt->get_result();
         
                 if ($result && $result->num_rows > 0) {
+
                     $row = $result->fetch_assoc();
-                    
-                    $usuarioId = $row['id'];
+
+                    $_SESSION['id'] = $row['id'];
+                    $_SESSION['nickName'] = $row['nickName'];
+
                     $response = [
-                        'usuarioId' => $usuarioId,
-                        'status' => 'success'
+                        'status' => 'success',
+                        'message' => 'Se ha iniciado sesión exitosamente.'
                     ];
+
                 } else {
                     $response = [
                         'status' => 'error',

@@ -1,23 +1,23 @@
-const usuarioId = localStorage.getItem('usuario');
-
 let avatar = document.getElementById("avatar");
 let playerName = document.getElementById("playerName");
 
-fetch('../resources/logic/perfil.php', {
-    method: 'POST',
+fetch('../resources/usuario/logic/perfil.php', {
+    method: 'POST', 
     headers: {
         'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-        usuarioId: usuarioId
+        id: '',
     })
 })
 .then(response => response.json())
 .then(data => {
-    console.log(data.rutaImg);
-    avatar.src=`../img/${data.rutaImg}`;
-    playerName.innerHTML = data.nickName;
+    if (data.nickName && data.rutaImg) {
+        console.log(data.rutaImg);
+        avatar.src = `../img/${data.rutaImg}`;
+        playerName.innerHTML = data.nickName;
+    } else {
+        console.error('No se recibieron los datos esperados:', data);
+    }
 })
-
 .catch(error => console.error('Error:', error));
-

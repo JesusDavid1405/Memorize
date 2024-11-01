@@ -2,7 +2,7 @@ let perfilAvatar = document.getElementById("gratis");
 let avatarOptions;
 
 
-fetch('../resources/logic/avatar.php', {
+fetch('../resources/usario/logic/avatar.php', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
