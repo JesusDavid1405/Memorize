@@ -142,6 +142,7 @@ body{
 .back-button {
     left: 1%;
     bottom: 83%;
+    z-index: 10;
     position: fixed;
 }
 .back-button-img{
