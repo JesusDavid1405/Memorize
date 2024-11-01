@@ -56,6 +56,7 @@ document.querySelector('a').addEventListener('mouseenter', () => {
     sound.currentTime = 0;
     sound.play();
 });
+<<<<<<< HEAD
 document.getElementById("togglePassword").addEventListener("click", function() {
     const passwordField = document.getElementById("contraseñaLogin");
     const eyeIcon = document.getElementById("eyeIcon");
@@ -68,3 +69,5 @@ document.getElementById("togglePassword").addEventListener("click", function() {
         eyeIcon.src = "../img/icon/candado1.png"; // Cambia al icono de contraseña cerrado
     }
 });
+=======
+>>>>>>> 4256f72e766f7249d879250eddccbff65d440012
