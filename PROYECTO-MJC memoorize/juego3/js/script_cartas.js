@@ -4,6 +4,7 @@ const selectors = {
     movimiento: document.querySelector('.moves'),
     tiempo: document.querySelector('.timer'),
     Iniciar: document.querySelector('button'),
+    iniciarButton: document.getElementById('iniciarButton'),
     win: document.querySelector('.win'),
     scoreTable: document.querySelector('.score-table'),
     siguienteRonda: document.getElementById('siguienteRonda'),
@@ -209,6 +210,8 @@ const resetGame = async () => {
     
     const boardContainer = document.querySelector('.board-container');
     boardContainer.classList.remove('flipped');
+
+    selectors.iniciarButton.classList.remove('oculto');
     
     await generateGame();
     attachEventListeners();
@@ -227,6 +230,8 @@ const endGame = () => {
     }
 
     state.currentRound++;
+    selectors.iniciarButton.classList.add('oculto');
+
     const siguienteRonda = document.getElementById('siguienteRonda');
     if (siguienteRonda) {
         siguienteRonda.classList.remove('oculto');
@@ -243,7 +248,7 @@ const endGame = () => {
         }
     } else {
         alert("¡Has completado todas las rondas!");
-        state.currentRound = 0;
+        state.currentRound = 0; 
     }
 };
 
