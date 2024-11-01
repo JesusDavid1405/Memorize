@@ -5,10 +5,10 @@ var isPlaying = false
 playButton.addEventListener('click', function() {
     if (isPlaying) {
         audio.pause();
-        playButton.innerHTML = `<img class="imgSonido" src="../../img/musica.png" alt="">`;
+        playButton.innerHTML = `<img class="imgSonido" src="../../img/icon/noSonido.png" alt="">`;
     } else {
         audio.play();
-        playButton.innerHTML =  `<img class="imgSonido" src="../../img/nomusica.png" alt="">`;
+        playButton.innerHTML =  `<img class="imgSonido" src="../../img/icon/sonido.png" alt="">`;
     }
     isPlaying = !isPlaying;
 });
@@ -59,4 +59,16 @@ document.querySelector('.textCrear').addEventListener('mouseenter', () => {
 document.querySelector('a').addEventListener('mouseenter', () => {
     sound.currentTime = 0;
     sound.play();
+});
+document.getElementById("togglePassword").addEventListener("click", function() {
+    const passwordField = document.getElementById("contraseñaLogin");
+    const eyeIcon = document.getElementById("eyeIcon");
+
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        eyeIcon.src = "../../img/icon/password.png"; // Cambia al icono de ojo abierto
+    } else {
+        passwordField.type = "password";
+        eyeIcon.src = "../../img/icon/candado1.png"; // Cambia al icono de contraseña cerrado
+    }
 });
