@@ -8,7 +8,8 @@ const selectors = {
     win: document.querySelector('.win'),
     scoreTable: document.querySelector('.score-table'),
     siguienteRonda: document.getElementById('siguienteRonda'),
-    dificultad: document.getElementById('dificultad')
+    dificultad: document.getElementById('dificultad'),
+    
 };
 
 const state = {
@@ -92,7 +93,7 @@ const generateGame = async () => {
 
         if (state.dificultad === 'facil') {
             largo = 4;
-            ancho = 2; 
+            ancho = 3; 
             //4x2
 
         } else if (state.dificultad === 'medio') {
