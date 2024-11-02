@@ -812,7 +812,7 @@ nav {
     text-decoration: none; 
     position: relative;
     z-index: 1;
-    right: 10%;
+    right: 3%;
     color: inherit;
     top: 20px;
     pointer-events: auto;
@@ -833,7 +833,7 @@ nav {
     background-position: center;
     text-decoration: none; 
     top: 20px;
-    right: 10%;
+    right: 5%;
     position: relative;
     z-index: 1;
     color: inherit;
@@ -909,12 +909,12 @@ nav {
     width: 200px; 
 }
 .game-image {
-    width: 130%;
+    width: 150%;
     height: auto;
     position: relative;
     animation: glitch 1s infinite;
     margin-top: 70px;
-    margin-left: -20%;
+    margin-left: -25%;
     animation: swashIn 1s ease-in-out, gameVertical 2s infinite alternate ease-in-out;
     transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
 }
@@ -1054,7 +1054,6 @@ nav {
         align-items: center;    
         width: 60px;
         height: 60px;
-        background-image: url(../../img/mapa.jpg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
