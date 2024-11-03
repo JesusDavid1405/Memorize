@@ -28,7 +28,7 @@
 
             if ($conn) {
                 // Verificar si el nickName ya existe
-                $queryNick = "SELECT * FROM usuario WHERE nickName = ?";
+                $queryNick = "SELECT * FROM usuarios WHERE nickName = ?";
                 $stmtNick = $conn->prepare($queryNick);
                 $stmtNick->bind_param("s", $nickName);
                 $stmtNick->execute();
@@ -42,7 +42,7 @@
                     ];
                 } else {
                     // Verificar si el correo ya existe
-                    $queryCorreo = "SELECT * FROM usuario WHERE correo = ?";
+                    $queryCorreo = "SELECT * FROM usuarios WHERE correo = ?";
                     $stmtCorreo = $conn->prepare($queryCorreo);
                     $stmtCorreo->bind_param("s", $correo);
                     $stmtCorreo->execute();
@@ -56,13 +56,10 @@
                         ];
                     } else {
                         // Si no existe, proceder a registrar el nuevo usuario
-                        $insertUser = "INSERT INTO usuario (nickName, avatarId, correo, contraseña) VALUES (?, ?, ?, ?)";
+                        $insertUser = "INSERT INTO usuarios (nickName,correo, contraseña) VALUES (?, ?, ?)";
                         $stmtRegistrar = $conn->prepare($insertUser);
 
-                        // Establecer valores (por ejemplo, avatarId es 1)
-                        $avatarId = 1;
-
-                        $stmtRegistrar->bind_param("siss", $nickName, $avatarId, $correo, $contraseña);
+                        $stmtRegistrar->bind_param("sss", $nickName, $correo, $contraseña);
 
                         if ($stmtRegistrar->execute()) {
                             $response = [

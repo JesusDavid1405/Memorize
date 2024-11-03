@@ -12,14 +12,16 @@ if (isset($_SESSION['id'])) {
 
     if ($conn) {
         $query = "SELECT 
-            usuario.id,
-            usuario.nickName,
-            avatar.imagen
+            usuarios.id,
+            usuarios.nickName,
+            usuarios.descripcion,
+            usuarios.monedas,
+            avatares.imagen
         FROM 
-            usuario
+            usuarios
         INNER JOIN 
-            avatar ON usuario.avatarId = avatar.id
-        WHERE usuario.id = ?";
+            avatares ON usuarios.avatarId = avatares.id
+        WHERE usuarios.id = ?";
 
         $stmt = $conn->prepare($query);
         $stmt->bind_param("i", $usuarioId);
@@ -31,10 +33,14 @@ if (isset($_SESSION['id'])) {
 
             $imagen = $row['imagen'];
             $nickName = $row['nickName'];
+            $descripcion= $row['descripcion'];
+            $monedas = $row['monedas'];
 
             $response = [
                 'nickName' => $nickName,
-                'rutaImg' => $imagen
+                'rutaImg' => $imagen,
+                'monedas' => $monedas,
+                'descripcion' => $descripcion
             ];
         }
     }

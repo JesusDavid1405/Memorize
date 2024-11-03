@@ -26,7 +26,7 @@
             $conn = $database->connect();
         
             if ($conn) {
-                $query = "SELECT * FROM usuario WHERE correo = ?";
+                $query = "SELECT * FROM usuarios WHERE correo = ?";
                 $stmt = $conn->prepare($query);
         
                 $stmt->bind_param("s", $correo);

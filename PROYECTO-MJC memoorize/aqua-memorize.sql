@@ -1,179 +1,179 @@
-/*CREATE DATABASE prueba;*/
-
-USE prueba2;
-
-/*AVATAR*/
-
-CREATE TABLE avatar(
-    id INT AUTO_INCREMENT NOT NULL,
-    nombre VARCHAR(100) NOT NULL,
-    imagen VARCHAR(255) NOT NULL,
-    precio DECIMAL(10, 2) NOT NULL,
-    es_gratuito BOOLEAN,
-    PRIMARY KEY (id)
-);
-
-/*LOGIN 100%*/
-
-CREATE TABLE usuario(
-    id INT NOT NULL AUTO_INCREMENT UNIQUE,
-    nickName VARCHAR(50) NOT NULL UNIQUE,
-    avatarId INT NOT NULL,
-    correo VARCHAR(150) NOT NULL UNIQUE,
-    contraseña VARCHAR(20) NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (avatarId) REFERENCES avatar(id)
-);
-
-CREATE TABLE olvidasteContraseña(
-    usuarioId INT AUTO_INCREMENT NOT NULL,
-    codigo BIGINT NOT NULL UNIQUE,
-    PRIMARY KEY (usuarioId),
-    FOREIGN KEY (usuarioId) REFERENCES usuario(id)
-);
-
-CREATE TABLE sesiones (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    usuarioId INT NOT NULL,
-    token VARCHAR(255) NOT NULL,
-    fechaCreacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    fechaExpiracion TIMESTAMP NULL, 
-    FOREIGN KEY (usuarioId) REFERENCES usuario(id)
-);
-
-/*TIENDA*/
-
-CREATE TABLE compras (
-    id INT AUTO_INCREMENT NOT NULL,
-    usuarioId INT NOT NULL,
-    avatarId INT NOT NULL,
-    fecha_compra TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (id),
-    FOREIGN KEY (usuarioId) REFERENCES usuario(id),
-    FOREIGN KEY (avatarId) REFERENCES avatar(id)
-);
-
-/*MULTIJUGADOR 90%*/
-
-CREATE TABLE dificultad(
-    id INT AUTO_INCREMENT NOT NULL UNIQUE,
-    nombre VARCHAR(20) NOT NULL,
-    descripcion TEXT NOT NULL,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE configuracion(
-    id INT AUTO_INCREMENT NOT NULL UNIQUE,
-    dificultadId INT NOT NULL,
-    rondas BIGINT NOT NULL,
-    maximoJugadores BIGINT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (dificultadId) REFERENCES dificultad(id)
+CREATE TABLE `usuarios` (
+	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	`nickName` VARCHAR(50) NOT NULL UNIQUE,
+	`descripcion` VARCHAR(100) NOT NULL DEFAULT 'soy un marinero en busca de tesoros',
+	`avatarId` INTEGER NOT NULL DEFAULT 1,
+	`correo` VARCHAR(150) NOT NULL UNIQUE,
+	`contraseña` VARCHAR(15) NOT NULL,
+	`monedas` BIGINT NOT NULL DEFAULT 200,
+	PRIMARY KEY(`id`)
 );
 
 
-CREATE TABLE sala(
-    id INT AUTO_INCREMENT NOT NULL UNIQUE,
-    nombre VARCHAR(50) NOT NULL,
-    codigo INT NOT NULL UNIQUE,
-    configuracionId INT NOT NULL,
-    fechaCreacion TIMESTAMP NOT NULL,
-    estadoSala VARCHAR(30) NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (configuracionId) REFERENCES configuracion(id)
+CREATE TABLE `juegos` (
+	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	`nombre` VARCHAR(30) NOT NULL UNIQUE,
+	`descripcion` TEXT(65535) NOT NULL,
+	`imagen` TEXT(65535) NOT NULL UNIQUE,
+	`maximoNIveles` INTEGER NOT NULL,
+	PRIMARY KEY(`id`)
 );
 
-CREATE TABLE participacion(
-    id INT AUTO_INCREMENT NOT NULL UNIQUE,
-    salaId INT NOT NULL,
-    jugadorId INT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (salaId) REFERENCES sala(id),
-    FOREIGN KEY (jugadorId) REFERENCES usuario(id) 
+
+CREATE TABLE `avatares` (
+	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	`nombre` VARCHAR(50) NOT NULL UNIQUE,
+	`imagen` TEXT(65535) NOT NULL UNIQUE,
+	`valor` BIGINT NOT NULL,
+	PRIMARY KEY(`id`)
 );
 
-CREATE TABLE rondaSala(
-    id INT AUTO_INCREMENT NOT NULL UNIQUE,
-    salaId INT NOT NULL,
-    rondaNumero BIGINT NOT NULL,
-    fechaIncio TIMESTAMP NOT NULL,
-    fechaFin TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (id),
-    FOREIGN KEY (salaId) REFERENCES sala(id)
+
+CREATE TABLE `niveles` (
+	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	`nombre` VARCHAR(50) NOT NULL,
+	`numero` BIGINT NOT NULL,
+	PRIMARY KEY(`id`)
 );
 
-CREATE TABLE podioRonda(
-    id INT AUTO_INCREMENT NOT NULL UNIQUE,
-    rondaSalaId INT NOT NULL,
-    jugadorId INT NOT NULL,
-    posicion SMALLINT NOT NULL,
-    puntosObtenidos INT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (rondaSalaId) REFERENCES rondaSala(id),
-    FOREIGN KEY (jugadorId) REFERENCES usuario(id)
+
+CREATE TABLE `historialNiveles` (
+	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	`juegoId` INTEGER NOT NULL,
+	`nivelId` INTEGER NOT NULL,
+	`puntos` BIGINT NOT NULL,
+	`tiempo` TIME NOT NULL,
+	`monedas` BIGINT NOT NULL DEFAULT 50,
+	`usuarioId` INTEGER NOT NULL,
+	PRIMARY KEY(`id`)
 );
 
-CREATE TABLE podioFinalSala(
-    id INT AUTO_INCREMENT NOT NULL UNIQUE,
-    salaId INT NOT NULL,
-    jugadorId INT NOT NULL,
-    posicionFinal SMALLINT NOT NULL,
-    puntosFInal BIGINT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (salaId) REFERENCES sala(id),
-    FOREIGN KEY (jugadorId) REFERENCES usuario(id)
+
+CREATE TABLE `avatarTienda` (
+	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	`usuarioId` INTEGER NOT NULL,
+	`avatarId` INTEGER NOT NULL,
+	`fechaCompra` TIMESTAMP NOT NULL,
+	PRIMARY KEY(`id`)
 );
 
-/*JUEGOS  90%*/
 
-CREATE TABLE juego(
-    id INT AUTO_INCREMENT NOT NULL UNIQUE,
-    nombre VARCHAR(50) NOT NULL,
-    descripcion TEXT NOT NULL,
-    PRIMARY KEY (id)
+CREATE TABLE `sala` (
+	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	`creadorId` INTEGER NOT NULL,
+	`nombre` VARCHAR(50) NOT NULL,
+	`codigo` BIGINT NOT NULL,
+	`capacidad` INTEGER NOT NULL,
+	`dificultad` INTEGER NOT NULL,
+	`rondas` INTEGER NOT NULL,
+	`rondaActual` INTEGER NOT NULL,
+	`estado` VARCHAR(50) NOT NULL DEFAULT 'abierta',
+	`fechaCreacion` TIMESTAMP NOT NULL,
+	`estadoFinalizado` BOOLEAN NOT NULL,
+	PRIMARY KEY(`id`)
 );
 
-CREATE TABLE niveles(
-    id INT AUTO_INCREMENT NOT NULL UNIQUE,
-    juegoId INT NOT NULL,
-    nombre VARCHAR(50) NOT NULL,
-    numero BIGINT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (juegoId) REFERENCES juego(id)
+
+CREATE TABLE `participantes` (
+	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	`salaId` INTEGER NOT NULL,
+	`usuarioId` INTEGER NOT NULL,
+	`fechaIngreso` INTEGER,
+	PRIMARY KEY(`id`)
 );
 
-CREATE TABLE procesoNivel(
-    id INT AUTO_INCREMENT NOT NULL UNIQUE,
-    nivelId INT NOT NULL,
-    jugadorId INT NOT NULL,
-    estadoNivel BOOLEAN NOT NULL,
-    fechaJugada TIMESTAMP NOT NULL,
-    puntacion BIGINT NOT NULL,
-    tiempo TIME NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (nivelId) REFERENCES niveles(id),
-    FOREIGN KEY (jugadorId) REFERENCES usuario(id)
+
+CREATE TABLE `palabra` (
+	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	`palabra` VARCHAR(20) NOT NULL,
+	PRIMARY KEY(`id`)
 );
 
-CREATE TABLE palabras(
-    id INT AUTO_INCREMENT NOT NULL UNIQUE,
-    palabra VARCHAR(20) NOT NULL,
-    PRIMARY KEY (id)
+
+CREATE TABLE `palabraNivel` (
+	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	`palabraId` INTEGER NOT NULL,
+	`nivelId` INTEGER NOT NULL,
+	PRIMARY KEY(`id`)
 );
 
-CREATE TABLE pistas(
-    id INT AUTO_INCREMENT NOT NULL UNIQUE,
-    pista TEXT NOT NULL,
-    palabraId INT NOT NULL,
-    nivelId INT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (palabraId) REFERENCES palabras(id),
-    FOREIGN KEY (nivelId) REFERENCES niveles(id)
+
+CREATE TABLE `pista` (
+	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	`palabraNivelId` INTEGER NOT NULL,
+	`pista` TEXT(65535) NOT NULL,
+	PRIMARY KEY(`id`)
 );
 
-/*PODIOS*/
+
+CREATE TABLE `imagenNivel` (
+	`imagenId` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	`nivelId` INTEGER NOT NULL
+);
 
 
+CREATE TABLE `imagen` (
+	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	`nombre` VARCHAR(100) NOT NULL,
+	`url` TEXT(65535) NOT NULL,
+	PRIMARY KEY(`id`)
+);
 
-/*TIENDA*/
 
+CREATE TABLE `rondas` (
+	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	`salaId` INTEGER NOT NULL,
+	`numeroRondas` INTEGER NOT NULL,
+	`fechaInicio` DATETIME NOT NULL,
+	`fechaFin` DATETIME,
+	`resultado` JSON,
+	`estadoFinalizado` BOOLEAN NOT NULL,
+	PRIMARY KEY(`id`)
+);
+
+
+ALTER TABLE `sala`
+ADD FOREIGN KEY(`creadorId`) REFERENCES `usuarios`(`id`)
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE `participantes`
+ADD FOREIGN KEY(`salaId`) REFERENCES `sala`(`id`)
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE `participantes`
+ADD FOREIGN KEY(`usuarioId`) REFERENCES `usuarios`(`id`)
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE `avatarTienda`
+ADD FOREIGN KEY(`usuarioId`) REFERENCES `usuarios`(`id`)
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE `usuarios`
+ADD FOREIGN KEY(`avatarId`) REFERENCES `avatares`(`id`)
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE `avatarTienda`
+ADD FOREIGN KEY(`avatarId`) REFERENCES `avatares`(`id`)
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE `historialNiveles`
+ADD FOREIGN KEY(`usuarioId`) REFERENCES `usuarios`(`id`)
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE `historialNiveles`
+ADD FOREIGN KEY(`juegoId`) REFERENCES `juegos`(`id`)
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE `historialNiveles`
+ADD FOREIGN KEY(`nivelId`) REFERENCES `niveles`(`id`)
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE `imagenNivel`
+ADD FOREIGN KEY(`nivelId`) REFERENCES `niveles`(`id`)
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE `imagenNivel`
+ADD FOREIGN KEY(`imagenId`) REFERENCES `imagen`(`id`)
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE `palabraNivel`
+ADD FOREIGN KEY(`palabraId`) REFERENCES `palabra`(`id`)
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE `palabraNivel`
+ADD FOREIGN KEY(`nivelId`) REFERENCES `niveles`(`id`)
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE `pista`
+ADD FOREIGN KEY(`palabraNivelId`) REFERENCES `palabraNivel`(`id`)
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE `rondas`
+ADD FOREIGN KEY(`salaId`) REFERENCES `sala`(`id`)
+ON UPDATE NO ACTION ON DELETE NO ACTION;
