@@ -2,7 +2,6 @@
 <?php
     // Incluir la clase Database
     include_once ('../../conexion/conexion.php');
-    include('login.php');
 
     $database = new Database();
     $conn = $database->connect();

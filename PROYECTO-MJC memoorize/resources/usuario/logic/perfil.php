@@ -1,7 +1,7 @@
 <?php
-
-include_once ('login.php');
 include_once ('../../conexion/conexion.php');
+
+session_start();
 
 $response = [];
 $dataBase = new Database();

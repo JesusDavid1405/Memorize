@@ -2,7 +2,7 @@ let perfilAvatar = document.getElementById("gratis");
 let avatarOptions;
 
 
-fetch('../resources/usario/logic/avatar.php', {
+fetch('../resources/usuario/logic/avatar.php', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
@@ -29,22 +29,7 @@ fetch('../resources/usario/logic/avatar.php', {
         avatar.addEventListener('click', (event) => {
             const avatarId = event.target.getAttribute('data-id');
             console.log('Avatar seleccionado con ID:', avatarId);
-
-            fetch('../resources/logic/avatar.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ 
-                    id: avatarId  
-                }) 
-            })
-            .then(response => response.json())
-            .then(data => {
-                
-            })
-            .catch(error => console.error('Error en la segunda solicitud:', error));
-        });
-    });
+        })
+    })
 })
 .catch(error => console.error('Error:', error));
