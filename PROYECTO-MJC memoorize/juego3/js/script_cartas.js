@@ -6,10 +6,8 @@ const selectors = {
     Iniciar: document.querySelector('button'),
     iniciarButton: document.getElementById('iniciarButton'),
     win: document.querySelector('.win'),
-    scoreTable: document.querySelector('.score-table'),
     siguienteRonda: document.getElementById('siguienteRonda'),
     dificultad: document.getElementById('dificultad'),
-    
 };
 
 const state = {
@@ -20,8 +18,11 @@ const state = {
     loop: null,
     currentRound: 0,
     maxRounds: parseInt(localStorage.getItem('rondas')) || 7,
-    dificultad: parseInt(localStorage.getItem('dificultad')) || 'facil'
- 
+    dificultad: parseInt(localStorage.getItem('dificultad')) || 'facil',
+    scores: [], // Array para almacenar las puntuaciones
+    basePoints: 1000, // Puntos base para cada ronda
+    timeMultiplier: 2, // Puntos a restar por segundo
+    moveMultiplier: 10, // Puntos a restar por movimiento
 };
 
 const updateSelectors = () => {
@@ -31,9 +32,133 @@ const updateSelectors = () => {
     selectors.tiempo = document.querySelector('.timer');
     selectors.Iniciar = document.querySelector('button');
     selectors.win = document.querySelector('.win');
-    selectors.scoreTable = document.querySelector('.score-table');
     selectors.siguienteRonda = document.getElementById('siguienteRonda');
     selectors.dificultad = document.getElementById('dificultad');
+};
+
+const calculateScore = (moves, time) => {
+    const score = Math.max(
+        0, 
+        state.basePoints - (moves * state.moveMultiplier) - (time * state.timeMultiplier)
+    );
+    return Math.round(score);
+};
+
+const saveScore = (playerName, moves, time, score) => {
+    const scoreData = {
+        playerName,
+        round: state.currentRound + 1,
+        moves,
+        time,
+        score,
+        date: new Date().toLocaleString()
+    };
+    
+    state.scores.push(scoreData);
+    
+    // Guardar en localStorage
+    const savedScores = JSON.parse(localStorage.getItem('memoryGameScores') || '[]');
+    savedScores.push(scoreData);
+    localStorage.setItem('memoryGameScores', JSON.stringify(savedScores));
+};
+
+const showScoreModal = (score) => {
+    // Crear el contenido del modal
+    const modalHTML = `
+        <div class="score-modal">
+            <div class="score-modal-content">
+                <div class="score-modal-header">
+                    <h2>¡Felicitaciones!</h2>
+                    <div class="player-input">
+                        <label for="playerName">Ingresa tu nombre:</label>
+                        <input type="text" id="playerName" placeholder="Tu nombre">
+                        <button id="saveScore" class="save-score-btn">Guardar Puntuación</button>
+                    </div>
+                </div>
+                
+                <div class="score-table-container">
+                    <h3>Mejores Puntuaciones</h3>
+                    <table class="score-table">
+                        <thead>
+                            <tr>
+                                <th>Jugador</th>
+                                <th>Ronda</th>
+                                <th>Movimientos</th>
+                                <th>Tiempo</th>
+                                <th>Puntuación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+
+                ${state.currentRound < state.maxRounds ? `
+                    <button id="nextRoundBtn" class="next-round-btn">Siguiente Ronda</button>
+                ` : `
+                    <button id="restartGameBtn" class="restart-game-btn">Reiniciar Juego</button>
+                `}
+            </div>
+        </div>
+    `;
+
+    // Insertar el modal en el DOM
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+    // Actualizar la tabla de puntuaciones
+    updateScoreTableInModal();
+
+    // Manejar el guardado de la puntuación
+    const saveScoreBtn = document.getElementById('saveScore');
+    const playerNameInput = document.getElementById('playerName');
+    const nextRoundBtn = document.getElementById('nextRoundBtn');
+    const restartGameBtn = document.getElementById('restartGameBtn');
+
+    saveScoreBtn.addEventListener('click', () => {
+        const playerName = playerNameInput.value.trim();
+        if (playerName) {
+            saveScore(playerName, state.totalFlips, state.totalTime, score);
+            saveScoreBtn.disabled = true;
+            playerNameInput.disabled = true;
+            updateScoreTableInModal();
+        } else {
+            alert('Por favor, ingresa tu nombre');
+        }
+    });
+
+    if (nextRoundBtn) {
+        nextRoundBtn.addEventListener('click', async () => {
+            document.querySelector('.score-modal').remove();
+            await resetGame();
+        });
+    }
+
+    if (restartGameBtn) {
+        restartGameBtn.addEventListener('click', () => {
+            document.querySelector('.score-modal').remove();
+            state.currentRound = 0;
+            resetGame();
+        });
+    }
+};
+
+const updateScoreTableInModal = () => {
+    const scoreTableBody = document.querySelector('.score-modal .score-table tbody');
+    if (!scoreTableBody) return;
+
+    const sortedScores = state.scores
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 10); // Mostrar solo los 10 mejores puntajes
+
+    scoreTableBody.innerHTML = sortedScores.map(score => `
+        <tr>
+            <td>${score.playerName}</td>
+            <td>${score.round}</td>
+            <td>${score.moves}</td>
+            <td>${score.time}s</td>
+            <td>${score.score}</td>
+        </tr>
+    `).join('');
 };
 
 const pickRandom = (array, items) => {
@@ -65,49 +190,24 @@ const loadImagenes = async () => {
     return data.imagenes;
 };
 
-const saveScore = (playerName, moves, time) => {
-    const scores = JSON.parse(localStorage.getItem('memoryGameScores') || '[]');
-    const newScore = {
-        playerName,
-        moves,
-        time,
-        date: new Date().toISOString()
-    };
-    scores.push(newScore);
-    scores.sort((a, b) => {
-        if (a.moves === b.moves) {
-            return a.time - b.time;
-        }
-        return a.moves - b.moves;
-    });
-    const topScores = scores.slice(0, 10);
-    localStorage.setItem('memoryGameScores', JSON.stringify(topScores));
-};
-
 const generateGame = async () => {
     try {
-
         let largo;
         let ancho;
         let dimensions;
 
         if (state.dificultad === 'facil') {
             largo = 4;
-            ancho = 3; 
-            //4x2
-
+            ancho = 3;
         } else if (state.dificultad === 'medio') {
             largo = 4;
             ancho = 4;
-            //4x4 
         } else if (state.dificultad === 'dificil') {
             largo = 6;
             ancho = 4;
-
-            //6x4
         }
 
-        dimensions= largo*ancho;
+        dimensions = largo * ancho;
 
         if (dimensions % 2 !== 0) {
             throw new Error("La dimensión del tablero debe ser un número par.");
@@ -118,7 +218,7 @@ const generateGame = async () => {
         const items = shuffle([...picks, ...picks]);
         
         const cards = `
-            <div class="board" style="grid-template-columns: repeat(${largo}, auto)"   >
+            <div class="board" style="grid-template-columns: repeat(${largo}, auto)">
                 ${items.map(item => `   
                     <div class="card">
                         <div class="card-front"></div>
@@ -133,7 +233,6 @@ const generateGame = async () => {
         const boardContainer = document.querySelector('.board-container');
         boardContainer.innerHTML = cards;
         
-        // Actualizar selectores después de regenerar el tablero
         updateSelectors();
         
     } catch (error) {
@@ -142,7 +241,6 @@ const generateGame = async () => {
 };
 
 const IniciarGame = () => {
-
     clearInterval(state.loop);
 
     state.gameIniciar = true;
@@ -170,14 +268,14 @@ const flipCard = card => {
         IniciarGame();
     }
 
-    if (state.flippedCards <= 2) {  // Cambiado de '=' a '<='
+    if (state.flippedCards <= 2) {
         card.classList.add('flipped');
     }
 
     if (state.flippedCards === 2) {
         const flippedCards = document.querySelectorAll('.flipped:not(.matched)');
         
-        if (flippedCards.length === 2) {  // Verificar que hay exactamente 2 cartas volteadas
+        if (flippedCards.length === 2) {
             const img1 = flippedCards[0].querySelector('.card-back img').src;
             const img2 = flippedCards[1].querySelector('.card-back img').src;
             
@@ -192,7 +290,6 @@ const flipCard = card => {
         }
     }
 
-    // Verificar si todas las cartas están emparejadas
     const matchedCards = document.querySelectorAll('.card.matched');
     const totalCards = document.querySelectorAll('.card').length;
     
@@ -221,36 +318,31 @@ const resetGame = async () => {
 const endGame = () => {
     clearInterval(state.loop);
     document.querySelector('.board-container').classList.add('flipped');
+    
+    const score = calculateScore(state.totalFlips, state.totalTime);
+    showScoreModal(score);
+};
 
-    const playerName = prompt('¡Felicidades! Has ganado esta ronda! Por favor, ingresa tu nombre:');
-    if (playerName) {
-        saveScore(playerName, state.totalFlips, state.totalTime);
-        if (typeof mostrarModal === 'function') {
-            mostrarModal(playerName);
-        }
+state.currentRound++;
+selectors.iniciarButton.classList.add('oculto');
+
+const siguienteRonda = document.getElementById('siguienteRonda');
+if (siguienteRonda) {
+    siguienteRonda.classList.remove('oculto');
+}
+
+if (state.currentRound < state.maxRounds) {
+    const siguienteRondaBtn = document.getElementById('siguienteRonda');
+    if (siguienteRondaBtn) {
+        siguienteRondaBtn.addEventListener('click', async function siguienteRondaHandler() {
+            await resetGame();
+            siguienteRondaBtn.classList.add('oculto');
+            siguienteRondaBtn.removeEventListener('click', siguienteRondaHandler);
+        });
     }
-
-    state.currentRound++;
-    selectors.iniciarButton.classList.add('oculto');
-
-    const siguienteRonda = document.getElementById('siguienteRonda');
-    if (siguienteRonda) {
-        siguienteRonda.classList.remove('oculto');
-    }
-
-    if (state.currentRound < state.maxRounds) {
-        const siguienteRondaBtn = document.getElementById('siguienteRonda');
-        if (siguienteRondaBtn) {
-            siguienteRondaBtn.addEventListener('click', async function siguienteRondaHandler() {
-                await resetGame();
-                siguienteRondaBtn.classList.add('oculto');
-                siguienteRondaBtn.removeEventListener('click', siguienteRondaHandler);
-            });
-        }
-    } else {
-        alert("¡Has completado todas las rondas!");
-        state.currentRound = 0; 
-    }
+} else {
+    alert("¡Has completado todas las rondas!");
+    state.currentRound = 0; 
 };
 
 const attachEventListeners = () => {
@@ -268,13 +360,13 @@ const attachEventListeners = () => {
 
 const initGame = async () => {
     try {
-
+        // Cargar puntuaciones guardadas
+        const savedScores = JSON.parse(localStorage.getItem('memoryGameScores') || '[]');
+        state.scores = savedScores;
+        
         state.dificultad = localStorage.getItem('dificultad') || 'facil';   
         await generateGame();
         attachEventListeners();
-        if (typeof displayScores === 'function') {
-            displayScores();
-        }
     } catch (error) {
         console.error('Error al inicializar el juego:', error);
     }
