@@ -1,4 +1,3 @@
-let saldoMonedas = 200;
 document.getElementById('moneda-moneda').innerText = saldoMonedas;
 
 function comprarProducto(precio) {

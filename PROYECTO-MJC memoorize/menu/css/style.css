@@ -933,6 +933,9 @@ nav {
     animation: swashIn 1s ease-in-out, gameVertical 2s infinite alternate ease-in-out;
     transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
 }
+.ocultar{
+    display: none;
+}
 @keyframes swashIn {
     0% {
         opacity: 0;

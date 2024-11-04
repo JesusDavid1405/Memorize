@@ -3,7 +3,7 @@ let playerName = document.getElementById("playerName");
 let descripcionPlayer= document.getElementById('personalInfo');
 let monedas= document.getElementById('moneda-moneda')
 
-fetch('../resources/usuario/logic/perfil.php', {
+fetch('../resources/usuario/perfil.php', {
     method: 'POST', 
     headers: {
         'Content-Type': 'application/json'
