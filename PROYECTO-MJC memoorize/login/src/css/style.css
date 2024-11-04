@@ -294,6 +294,11 @@ a:link, a:visited, a:active {
         height: 45%;
         transition: 200ms;
     }
+    .imgSonido{
+        width: 50px;
+        height: 50px;
+        
+    }
 }
 /* Estilos para pantallas de computadora */
 @media (min-width: 769px) {

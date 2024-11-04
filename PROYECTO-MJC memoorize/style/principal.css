@@ -2,6 +2,7 @@ body {
     background-image: url(../img/fondo4.gif);
     background-repeat: no-repeat;
     background-size: cover;
+    
     background-attachment: fixed;
     overflow: hidden;
     animation: puffIn 1s ease-in-out
@@ -45,10 +46,10 @@ body {
     padding: 15px 30px; 
     max-width: 100%; 
     z-index: 10;
-    font-size: 18px; 
+    font-size: 22px; 
     cursor: pointer; 
     position: relative; 
-    width: 220px;
+    width: 240px;
     height: 160px;
     transition: transform 0.2s, background-color 0.2s;
     animation: swashIn 1s ease-in-out;
@@ -69,9 +70,36 @@ body {
     transform: scale(1.1);
     background-color: rgba(255, 255, 255, 0); 
 }
+.welcome-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-family: 'Pacifico', cursive;
+    font-size: 24px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    z-index: 20;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
 
 .btnTex {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Pirata One', cursive; 
     color: rgb(255, 255, 255);
     padding-top: 7px;
     text-align: center;
@@ -79,6 +107,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
+}
+.btnTex:hover {
+    color: rgb(0, 0, 0);
 }
 
 .bubbles {

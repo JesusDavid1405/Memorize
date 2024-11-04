@@ -928,7 +928,7 @@ nav {
     height: auto;
     position: relative;
     animation: glitch 1s infinite;
-    margin-top: 70px;
+    margin-top: 30px;
     margin-left: -25%;
     animation: swashIn 1s ease-in-out, gameVertical 2s infinite alternate ease-in-out;
     transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
@@ -1023,7 +1023,7 @@ nav {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
     .game-image {
-        width: 100px;
+        width: 110px;
         height: auto;
         cursor: pointer;
         margin-top: 0px;
@@ -1080,7 +1080,7 @@ nav {
     }
     .back-button {
         left: 2%;
-        bottom: 84%;
+        bottom: 82%;
         z-index: 10;
         
     
@@ -1121,7 +1121,7 @@ nav {
     }
     .moneda {
         right: 3vh;
-        bottom: 81vh;
+        bottom: 80vh;
         width: 100px;
         height: 50px;
         
@@ -1187,5 +1187,15 @@ nav {
     .info-producto{
         font-size: 90%;
      }
+     .games-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 0px;
+        margin-top: 20%;
+        
+    
+    }
     
 }

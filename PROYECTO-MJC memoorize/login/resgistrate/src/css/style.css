@@ -6,71 +6,9 @@ body{
     overflow: hidden;
     height: 100vh;
     margin: 0;
-}
-#togglePassword{
-    position: absolute;
-    display: block;
-    bottom: .5rem;
-    right: 1rem;
-    
-    user-select: none;
-    cursor: pointer;
-}
-#togglePassword img{
-    width: 15px;
-    height: 15px;
-}
-.modal-content {
-    padding: 20px;
-    font-family: 'Pirata One', cursive; 
-    font-size: 22px;
-    text-shadow: 3px 3px 0px #ffffff00,   
-    6px 6px 0px #8b451300; 
-    border-radius: 30px; 
-    background: radial-gradient(circle, rgba(255, 255, 110, 0.699) 0%, rgb(33, 148, 202) 100%) !important;
-    box-shadow: 0 0 15px rgb(255, 166, 0),
-    inset 0 0 10px rgb(44, 166, 227); 
-    background-repeat: no-repeat; 
-    background-position: center;
 
 }
-.modal-footer {
-    border: none !important;
-}
-.btnLogin{
-    width: 200px;
-    height: 40px;
-    background-color: rgb(211, 153, 46) !important;  
-    transition: 600ms;
-    margin-bottom: 3%;
-}
-#response{
-    color: #000000;
-    font-size: 1.0em; 
-    
-}
-.btnLogin:hover{
-    transform: scale(0.9);
-}
-.hibtn{
-    background: radial-gradient(circle, rgba(255, 255, 110, 0.699) 0%, rgb(33, 148, 202) 100%) !important;
-}
-.hibtn:hover{
-    background: radial-gradient(circle, rgba(255, 255, 212, 0.699) 0%, rgb(33, 148, 202) 100%) !important;
-}
-.bodyModal{
-    padding: 20px;
-    font-family: 'Pirata One', cursive; 
-    font-size: 22px;
-    text-shadow: 3px 3px 0px #ffffff00,   
-    6px 6px 0px #8b451300; 
-    border-radius: 30px; 
-    background: radial-gradient(circle, rgba(255, 255, 110, 0.699) 0%, rgb(33, 148, 202) 100%) !important;
-    box-shadow: 0 0 15px rgb(255, 166, 0) !important ;
-    inset: 0 0 10px rgb(44, 166, 227) !important; 
-    background-repeat: no-repeat; 
-    background-position: center;
-}
+
 /*botones*/
 .btnLogin{
     width: 200px;
@@ -81,6 +19,11 @@ body{
 }
 .btnLogin:hover{
     transform: scale(0.9);
+}
+#response{
+    color: #000000;
+    font-size: 1.0em; 
+    
 }
 /*Formulario*/
 #formulario{
@@ -99,7 +42,7 @@ body{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     display: flex;
-    bottom: 10vh;
+    bottom: 0vh;
 }
 #formulario::after {
     content: "";
@@ -109,6 +52,7 @@ body{
     right: -5px;
     bottom: -5px;
     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #ff0000);
+    background-size: 400%;
     border-radius: 15px;
     filter: blur(5px);
     z-index: -1;
@@ -125,9 +69,44 @@ body{
         background-position: 0 0;
     }
 }
-
 .logoForm{
     margin: auto;
+}
+.hibtn{
+    background: radial-gradient(circle, rgba(255, 255, 110, 0.699) 0%, rgb(33, 148, 202) 100%) !important;
+}
+.hibtn:hover{
+    background: radial-gradient(circle, rgba(255, 255, 212, 0.699) 0%, rgb(33, 148, 202) 100%) !important;
+}
+.modal-footer {
+    border: none !important;
+}
+.modal-content {
+    padding: 20px;
+    font-family: 'Pirata One', cursive; 
+    font-size: 22px;
+    text-shadow: 3px 3px 0px #ffffff00,   
+    6px 6px 0px #8b451300; 
+    border-radius: 30px; 
+    background: radial-gradient(circle, rgba(255, 255, 110, 0.699) 0%, rgb(33, 148, 202) 100%) !important;
+    box-shadow: 0 0 15px rgb(255, 166, 0),
+    inset 0 0 10px rgb(44, 166, 227); 
+    background-repeat: no-repeat; 
+    background-position: center;
+
+}
+.bodyModal{
+    padding: 20px;
+    font-family: 'Pirata One', cursive; 
+    font-size: 22px;
+    text-shadow: 3px 3px 0px #ffffff00,   
+    6px 6px 0px #8b451300; 
+    border-radius: 30px; 
+    background: radial-gradient(circle, rgba(255, 255, 110, 0.699) 0%, rgb(33, 148, 202) 100%) !important;
+    box-shadow: 0 0 15px rgb(255, 166, 0) !important ;
+    inset: 0 0 10px rgb(44, 166, 227) ; 
+    background-repeat: no-repeat; 
+    background-position: center;
 }
 .logoForm img{
     width: 175px;
@@ -160,36 +139,49 @@ body{
     user-select: none;
     cursor: pointer;
 }
+#togglePassword{
+    position: absolute;
+    display: block;
+    bottom: .5rem;
+    right: 1rem;
+    
+    user-select: none;
+    cursor: pointer;
+}
+#togglePassword img{
+    width: 15px;
+    height: 15px;
+}
 #icon img{
     width: 15px;
     height: 15px;
 }
 input.input{    
-    padding-right: 2.5rem;
-    background-color: rgba(255, 255, 255, 0.427);
-    border: 1px solid#F28F16;
-    transition: 100ms;
-  }
-  input.input:focus{
-      background-color: rgba(255, 255, 255, 0.77);
-      border: 1px solid black;
-      box-shadow: 0px 0px 5px#F28F16;
-  }
-  input.input:hover {  
-      background-color: rgba(255, 255, 255, 0.692);
-      
-  }
-  .text{
-      color: #ffffff;
-      text-align: center;
-      font-size: 25px;
-      font-family: 'Pirata One', cursive; 
-  }
-  text:hover{
-      transform: scale(1.1);
-      
-  }
-  .text2{
+  padding-right: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.427);
+  border: 1px solid#F28F16;
+  transition: 100ms;
+}
+input.input:focus{
+    background-color: rgba(255, 255, 255, 0.77);
+    border: 1px solid black;
+    box-shadow: 0px 0px 5px#F28F16;
+}
+input.input:hover {  
+    background-color: rgba(255, 255, 255, 0.692);
+    
+}
+.text{
+    color: #ffffff;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Pirata One', cursive; 
+}
+text:hover{
+    transform: scale(1.1);
+    
+}
+.text2{
     color:#014d7d; 
     text-align: center;
     font-family: 'Pirata One', cursive; 
@@ -198,6 +190,7 @@ input.input{
 .text2:hover{
     color: rgb(54, 32, 225)
 }
+
 /*sonido*/
 #playButton {
     font-size: 20px;
@@ -211,32 +204,24 @@ input.input{
     transition: 100ms;
 }
 .imgSonido{
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
+    
 }
 #playButton:hover {
     transform: scale(1.1);
 }
-
-/*iconosRedes*/
-.logoRedes{
-    margin: auto;
+.back-button {
+    left: 2%;
+    bottom: 79%;
+    position: fixed;
 }
-.logoRedes img{
+.back-button:hover {
+    transform: scale(0.9);
+}
+.back-button-img{
     width: 25%;
     height: 25%;
-    transition: 200ms;
-}
-.logoRedes img:hover{
-    transform: scale(1.2);
-}
-.facebook{
-    position: relative;
-    left: 75%;
-}
-.gitHub{
-    position: relative;
-    left: 40%;
 }
 
 /*texto*/
@@ -273,7 +258,6 @@ input.input{
     color: rgb(167, 225, 32) !important;
 }
 
-
 /*quitar link*/
 a:link, a:visited, a:active {
     text-decoration:none;
@@ -292,36 +276,28 @@ a:link, a:visited, a:active {
     .logoForm img {
         width: 120px;
         height: 120px;
-    }#playButton {
+    }
+    #playButton {
         font-size: 20px;
         padding: 10px 20px;
         background-color: rgba(73, 20, 20, 0);
         border: none;
         cursor: pointer;
         position: relative;
-        top: 0%;
-        right: 2%;;
+        
+        right: 5%;;
         z-index: 10;
         transition: 100ms;
     }
     .logoRedes img{
-        width: 15%;
-        height: 15%;
+        width: 45%;
+        height: 45%;
         transition: 200ms;
     }
-    .facebook{
-        position: relative;
-        left: 80%;
-    }
-    .gitHub{
-        position: relative;
-        left: 45%;
-        bottom: 40px;
-    }
-    .email{
-        position: relative;
-        left: 10%;
-        bottom: 75px;
+    .imgSonido{
+        width: 50px;
+        height: 50px;
+        
     }
 }
 /* Estilos para pantallas de computadora */
@@ -329,7 +305,7 @@ a:link, a:visited, a:active {
     /* Ajuste del formulario */
     #formulario {
         width: 40%;
-        padding: 20px;       
+        padding: 30px;       
         margin: 0% auto;
         box-shadow: 0px 0px 40px rgb(0, 0, 0, 0.3);
     }
@@ -342,6 +318,22 @@ a:link, a:visited, a:active {
         margin-bottom: 2%;
     }
 
+    /* Logo en el formulario */
+    .logoForm img {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Botón de sonido */
+
+
+    /* Íconos de redes sociales */
+    .logoRedes img {
+        width: 27%;
+        height: 27%;
+        transition: 200ms;
+    } 
+    
     #playButton {
         font-size: 20px;
         padding: 10px 20px;
@@ -352,8 +344,10 @@ a:link, a:visited, a:active {
     }
 
     /* Tamaños de texto */
-    .textCrear, .textOlvide {
+    .textOlvide {
+        font-size: 1.2em;
+    }
+    .textCrear{
         font-size: 1.2em;
     }
 }
-
