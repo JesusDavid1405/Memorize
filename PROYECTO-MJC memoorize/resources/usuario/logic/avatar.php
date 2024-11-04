@@ -6,48 +6,36 @@
     $database = new Database();
     $conn = $database->connect();
 
-    if (empty($avatarId)) {
-        if ($conn) {
-            $query = "SELECT 
-                *
-            FROM 
-                avatar
-            ;
-            ";
-            $result = $conn->query($query);
+    if ($conn) {
+        $query = "SELECT 
+            *
+        FROM 
+            avatares
+        ;
+        ";
+        $result = $conn->query($query);
 
 
-            if ($result) {
-                while ($row = $result->fetch_assoc()) {
-                    
-                    $response[]= [
-                        'id'=>$row['id'],
-                        'nombre'=>$row['nombre'],
-                        'imagen'=>$row['imagen'],
-                        'gratis'=>$row['es_gratuito']
-                    ];
-                }
-            } else {
-                echo "No se encontraron registros.";
+        if ($result) {
+            while ($row = $result->fetch_assoc()) {
+                
+                $response[]= [
+                    'id'=>$row['id'],
+                    'nombre'=>$row['nombre'],
+                    'imagen'=>$row['imagen'],
+                    'valor'=>$row['valor']
+                ];
             }
-            
-            
-            $database->disconnect();
         } else {
-            echo "Fallo en la conexión a la base de datos.";
+            echo "No se encontraron registros.";
         }
-    }else{
-        if ($conn) {
-            $query = "UPDATE `usuario` SET `avatarId` = ? WHERE `usuario`.`id` = ?;";
-            $stmt = $conn->prepare($query);
-            $stmt->bind_param("i", $avatarId); // Vinculamos el id como un entero
-            $stmt->execute();
-            $result = $stmt->get_result();
-        }
+        
+        
+        $database->disconnect();
+    } else {
+        echo "Fallo en la conexión a la base de datos.";
     }
-
-
-
+    
     header('Content-Type: application/json');
 
     echo json_encode($response);
