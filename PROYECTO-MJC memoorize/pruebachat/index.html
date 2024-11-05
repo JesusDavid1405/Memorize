@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+    <div id="login-modal">
+        <div class="modal-content">
+            <h2>Ingresa tu nombre</h2>
+            <input type="text" id="nombre-input" placeholder="Tu nombre...">
+            <button id="entrar-btn">Entrar al chat</button>
+        </div>
+    </div>
 
     <div id="chat-container">
         <div id="chat-header">
@@ -22,6 +28,7 @@
         </div>
     </div>
 
+    <script src="/socket.io/socket.io.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
         // Conectar al servidor Socket.io
