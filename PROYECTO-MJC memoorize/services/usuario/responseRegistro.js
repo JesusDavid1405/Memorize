@@ -24,7 +24,7 @@ btnRegistrar.addEventListener('click', function() {
     }
 
     
-    fetch('../../resources/usuario/logic/registrar.php', {
+    fetch('../../resources/usuario/registrar.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
