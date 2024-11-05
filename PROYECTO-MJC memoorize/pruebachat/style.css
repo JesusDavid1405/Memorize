@@ -54,7 +54,7 @@ body {
 }
 
 .enviado {
-    background: #DCF8C6;
+    background: #ffea0066;
     margin-left: auto;
 }
 
@@ -64,7 +64,7 @@ body {
 
 .sistema {
     text-align: center;
-    color: #666;
+    color: #ae00ff;
     font-style: italic;
     margin: 10px 0;
 }
@@ -75,6 +75,7 @@ body {
     font-style: italic;
     min-height: 24px;
 }
+
 
 #chat-input {
     display: flex;
