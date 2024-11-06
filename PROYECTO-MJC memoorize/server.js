@@ -13,7 +13,7 @@ app.use(express.static(__dirname));
 
 // Ruta principal
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '../indexchat.html');
 });
 
 const usuarios = new Map();

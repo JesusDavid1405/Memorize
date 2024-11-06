@@ -1,5 +1,5 @@
 {
-  "name": "ChatMemorize",
+  "name": "Chat Memorize",
   "version": "1.0.0",
   "main": "server.js", 
   "scripts": {
