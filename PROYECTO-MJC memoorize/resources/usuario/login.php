@@ -39,6 +39,7 @@
 
                     $_SESSION['id'] = $row['id'];
                     $_SESSION['nickName'] = $row['nickName'];
+                    $_SESSION['monedas'] = $row['monedas'];
 
                     $response = [
                         'status' => 'success',

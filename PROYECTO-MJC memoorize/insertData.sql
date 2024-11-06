@@ -24,3 +24,10 @@ VALUES
 ('nivel 6','6'),
 ('nivel 7','7'),
 ('nivel 8','8');
+
+INSERT INTO `palabras` (`palabra`) 
+VALUES 
+('palabra 1'),
+('palabra 2'),
+('palabra 3'),
+('palabra 4'),

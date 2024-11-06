@@ -23,7 +23,7 @@
             
         $resultRead = $stmtRead->get_result();
 
-        if ($resultRead) {
+        if ($resultRead && $resultRead->num_rows > 0) {
             while ($row = $resultRead->fetch_assoc()) {
 
                 $response[] = [

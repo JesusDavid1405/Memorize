@@ -38,20 +38,53 @@
                 ];
 
             } else {
-            
-                $query = "INSERT INTO avatartienda (usuarioId , avatarId ,fechaCompra) VALUES (?,?,NOW())";
-                $stmt = $conn->prepare($query);
-                $stmt->bind_param("is", 
-                    $usuarioId,
-                    $avatarComprar
-                );
-                if($stmt->execute()){
-                    $response=[
-                        'status' => 'TRUE',
-                        'mensaje' => 'avatar comprado correctamente'
-                    ];
 
-                    
+                $queryUsuario= "SELECT * FROM usuarios WHERE id = ?";
+                $stmtUsuario= $conn->prepare($queryUsuario);
+                $stmtUsuario->bind_param("i",$usuarioId);
+                $stmtUsuario->execute();
+                $resultUsuario = $stmtUsuario->get_result();
+                $rowUsuario= $resultUsuario->fetch_assoc();
+                $monedas=$rowUsuario['monedas'];
+
+                $queryAvatar= "SELECT * FROM avatares WHERE id = ?";
+                $stmtAvatar = $conn->prepare($queryAvatar);
+                $stmtAvatar->bind_param("i",$avatarComprar);
+                $stmtAvatar->execute();
+                $resultAvatar = $stmtAvatar->get_result();
+                $rowAvatar= $resultAvatar->fetch_assoc();
+                $valorAvatar= $rowAvatar['valor'];
+
+                if($monedas >= $valorAvatar){ // Comprar avatar
+
+                    $monedasActual= $monedas - $valorAvatar;
+
+                    $queryUserUpdate = "UPDATE usuarios SET monedas = monedas - ? WHERE id = ?";
+                    $stmtUserUpdate = $conn->prepare($queryUserUpdate);
+                    $stmtUserUpdate->bind_param("ii", 
+                        $valorAvatar,
+                        $usuarioId
+                    );
+                    $stmtUserUpdate->execute();
+
+                    $query = "INSERT INTO avatartienda (usuarioId , avatarId ,fechaCompra) VALUES (?,?,NOW())";
+                    $stmt = $conn->prepare($query);
+                    $stmt->bind_param("ii", 
+                        $usuarioId,
+                        $avatarComprar
+                    );
+                    if($stmt->execute()){
+                        $response=[
+                            'status' => 'TRUE',
+                            'mensaje' => 'avatar comprado correctamente',
+                        ];               
+                    }
+
+                }else{
+                    $response=[
+                        'status' => 'FALSE',
+                        'mensaje' => 'monedas insuficientes'
+                    ];
                 }
             }
         }else{

@@ -8,8 +8,7 @@ $conn = $database->connect();
 
 if ($conn) {
     $userId = $_SESSION['id']; // ID del usuario actual en sesión
-
-    // Consulta que selecciona solo los avatares que el usuario no ha comprado
+  
     $query = "
         SELECT a.* 
         FROM avatares a

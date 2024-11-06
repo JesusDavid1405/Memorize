@@ -24,13 +24,13 @@ fetch('../resources/avatar/avatar.php', {
             `;
         }else{
             avatarTienda.innerHTML +=`
-            <div class="producto1" id="${element.id}">
+            <div class="producto1">
                 <img src="../img/${element.imagen}" alt="producto1" class="producto-img" >
-                <div class="info-producto">
-                    <h3 class="nombre-producto" id="nombre-producto1">${element.nombre}</h3>
+                <h3 class="nombre-producto" id="nombre-producto1">${element.nombre}</h3>
+                <div id="${element.id}" class="info-producto">  
                     <img src="../img/icon/moneda.png" alt="Icono de comprar" class="descripcion-producto-img" id="descripcion-producto1">${element.valor}
+                    <button class="comprar-button" data-id="${element.id}">Comprar</button>
                 </div>
-                <button class="comprar-button" data-id="${element.id}">Comprar</button>
             </div>
             `;
         }        
@@ -82,7 +82,7 @@ fetch('../resources/avatar/avatar.php', {
             .then(data =>{
                 if(data.status){
                     alert(data.mensaje)
-                    document.getElementById(`${avatarComprar}`).style.display= 'none';
+                    window.location.reload();
                 }else{
                     alert(data.mensaje)
                 }
