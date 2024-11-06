@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
 </head>
 <body>
+    <h1 class="menu-title">Niveles</h1>
     <div class="back-button">
         <a href="../../menu/index.html"><img class="back-button-img" src="../../img/icon/back.png" alt="Icono de retroceder"></a>
     </div>
@@ -21,8 +22,9 @@
             </button>
         </div>
     </div>
-    <div class="map-container">
-        <h1 class="menu-title">Niveles</h1>
+
+    <div class="map-container" >
+        <div id="lineaRoja"></div>
         <div class="level level-1" onclick="goToLevel(1)">
             <div class="level-number">1</div>
             <span class="level-label">Nivel</span>
@@ -68,8 +70,8 @@
     </div>
 
     <audio id="backgroundMusic" src="../../audio/no-copyright-music-181373.mp3" loop></audio>
-    <script src="js/barco.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/barco.js"></script>
     <script src="js/sonido.js"></script>
     <script src="../../bootstrap/js/bootstrap.js"></script>
     <script src="../../bootstrap/js/bootstrap.bundle.js"></script>

@@ -8,17 +8,36 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
+
 .map-container {
     position: relative;
     width: 880px;
     height: 580px;
-    background: radial-gradient(circle, rgba(203, 255, 46, 0.778) 0%, rgb(16, 137, 250) 100%);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 8%;
+    background-color: rgba(47, 248, 255, 0.377);
+    background-position: center;
+    box-shadow: 0 4px 16px rgba(216, 255, 213, 0.836);
+    backdrop-filter: blur(10px);
+    background-size: cover;
+    background-repeat: no-repeat;
+ 
+    margin-top: 2%;
     background-size: cover;
     border: 4px solid #ffffff00;
-    border-radius: 30px;
+    border-radius: 40px;
     overflow: hidden;
+    animation: swashIn 1s ease-in-out, gameVertical 1s infinite alternate ease-in-out;
+    transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+}
+
+@keyframes swashIn {
+0% {
+    opacity: 0;
+    transform: rotate(-30deg) scale(0.8);
+}
+100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
 }
 .menu-title {
     font-family: 'Pirata One', cursive; 
@@ -28,8 +47,9 @@ body {
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
-    font-size: 4.0rem;
-    color: #ffd700; 
+    font-size: 6.0rem;
+    margin-top: 2%;
+    color: #ffc400; 
     text-shadow: 3px 3px 0px #000000,   
                  6px 6px 0px #8b4513;
     position: relative;
@@ -70,26 +90,32 @@ body {
     position: absolute;
     width: 90px;
     height: 90px;
-    background: radial-gradient(circle, rgba(214, 214, 16, 0) 0%, rgb(142, 255, 244) 100%);
+    background-image: url(../../../img/icon/tesoro.png);
     border-radius: 10%;
     display: flex;
     flex-direction: column;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    color: #000000;
+    color: #ffffff;
     cursor: pointer;
     z-index: 10;
     transition: transform 0.3s;
 }
-
+.nivel1-img {
+    width: 35%;
+    height: 35%;
+}
 .level-number {
     font-size: 1.2em;
 }
 
 .level-label {
     font-size: 0.8em;
-    color: #000;
+    color: #ffffff;
     margin-top: 5px; 
 }
 
@@ -186,7 +212,8 @@ body {
 
 .ship {
     position: absolute;
-    width: 90px;
+    width: 40px;
+    z-index: 13;
     transition: left 2s, top 2s; 
 }
 

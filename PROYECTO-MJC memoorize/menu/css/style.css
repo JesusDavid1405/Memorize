@@ -815,6 +815,7 @@ nav {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 0px;
+    margin-top: 8%;
     
 
 }
@@ -928,7 +929,6 @@ nav {
     height: auto;
     position: relative;
     animation: glitch 1s infinite;
-    margin-top: 30px;
     margin-left: -25%;
     animation: swashIn 1s ease-in-out, gameVertical 2s infinite alternate ease-in-out;
     transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
