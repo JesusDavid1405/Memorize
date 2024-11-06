@@ -379,7 +379,7 @@ body{
 .menu-title {
     font-family: 'Pirata One', cursive; 
     text-align: center;
-    font-size: 5.0rem;
+    font-size: 6.0rem;
     color: #ffd700; 
     
     text-shadow: 3px 3px 0px #000000,   
@@ -388,7 +388,9 @@ body{
     padding: 0px;
     animation: vanishIn 1s ease-in-out
 }
-
+.menu-title:hover{
+    color: #0056b3;
+}
 @keyframes vanishIn {
     0% {
         opacity: 0;
