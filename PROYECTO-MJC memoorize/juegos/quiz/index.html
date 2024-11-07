@@ -23,9 +23,9 @@
         </div>
     </div>
 
-    <div class="map-container" >
+    <div class="map-container" id="niveles">
         <div id="lineaRoja"></div>
-        <div class="level level-1" onclick="goToLevel(1)">
+        <!-- <div class="level level-1" onclick="goToLevel(1)">
             <div class="level-number">1</div>
             <span class="level-label">Nivel</span>
         </div>
@@ -56,7 +56,7 @@
         <div class="level level-8" onclick="goToLevel(8)">
             <div class="level-number">8</div>
             <span class="level-label">Nivel</span>
-        </div>
+        </div> -->
         <div class="chest" onclick="showModal()">
             <img src="../../img/icon/cofre.png" alt="Cofre del tesoro" class="chest-img">
         </div>
@@ -70,6 +70,7 @@
     </div>
 
     <audio id="backgroundMusic" src="../../audio/no-copyright-music-181373.mp3" loop></audio>
+    <script src="../../services/niveles/niveles.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/barco.js"></script>
     <script src="js/sonido.js"></script>
