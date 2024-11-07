@@ -1,3 +1,9 @@
+INSERT INTO  juegos (nombre, descripcion, imagen, maximoNiveles)
+VALUES
+('Rompecabezas','Arma el enigma','rompecabeza.jpeg',8),
+('Wordle','Encuentras palabras','wordle.jpeg',8),
+('Multijugador','Salas','multijugador.jpeg',0);
+
 INSERT INTO `avatares` (`nombre`, `imagen`, `valor`) 
 VALUES 
 ('rockera','avatar1.png','0'),

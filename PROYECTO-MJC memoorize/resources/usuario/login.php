@@ -26,10 +26,10 @@
             $conn = $database->connect();
         
             if ($conn) {
-                $query = "SELECT * FROM usuarios WHERE correo = ?";
+                $query = "SELECT * FROM usuarios WHERE correo = ? AND contraseña= ?";
                 $stmt = $conn->prepare($query);
         
-                $stmt->bind_param("s", $correo);
+                $stmt->bind_param("ss", $correo, $contraseña);
                 $stmt->execute();
                 $result = $stmt->get_result();
         
@@ -49,7 +49,7 @@
                 } else {
                     $response = [
                         'status' => 'error',
-                        'message' => 'No se encontraron registros con ese correo.'
+                        'message' => 'contraseña o correo incorrectos, intentanuevamente.'
                     ];
                 }
         

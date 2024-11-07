@@ -15,7 +15,7 @@ CREATE TABLE `juegos` (
 	`nombre` VARCHAR(30) NOT NULL UNIQUE,
 	`descripcion` TEXT(65535) NOT NULL,
 	`imagen` TEXT(65535) NOT NULL UNIQUE,
-	`maximoNIveles` INTEGER NOT NULL,
+	`maximoNiveles` INTEGER NOT NULL,
 	PRIMARY KEY(`id`)
 );
 
@@ -39,12 +39,13 @@ CREATE TABLE `niveles` (
 
 CREATE TABLE `historialNiveles` (
 	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	`usuarioId` INTEGER NOT NULL,
 	`juegoId` INTEGER NOT NULL,
 	`nivelId` INTEGER NOT NULL,
 	`puntos` BIGINT NOT NULL,
 	`tiempo` TIME NOT NULL,
 	`monedas` BIGINT NOT NULL DEFAULT 50,
-	`usuarioId` INTEGER NOT NULL,
+	`estadoNivel` BOOLEAN NOT NULL,
 	PRIMARY KEY(`id`)
 );
 
