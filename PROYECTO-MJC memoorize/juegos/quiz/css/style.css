@@ -12,10 +12,10 @@ body {
     position: relative;
     width: 880px;
     height: 620px;
-    margin-top: 2%;
-    background-color: #d8c9a3; /* Color base estilo pergamino */
+    margin-top: 5%;
+    background-color: #e0c88c; /* Color base estilo pergamino */
     background-image:
-        linear-gradient(90deg, rgba(221, 195, 147, 0.4) 25%, transparent 25%, transparent 75%, rgba(221, 195, 147, 0.4) 75%),
+        linear-gradient(90deg, rgba(182, 161, 122, 0.479) 25%, transparent 25%, transparent 75%, rgba(221, 195, 147, 0.4) 75%),
         linear-gradient(180deg, rgba(221, 195, 147, 0.4) 25%, transparent 25%, transparent 75%, rgba(221, 195, 147, 0.4) 75%),
         url('ruta/a/una/imagen-textura.jpg'); /* Imagen de textura si tienes alguna */
     background-size: 40px 40px, 40px 40px, cover;
@@ -45,11 +45,11 @@ body {
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
-    font-size: 4.0rem;
+    font-size: 5.0rem;
     margin-top: 0%;
-    color: #a79d59; 
-    text-shadow: 3px 3px 0px #000000,   
-                 6px 6px 0px #8b4513;
+    color: #ffcc40; 
+    text-shadow: 0px 0px 0px #ffa43d,   
+                 5px 5px 0px #8b4513;
     position: relative;
     padding: 0;
     animation: vanishIn 1s ease-in-out;
@@ -91,6 +91,7 @@ body {
     background-image: url(../../../img/icon/tesoro.png);
     border-radius: 10%;
     display: flex;
+    font-family: 'Pirata One', cursive; 
     flex-direction: column;
     background-size: cover;
     background-repeat: no-repeat;
@@ -108,13 +109,13 @@ body {
     height: 35%;
 }
 .level-number {
-    font-size: 1.2em;
+    font-size: 2.9em;
 }
 
 .level-label {
-    font-size: 0.8em;
+    font-size: 1.0em;
     color: #ffffff;
-    margin-top: 5px; 
+    margin-top: 0px; 
 }
 
 .level:hover {

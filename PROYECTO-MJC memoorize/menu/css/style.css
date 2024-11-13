@@ -410,18 +410,16 @@ li.nav-item {
     align-items: center;
     width: 60px;
     height: 60px;
-    margin: 0 12px;
+    margin: 0 20px;
     flex: 1;
     text-align: center;
-    background-color: #ff9100a3;
-    background-image:
-        linear-gradient(45deg, #d6760073 25%, transparent 25%),
-        linear-gradient(-45deg, #d67600a3 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #d67500 75%),
-        linear-gradient(-45deg, transparent 75%, #d67500 75%);
-    background-size: 16px 16px;
-    border: 4px solid #d67500;
-    box-shadow: 2px 2px #d67500, 4px 4px #ff9100;
+    color: #ffffff; 
+    text-shadow: 3px 3px 0px #ffffff00,   
+                 6px 6px 0px #8b451300; 
+    border-radius: 20px; 
+    background: radial-gradient(circle, rgb(231, 147, 68) 0%, rgba(228, 181, 53, 0.651) 100%);
+    box-shadow: 0 0 15px rgb(221, 149, 55),
+    inset 0 0 10px rgb(253, 186, 62, 0.884); 
     image-rendering: pixelated;
     transition: none; /* Evita transiciones que podrían afectar la opacidad */
 }
@@ -429,13 +427,12 @@ li.nav-item {
 /* Estilo para el estado hover sin transparencia */
 li.nav-item:hover {
     opacity: 1; /* Asegura que no haya transparencia */
-    background-color: #ff9100a3;
-    background-image:
-        linear-gradient(45deg, #d6760073 25%, transparent 25%),
-        linear-gradient(-45deg, #d67600a3 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #d67500 75%),
-        linear-gradient(-45deg, transparent 75%, #d67500 75%);
-    box-shadow: 2px 2px #d67500, 4px 4px #ff9100; /* Mantiene la misma sombra */
+    text-shadow: 3px 3px 0px #ffffff00,   
+                 6px 6px 0px #8b451300; 
+    border-radius: 30px; 
+    background: radial-gradient(circle, rgb(231, 147, 68) 0%, rgba(228, 181, 53, 0.651) 100%);
+    box-shadow: 0 0 15px rgb(221, 149, 55),
+    inset 0 0 10px rgb(253, 186, 62, 0.884); 
 }
 
 nav.navbar {
@@ -837,7 +834,7 @@ nav {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 0px;
-    margin-top: 0%;
+    margin-top: 8%;
     
 
 }
