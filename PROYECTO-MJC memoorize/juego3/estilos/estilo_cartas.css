@@ -349,9 +349,27 @@ body {
     align-items: center;
     z-index: 1000;
 }
+.exit-modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    color: #ff4d4d;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.exit-modal-btn:hover {
+    color: #e63939;
+}
 
 .score-modal-content {
-    background-color: rgba(0, 255, 242, 0.637);
+    background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);
+    box-shadow: 0 0 15px rgb(255, 166, 0),
+    inset 0 0 10px rgb(44, 166, 227); 
+    border-radius: 15px;
     padding: 2rem;
     border-radius: 10px;
     max-width: 800px;
@@ -368,7 +386,9 @@ body {
 .round-info {
     margin: 1rem 0;
     padding: 1rem;
-    background-color: #00ff88;
+    background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);
+    box-shadow: 0 0 15px rgb(255, 166, 0),
+    inset 0 0 10px rgb(44, 166, 227); 
     border-radius: 5px;
 }
 

@@ -13,9 +13,28 @@
     <div class="back-button">
         <a href="../../multijugador/index.html"><img class="back-button-img" src="../../img/icon/back.png" alt="Icono de retroceder"></a>
     </div>
-    <button id="chatButton" data-bs-toggle="modal" data-bs-target="#login-modal" >
+    <!-- Botón de chat (ya existente) -->
+    <button id="chatButton" data-bs-toggle="modal" data-bs-target="#chat-modal">
         <img class="imgChat" src="../../img/icon/chat.png" alt="Icono del chat">
     </button>
+
+    <!-- Modal del chat (migrado de indexchat.html) -->
+    <div id="chat-modal" class="modal fade" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="chat-container">
+                    <div id="chat-header">Chat Local</div>
+                    <div id="chat-messages"></div>
+                    <div id="escribiendo"></div>
+                    <div id="chat-input">
+                        <input type="text" id="mensaje" placeholder="Escribe un mensaje...">
+                        <button id="enviar">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="menu" onclick="toggleButtons()">
         <img src="../../img/icon/wenu-Photoroom.png" alt="Icono del menú" style="width: 40px; height: auto;">
         <div class="button-container" style="display: none;">
@@ -96,7 +115,7 @@
         </div>
     </div>
     
-    
+    <script src="/socket.io/socket.io.js"></script>
     <audio id="backgroundMusic" src="../../audio/no-copyright-music-181373.mp3" loop></audio>
     
 
@@ -106,5 +125,116 @@
 
     <script src="js/avatar.js"></script>
     <script src="../../bootstrap/js/bootstrap.bundle.js"></script>
+    <script>
+        const socket = io();
+        
+        const chatIcon = document.getElementById('chat-icon');
+        const chatContainer = document.getElementById('chat-container');
+        const loginModal = document.getElementById('login-modal');
+        const nombreInput = document.getElementById('nombre-input');
+        const entrarBtn = document.getElementById('entrar-btn');
+        const mensajeInput = document.getElementById('mensaje');
+        const enviarBtn = document.getElementById('enviar');
+        const chatMessages = document.getElementById('chat-messages');
+        const escribiendoDiv = document.getElementById('escribiendo');
+
+        let timeoutEscribiendo;
+
+        // Función para leer el mensaje en voz alta
+        function leerMensaje(mensaje) {
+            if ('speechSynthesis' in window) {
+                const msg = new SpeechSynthesisUtterance(mensaje);
+                msg.lang = 'es-ES';  // Usar español
+                window.speechSynthesis.speak(msg);
+            } else {
+                console.log('Tu navegador no soporta SpeechSynthesis');
+            }
+        }
+
+        function agregarMensaje(mensaje, tipo, nombre = '') {
+            const div = document.createElement('div');
+            
+            if (tipo === 'sistema') {
+                div.className = 'mensaje sistema';
+                div.textContent = mensaje;
+            } else {
+                div.className = `mensaje ${tipo}`;
+                div.textContent = tipo === 'recibido' ? `${nombre}: ${mensaje}` : mensaje;
+            }
+            
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        chatIcon.addEventListener('click', () => {
+            if (nombreInput.value.trim()) {
+                chatContainer.style.display = chatContainer.style.display === 'none' ? 'flex' : 'none';
+            } else {
+                loginModal.style.display = 'flex';
+            }
+        });
+
+        entrarBtn.addEventListener('click', () => {
+            const nombre = nombreInput.value.trim();
+            if (nombre) {
+                loginModal.style.display = 'none';
+                chatContainer.style.display = 'flex';
+                socket.emit('nuevo-usuario', nombre);
+            }
+        });
+
+        mensajeInput.addEventListener('input', () => {
+            socket.emit('escribiendo', true);
+            clearTimeout(timeoutEscribiendo);
+            timeoutEscribiendo = setTimeout(() => {
+                socket.emit('escribiendo', false);
+            }, 1000);
+        });
+
+        function enviarMensaje() {
+            const mensaje = mensajeInput.value.trim();
+            if (mensaje) {
+                socket.emit('chat', mensaje);
+                agregarMensaje(mensaje, 'enviado');
+                mensajeInput.value = '';
+                socket.emit('escribiendo', false);
+                clearTimeout(timeoutEscribiendo);
+            }
+        }
+
+        enviarBtn.addEventListener('click', enviarMensaje);
+        mensajeInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                enviarMensaje();
+            }
+        });
+
+        socket.on('usuario-conectado', (nombre) => {
+            agregarMensaje(`${nombre} se unió al chat`, 'sistema');
+        });
+
+        socket.on('usuario-desconectado', (nombre) => {
+            agregarMensaje(`${nombre} abandonó el chat`, 'sistema');
+        });
+
+        socket.on('chat', (data) => {
+            if (data.nombre !== nombreInput.value.trim()) {
+                agregarMensaje(data.mensaje, 'recibido', data.nombre);
+                
+                // Leer el mensaje recibido en voz alta
+                leerMensaje(data.mensaje);
+            }
+        });
+
+        socket.on('escribiendo', (data) => {
+            if (data.escribiendo) {
+                escribiendoDiv.textContent = `${data.nombre} está escribiendo...`;
+            } else {
+                escribiendoDiv.textContent = '';
+            }
+        });
+
+        nombreInput.focus();
+    </script>
 </body>
 </html>

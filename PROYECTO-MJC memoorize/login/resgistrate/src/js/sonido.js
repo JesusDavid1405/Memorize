@@ -60,3 +60,14 @@ document.querySelector('a').addEventListener('mouseenter', () => {
     sound.currentTime = 0;
     sound.play();
 });
+function togglePassword() {
+    var passwordInput = document.getElementById('contraseña');
+    var icon = document.getElementById('icon').getElementsByTagName('img')[0];
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        icon.src = "../../img/icon/user.png";
+    } else {
+        passwordInput.type = 'password';
+        icon.src = "../../img/icon/user.png";
+    }
+}

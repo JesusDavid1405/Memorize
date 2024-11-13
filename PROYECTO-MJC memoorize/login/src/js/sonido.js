@@ -56,3 +56,16 @@ document.querySelector('a').addEventListener('mouseenter', () => {
     sound.currentTime = 0;
     sound.play();
 });
+function togglePasswordLogin() {
+    var passwordInput = document.getElementById('contraseñaLogin');
+    var icon = document.querySelector('#icon img'); // Selecciona la imagen dentro del icono
+
+    // Cambiar el tipo de input y el icono
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        icon.src = "../img/icon/user.png"; // Cambia el icono a "mostrar contraseña"
+    } else {
+        passwordInput.type = 'password';
+        icon.src = "../img/icon/user.png"; // Vuelve a cambiar el icono a "ocultar contraseña"
+    }
+}
