@@ -65,58 +65,94 @@ INSERT INTO `palabraNivel` (`palabraId`, `nivelId`) VALUES
 
 
 -- Arena
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(1, 'Es un grano diminuto que forma playas'), 
-(1, 'La encuentras en el desierto y en la costa'), 
-(1, 'Se desliza entre los dedos y es cálida al sol');
+INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES
+(1, 'Son pequeñas masas de tierra rodeadas por agua.'), -- 'islas'
+(1, 'Algunas islas son tropicales y tienen playas.'),
+(1, 'Las islas pueden formar archipiélagos.'),
 
--- Marea
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(2, 'Sube y baja en ciclos'), 
-(2, 'Es influenciada por la luna'), 
-(2, 'Afecta la costa y el nivel del agua');
+(2, 'Se usan para mover una embarcación en el agua.'),  -- 'remos'
+(2, 'Tienen una parte plana que se hunde en el agua.'),
+(2, 'Son herramientas manuales, opuestas a los motores.'),
 
--- Barco
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(3, 'Medio de transporte sobre el agua'), 
-(3, 'Tiene timón y velas en algunos casos'), 
-(3, 'Se utiliza para navegar los mares');
+(3, 'Es un verbo que significa navegar con remos.'),  -- 'bogar'
+(3, 'Se puede hacer en canoas o botes pequeños.'),
+(3, 'Requiere esfuerzo físico para mover la embarcación.'),
 
--- Brisa
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(4, 'Es un viento suave y refrescante'), 
-(4, 'Sientes su frescura en la costa'), 
-(4, 'Normalmente acompaña a la puesta de sol en la playa');
+(4, 'Se refiere al peso o volumen que se transporta.'), -- 'carga'
+(4, 'Puede ser cargada en un barco, camión o avión.'),
+(4, 'Es un término común en logística y transporte.'),
 
--- Babor
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(5, 'Es la izquierda en términos náuticos'), 
-(5, 'Lo opuesto de estribor en un barco'), 
-(5, 'Una orientación de lado en el mar');
+(5, 'Es un hilo fuerte usado para pescar.'), -- 'sedal'
+(5, 'Generalmente, está hecho de nylon o materiales sintéticos.'),
+(5, 'Se conecta al anzuelo en las cañas de pescar.'),
 
--- Nadar
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(6, 'Actividad común en el agua'), 
-(6, 'Puedes hacerlo en el mar o en una piscina'), 
-(6, 'Requiere movimiento de brazos y piernas');
+(6, 'Es la actividad de capturar peces.'), -- 'pesca'
+(6, 'Se puede realizar con redes, anzuelos o trampas.'),
+(6, 'Es una fuente de alimento para muchas culturas.'),
 
--- Timon
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(7, 'Se usa para dirigir un barco'), 
-(7, 'Es un volante, pero del océano'), 
-(7, 'Capitanes lo manejan para guiar su nave');
+(7, 'Es un arma o herramienta utilizada para pescar grandes animales marinos.'), -- 'arpon'
+(7, 'Tiene una punta afilada que se clava en el objetivo.'),
+(7, 'Se usa en deportes acuáticos como la caza submarina.'),
 
--- Costa
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(8, 'Es el límite entre la tierra y el mar'), 
-(8, 'Normalmente tiene playas o acantilados'), 
-(8, 'Donde las olas tocan la tierra');
+(8, 'Es una gran roca que sobresale de la tierra o el mar.'), -- 'peñon'
+(8, 'A menudo se encuentra en costas rocosas o islas.'),
+(8, 'Suelen ser peligrosos para la navegación.'),
 
--- Cofre
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(9, 'Puede contener un tesoro pirata'), 
-(9, 'Suele ser de madera y estar cerrado con llave'), 
-(9, 'Algo que buscan los cazadores de tesoros');
+(9, 'Es una prenda de ropa típica en zonas tropicales.'), -- 'pareo'
+(9, 'Generalmente es de tela ligera y se usa en la playa.'),
+(9, 'Se puede envolver alrededor del cuerpo como falda o vestido.'),
+
+(10, 'Es uno de los puntos cardinales.'), -- 'oeste'
+(10, 'Se opone al este en la brújula.'),
+(10, 'El sol se pone en esta dirección.'),
+
+(11, 'Son plantas marinas que crecen en el agua.'), -- 'algas'
+(11, 'Algunas algas se usan como alimento en Asia.'),
+(11, 'Pueden ser de diferentes colores, como verde, roja o marrón.'),
+
+(12, 'Es una estructura que retiene agua, como en un río.'), -- 'presa'
+(12, 'También puede referirse a un animal capturado durante la caza.'),
+(12, 'Se utiliza para controlar el flujo de agua y generar energía.'),
+
+(13, 'Se usa para mantener una embarcación en su lugar.'), -- 'ancla'
+(13, 'Generalmente está hecha de metal y se lanza al agua.'),
+(13, 'Se utiliza para evitar que el barco se desplace por el viento o las corrientes.'),
+
+(14, 'Es una vía artificial de agua que conecta dos cuerpos acuáticos.'), -- 'canal'
+(14, 'A menudo se usa para navegación y transporte de mercancías.'),
+(14, 'Los canales son comunes en países bajos como los Países Bajos.'),
+
+(15, 'Es un organismo marino que forma arrecifes.'), -- 'coral'
+(15, 'Los corales son muy importantes para los ecosistemas marinos.'),
+(15, 'Tienen colores brillantes y a menudo se asocian con la vida marina diversa.'),
+
+(16, 'Es una formación geológica formada por la erosión del agua.'), -- 'cañon'
+(16, 'Puede ser profundo y estrecho, con paredes rocosas empinadas.'),
+(16, 'Algunos cañones, como el Gran Cañón, son famosos por su belleza.'),
+
+(17, 'Es una entrada de mar rodeada parcialmente por tierra.'), -- 'bahía'
+(17, 'Generalmente es más tranquila que el mar abierto.'),
+(17, 'Las bahías a menudo se utilizan como puertos naturales.'),
+
+(18, 'Es una franja de tierra cubierta de arena junto al mar.'), -- 'playa'
+(18, 'A menudo es un destino turístico popular.'),
+(18, 'Las playas pueden ser de arena fina o gruesa, dependiendo del lugar.'),
+
+(19, 'Es una estructura flotante hecha de madera o materiales similares.'), -- 'balsa'
+(19, 'Se utiliza para cruzar ríos o como medio de transporte improvisado.'),
+(19, 'Las balsas también son comunes en actividades recreativas en el agua.'),
+
+(20, 'Es un pequeño crustáceo marino.'), -- 'krill'
+(20, 'Forma una parte importante de la dieta de ballenas y focas.'),
+(20, 'Se encuentra en grandes cantidades en los océanos.'),
+
+(21, 'Es uno de los puntos cardinales.'), -- 'norte'
+(21, 'Se opone al sur en la brújula.'),
+(21, 'En el hemisferio norte, es la dirección donde se encuentra el Polo Norte.'),
+
+(22, 'Es una gran extensión de mar rodeada parcialmente por tierra.'), -- 'golfo'
+(22, 'Los golfos suelen ser más grandes que las bahías.'),
+(22, 'El Golfo de México es uno de los más conocidos a nivel mundial.');
 
 -- Faros
 INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
