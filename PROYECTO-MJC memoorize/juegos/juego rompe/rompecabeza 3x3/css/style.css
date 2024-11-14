@@ -6,6 +6,7 @@
     background-position: center;
     overflow: hidden;
 }
+
 .back-button {
   left: 2%;
   bottom: 91%;
@@ -76,3 +77,6 @@ h3{
   .open-modal:hover {
     background-color: #45a049;
   }
+  @media (max-width: 768px) {
+
+}

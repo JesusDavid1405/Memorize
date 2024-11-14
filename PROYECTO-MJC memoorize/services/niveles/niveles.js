@@ -15,7 +15,6 @@ fetch('../../resources/niveles/niveles.php',{
         displayNiveles.innerHTML +=`
         <div class="level level-${element.id}" data-id="${element.id}">
             <div class="level-number">${element.numero}</div>
-            <span class="level-label">${element.nombre}</span>
         </div>
         `;
     });

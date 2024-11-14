@@ -17,7 +17,7 @@ body {
     background-image:
         linear-gradient(90deg, rgba(182, 161, 122, 0.479) 25%, transparent 25%, transparent 75%, rgba(221, 195, 147, 0.4) 75%),
         linear-gradient(180deg, rgba(221, 195, 147, 0.4) 25%, transparent 25%, transparent 75%, rgba(221, 195, 147, 0.4) 75%),
-        url('ruta/a/una/imagen-textura.jpg'); /* Imagen de textura si tienes alguna */
+        url(''); /* Imagen de textura si tienes alguna */
     background-size: 40px 40px, 40px 40px, cover;
     border: 4px solid #8b5a2b; /* Borde marrón oscuro para simular borde envejecido */
     box-shadow: 6px 6px #7b6c4ea3, 12px 12px #5a4731; /* Sombra estilo pergamino */
@@ -99,7 +99,7 @@ body {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    color: #ffffff;
+    color: #f1ecbb;
     cursor: pointer;
     z-index: 10;
     transition: transform 0.3s;
@@ -109,7 +109,7 @@ body {
     height: 35%;
 }
 .level-number {
-    font-size: 2.9em;
+    font-size: 3.8em;
 }
 
 .level-label {
@@ -127,19 +127,19 @@ body {
 }
 .chest {
     position: absolute;
-    width: 10%;
+    width: 12%;
     height: 12%;
-    top: 454px; 
+    top: 458px; 
     
-    left: 83%;
+    left: 83.1%;
     cursor: pointer;
 }
 .chest:hover {
     transform: scale(1.1);
 }
 .chest-img {
-    width: 110%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
 }
 
 /* Modal */
@@ -275,13 +275,14 @@ body {
 }
 @media (max-width: 768px) {
     .menu-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
         letter-spacing: 0px;
         text-align: center;
         
     }
     .level-number {
-        font-size: 0.5em;
+        font-size: 2.0em;
+        color: #ffffff;
     }
     
     .level-label {
@@ -291,14 +292,14 @@ body {
     }
     .map-container {
         width: 330px;
-        height: 360px; 
-        right: 1%; 
-        margin-top: 40%;
+        height: 420px; 
+        right: 4%; 
+        margin-top: 30%;
     }
     
     .level {
-        width: 45px; 
-        height: 45px;
+        width: 70px; 
+        height: 70px;
         font-size: 1em; 
     }
     .logo {
@@ -310,25 +311,27 @@ body {
         width: 40%; 
         height: auto;
        
-
+    }
+    .menu{
+        right: 20px;
     }
     .ship {
         width: 70px;
     }
     .chest {
-        top: 50px;
-        left:15%;
+        top: 253px;
+        left:74%;
     }
     .chest-img {
-        width: 130%;
+        width: 150%;
         height: 100%;
     }
-    .level-1 { top: 50px; left: 150px; }
-    .level-2 { top: 50px; left: 250px; }
-    .level-3 { top: 140px; left: 250px; }
-    .level-4 { top: 140px; left: 150px; }
-    .level-5 { top: 140px; left: 50px; } 
-    .level-6 { top: 240px; left: 50px; }
-    .level-7 { top: 240px; left: 150px; }
-    .level-8 { top: 240px; left: 250px; }
+    .level-1 { top: 50px; left: 20px; }
+    .level-2 { top: 50px; left: 130px; }
+    .level-3 { top: 50px; left: 230px; }
+    .level-4 { top: 140px; left: 230px; }
+    .level-5 { top: 140px; left: 130px; } 
+    .level-6 { top: 140px; left: 20px; }
+    .level-7 { top: 240px; left: 20px; }
+    .level-8 { top: 240px; left: 130px; }
 }

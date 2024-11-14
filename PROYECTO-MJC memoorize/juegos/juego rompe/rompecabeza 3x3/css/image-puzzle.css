@@ -96,3 +96,18 @@
     width: auto;
     padding: 3px 8px;
 }
+@media (max-width: 768px) {
+    #collage #playPanel {
+        background-color:#ffffff75;
+        padding:10px 0px;
+        margin: 10px auto;
+        width:95%
+    }
+    #collage img#actualImage{
+        border:2px solid #a46;
+        height:280px;
+        width:280px;
+    }
+    
+    
+}
