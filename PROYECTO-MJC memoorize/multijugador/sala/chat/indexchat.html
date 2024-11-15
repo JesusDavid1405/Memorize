@@ -3,9 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Memorize</title>
+    <title>chatmemorize</title>
+    <link rel="stylesheet" href="css/sala.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <body>
+        <div class="back-button">
+            <a href="../../multijugador/index.html"><img class="back-button-img" src="img/icon/back.png" alt="Icono de retroceder"></a>
+        </div>
+    
+        <div class="menu" onclick="toggleButtons()">
+            <img src="img/icon/wenu-Photoroom.png" alt="Icono del menú" style="width: 40px; height: auto;">
+            <div class="button-container" style="display: none;">
+                <div class="soundButton" data-bs-toggle="modal" data-bs-target="#sonido">
+                    <img class="imgSonido" src="img/sonido.png" alt="Icono de sonido">
+                </div>
+                <button id="musicButton">
+                    <img class="imgSonido" src="img/musica.png" alt="Icono de sonido">
+                </button>
+            </div>
+        </div>
+        <div class="multiplayer-container">
+            <h1 class="menu-title">Sala de Espera</h1>
+            <div class="avatars" id="players">
+                <div class="avatar" title="Avatar 1">
+                    <img src="img/icon/avatar15.png" alt="Avatar 1">
+                    <div class="avatar-name">Jugador 1</div>
+                </div>
+                <div class="avatar" title="Avatar 2">
+                    <img src="img/icon/avatar2.png" alt="Avatar 2">
+                    <div class="avatar-name">Jugador 2</div>
+                </div>
+                <div class="avatar" title="Avatar 16">
+                    <img src="img/icon/avatar16.png" alt="Avatar 16">
+                    <div class="avatar-name">Jugador 3</div>
+                </div>
+                <div class="avatar" title="Avatar 4">
+                    <img src="img/icon/avatar4.png" alt="Avatar 4">
+                    <div class="avatar-name">Jugador 4</div>
+                </div>
+                <div class="avatar" title="Avatar 13">
+                    <img src="img/icon/avatar13.png" alt="Avatar 13">
+                    <div class="avatar-name">Jugador 5</div>
+                </div>
+                <div class="avatar" title="Avatar 11">
+                    <img src="img/icon/avatar11.png" alt="Avatar 11">
+                    <div class="avatar-name">Jugador 6</div>
+                </div>
+                <div class="avatar" title="Avatar 14">
+                    <img src="img/icon/avatar14.png" alt="Avatar 14">
+                    <div class="avatar-name">Jugador 7</div>
+                </div>
+                <div class="avatar" title="Avatar 12">
+                    <img src="img/icon/avatar12.png" alt="Avatar 12">
+                    <div class="avatar-name">Jugador 8</div>
+                </div>
+                <div class="avatar" title="Avatar 9">
+                    <img src="img/icon/avatar9.png" alt="Avatar 9">
+                    <div class="avatar-name">Jugador 9</div>
+                </div>
+                <div class="avatar" title="Avatar 10">
+                    <img src="img/icon/avatar10.png" alt="Avatar 10">
+                    <div class="avatar-name">Jugador 10</div>
+                </div>
+            </div>
+            <div class="center-content">
+                <div id="configuraciones"></div>
+                <button id="jugar" class="btn btn-primary yum">Jugar</button>
+                <div id="joiningMessage" class="joining-message" style="display: none;">
+                    <img src="img/icon/multi.png" alt="Uniéndote" class="joining-image"> 
+                    Uniéndote...
+                </div>
+            </div>     
+          </div>
+    
+        
+                </div>
+            </div>
+        </div>
+    </body>
     <style>
+
+        
         /* Estilos básicos del chat */
         * {
             margin: 0;
@@ -14,15 +94,20 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            height: 100vh;
-            background: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    background-image: url(img/fondo4.gif);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+    background-repeat: no-repeat;
+    animation: puffIn 1s ease-in-out
+}
 
         #chat-icon {
+            z-index: 10;
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -40,10 +125,12 @@
         }
 
         #chat-icon:hover {
+            z-index: 10;
             transform: scale(1.1);
         }
 
         #chat-container {
+            z-index: 10;
             display: none;
             position: fixed;
             bottom: 90px;
@@ -58,6 +145,7 @@
         }
 
         #chat-header {
+            z-index: 10;
             background: radial-gradient(circle, rgba(255, 255, 110, 0.699) 0%, rgb(33, 148, 202) 100%);
             color: white;
             padding: 10px;
@@ -66,12 +154,14 @@
         }
 
         #chat-messages {
+            z-index: 10;
             flex: 1;
             overflow-y: auto;
             padding: 10px;
         }
 
         .mensaje {
+            z-index: 10;
             margin-bottom: 10px;
             padding: 8px 12px;
             border-radius: 8px;
@@ -80,22 +170,26 @@
         }
 
         .enviado {
+            z-index: 10;
             background: #ffea0066;
             margin-left: auto;
         }
 
         .recibido {
+            z-index: 10;
             background: #E8E8E8;
         }
 
         .sistema {
+            z-index: 10;
             text-align: center;
-            color: #ae00ff;
+            color: #fbff00;
             font-style: italic;
             margin: 10px 0;
         }
 
         #escribiendo {
+            z-index: 10;
             padding: 5px 10px;
             color: #666;
             font-style: italic;
@@ -103,12 +197,14 @@
         }
 
         #chat-input {
+            z-index: 10;
             display: flex;
             padding: 10px;
             background: #f5f5f5;
         }
 
         #mensaje {
+            z-index: 10;
             flex: 1;
             padding: 8px;
             border: 1px solid #ddd;
@@ -118,6 +214,7 @@
         }
 
         #enviar {
+            z-index: 10;
             padding: 8px 15px;
             background: radial-gradient(circle, rgba(255, 255, 110, 0) 0%, rgb(33, 148, 202) 100%);
             color: white;
@@ -129,11 +226,13 @@
         }
 
         #enviar:hover {
+            z-index: 10;
             background: radial-gradient(circle, rgba(255, 255, 110, 0) 0%, rgb(33, 148, 202) 100%);
             box-shadow: 0 0 15px rgb(255, 166, 0), inset 0 0 10px rgb(44, 166, 227);
         }
 
         #login-modal {
+            z-index: 10;
             display: none;
             position: fixed;
             top: 0;
@@ -146,6 +245,7 @@
         }
 
         .modal-content {
+            z-index: 10;
             background: white;
             padding: 20px;
             border-radius: 10px;
@@ -153,12 +253,14 @@
         }
 
         #nombre-input {
+            z-index: 10;
             margin: 10px 0;
             padding: 8px;
             width: 200px;
         }
 
         #entrar-btn {
+            z-index: 10;
             padding: 8px 20px;
             background-color: rgb(62, 171, 255);
             color: white;
