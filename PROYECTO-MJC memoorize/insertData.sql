@@ -225,7 +225,7 @@ INSERT INTO `pista` (`palabraId`, `pista`) VALUES
     (32, 'Más grande que una bahía.'),
     (32, 'Famoso en lugares como el Golfo de México.');
 
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES
+INSERT INTO `pista` (`palabraId`, `pista`) VALUES
     -- Pistas para "pirata"
     (33, 'Navegante que suele buscar tesoros en alta mar.'),
     (33, 'A menudo lleva un parche en el ojo.'),
@@ -356,7 +356,7 @@ INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES
     (58, 'Se cultivan en el mar para consumo.'),
     (58, 'Suelen encontrarse en aguas saladas poco profundas.');
 
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES
+INSERT INTO `pista` (`palabraId`, `pista`) VALUES
     -- Pistas para "olas"
     (59, 'Formaciones de agua que se desplazan hacia la costa.'),
     (59, 'Se generan por el viento y afectan a la navegación.'),

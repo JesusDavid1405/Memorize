@@ -14,7 +14,7 @@ const contadorTiempo = setInterval(() => {
     
 }, 1000);
 
-fetch('libreria/palabras.php', {
+fetch('../../../resources/wordle/palabras.php', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json' // Asegúrate de usar 'Content-Type' en mayúsculas
@@ -50,6 +50,7 @@ fetch('libreria/palabras.php', {
         let wordlePistas= pistas[escoger];
 
         let wordleArray=wordle.toUpperCase().split('');
+        let tamañoWordle= wordleArray.length;
         
         console.log(wordleArray);
         console.log(wordlePistas);
@@ -69,9 +70,9 @@ fetch('libreria/palabras.php', {
 
             square.forEach(element => {
                 element.addEventListener('input',event=>{
-                    //si no se ha borrado
+                    
                     if(event.inputType !== 'deleteContentBackward'){
-                        //recoger el ingreso del usuario
+                        
                         userInput.push(event.target.value.toUpperCase())
             
                         console.log(userInput)
@@ -81,14 +82,14 @@ fetch('libreria/palabras.php', {
                         }else{
                             let squaresFilled = document.querySelectorAll('.square')
                             squaresFilled=[...squaresFilled]
-                            let lastFiveSquaresFilled=squaresFilled.slice(-5)
+                            let lastFiveSquaresFilled=squaresFilled.slice(-tamañoWordle)
                             let finalUserInput=[];
 
                             lastFiveSquaresFilled.forEach(element =>{
                                 finalUserInput.push(element.value.toUpperCase())
                             })
                             console.log("userInput:" + finalUserInput)
-                            // cambiar si existe la letra pero no esta en la posicion correcta
+                            
                             let existIndexArray=existLetter(wordleArray, finalUserInput)
                             existIndexArray.forEach(element =>{
                                 square[element].classList.add('gold')
@@ -238,13 +239,14 @@ fetch('libreria/palabras.php', {
         
         function addPista() {
             var modal = new bootstrap.Modal(document.getElementById('miModal'));
-            var modalBody = document.querySelector('.modal-body');
+            var modalBody = document.querySelector('#pista');
             
             if (pistaIndex < wordlePistas.length) {
-                modalBody.innerHTML = `
-                    <div>
-                        <h3>Pista:</h3>
-                        <p>${wordlePistas[pistaIndex]}</p>
+                modalBody.innerHTML += `
+                    <div class="row">
+                        <div class="col-12">
+                            <p>${wordlePistas[pistaIndex]}</p>
+                        </div>
                     </div>
                 `;
                 pistaIndex++; 
@@ -260,7 +262,7 @@ fetch('libreria/palabras.php', {
             }
         }
     }
-    
+
 }).catch(error => {
     console.error('There was a problem with the fetch operation:', error);
 });
