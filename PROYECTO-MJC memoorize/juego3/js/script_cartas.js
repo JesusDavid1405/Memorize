@@ -19,7 +19,7 @@ const state = {
     totalTime: 0,
     loop: null,
     currentRound: 1,
-    maxRounds: parseInt(localStorage.getItem('rondas')) || 7,
+    maxRounds: parseInt(localStorage.getItem('rondas')) || 6,
     dificultad: localStorage.getItem('dificultad') || 'facil',
     scores: [],
     basePoints: 1000,
@@ -27,8 +27,12 @@ const state = {
     moveMultiplier: 10,
     currentPlayerName: '',
     cumulativeScore: 0,
-    baseCards: 12, // Número inicial de cartas para modo fácil (6 pares)
-    cardsPerRound: 4  // Número de cartas adicionales por ronda (2 pares)
+    baseCardsF: 8, // Número inicial de cartas para modo fácil (4 pares)
+    cardsPerRoundF: 2,  // Número de cartas adicionales por ronda (2 pares)
+    baseCardsM: 12, // Número inicial de cartas para modo fácil (6 pares)
+    cardsPerRoundM: 2,  // Número de cartas adicionales por ronda (2 pares)
+    baseCardsD: 16, // Número inicial de cartas para modo fácil (8 pares)
+    cardsPerRoundD: 2  // Número de cartas adicionales por ronda (2 pares)
 };
 
 // Función para actualizar los selectores del DOM
@@ -46,36 +50,32 @@ const updateSelectors = () => {
 // Función para obtener el número de cartas según la ronda actual
 const getCardsForCurrentRound = () => {
     if (state.dificultad === 'facil') {
-        return state.baseCards + (state.cardsPerRound * (state.currentRound - 1));
+        return state.baseCardsF + (state.cardsPerRoundF * (state.currentRound - 1));
     } else if (state.dificultad === 'medio') {
-        return 16; // 4x4
+        return state.baseCardsM + (state.cardsPerRoundM * (state.currentRound - 1));
     } else { // dificil
-        return 24; // 6x4
+        return state.baseCardsD + (state.cardsPerRoundD * (state.currentRound - 1));
     }
+
+    
 };
 
 // Función para calcular las dimensiones del tablero
 const calculateBoardSize = () => {
     const totalCards = getCardsForCurrentRound();
     
-    if (state.dificultad === 'facil') {
-        // Calcular las dimensiones óptimas para el número de cartas
-
-        let largo = Math.ceil(Math.sqrt(totalCards));
-        let ancho = Math.ceil(totalCards / largo);
-        
-        // Asegurarse de que el número total de celdas sea par
-        if ((largo * ancho) % 2 !== 0) {
-            ancho++;
-        }
-        
-        return { largo, ancho };
-    } else if (state.dificultad === 'medio') {
-        return { largo: 4, ancho: 4 };
-    } else { // dificil
-        return { largo: 6, ancho: 4 };
+    let largo = Math.ceil(Math.sqrt(totalCards));
+    let ancho = Math.ceil(totalCards / largo);
+    
+    // Asegurarse de que el número total de celdas sea par
+    if ((largo * ancho) % 2 !== 0) {
+        ancho++;
     }
+
+    // Retornar el objeto con las dimensiones calculadas
+    return { largo, ancho };
 };
+
 
 // Función para seleccionar elementos aleatorios de un array
 const pickRandom = (array, items) => {

@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (numeroPersonas > 10) {
             modalDisplay.innerHTML = `El número máximo de personas es 10`;
             modalError.show();    
-        } else if (rondas < 1 || rondas > 6) {
-            modalDisplay.innerHTML = `El número de rondas debe estar entre 1 y 6`;
+        } else if (rondas < 1 || rondas > 5) {
+            modalDisplay.innerHTML = `El número de rondas debe estar entre 1 y 5`;
             modalError.show();
         } else {
             localStorage.setItem('nombreSala', nombreSala);
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('rondas', rondas);
             localStorage.setItem('rol', 1);
             
-            if (rondas === 6) {
+            if (rondas === 5) {
                 localStorage.setItem('rondaMasLarga', true);
             } else {
                 localStorage.removeItem('rondaMasLarga');
