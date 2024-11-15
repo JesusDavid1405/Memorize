@@ -12,14 +12,6 @@
 <body>
     <div id="contador"></div>
     <h1 class="menu-title">Wordle</h1>
-    <div id="pista" >
-        <div class="pistas">
-            <ul id="displayPista">
-                
-            </ul>
-        </div>
-        <img src="../../../img/icon/pirata.png" alt="">
-    </div>
     <div class="back-button">
         <a href="../../quiz/index.html"><img class="back-button-img" src="../../../img/icon/back.png" alt="Icono de retroceder"></a>
     </div>
@@ -49,7 +41,10 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    Este es un modal que se muestra automáticamente.
+                    <h3>Pista:</h3>
+                    <div id="pista">
+
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Cerrar</button>
@@ -73,6 +68,7 @@
             </div>
         </div>
     </div>
+
     <audio id="backgroundMusic" src="../../../audio/no-copyright-music-181373.mp3" loop></audio>
     <script src="./js/main.js"></script>
     <script src="js/menu2.js"></script>
