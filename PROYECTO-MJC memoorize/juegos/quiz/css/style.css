@@ -27,6 +27,10 @@ body {
     transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
     animation: mapMotion 3s infinite alternate ease-in-out, swashIn 1s ease-in-out; /* Movimiento suave */
 }
+.bloqueado{
+    width: 50px;
+    height: 50px;
+}
 
 /* Añadimos las líneas de latitud y longitud estilo pirata */
 .map-container::before {
