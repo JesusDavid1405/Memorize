@@ -413,26 +413,27 @@ li.nav-item {
     margin: 0 10px;
     flex: 1;
     text-align: center;
-    color: #ffffff; 
-    text-shadow: 3px 3px 0px #ffffff00,   
+    color: #ffffff;
+    text-shadow: 3px 3px 0px #ffffff00, 
                  6px 6px 0px #8b451300; 
-    border-radius: 15px; 
+    border-radius: 15px;
     background: radial-gradient(circle, rgb(231, 147, 68) 0%, rgba(228, 181, 53, 0.651) 100%);
-    box-shadow: 20 10 40px rgb(221, 149, 55),
-    inset 0 0 20px rgb(253, 186, 62, 0.884); 
+    box-shadow: 20px 10px 40px rgb(221, 149, 55),
+                inset 0 0 20px rgb(253, 186, 62, 0.884); 
     image-rendering: pixelated;
-    transition: none; /* Evita transiciones que podrían afectar la opacidad */
+    transition: transform 300ms ease, box-shadow 300ms ease-in-out; 
 }
 
-/* Estilo para el estado hover sin transparencia */
 li.nav-item:hover {
-    opacity: 1; /* Asegura que no haya transparencia */
-    text-shadow: 3px 3px 0px #ffffff00,   
-                 6px 6px 0px #8b451300; 
-    border-radius: 30px; 
-    background: radial-gradient(circle, rgb(231, 147, 68) 0%, rgba(228, 181, 53, 0.651) 100%);
-    box-shadow: 0 0 15px rgb(221, 149, 55),
-    inset 0 0 10px rgb(253, 186, 62, 0.884); 
+    transform: translateY(-8px) scale(1.1); 
+    box-shadow: 25px 15px 50px rgb(221, 149, 55), 
+                inset 0 0 25px rgb(253, 186, 62, 0.884); 
+}
+
+li.nav-item:active {
+    transform: translateY(4px) scale(1);
+    box-shadow: 10px 5px 30px rgb(221, 149, 55), 
+                inset 0 0 15px rgb(253, 186, 62, 0.884); 
 }
 
 nav.navbar {
