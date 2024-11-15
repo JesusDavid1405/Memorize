@@ -323,7 +323,7 @@ const showScoreModal = (roundScore) => {
                         <p>En la ronda: ${bestScore.currentRound}</p>
                     
                         <button>
-                <a href="../multijugador/sala/index.html" class="btn-exit">Salir</a>
+                <a href="../menu/index.html" class="btn-exit">Salir</a>
             </button>
                     </div>
                 `}
