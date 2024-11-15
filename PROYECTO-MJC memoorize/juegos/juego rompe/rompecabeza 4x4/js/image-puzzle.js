@@ -18,12 +18,61 @@ var imagePuzzle = {
         timerFunction = setTimeout(imagePuzzle.tick, 1000);
     },
     setImage: function (images) {
-        var gridSize = 4;
+        var gridSize = 4; // Cambiado a 4x4
         var percentage = 100 / (gridSize - 1);
         var image = images[Math.floor(Math.random() * images.length)];
         helper.doc('imgTitle').innerHTML = image.title;
         helper.doc('actualImage').setAttribute('src', image.src);
         helper.doc('sortable').innerHTML = '';
+
+        // Ocultar la imagen actual
+        helper.doc('actualImage').style.display = 'none';
+
+        // Crear el overlay (capa de fondo) y mostrar la imagen encima de todo
+        var overlay = document.createElement('div');
+        overlay.id = 'imageOverlay';
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100vw';
+        overlay.style.height = '100vh';
+        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+        overlay.style.display = 'flex';
+        overlay.style.alignItems = 'center';
+        overlay.style.justifyContent = 'center';
+        overlay.style.zIndex = '9999';
+        overlay.style.transition = 'opacity 0.5s ease';
+        overlay.style.opacity = '0';
+        overlay.style.borderRadius = '20px';
+        overlay.style.boxShadow = '0px 0px 20px rgba(0, 0, 0, 0.5)';
+
+        var img = document.createElement('img');
+        img.src = image.src;
+        img.alt = image.title;
+        img.style.maxWidth = '50%';
+        img.style.maxHeight = '50%';
+        img.style.objectFit = 'contain';
+        img.style.transition = 'transform 1s ease';
+
+        overlay.appendChild(img);
+        document.body.appendChild(overlay);
+
+        setTimeout(function () {
+            overlay.style.opacity = '1';
+            img.style.transform = 'scale(1.05)';
+        }, 50);
+
+        setTimeout(function () {
+            overlay.style.opacity = '0';
+            img.style.transform = 'scale(1)';
+
+            setTimeout(function () {
+                overlay.remove();
+                helper.doc('actualImage').setAttribute('src', '');
+                helper.doc('actualImage').style.display = 'none';
+            }, 500);
+        }, 5000);
+
         for (var i = 0; i < gridSize * gridSize; i++) {
             var xpos = (percentage * (i % gridSize)) + '%';
             var ypos = (percentage * Math.floor(i / gridSize)) + '%';
@@ -47,14 +96,13 @@ var imagePuzzle = {
 
                 if (origin && dest && p) {
                     let temp = dest.nextSibling;
-                    let x_diff = origin.offsetLeft-dest.offsetLeft;
-                    let y_diff = origin.offsetTop-dest.offsetTop;
+                    let x_diff = origin.offsetLeft - dest.offsetLeft;
+                    let y_diff = origin.offsetTop - dest.offsetTop;
 
-                    if(y_diff == 0 && x_diff >0){
+                    if (y_diff == 0 && x_diff > 0) {
                         p.insertBefore(origin, dest);
                         p.insertBefore(temp, origin);
-                    }
-                    else{
+                    } else {
                         p.insertBefore(dest, origin);
                         p.insertBefore(origin, temp);
                     }
@@ -80,7 +128,6 @@ isSorted = (arr) => arr.every((elem, index) => { return elem == index; });
 
 var helper = {
     doc: (id) => document.getElementById(id) || document.createElement("div"),
-
     shuffle: (id) => {
         var ul = document.getElementById(id);
         for (var i = ul.children.length; i >= 0; i--) {

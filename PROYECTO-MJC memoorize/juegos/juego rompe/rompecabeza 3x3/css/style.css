@@ -193,7 +193,6 @@ body {
   padding: 0;
   width: 400px;
 }
-
 #collage #sortable li {
   background-size: cover;
   border: none;
@@ -201,8 +200,8 @@ body {
   margin: 5px;
   padding: 0;
   float: left;
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   transition: transform 0.2s ease;
   border-radius: 5px; /* Bordes redondeados */
 }

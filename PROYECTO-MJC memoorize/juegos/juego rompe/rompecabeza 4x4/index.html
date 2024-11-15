@@ -4,11 +4,15 @@
 <head>
     <title>ROMPE CABEZA</title>
     <link href="css/style.css" rel="stylesheet" />
-    <link href="css/image-puzzle.css" rel="stylesheet" />
     <script src="js/image-puzzle.js"></script>
     <script src="js/img.js"></script>
-    <link rel="shortcut icon" href="images/rompecabeza.png"> 
+    <link rel="shortcut icon" href="images/rompecabeza.png">
+    <script src="../bootstrap/js/bootstrap.bundle.js"></script> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+ 
     <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../css/offcanvas.css">
     <link rel="stylesheet" href="../css/bar.css">
     <link rel="stylesheet" href="../css/icon.css">
@@ -21,45 +25,43 @@
     
     
     <div id="collage">
-        <h2>AQUAC-MEMORY ROMPE CABEZA</h2>
         
         <hr />
         
         <div id="playPanel" style="padding:5px;display:none;">
             <h3 id="imgTitle"></h3>
             <hr />
+            <div id="stepBox">
+                <div>Movimientos</div>
+                <div id="stepCount" class="stepCount">0</div>
+            </div>
+            <div id="timeBox">
+                TIEMPO TOMADO: <span id="timerPanel"></span> SEG:
+            </div>
             <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
                 <ul id="sortable" class="sortable"></ul>
                 <div id="actualImageBox">
-                    <div id="stepBox">
-                        <div>Movimientos</div>
-                        <div id="stepCount" class="stepCount">0</div>
-                    </div>
-                    <div id="timeBox">
-                        TIEMPO TOMADO: <span id="timerPanel"></span> SEG:
-                    </div>
                     <img id="actualImage" />
-                    <div>Reorganizar para crear una imagen como ésta.</div>
+                    <div>Reorganizar el rompecabeza.</div>
                     <p id="levelPanel">
                         <input type="radio" name="level" id="easy" checked="checked" value="3" onchange="imagePuzzle.startGame(images, this.value);"/> <label for="easy">Medio</label>
                       
                     </p>
                     <div>
                         <button id="regla" type="button" class="btn">Reglas</button>
-                        <button id="newPhoto" type="button" class="btn" onclick="restart();">Otra Imagen</button>
                         <button id="acercaDe" type="button" class="btn">Acerca de:</button>
                     </div>
                 </div>
             </div>
         </div>
         <div id="gameOver" style="display:none;">
-            <div style="background-color: #da00003f; padding: 5px 10px 20px 10px; text-align: center; ">
-                <h2 style="text-align:center">¡¡Juego terminado!!</h2>
-                ¡¡Felicidades!! <br /> Has completado este nivel
+            <div style="background-color: #da00003f; padding: 5px 0px 0px 10px; text-align: center; ">
+                ¡¡Felicidades!! Has completado este nivel
                 <br /> Movimientos: <span id="stepCount" class="stepCount">0</span> Movimientos:
                 <br /> TIEMPO TOMADO: <span class="timeCount">0</span> SEG: <br />
                 <div>
-                    <button type="button" onclick="window.location.reload(true);">Jugar de nuevo</button>
+                    <button type="button" onclick="window.location.href='../rompecabeza 5x5/index.html';">Siguiente Nivel</button>
+
                 </div>
             </div>
         </div>
