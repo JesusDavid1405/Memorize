@@ -17,8 +17,12 @@
         body {
             font-family: Arial, sans-serif;
             height: 100vh;
-            background: #ffffff;
+            background-image: url(../../../img/fondo4.gif);
             display: flex;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            overflow: hidden;
             justify-content: center;
             align-items: center;
         }
@@ -91,7 +95,8 @@
 
         .sistema {
             text-align: center;
-            color: #ae00ff;
+            color: #000000;
+            
             font-style: italic;
             margin: 10px 0;
         }
@@ -100,7 +105,7 @@
             padding: 5px 10px;
             color: #666;
             font-style: italic;
-            min-height: 24px;
+            min-height: 26px;
         }
 
         #chat-input {
@@ -145,7 +150,18 @@
             justify-content: center;
             align-items: center;
         }
-
+        .menu-title {
+        font-family: 'Pirata One', cursive; 
+        text-align: center;
+        font-size: 5.0rem;
+        color: #ffd700; 
+        
+        text-shadow: 3px 3px 0px #000000,   
+                    6px 6px 0px #8b4513;  
+        position: relative;
+        padding: 0px;
+        animation: vanishIn 1s ease-in-out
+       }
         .modal-content {
             background: white;
             padding: 20px;
@@ -170,6 +186,7 @@
     </style>
 </head>
 <body>
+    <h1 class="menu-title">Menú de Juegos</h1>
     <div id="chat-icon">
         <i class="fas fa-comments"></i>
     </div>
