@@ -6,13 +6,9 @@ let mainContainer = document.querySelector('.main-container')
 let resultElement = document.querySelector(".result")
 let pistaIndex = 0; 
 
-let tiempo = 0; 
+let tiempo = 30; 
     
-const contadorTiempo = setInterval(() => {
-    tiempo++; 
-    document.getElementById('contador').innerHTML = formatoTiempo(tiempo); 
-    
-}, 1000);
+
 
 fetch('../../../resources/wordle/palabras.php', {
     method: 'POST',
@@ -32,6 +28,17 @@ fetch('../../../resources/wordle/palabras.php', {
     if (data.error) {
         alert(data.error);
     } else {
+        const contadorTiempo = setInterval(() => {
+            tiempo--; 
+            document.getElementById('contador').innerHTML = formatoTiempo(tiempo); 
+        
+            if (tiempo <= 0) {
+                clearInterval(contadorTiempo);  // Detener el temporizador
+                mostrarModal("¡El tiempo ha terminado!");  // Mostrar el modal de fin de juego
+            }
+        }, 1000);
+        
+
         // Iterar sobre las palabras recibidas
         data.forEach(item => {
             app.push(item); 
@@ -275,16 +282,25 @@ function formatoTiempo(segundos) {
 
     return tiempoPantalla; 
 }
-function puntacion(intentos){
-    let puntosMaximo=1000;
-    let intentosFinal=intentos;
-    let puntos
+function puntacion(intentos) {
+    const puntosMaximo = 1000;
+    const tiempoMaximo = 30;
+    const tiempoRestante = tiempoMaximo - tiempo;  // Tiempo máximo en segundos (o el valor que desees)
+    let puntos;
+    let tiempoBonus 
 
-    if(intentosFinal>=5){
-        puntos =0;
-    }else{
-        puntos =(puntosMaximo/intentosFinal);
+    // Penalización por intentos
+    let penalizacionIntentos = 0;
+    if (intentos >= 5) {
+        penalizacionIntentos = 0;
+        tiempoBonus= 0
+    } else {
+        penalizacionIntentos = puntosMaximo / intentos;
+        tiempoBonus = (tiempoRestante / tiempoMaximo) * puntosMaximo;
     }
-        
+
+    // Los puntos finales dependen de la penalización por intentos y el bono por tiempo
+    puntos = Math.max(0, penalizacionIntentos + tiempoBonus);  // Evitar que los puntos sean negativos
+
     return puntos;
 }
