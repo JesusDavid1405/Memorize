@@ -321,7 +321,10 @@ const showScoreModal = (roundScore) => {
                         <p>Mejor puntuación: ${bestScore.cumulativeScore} puntos</p>
                         <p>Conseguida por: ${bestScore.playerName}</p>
                         <p>En la ronda: ${bestScore.currentRound}</p>
-                        <a href="../multijugador/sala/index.html" class="exit-game-btn" id="exitGame">Salir</a>
+                    
+                        <button>
+                <a href="../multijugador/sala/index.html" class="btn-exit">Salir</a>
+            </button>
                     </div>
                 `}
             </div>
