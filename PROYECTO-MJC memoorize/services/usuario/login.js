@@ -24,7 +24,7 @@ btnIniciar.addEventListener('click', function() {
             modal.show();
         } else {
             localStorage.setItem('usuario', data.usuarioId);
-            window.location.href = '../menu/index.html';  // Redirige solo si el login fue exitoso
+            window.location.href = '../interfaz/index.html  ';  // Redirige solo si el login fue exitoso
         }
     })
     .catch(error => console.error('Error:', error));
