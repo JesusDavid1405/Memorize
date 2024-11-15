@@ -12,12 +12,12 @@ $data = json_decode($input, true);
 
 $response = [];
 
-if ($data && isset($data['nickName']) && isset($data['correo']) && isset($data['contraseña'])) {
+if ($data && isset($data['estadoNivel']) && isset($data['correo']) && isset($data['contraseña'])) {
 
-    $nickName = $data['nickName'];
-    $correo = $data['correo'];
-    $contraseña = $data['contraseña'];
-
+    $estadoNivel = $data['estadoNivel'];
+    $tiempo = $data['tiempo'];
+    $puntos = $data['puntos'];
+    $juegoId=2;
     
     $database = new Database();
     $conn = $database->connect();
@@ -25,17 +25,16 @@ if ($data && isset($data['nickName']) && isset($data['correo']) && isset($data['
     if ($conn) {
         $query="
         INSERT INTO `historialniveles` 
-        (`usuarioId`, `juegoId`, `nivelId`, `puntos`, `tiempo`, `monedas`, `estadoNivel`) 
+        (`usuarioId`, `juegoId`, `nivelId`, `puntos`, `tiempo`,`estadoNivel`) 
         VALUES (?, ?, ?, ?, ?, ?, ?);
         ";
         $stmtNick = $conn->prepare($query);
-        $stmtNick->bind_param("iiiiiii", 
+        $stmtNick->bind_param("iiiisi", 
             $usuarioId,
             $juegoId,
             $nivelId,
             $puntos,
             $tiempo,
-            $monedas,
             $estadoNivel
 
         );

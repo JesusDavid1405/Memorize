@@ -71,7 +71,7 @@ var imagePuzzle = {
                 helper.doc('actualImage').setAttribute('src', '');
                 helper.doc('actualImage').style.display = 'none';
             }, 500);
-        }, 5000);
+        }, 15000);
 
         for (var i = 0; i < gridSize * gridSize; i++) {
             var xpos = (percentage * (i % gridSize)) + '%';

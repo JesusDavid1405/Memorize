@@ -5,6 +5,7 @@ let rowId=1;
 let mainContainer = document.querySelector('.main-container')
 let resultElement = document.querySelector(".result")
 let pistaIndex = 0; 
+let estadoNivel;
 
 let tiempo = 30; 
     
@@ -35,6 +36,7 @@ fetch('../../../resources/wordle/palabras.php', {
             if (tiempo <= 0) {
                 clearInterval(contadorTiempo);  // Detener el temporizador
                 mostrarModal("¡El tiempo ha terminado!");  // Mostrar el modal de fin de juego
+                rowId=0;
             }
         }, 1000);
         
@@ -113,6 +115,7 @@ fetch('../../../resources/wordle/palabras.php', {
                             if(rightIndex.length == wordleArray.length){
                                 clearInterval(contadorTiempo);
                                 mostrarModal("Ganaste!");
+                                estadoNivel = true
                                 
                                 return
                             }
@@ -136,6 +139,7 @@ fetch('../../../resources/wordle/palabras.php', {
                 })
             })
         }
+        
         function compareArrays(arrayUno,arrayDos){
     
             let iqualsIndex =[]
@@ -164,8 +168,6 @@ fetch('../../../resources/wordle/palabras.php', {
                 newRow.classList.add('fila');
                 newRow.setAttribute('id', rowId);
                 mainContainer.appendChild(newRow);
-                
-                console.log("Fila creada, rowId es:", rowId);  // Depuración para ver si se crea la fila
         
                 // Verificar si hay que mostrar una pista
                 checkRowAndAddPista();  
@@ -174,6 +176,7 @@ fetch('../../../resources/wordle/palabras.php', {
             } else {
                 clearInterval(contadorTiempo);
                 mostrarModal(`Inténtalo de nuevo, la palabra correcta era "${wordle.toUpperCase()}"`);
+                estadoNivel = false;
             }
         }
         function drawSquaers(actualRow){
@@ -194,8 +197,8 @@ fetch('../../../resources/wordle/palabras.php', {
             var modal = new bootstrap.Modal(document.getElementById('miModal'));  
             var modalBody = document.querySelector('.modal-body');  
             
-            if(rowId >= 5){
-                modalBody.innerHTML=`
+            if (rowId >= 5) {
+                modalBody.innerHTML = `
                     <div class="">
                         <h1>Perdiste!</h1>
                         ${textMsg}
@@ -210,9 +213,11 @@ fetch('../../../resources/wordle/palabras.php', {
                         </div>
                     </div>
                     <button class="button">Reiniciar</button>
-                `
-            }else{
-                modalBody.innerHTML=`
+                `;
+                // Marcar estado como perdido
+                estadoNivel = false; 
+            } else {
+                modalBody.innerHTML = `
                     <div class="">
                         <h1>${textMsg}</h1>
                         <div class="text">
@@ -226,23 +231,60 @@ fetch('../../../resources/wordle/palabras.php', {
                         </div>
                     </div>
                     <button class="button">Reiniciar</button>
-                    <button class="button" id="salir">salir</button>
-                `
-
-                let returnSalir= document.querySelector("#salir")
-                returnSalir.addEventListener('click',()=>{
-                    window.location.href= '../index.html';
-                }); 
+                    <button class="button" id="salir">Salir</button>
+                `;
+                // Marcar estado como ganado
+                estadoNivel = true;
+        
+                let returnSalir = document.querySelector("#salir");
+                returnSalir.addEventListener('click', () => {
+                    window.location.href = '../index.html';
+                });
             }
-            let returnBtn= document.querySelector(".button")
-                returnBtn.addEventListener('click',()=>{
-                location.reload();
-            }); 
-
             
+            let tiempoCliente = formatoTiempo(tiempo);
+            let puntosClientes = puntacion(rowId);
 
+            fetch('../../../resources/wordle/historialNivel.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    estadoNivel,
+                    tiempo: tiempoCliente,
+                    puntos: puntosClientes
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                // Intentar procesar la respuesta como JSON
+                return response.text().then(text => {
+                    try {
+                        return JSON.parse(text); // Intentar convertir a JSON
+                    } catch {
+                        throw new Error(`No se pudo parsear JSON. Respuesta: ${text}`);
+                    }
+                });
+            })
+            .then(result => {
+                console.log('Historial guardado:', result);
+            })
+            .catch(error => {
+                console.error('Hubo un problema al guardar el historial:', error);
+            });
+            
+        
+            let returnBtn = document.querySelector(".button");
+            returnBtn.addEventListener('click', () => {
+                location.reload();
+            });
+        
             modal.show(); 
         }
+        
         
         function addPista() {
             var modal = new bootstrap.Modal(document.getElementById('miModal'));
