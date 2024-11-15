@@ -212,7 +212,7 @@ fetch('../../../resources/wordle/palabras.php', {
                             puntos: ${puntacion(rowId)}
                         </div>
                     </div>
-                    <button class="button">Reiniciar</button>
+                    
                 `;
                 // Marcar estado como perdido
                 estadoNivel = false; 
@@ -230,16 +230,19 @@ fetch('../../../resources/wordle/palabras.php', {
                             puntos: ${puntacion(rowId)}
                         </div>
                     </div>
-                    <button class="button">Reiniciar</button>
-                    <button class="button" id="salir">Salir</button>
+
                 `;
+
+                // <button class="button">Reiniciar</button>
+                // <button class="button">Reiniciar</button>
+                // <button class="button" id="salir">Salir</button>
                 // Marcar estado como ganado
                 estadoNivel = true;
         
-                let returnSalir = document.querySelector("#salir");
-                returnSalir.addEventListener('click', () => {
-                    window.location.href = '../index.html';
-                });
+                // let returnSalir = document.querySelector("#salir");
+                // returnSalir.addEventListener('click', () => {
+                //     window.location.href = '../index.html';
+                // });
             }
             
             let tiempoCliente = formatoTiempo(tiempo);
@@ -277,9 +280,9 @@ fetch('../../../resources/wordle/palabras.php', {
             });
             
         
-            let returnBtn = document.querySelector(".button");
+            let returnBtn = document.querySelector(".btn-secondary");
             returnBtn.addEventListener('click', () => {
-                location.reload();
+                location.href='../index.html';
             });
         
             modal.show(); 
