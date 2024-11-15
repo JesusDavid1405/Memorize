@@ -64,158 +64,406 @@ INSERT INTO `palabraNivel` (`palabraId`, `nivelId`) VALUES
 (77, 3), (78, 3), (79, 3), (80, 3);
 
 
--- Arena
+INSERT INTO `pista` (`palabraId`, `pista`) VALUES
+    -- Pistas para "arena"
+    (1, 'Material fino que cubre las playas y costas.'),
+    (1, 'Componente esencial de las playas.'),
+    (1, 'Puede estar seca o mojada por el agua del mar.'),
+
+    -- Pistas para "marea"
+    (2, 'Movimiento regular de subida y bajada del mar.'),
+    (2, 'Causado por la atracción de la luna.'),
+    (2, 'Afecta la altura del agua en las costas.'),
+
+    -- Pistas para "barco"
+    (3, 'Embarcación que navega en el agua.'),
+    (3, 'Medio de transporte marítimo.'),
+    (3, 'Puede ser grande o pequeño y tiene un casco.'),
+
+    -- Pistas para "brisa"
+    (4, 'Viento suave que se siente cerca del mar.'),
+    (4, 'Sopla en la costa y refresca.'),
+    (4, 'Común en las tardes junto al mar.'),
+
+    -- Pistas para "babor"
+    (5, 'Lado izquierdo de una embarcación mirando hacia la proa.'),
+    (5, 'Contrario a estribor en un barco.'),
+    (5, 'Se usa para dirección en navegación.'),
+
+    -- Pistas para "nadar"
+    (6, 'Actividad de moverse en el agua.'),
+    (6, 'Se practica en el mar, ríos o piscinas.'),
+    (6, 'Involucra movimientos coordinados de brazos y piernas.'),
+
+    -- Pistas para "timon"
+    (7, 'Mecanismo para dirigir un barco.'),
+    (7, 'Utilizado por el capitán o timonel.'),
+    (7, 'Controla la dirección de la nave.'),
+
+    -- Pistas para "costa"
+    (8, 'Línea donde el mar se encuentra con la tierra.'),
+    (8, 'Zona de transición entre tierra y océano.'),
+    (8, 'Área común para turistas y pescadores.'),
+
+    -- Pistas para "cofre"
+    (9, 'Caja donde se guardan tesoros.'),
+    (9, 'Objeto buscado por piratas.'),
+    (9, 'Suele estar lleno de monedas y joyas.'),
+
+    -- Pistas para "faros"
+    (10, 'Estructuras que guían a los barcos con luz.'),
+    (10, 'Se encuentran en la costa o islas.'),
+    (10, 'Emiten destellos para orientar a los navegantes.'),
+
+    -- Pistas para "islas"
+    (11, 'Terrenos rodeados completamente de agua.'),
+    (11, 'Habitadas o deshabitadas, grandes o pequeñas.'),
+    (11, 'Destinos turísticos y sitios de naturaleza aislada.'),
+
+    -- Pistas para "remos"
+    (12, 'Palos alargados para impulsar botes.'),
+    (12, 'Se usan en botes pequeños.'),
+    (12, 'Movidos por fuerza humana para avanzar.'),
+
+    -- Pistas para "bogar"
+    (13, 'Acción de remar para mover un bote.'),
+    (13, 'Se practica en deportes acuáticos.'),
+    (13, 'Implica coordinación y fuerza en el agua.'),
+
+    -- Pistas para "carga"
+    (14, 'Mercancía transportada por barco.'),
+    (14, 'Puede ser de diversos tipos y tamaños.'),
+    (14, 'Incluye alimentos, productos, y materiales.'),
+
+    -- Pistas para "sedal"
+    (15, 'Hilo utilizado para pescar.'),
+    (15, 'Es parte de la caña de pescar.'),
+    (15, 'Suele ser resistente y delgado.'),
+
+    -- Pistas para "pesca"
+    (16, 'Actividad de capturar peces en el mar.'),
+    (16, 'Se realiza con redes o cañas.'),
+    (16, 'Puede ser recreativa o comercial.'),
+
+    -- Pistas para "arpon"
+    (17, 'Instrumento afilado usado para cazar peces grandes.'),
+    (17, 'Es lanzado o disparado bajo el agua.'),
+    (17, 'Utilizado por buzos y pescadores.'),
+
+    -- Pistas para "peñon"
+    (18, 'Gran roca que sobresale del agua.'),
+    (18, 'Se encuentra cerca de la costa o en el mar.'),
+    (18, 'Puede ser un punto de referencia para barcos.'),
+
+    -- Pistas para "pareo"
+    (19, 'Prenda ligera que se usa en la playa.'),
+    (19, 'Se usa sobre el traje de baño.'),
+    (19, 'Popular en zonas de playa y climas cálidos.'),
+
+    -- Pistas para "oeste"
+    (20, 'Uno de los puntos cardinales.'),
+    (20, 'Dirección opuesta al este.'),
+    (20, 'Es hacia donde se pone el sol.'),
+
+    -- Pistas para "algas"
+    (21, 'Plantas marinas que flotan en el agua.'),
+    (21, 'Son alimento para muchos peces.'),
+    (21, 'Se encuentran en el fondo o superficie del mar.'),
+
+    -- Pistas para "presa"
+    (22, 'Animal que es cazado por otros.'),
+    (22, 'Es el objetivo en la pesca o caza.'),
+    (22, 'Suele ser alimento para otros animales.'),
+
+    -- Pistas para "ancla"
+    (23, 'Objeto que mantiene el barco en su lugar.'),
+    (23, 'Se lanza al agua para detener una embarcación.'),
+    (23, 'Pesado y de metal, con forma de gancho.'),
+
+    -- Pistas para "canal"
+    (24, 'Paso estrecho de agua entre tierras.'),
+    (24, 'Utilizado para la navegación de barcos.'),
+    (24, 'Conecta dos cuerpos de agua mayores.'),
+
+    -- Pistas para "coral"
+    (25, 'Estructura marina formada por pólipos.'),
+    (25, 'Base de ecosistemas llamados arrecifes.'),
+    (25, 'Hogar para numerosos animales marinos.'),
+
+    -- Pistas para "cañon"
+    (26, 'Arma antigua que dispara balas o proyectiles.'),
+    (26, 'Utilizado para la defensa de barcos y puertos.'),
+    (26, 'Se dispara con pólvora desde barcos o fortalezas.'),
+
+    -- Pistas para "bahía"
+    (27, 'Entrada de mar en la costa, de forma curva.'),
+    (27, 'Zona de protección natural para barcos.'),
+    (27, 'Lugar donde se pueden anclar embarcaciones.'),
+
+    -- Pistas para "playa"
+    (28, 'Zona de arena junto al mar.'),
+    (28, 'Frecuentada por turistas y bañistas.'),
+    (28, 'Lugar para relajarse y disfrutar del mar.'),
+
+    -- Pistas para "balsa"
+    (29, 'Embarcación pequeña y ligera.'),
+    (29, 'Puede estar hecha de madera o materiales flotantes.'),
+    (29, 'Se usa en rescates o como medio de emergencia.'),
+
+    -- Pistas para "krill"
+    (30, 'Pequeño crustáceo marino.'),
+    (30, 'Principal alimento de algunas ballenas.'),
+    (30, 'Es esencial en la cadena alimentaria del océano.'),
+
+    -- Pistas para "norte"
+    (31, 'Punto cardinal que indica la dirección hacia arriba.'),
+    (31, 'Usado para orientarse en el mapa.'),
+    (31, 'Contrario al sur.'),
+
+    -- Pistas para "golfo"
+    (32, 'Extensión del mar rodeada por tierra.'),
+    (32, 'Más grande que una bahía.'),
+    (32, 'Famoso en lugares como el Golfo de México.');
+
 INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES
-(1, 'Son pequeñas masas de tierra rodeadas por agua.'), -- 'islas'
-(1, 'Algunas islas son tropicales y tienen playas.'),
-(1, 'Las islas pueden formar archipiélagos.'),
+    -- Pistas para "pirata"
+    (33, 'Navegante que suele buscar tesoros en alta mar.'),
+    (33, 'A menudo lleva un parche en el ojo.'),
+    (33, 'Conocido por sus saqueos y aventuras marinas.'),
 
-(2, 'Se usan para mover una embarcación en el agua.'),  -- 'remos'
-(2, 'Tienen una parte plana que se hunde en el agua.'),
-(2, 'Son herramientas manuales, opuestas a los motores.'),
+    -- Pistas para "viento"
+    (34, 'Impulsa las velas de un barco y facilita su movimiento.'),
+    (34, 'Puede ser suave o fuerte, según el clima.'),
+    (34, 'Es fundamental para la navegación a vela.'),
 
-(3, 'Es un verbo que significa navegar con remos.'),  -- 'bogar'
-(3, 'Se puede hacer en canoas o botes pequeños.'),
-(3, 'Requiere esfuerzo físico para mover la embarcación.'),
+    -- Pistas para "galeon"
+    (35, 'Embarcación grande y antigua de madera.'),
+    (35, 'Solía llevar cañones y tesoros.'),
+    (35, 'Usado en exploraciones y comercio en siglos pasados.'),
 
-(4, 'Se refiere al peso o volumen que se transporta.'), -- 'carga'
-(4, 'Puede ser cargada en un barco, camión o avión.'),
-(4, 'Es un término común en logística y transporte.'),
+    -- Pistas para "tesoro"
+    (36, 'Objeto de gran valor escondido o enterrado.'),
+    (36, 'Buscado por piratas y aventureros.'),
+    (36, 'Puede estar guardado en un cofre bajo tierra o en el mar.'),
 
-(5, 'Es un hilo fuerte usado para pescar.'), -- 'sedal'
-(5, 'Generalmente, está hecho de nylon o materiales sintéticos.'),
-(5, 'Se conecta al anzuelo en las cañas de pescar.'),
+    -- Pistas para "sirena"
+    (37, 'Mitad mujer, mitad pez, según la mitología.'),
+    (37, 'Se dice que canta para atraer a los marineros.'),
+    (37, 'Habita en las profundidades del océano.'),
 
-(6, 'Es la actividad de capturar peces.'), -- 'pesca'
-(6, 'Se puede realizar con redes, anzuelos o trampas.'),
-(6, 'Es una fuente de alimento para muchas culturas.'),
+    -- Pistas para "oceano"
+    (38, 'Inmensa masa de agua salada que cubre la Tierra.'),
+    (38, 'Hogar de especies marinas y zonas abisales.'),
+    (38, 'Lugar de grandes exploraciones marítimas.'),
 
-(7, 'Es un arma o herramienta utilizada para pescar grandes animales marinos.'), -- 'arpon'
-(7, 'Tiene una punta afilada que se clava en el objetivo.'),
-(7, 'Se usa en deportes acuáticos como la caza submarina.'),
+    -- Pistas para "puerto"
+    (39, 'Lugar donde los barcos cargan y descargan mercancías.'),
+    (39, 'Conecta las rutas marítimas con las ciudades.'),
+    (39, 'Punto de anclaje y descanso para los barcos.'),
 
-(8, 'Es una gran roca que sobresale de la tierra o el mar.'), -- 'peñon'
-(8, 'A menudo se encuentra en costas rocosas o islas.'),
-(8, 'Suelen ser peligrosos para la navegación.'),
+    -- Pistas para "triton"
+    (40, 'Mitad hombre, mitad pez, figura mitológica.'),
+    (40, 'Representa la fuerza y el misterio del mar.'),
+    (40, 'Suele portar un tridente en su representación.'),
 
-(9, 'Es una prenda de ropa típica en zonas tropicales.'), -- 'pareo'
-(9, 'Generalmente es de tela ligera y se usa en la playa.'),
-(9, 'Se puede envolver alrededor del cuerpo como falda o vestido.'),
+    -- Pistas para "rancho"
+    (41, 'Refugio para descansar en largos viajes marítimos.'),
+    (41, 'Lugar para comer y reponer fuerzas en alta mar.'),
+    (41, 'Sitio de descanso en condiciones sencillas.'),
 
-(10, 'Es uno de los puntos cardinales.'), -- 'oeste'
-(10, 'Se opone al este en la brújula.'),
-(10, 'El sol se pone en esta dirección.'),
+    -- Pistas para "averia"
+    (42, 'Falla técnica en una embarcación.'),
+    (42, 'Puede ser causada por tormentas o falta de mantenimiento.'),
+    (42, 'Requiere reparaciones para continuar el viaje.'),
 
-(11, 'Son plantas marinas que crecen en el agua.'), -- 'algas'
-(11, 'Algunas algas se usan como alimento en Asia.'),
-(11, 'Pueden ser de diferentes colores, como verde, roja o marrón.'),
+    -- Pistas para "deriva"
+    (43, 'Cuando un barco se desplaza sin rumbo fijo.'),
+    (43, 'Situación peligrosa si no se tiene control.'),
+    (43, 'Se mueve por la corriente sin dirección.'),
 
-(12, 'Es una estructura que retiene agua, como en un río.'), -- 'presa'
-(12, 'También puede referirse a un animal capturado durante la caza.'),
-(12, 'Se utiliza para controlar el flujo de agua y generar energía.'),
+    -- Pistas para "espuma"
+    (44, 'Aparece en la superficie del mar cuando el agua se agita.'),
+    (44, 'Común en olas rompientes y mar movido.'),
+    (44, 'Se ve como pequeñas burbujas en el agua.'),
 
-(13, 'Se usa para mantener una embarcación en su lugar.'), -- 'ancla'
-(13, 'Generalmente está hecha de metal y se lanza al agua.'),
-(13, 'Se utiliza para evitar que el barco se desplace por el viento o las corrientes.'),
+    -- Pistas para "aletas"
+    (45, 'Extremidades de peces y animales marinos.'),
+    (45, 'Permiten moverse y estabilizarse en el agua.'),
+    (45, 'Fundamentales para nadar y cambiar de dirección.'),
 
-(14, 'Es una vía artificial de agua que conecta dos cuerpos acuáticos.'), -- 'canal'
-(14, 'A menudo se usa para navegación y transporte de mercancías.'),
-(14, 'Los canales son comunes en países bajos como los Países Bajos.'),
+    -- Pistas para "estela"
+    (46, 'Rastro de agua que deja un barco al pasar.'),
+    (46, 'Marca el recorrido de una embarcación.'),
+    (46, 'Es visible en el agua detrás del barco.'),
 
-(15, 'Es un organismo marino que forma arrecifes.'), -- 'coral'
-(15, 'Los corales son muy importantes para los ecosistemas marinos.'),
-(15, 'Tienen colores brillantes y a menudo se asocian con la vida marina diversa.'),
+    -- Pistas para "laguna"
+    (47, 'Pequeño cuerpo de agua salada o dulce cerca del mar.'),
+    (47, 'Suele estar rodeado de vegetación.'),
+    (47, 'Un ecosistema rico en flora y fauna acuática.'),
 
-(16, 'Es una formación geológica formada por la erosión del agua.'), -- 'cañon'
-(16, 'Puede ser profundo y estrecho, con paredes rocosas empinadas.'),
-(16, 'Algunos cañones, como el Gran Cañón, son famosos por su belleza.'),
+    -- Pistas para "islote"
+    (48, 'Isla pequeña y rocosa sin habitantes.'),
+    (48, 'Lugar de descanso para aves y fauna marina.'),
+    (48, 'Emergencia de tierra en medio del mar.'),
 
-(17, 'Es una entrada de mar rodeada parcialmente por tierra.'), -- 'bahía'
-(17, 'Generalmente es más tranquila que el mar abierto.'),
-(17, 'Las bahías a menudo se utilizan como puertos naturales.'),
+    -- Pistas para "concha"
+    (49, 'Cubierta dura que protege ciertos animales marinos.'),
+    (49, 'Se encuentra en la playa tras el oleaje.'),
+    (49, 'Es la casa de moluscos como los caracoles.'),
 
-(18, 'Es una franja de tierra cubierta de arena junto al mar.'), -- 'playa'
-(18, 'A menudo es un destino turístico popular.'),
-(18, 'Las playas pueden ser de arena fina o gruesa, dependiendo del lugar.'),
+    -- Pistas para "medusa"
+    (50, 'Animal marino transparente con tentáculos.'),
+    (50, 'Puede picar si se toca.'),
+    (50, 'Flota en el agua y tiene forma de campana.'),
 
-(19, 'Es una estructura flotante hecha de madera o materiales similares.'), -- 'balsa'
-(19, 'Se utiliza para cruzar ríos o como medio de transporte improvisado.'),
-(19, 'Las balsas también son comunes en actividades recreativas en el agua.'),
+    -- Pistas para "abisal"
+    (51, 'Zona oscura y profunda del océano.'),
+    (51, 'Allí habitan criaturas extrañas y adaptadas.'),
+    (51, 'Áreas de gran presión y sin luz.'),
 
-(20, 'Es un pequeño crustáceo marino.'), -- 'krill'
-(20, 'Forma una parte importante de la dieta de ballenas y focas.'),
-(20, 'Se encuentra en grandes cantidades en los océanos.'),
+    -- Pistas para "calado"
+    (52, 'Profundidad de inmersión de un barco en el agua.'),
+    (52, 'Indica cuánto del barco está bajo el agua.'),
+    (52, 'Importante para evitar encallamientos.'),
 
-(21, 'Es uno de los puntos cardinales.'), -- 'norte'
-(21, 'Se opone al sur en la brújula.'),
-(21, 'En el hemisferio norte, es la dirección donde se encuentra el Polo Norte.'),
+    -- Pistas para "goleta"
+    (53, 'Barco pequeño con varias velas y casco estrecho.'),
+    (53, 'Usado en comercio y exploración costera.'),
+    (53, 'Embarcación ligera y rápida en el mar.'),
 
-(22, 'Es una gran extensión de mar rodeada parcialmente por tierra.'), -- 'golfo'
-(22, 'Los golfos suelen ser más grandes que las bahías.'),
-(22, 'El Golfo de México es uno de los más conocidos a nivel mundial.');
+    -- Pistas para "orilla"
+    (54, 'Límite donde el mar se encuentra con la tierra.'),
+    (54, 'Lugar donde las olas rompen.'),
+    (54, 'Zona de paseo y esparcimiento costero.'),
 
--- Faros
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(10, 'Guía a los barcos en la oscuridad'), 
-(10, 'Suele estar en torres altas cerca del mar'), 
-(10, 'Tiene una luz giratoria potente');
+    -- Pistas para "muelle"
+    (55, 'Estructura donde atracan los barcos.'),
+    (55, 'Punto de embarque y desembarque en el puerto.'),
+    (55, 'Permite acceso fácil a embarcaciones.'),
 
--- Pirata
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(33, 'Navegante que busca tesoros en el mar'), 
-(33, 'Lleva parche en el ojo y a veces loro en el hombro'), 
-(33, 'Famoso por saquear y decir "¡Argh!"');
+    -- Pistas para "resaca"
+    (56, 'Corriente que regresa al mar después de que la ola rompe.'),
+    (56, 'Puede ser peligrosa para nadadores.'),
+    (56, 'Se siente como una succión hacia el océano.'),
 
--- Viento
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(34, 'Movimiento del aire que impulsa las velas'), 
-(34, 'Sientes su fuerza cuando estás en el mar'), 
-(34, 'Es responsable de las olas y las tormentas');
+    -- Pistas para "marina"
+    (57, 'Relativo al mar o a la navegación.'),
+    (57, 'También puede referirse a una fuerza naval.'),
+    (57, 'Conjunto de embarcaciones y estructura portuaria.'),
 
--- Galeon
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(35, 'Barco antiguo, usado en exploraciones'), 
-(35, 'Tiene velas grandes y madera fuerte'), 
-(35, 'Nave de los descubridores del Nuevo Mundo');
+    -- Pistas para "ostras"
+    (58, 'Moluscos que viven en conchas y producen perlas.'),
+    (58, 'Se cultivan en el mar para consumo.'),
+    (58, 'Suelen encontrarse en aguas saladas poco profundas.');
 
--- Tesoro
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(36, 'Lo que buscan los piratas y exploradores'), 
-(36, 'Suele estar guardado en un cofre escondido'), 
-(36, 'Contiene oro, joyas o riquezas valiosas');
+INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES
+    -- Pistas para "olas"
+    (59, 'Formaciones de agua que se desplazan hacia la costa.'),
+    (59, 'Se generan por el viento y afectan a la navegación.'),
+    (59, 'Rompen en la orilla y generan espuma.'),
 
--- Sirena
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(37, 'Criatura mitad pez, mitad humana'), 
-(37, 'Canta para atraer a los marineros'), 
-(37, 'Aparece en historias y leyendas del mar');
+    -- Pistas para "vela"
+    (60, 'Elemento que impulsa al barco con la fuerza del viento.'),
+    (60, 'Hecha de tela y situada en el mástil.'),
+    (60, 'Fundamental para la navegación sin motor.'),
 
--- Olas
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(59, 'Formaciones de agua en movimiento'), 
-(59, 'Rompen en la orilla y son constantes'), 
-(59, 'Las surfistas las adoran');
+    -- Pistas para "isla"
+    (61, 'Tierra rodeada de agua por todos sus lados.'),
+    (61, 'Puede ser pequeña o grande y habitada o desierta.'),
+    (61, 'Lugar de refugio para marineros en naufragio.'),
 
--- Vela
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(60, 'Impulsa los barcos con viento'), 
-(60, 'Hecha de tela, se despliega en los mástiles'), 
-(60, 'Fundamental en la navegación sin motor');
+    -- Pistas para "faro"
+    (62, 'Torre que guía a los barcos en la noche.'),
+    (62, 'Emite luz para evitar que encallen en la costa.'),
+    (62, 'Símbolo de seguridad en la navegación.'),
 
--- Isla
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(61, 'Territorio rodeado de agua'), 
-(61, 'Suele ser pequeño y solitario'), 
-(61, 'Algunos la buscan como refugio en el mar');
+    -- Pistas para "proa"
+    (63, 'Parte delantera de una embarcación.'),
+    (63, 'Es la parte que enfrenta las olas en la navegación.'),
+    (63, 'El frente del barco, opuesta a la popa.'),
 
--- Faro
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(62, 'Emite una luz para guiar a los navegantes'), 
-(62, 'Está en torres cercanas a la costa'), 
-(62, 'Funciona para evitar choques en la noche');
+    -- Pistas para "popa"
+    (64, 'Parte trasera de una embarcación.'),
+    (64, 'Donde se suelen colocar los motores.'),
+    (64, 'Opuesta a la proa en el barco.'),
 
--- Proa
-INSERT INTO `pista` (`palabraNivelId`, `pista`) VALUES 
-(63, 'Parte frontal de una embarcación'), 
-(63, 'Va delante en la dirección del viaje'), 
-(63, 'Lo opuesto de la popa en el barco');
+    -- Pistas para "mapa"
+    (65, 'Guía visual utilizada para la navegación.'),
+    (65, 'Representa la geografía de tierras y mares.'),
+    (65, 'Herramienta esencial para marineros y exploradores.'),
+
+    -- Pistas para "nudo"
+    (66, 'Unidad de velocidad en la navegación.'),
+    (66, 'También se refiere a la forma de atar cuerdas.'),
+    (66, 'Fundamental para maniobras de amarre y anclaje.'),
+
+    -- Pistas para "lino"
+    (67, 'Material utilizado para hacer velas y cuerdas.'),
+    (67, 'Fibra resistente y ligera.'),
+    (67, 'Usado en la industria marítima desde tiempos antiguos.'),
+
+    -- Pistas para "azul"
+    (68, 'Color asociado con el mar y el cielo.'),
+    (68, 'Evoca tranquilidad y profundidad.'),
+    (68, 'El color de los océanos en días despejados.'),
+
+    -- Pistas para "boya"
+    (69, 'Flotador que marca zonas específicas en el agua.'),
+    (69, 'Sirve como señal para los navegantes.'),
+    (69, 'Se mantiene a flote con un anclaje en el fondo.'),
+
+    -- Pistas para "cabo"
+    (70, 'Accidente geográfico que se adentra en el mar.'),
+    (70, 'También se refiere a una cuerda gruesa en náutica.'),
+    (70, 'Es un punto de referencia importante para la navegación.'),
+
+    -- Pistas para "lago"
+    (71, 'Cuerpo de agua rodeado de tierra, generalmente de agua dulce.'),
+    (71, 'Suele estar más tranquilo que el mar.'),
+    (71, 'Es un lugar de recreo y pesca.'),
+
+    -- Pistas para "fosa"
+    (72, 'Gran depresión en el fondo marino.'),
+    (72, 'Puede alcanzar profundidades extremas.'),
+    (72, 'Hogar de especies adaptadas a alta presión y oscuridad.'),
+
+    -- Pistas para "este"
+    (73, 'Punto cardinal opuesto al oeste.'),
+    (73, 'Dirección en la que sale el sol.'),
+    (73, 'Usado como referencia en la navegación y mapas.'),
+
+    -- Pistas para "yate"
+    (74, 'Embarcación de lujo utilizada para recreación.'),
+    (74, 'Suele tener cabinas y comodidades para los pasajeros.'),
+    (74, 'Generalmente es impulsado por motores.'),
+
+    -- Pistas para "remo"
+    (75, 'Pieza larga usada para propulsar botes a mano.'),
+    (75, 'Fundamental en pequeñas embarcaciones.'),
+    (75, 'Se mueve en el agua para avanzar en la dirección deseada.'),
+
+    -- Pistas para "lodo"
+    (76, 'Mezcla de tierra y agua, encontrada en zonas pantanosas.'),
+    (76, 'Puede dificultar el movimiento en la costa o ríos.'),
+    (76, 'Es común en zonas de baja marea y costas.') ,
+
+    -- Pistas para "pico"
+    (77, 'Parte puntiaguda de una montaña o formación rocosa.'),
+    (77, 'Lugar de avistamiento para barcos en el horizonte.'),
+    (77, 'Puede estar rodeado de acantilados y mar.'),
+
+    -- Pistas para "roca"
+    (78, 'Formación sólida en el mar o en la costa.'),
+    (78, 'Puede ser un peligro para la navegación.'),
+    (78, 'A menudo, las olas rompen contra ella.'),
+
+    -- Pistas para "agua"
+    (79, 'Elemento vital que cubre la mayoría de la Tierra.'),
+    (79, 'Fundamental para la vida marina y la navegación.'),
+    (79, 'Puede ser dulce o salada según su origen.'),
+
+    -- Pistas para "bojo"
+    (80, 'Parte inferior de una embarcación, el casco.'),
+    (80, 'Es la zona que está en contacto con el agua.'),
+    (80, 'Debe ser resistente para soportar el peso y el movimiento.');
+

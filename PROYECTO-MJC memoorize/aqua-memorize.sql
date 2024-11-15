@@ -101,7 +101,7 @@ CREATE TABLE `palabraNivel` (
 
 CREATE TABLE `pista` (
 	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
-	`palabraNivelId` INTEGER NOT NULL,
+	`palabraId` INTEGER NOT NULL,
 	`pista` TEXT(65535) NOT NULL,
 	PRIMARY KEY(`id`)
 );
@@ -173,7 +173,7 @@ ALTER TABLE `palabraNivel`
 ADD FOREIGN KEY(`nivelId`) REFERENCES `niveles`(`id`)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 ALTER TABLE `pista`
-ADD FOREIGN KEY(`palabraNivelId`) REFERENCES `palabraNivel`(`id`)
+ADD FOREIGN KEY(`palabraId`) REFERENCES `palabra`(`id`)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 ALTER TABLE `rondas`
 ADD FOREIGN KEY(`salaId`) REFERENCES `sala`(`id`)
