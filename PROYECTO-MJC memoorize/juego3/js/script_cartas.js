@@ -277,7 +277,7 @@ const showScoreModal = (roundScore) => {
                     <div class="round-info">
                         <p>Ronda ${state.currentRound} de ${state.maxRounds}</p>
                         ${state.dificultad === 'facil' ? `
-                            <p>Cartas en esta ronda: ${totalCards} (${totalCards/2} pares)</p>
+                            <p>Cartas en esta ronda: ${totalCards}</p>
                             <p>Tablero: ${largo}x${ancho}</p>
                         ` : ''}
                     </div>
@@ -312,13 +312,16 @@ const showScoreModal = (roundScore) => {
                 </div>
 
                 ${state.currentRound < state.maxRounds ? `
-                    <button id="siguienteRonda" class="next-round-btn">Siguiente Ronda</button>
+                    <div class="countdown">
+                        <p>Siguiente ronda en <span id="countdown">5</span> segundos...</p>
+                    </div>
                 ` : `
                     <div class="game-over-message">
                         <h3>¡Juego Terminado!</h3>
                         <p>Mejor puntuación: ${bestScore.cumulativeScore} puntos</p>
                         <p>Conseguida por: ${bestScore.playerName}</p>
                         <p>En la ronda: ${bestScore.currentRound}</p>
+                        <a href="../multijugador/sala/index.html" class="exit-game-btn" id="exitGame">Salir</a>
                     </div>
                 `}
             </div>
@@ -330,7 +333,6 @@ const showScoreModal = (roundScore) => {
 
     const saveScoreBtn = document.getElementById('saveScore');
     const playerNameInput = document.getElementById('playerName');
-    const siguienteRonda = document.getElementById('siguienteRonda');
 
     if (saveScoreBtn && playerNameInput) {
         saveScoreBtn.addEventListener('click', () => {
@@ -341,6 +343,10 @@ const showScoreModal = (roundScore) => {
                 saveScoreBtn.disabled = true;
                 playerNameInput.disabled = true;
                 updateScoreTableInModal();
+                
+                if (state.currentRound < state.maxRounds) {
+                    startCountdown();
+                }
             } else {
                 alert('Por favor, ingresa tu nombre');
             }
@@ -348,17 +354,39 @@ const showScoreModal = (roundScore) => {
     } else if (state.currentPlayerName) {
         saveScore(state.currentPlayerName, roundScore);
         updateScoreTableInModal();
+        
+        if (state.currentRound < state.maxRounds) {
+            startCountdown();
+        }
     }
-
-    if (siguienteRonda) {
-        siguienteRonda.addEventListener('click', async () => {
+      if (exitGameBtn) {
+        exitGameBtn.addEventListener('click', () => {
             document.querySelector('.score-modal').remove();
-            state.currentRound++;
-            await resetGame();
+            // Aquí puedes agregar la lógica para volver al menú principal o reiniciar el juego
+            
         });
     }
 };
 
+// Nueva función para manejar la cuenta regresiva
+const startCountdown = () => {
+    const countdownElement = document.getElementById('countdown');
+    let timeLeft = 5;
+    
+    const countdownInterval = setInterval(() => {
+        timeLeft--;
+        if (countdownElement) {
+            countdownElement.textContent = timeLeft;
+        }
+        
+        if (timeLeft <= 0) {
+            clearInterval(countdownInterval);
+            document.querySelector('.score-modal').remove();
+            state.currentRound++;
+            resetGame();
+        }
+    }, 1000);
+};
 // Función para actualizar la tabla de puntuaciones en el modal
 const updateScoreTableInModal = () => {
     const scoreTableBody = document.querySelector('.score-modal .score-table tbody');
