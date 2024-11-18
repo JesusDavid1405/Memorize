@@ -1,46 +1,62 @@
 <?php 
 
-include_once('../conexion/conexion.php');
+    include_once('../conexion/conexion.php');
 
-session_start();
+    session_start();
 
-$usuarioId = $_SESSION['id'];
-$nivelId = $_SESSION['nivelId'];
+    $usuarioId = $_SESSION['id'];
+    $nivelId = $_SESSION['nivelId'];
 
-$input = file_get_contents('php://input');
-$data = json_decode($input, true);
+    $input = file_get_contents('php://input');
+    $data = json_decode($input, true);
 
-$response = [];
+    $response = [];
 
-if ($data && isset($data['estadoNivel']) && isset($data['correo']) && isset($data['contraseña'])) {
+    if ($data && isset($data['estadoNivel']) && isset($data['tiempo']) && isset($data['puntos'])) {
 
-    $estadoNivel = $data['estadoNivel'];
-    $tiempo = $data['tiempo'];
-    $puntos = $data['puntos'];
-    $juegoId=2;
-    
-    $database = new Database();
-    $conn = $database->connect();
+        $estadoNivel = $data['estadoNivel'];
+        $tiempo = $data['tiempo'];
+        $puntos = $data['puntos'];
+        $juegoId=2;
 
-    if ($conn) {
-        $query="
-        INSERT INTO `historialniveles` 
-        (`usuarioId`, `juegoId`, `nivelId`, `puntos`, `tiempo`,`estadoNivel`) 
-        VALUES (?, ?, ?, ?, ?, ?, ?);
-        ";
-        $stmtNick = $conn->prepare($query);
-        $stmtNick->bind_param("iiiisi", 
-            $usuarioId,
-            $juegoId,
-            $nivelId,
-            $puntos,
+        $response=[
+            $estadoNivel,
             $tiempo,
-            $estadoNivel
+            $puntos,
+            $juegoId
+        ];
+        
+        $database = new Database();
+        $conn = $database->connect();
 
-        );
-        $stmtNick->execute();
+        if ($conn) {
+            $query="
+            INSERT INTO `historialniveles` 
+            (`usuarioId`, `juegoId`, `nivelId`, `puntos`, `tiempo`,`estadoNivel`) 
+            VALUES (?, ?, ?, ?, ?, ?);
+            ";
+            $stmtNick = $conn->prepare($query);
+            $stmtNick->bind_param("iiiisi", 
+                $usuarioId,
+                $juegoId,
+                $nivelId,
+                $puntos,
+                $tiempo,
+                $estadoNivel
+            );
+            $stmtNick->execute();
+
+            $response=['nivel registrado con exito'];
+        }else{
+            $response=['error al registrar'];
+        }
+        
+    }else{
+        $response=['datos enviados incorrectamente'];
     }
-    
-}
+
+
+    header('Content-Type: application/json');
+    echo json_encode($response);
 
 ?>

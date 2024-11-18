@@ -34,11 +34,12 @@ fetch('../../../resources/wordle/palabras.php', {
             document.getElementById('contador').innerHTML = formatoTiempo(tiempo); 
         
             if (tiempo <= 0) {
-                clearInterval(contadorTiempo);  // Detener el temporizador
+                clearInterval(contadorTiempo);
+                estadoNivel = false; // Asegurar que el estado del nivel es falso al terminar el tiempo
                 mostrarModal("¡El tiempo ha terminado!");  // Mostrar el modal de fin de juego
-                rowId=0;
             }
         }, 1000);
+        
         
 
         // Iterar sobre las palabras recibidas
@@ -118,6 +119,8 @@ fetch('../../../resources/wordle/palabras.php', {
                                 estadoNivel = true
                                 
                                 return
+                            }else{
+                                estadoNivel = false
                             }
                             //crear una linea
                             let actualRow=createRow()
@@ -209,13 +212,14 @@ fetch('../../../resources/wordle/palabras.php', {
                             intentos: ${rowId}
                         </div>
                         <div class="text">
-                            puntos: ${puntacion(rowId)}
+                            puntos: ${puntacion(rowId,tiempo)}
                         </div>
                     </div>
                     
                 `;
                 // Marcar estado como perdido
                 estadoNivel = false; 
+
             } else {
                 modalBody.innerHTML = `
                     <div class="">
@@ -227,7 +231,7 @@ fetch('../../../resources/wordle/palabras.php', {
                             intentos: ${rowId}
                         </div>
                         <div class="text">
-                            puntos: ${puntacion(rowId)}
+                            puntos: ${puntacion(rowId,tiempo)}
                         </div>
                     </div>
 
@@ -244,9 +248,11 @@ fetch('../../../resources/wordle/palabras.php', {
                 //     window.location.href = '../index.html';
                 // });
             }
+
+            console.log(estadoNivel)
             
             let tiempoCliente = formatoTiempo(tiempo);
-            let puntosClientes = puntacion(rowId);
+            let puntosClientes = puntacion(rowId,tiempo);
 
             fetch('../../../resources/wordle/historialNivel.php', {
                 method: 'POST',
@@ -327,25 +333,25 @@ function formatoTiempo(segundos) {
 
     return tiempoPantalla; 
 }
-function puntacion(intentos) {
+function puntacion(intentos, tiempo) {
     const puntosMaximo = 1000;
     const tiempoMaximo = 30;
-    const tiempoRestante = tiempoMaximo - tiempo;  // Tiempo máximo en segundos (o el valor que desees)
-    let puntos;
-    let tiempoBonus 
 
-    // Penalización por intentos
-    let penalizacionIntentos = 0;
-    if (intentos >= 5) {
-        penalizacionIntentos = 0;
-        tiempoBonus= 0
-    } else {
-        penalizacionIntentos = puntosMaximo / intentos;
-        tiempoBonus = (tiempoRestante / tiempoMaximo) * puntosMaximo;
+    if (intentos < 1 || tiempo < 0 || tiempo > tiempoMaximo) {
+        throw new Error("Parámetros inválidos: asegúrate de que intentos >= 1 y 0 <= tiempo <= tiempoMaximo.");
     }
 
-    // Los puntos finales dependen de la penalización por intentos y el bono por tiempo
-    puntos = Math.max(0, penalizacionIntentos + tiempoBonus);  // Evitar que los puntos sean negativos
+    if (tiempo === 0) {
+        return 0;
+    }
 
-    return puntos;
+    let penalizacionIntentos = puntosMaximo / intentos;
+
+    let tiempoBonus = (tiempo / tiempoMaximo) * puntosMaximo;
+
+    let puntos = Math.max(0, penalizacionIntentos + tiempoBonus);
+
+    return Math.round(puntos);
 }
+
+    
