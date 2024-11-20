@@ -1,7 +1,0 @@
-primero esto es el token
-ngrok config add-authtoken 2oTkCvuKMR1ayLqKM9Zr7jUqRWh_4aY1indcMR3593yorhCSv
-
-para hace que corra: ngrok http http://localhost:3000
-
-
-grCIs hdpt-
