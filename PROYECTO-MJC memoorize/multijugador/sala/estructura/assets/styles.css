@@ -1,25 +1,581 @@
 body {
-    font-family: Arial, sans-serif;
+    background-image: url(../../../../img/fondo4.gif);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+    background-repeat: no-repeat;
+    animation: puffIn 1s ease-in-out
+}
+#login-section {
+    width: 230px; /* Tamaño mayor para mayor comodidad */
+    padding: 20px; /* Agregar espacio interior */
+    background: radial-gradient(circle, rgba(214, 214, 16, 0.3) 0%, rgba(16, 137, 250, 0.5) 100%);
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(0, 255, 76, 0.5), 0 0 40px rgba(0, 255, 255, 0.6);
+    font-family: 'Pirata One', cursive;
+    color: #fff; /* Texto blanco para mejor contraste */
+    text-align: center; /* Centrar el texto */
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+#login-section:hover {
+    transform: scale(1.05); /* Escala al pasar el ratón */
+    box-shadow: 0 0 25px rgba(255, 166, 0, 0.8), inset 0 0 30px rgba(0, 255, 76, 0.5), 0 0 60px rgba(0, 255, 255, 0.8);
+    background: radial-gradient(circle, rgba(214, 214, 16, 0.6) 0%, rgba(16, 137, 250, 0.6) 100%);
+}
+
+/* Agregar un efecto de texto con sombra */
+#login-section h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Estilo para los inputs o botones de login */
+#login-section input{
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px; /* Bordes redondeados para inputs */
+    font-size: 1rem;
+    background-color: rgba(32, 28, 23, 0.5);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el ratón sobre los inputs y botones */
+#login-section input:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+}
+#login-section button:hover{
+    background-color: rgba(255, 149, 0, 0.7);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+}
+#login-section button{
+    background-color: rgba(255, 164, 29, 0.7);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+}
+/* Estilo para los labels */
+#login-section label {
+    display: block;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffd700;
 }
 
 #chat-window {
     transition: all 0.3s ease;
+    
 }
 
 #messages {
-    scrollbar-width: thin;
-    scrollbar-color: #888 #f1f1f1;
+    background: radial-gradient(circle, rgba(214, 214, 16, 0.3) 0%, rgba(16, 137, 250, 0.5) 100%);
+    border-radius: 15px; /* Bordes más suaves */
+    box-shadow: 0 0 40px rgba(0, 234, 255, 0.6), inset 0 0 40px rgba(0, 234, 255, 0.5), 0 0 50px rgba(0, 234, 255, 0.8);  /* Bordes LED sutiles con sombra */
+    font-family: 'Pirata One', cursive;
+    color: #fff; /* Texto blanco para buen contraste */
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, padding 0.3s ease;
 }
 
 #messages::-webkit-scrollbar {
-    width: 8px;
+    width: 8px; /* Ancho moderado para la barra de desplazamiento */
 }
 
 #messages::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: rgba(0, 0, 0, 0.1); /* Fondo oscuro para el track */
+    border-radius: 10px;
 }
 
 #messages::-webkit-scrollbar-thumb {
-    background: #888; 
-    border-radius: 4px;
+    background: #00eaff; /* Color LED suave para el thumb */
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0, 234, 255, 0.6); /* Resplandor leve para el thumb */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#messages::-webkit-scrollbar-thumb:hover {
+    background: #00b3cc; /* Cambio de color al hacer hover */
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.8); /* Intensificación del resplandor */
+}
+
+#login-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#nombre-input {
+    margin: 10px 0;
+    padding: 8px;
+    width: 200px;
+}
+
+#entrar-btn {
+    padding: 8px 20px;
+    background-color: rgb(62, 171, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+@keyframes puffIn {
+    0% {
+        opacity: 0;
+        transform: scale(2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.modal-header,
+.modal-footer {
+    border: none;
+}
+.modal,
+.modal-dialog {
+  box-shadow: none !important;
+}
+
+.modal-backdrop {
+  background-color: transparent !important; 
+}
+.modal-content {
+  padding: 20px;
+  font-family: 'Pirata One', cursive; 
+  font-size: 22px;
+  border: 5px solid #ffcc00; 
+  text-shadow: 3px 3px 0px #ffffff00,   
+  6px 6px 0px #8b451300; 
+  border: none;
+    box-shadow: none;
+  border-radius: 30px; 
+  background: radial-gradient(circle, rgba(255, 255, 110, 0.699) 0%, rgb(33, 148, 202) 100%);
+  box-shadow: 0 0 15px rgb(255, 166, 0),
+  inset 0 0 10px rgb(44, 166, 227); 
+  background-repeat: no-repeat; 
+  background-position: center;
+
+}
+
+.modal .btn-close {
+  width: 20px;
+  height: 20px;
+}
+.modal .btn-close {
+  border-radius: 50%;         
+  border: 2px solid #555;    
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+}
+.modal .btn-close:hover {
+  background-color: #555;
+  color: #ffcc00;
+  border-color: #ffcc00;
+}
+.modal-header .btn-close {
+  border: none; 
+  font-size: 1.5rem; 
+  border-bottom: none;
+  width: 40px;
+  height: 40px; 
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.3s;
+}
+.menu-title {
+    font-family: 'Pirata One', cursive;
+    font-weight: bold;
+    z-index: 10;
+    text-transform: uppercase;
+    font-size: 3.0rem; /* Puede ajustarse según el tamaño deseado */
+    color: #ffd700;
+    text-shadow: 3px 3px 0px #000000,
+                 6px 6px 0px #8b4513;
+    position: relative;
+    padding: 0px;
+    left: 5%;
+    animation: vanishIn 1s ease-in-out;
+    letter-spacing: 2px; /* Espaciado entre letras para alargar el texto */
+    white-space: nowrap; /* Evita que el texto se baje a una nueva línea */
+    display: inline-block; /* Asegura que el texto ocupe solo el espacio necesario */
+}
+
+
+.menu-title:hover {
+    transform: scale(1.1);
+}
+
+.menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background: radial-gradient(circle, rgb(214, 214, 16) 0%, rgb(16, 137, 250) 100%);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.menu:hover {
+    transform: scale(1.1);
+
+}
+.soundButton, #musicButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+#chatButton {
+    background: none;
+    border: none;
+    position: absolute;
+    left: 1%;
+    bottom: 76%;
+    
+}
+.imgChat{
+    width: 50px;
+    height: 50px;
+}
+#chatButton:hover {
+    transform: scale(1.1);
+}
+.imgSonido {
+    width: 40px;
+    height: auto;
+}
+
+#musicButton p {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.multiplayer-container {
+    width: 600px; 
+    height: 600px;
+    background: radial-gradient(circle, rgba(214, 214, 16, 0.578) 0%, rgba(16, 137, 250, 0.578) 100%);
+    box-shadow: 0 0 25px rgb(255, 166, 0), inset 0 0 15px rgb(0, 255, 76), 0 0 40px rgba(0, 255, 255, 0.7); /* Luz constante */
+    display: flex;
+    font-family: 'Pirata One', cursive;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    border-radius: 50%;
+    flex-shrink: 0; /* necesario */
+    bottom: 0;
+    top: 0%;
+    left: 0;
+    margin-left: 10%;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease; 
+}
+
+.multiplayer-container::after {
+    content: "";
+    position: absolute;
+    width: 103%;
+    height: 103%;
+    flex-shrink: 0; 
+    border-radius: 50%;
+    background: radial-gradient(circle, rgb(214, 214, 16, 0.4) 0%, rgba(16, 137, 250, 0.416) 100%);
+    box-shadow: 0 0 25px rgb(255, 166, 0), inset 0 0 15px rgb(0, 255, 76), 0 0 40px rgba(0, 255, 255, 0.7); /* Luz constante */
+    z-index: -1;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Estilo general de luces LED constantes */
+@keyframes ledGlow {
+    0% {
+        box-shadow: 0 0 25px rgb(255, 166, 0), inset 0 0 15px rgb(0, 255, 76), 0 0 40px rgba(0, 255, 255, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 25px rgb(255, 166, 0), inset 0 0 15px rgb(0, 255, 76), 0 0 40px rgba(0, 255, 255, 0.7);
+    }
+}
+
+.multiplayer-container {
+    animation: ledGlow 1s infinite alternate; /* Aplicando una animación continua */
+}
+
+.yum{
+    background: radial-gradient(circle, rgb(214, 16, 16) 0%, rgb(16, 137, 250) 100%);
+    box-shadow: 0 0 15px rgb(255, 166, 0),
+    inset 0 0 10px rgb(0, 255, 76); 
+}
+.yum:hover {
+    transform: scale(1.1);
+}
+.center-content {
+    z-index: 10;
+}
+#jugar{
+    z-index: 10;
+}
+.btn-primary{
+    z-index: 10;
+}
+#configuraciones{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 0%;
+    top: 0%;
+    font-size: 27px;
+    z-index: 10;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0);
+}
+.joining-message {
+    display: none; /* Ocultar inicialmente */
+    position: absolute; /* Para posicionar fuera del círculo */
+    top: 50%; /* Ajusta según sea necesario */
+    left: 50%; /* Ajusta según sea necesario */
+    transform: translate(-50%, -120%); /* Centrar y mover hacia arriba */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    font-size: 18px; 
+    display: flex;
+    align-items: center;
+    z-index: 10; 
+}
+.joining-image {
+    margin-right: 10px;
+    width: 60px; 
+    height: auto; 
+}
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+.back-button {
+    left: 1%;
+    bottom: 86%;
+    position: fixed;
+}
+.back-button img {
+    width: 70px;
+    height: 70px;
+}
+.back-button:hover {
+    transform: scale(1.05);
+}
+.avatars {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transform: rotate(18deg); 
+}
+
+.avatar-name {
+    display: block; /* Siempre visible */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 18px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(0, 255, 255, 0.8);
+    animation: ledGlow 1.5s infinite alternate; /* Animación LED */
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; 
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    min-width: 80px; 
+    min-height: 80px;
+}
+
+@keyframes ledGlow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(0, 255, 255, 0.8);
+        color: #ff9494;
+    }
+    100% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 20px rgba(0, 255, 255, 0.9), 0 0 30px rgba(0, 255, 255, 1);
+        color: #ff0000; /* Cambio de color a verde como ejemplo de LED */
+    }
+}
+
+
+.avatar img:hover {
+    transform: scale(1.1);
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.avatar:nth-child(1) { transform: rotate(0deg) translate(250px); }
+.avatar:nth-child(2) { transform: rotate(36deg) translate(250px); }
+.avatar:nth-child(3) { transform: rotate(72deg) translate(250px); }
+.avatar:nth-child(4) { transform: rotate(108deg) translate(250px); }
+.avatar:nth-child(5) { transform: rotate(144deg) translate(250px); }
+.avatar:nth-child(6) { transform: rotate(180deg) translate(250px); }
+.avatar:nth-child(7) { transform: rotate(216deg) translate(250px); }
+.avatar:nth-child(8) { transform: rotate(252deg) translate(250px); }
+.avatar:nth-child(9) { transform: rotate(288deg) translate(250px); }
+.avatar:nth-child(10) { transform: rotate(324deg) translate(250px); }
+
+.center-content {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.buttons button, .play-button button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.buttons button {
+    background-color: #ffaaaa;
+}
+
+.play-button button {
+    background-color: #aaffaa;
+    width: 100%;
+}
+@media (max-width: 768px) {
+    .avatar {
+        width: 60px;
+        height: 60px;
+    }
+    .back-button img {
+        width: 50px;
+        height: 50px;
+    }
+    .back-button {
+        right: 85%;
+        bottom: 82%;
+        position: fixed;
+        
+    }
+    #configuraciones{
+        font-size: 1.9em;
+        left: 0;
+        top: 0;
+        margin-bottom: 14%;
+    }
+    #jugar{
+        left: 0;
+        top: -8%;
+        font-size: 1.6em;
+        position: relative;
+
+    }
+    .menu {
+        position: fixed;
+        top: 8%;
+        right: 22px;
+    
+    }
+
+    .menu-title {
+        font-size: 2.2rem;
+        bottom: 45%;
+        margin-right: 10%;
+        
+    }
+    .imgSonido {
+        width: 30px;
+    }
+    .multiplayer-container {
+        width: 340px;
+        left: -2%;
+        top: 10%;
+        height: 70%;
+    }  
+    .avatar:nth-child(1) { transform: rotate(0deg) translate(143px); }
+    .avatar:nth-child(2) { transform: rotate(36deg) translate(170px); }
+    .avatar:nth-child(3) { transform: rotate(72deg) translate(201px); }
+    .avatar:nth-child(4) { transform: rotate(108deg) translate(171px); }
+    .avatar:nth-child(5) { transform: rotate(144deg) translate(142px); }
+    .avatar:nth-child(6) { transform: rotate(180deg) translate(142px); }
+    .avatar:nth-child(7) { transform: rotate(216deg) translate(173px); }
+    .avatar:nth-child(8) { transform: rotate(252deg) translate(200px); }
+    .avatar:nth-child(9) { transform: rotate(288deg) translate(170px); }
+    .avatar:nth-child(10) { transform: rotate(324deg) translate(142px); }
+    .center-content {
+        text-align: center;
+        color: #333;
+        font-size: 0.7em;
+    }   
+    .avatar-name {
+        font-size: 0.8em;
+    }
 }

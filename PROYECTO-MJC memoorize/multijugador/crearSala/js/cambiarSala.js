@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 localStorage.removeItem('rondaMasLarga');
             }
 
-            window.location.href = '../sala/index.html';
+            window.location.href = '../sala/estructura/index.php';
         }
     });
 });
