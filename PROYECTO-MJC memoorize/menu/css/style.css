@@ -839,7 +839,7 @@ nav {
     
 
 }
-.play-button {
+.play-button1{
     padding: 10px 30px;
     background-image: url(../../img/boton.png);
     background-size: cover;
@@ -883,7 +883,29 @@ nav {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 }
-.play-button:hover {
+.play-button3{
+    padding: 10px 30px;
+    background-image: url(../../img/boton.png);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center;
+    text-decoration: none; 
+    position: relative;
+    z-index: 1;
+    right: 3%;
+    color: inherit;
+    top: 20px;
+    pointer-events: auto;
+    font-size: 26px;
+    font-family:'Pirata One', cursive; ;
+    color: #012840;
+    flex-direction: row;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.play-button1:hover {
     background-color: #0056b3;
     transform: translateY(-3px);
     color: rgb(255, 255, 255);
@@ -891,6 +913,13 @@ nav {
 
 }
 .play-button2:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+.play-button3:hover {
     background-color: #0056b3;
     transform: translateY(-3px);
     color: rgb(255, 255, 255);
@@ -1175,7 +1204,7 @@ nav {
     .tienda .tienda-text {
         font-size: 0px;
     }
-    .play-button {
+    .play-button1 {
         z-index: 1;
         left: 2%;
         top: 10px;
@@ -1185,6 +1214,11 @@ nav {
         top: 10px;
         left: 2%;
         z-index: 1;
+    }
+    .play-button3 {
+        z-index: 1;
+        left: 2%;
+        top: 10px;
     }
     .game-description {
         font-family: 'Pirata One', cursive; 

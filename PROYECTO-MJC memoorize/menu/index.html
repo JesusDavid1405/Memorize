@@ -24,8 +24,8 @@
         <img src="../img/icon/moneda.png" alt="moneda" class="moneda-moneda">
         <span id="moneda-moneda"></span>
     </div>
-    <div class="games-container">
-        <div class="game-option">
+    <div class="games-container" id="juegos">
+        <!-- <div class="game-option">
             <img src="../img/rompecabeza.jpeg" alt="Juego 1" class="game-image">
             <a href="../juegos/juego rompe/nivel/index.html" class="play-button">Rompecabezas</a>
             <p class="game-description">Arma el enigma.</p>
@@ -39,7 +39,7 @@
             <img src="../img/multijugador.jpeg" alt="Multijugador" class="game-image">
             <a href="../multijugador/index.html" class="play-button">Multijugador</a>
             <p class="game-description">Salas.</p>
-        </div>
+        </div> -->
     </div>
   
     <nav class="navbar navbar-expand navbar">
@@ -87,52 +87,8 @@
                             <th>Puntuación</th>
                         </tr>
                     </thead>
-                    <tbody id="leaderboard">
-                        <tr>
-                            <td>
-                                <div class="player-info">
-                                    <img src="../img/nose1.png" alt="Avatar 1" class="avatar">
-                                    <span>Jugador 1</span>
-                                </div>
-                            </td>
-                            <td>150</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="player-info">
-                                    <img src="../img/avatar20.png" alt="Avatar 2" class="avatar">
-                                    <span>Jugador 2</span>
-                                </div>
-                            </td>
-                            <td>200</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="player-info">
-                                    <img src="../img/nose2.png" alt="Avatar 3" class="avatar">
-                                    <span>Jugador 3</span>
-                                </div>
-                            </td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="player-info">
-                                    <img src="../img/nose3.png" alt="Avatar 4" class="avatar">
-                                    <span>Jugador 4</span>
-                                </div>
-                            </td>
-                            <td>75</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="player-info">
-                                    <img src="../img/nose4.png" alt="Avatar 5" class="avatar">
-                                    <span>Jugador 5</span>
-                                </div>
-                            </td>
-                            <td>50</td>
-                        </tr>
+                    <tbody id="topGlobal">
+                        
                     </tbody>
                 </table>
             </div>
@@ -330,8 +286,10 @@
 
 
     <script src="../services/avatar/avatar.js"></script>
+    <script src="../services/juego/juegos.js"></script>
     <script src="../services/avatar/avatarComprados.js"></script>
     <script src="../services/usuario/perfil.js"></script>
+    <script src="../services/podio/top.js"></script>
     <script src="js/sonido.js"></script>
     <script src="js/icon.js"></script>
     

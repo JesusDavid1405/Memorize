@@ -13,9 +13,9 @@ body {
     width: 890px;
     height: 620px;
     margin-top: 5%;
-    background-color: #8ce0d000; /* Color base estilo pergamino */
+    background-color: #e0cc8c; /* Color base estilo pergamino */
     background-image:
-        url('../../../img/mapa.jpg'), /* Textura de papel envejecido */
+        url(''), /* Textura de papel envejecido */
         linear-gradient(90deg, rgba(182, 161, 122, 0.5) 25%, transparent 25%, transparent 75%, rgba(221, 195, 147, 0.4) 75%), 
         linear-gradient(180deg, rgba(221, 195, 147, 0.4) 25%, transparent 25%, transparent 75%, rgba(221, 195, 147, 0.4) 75%);
     background-size: cover, 40px 40px, 40px 40px; /* Textura de papel + cuadrícula */
