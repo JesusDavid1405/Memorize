@@ -20,6 +20,8 @@ fetch('../resources/juegos/juegos.php', {
             <p class="game-description">${element.descripcion}</p>
         </div>
         `;
+
+
     });
 
     // Añadir eventListener con condicionales

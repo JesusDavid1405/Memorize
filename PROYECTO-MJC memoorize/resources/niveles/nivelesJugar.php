@@ -11,17 +11,16 @@ $conn = $database->connect();
 
 if ($conn) {
     $query = "
-    SELECT n.id, n.nombre, n.numero 
+    SELECT 
+        n.id, 
+        n.nombre, 
+        n.numero 
     FROM niveles n
     LEFT JOIN historialniveles h 
         ON n.id = h.nivelId AND h.usuarioId = ?
     WHERE 
-        -- Mostrar el nivel 1 si el jugador no ha jugado ningún nivel
-        (n.numero = 1 AND NOT EXISTS (
-            SELECT 1 
-            FROM historialniveles 
-            WHERE usuarioId = ?
-        ))
+        -- Mostrar el nivel 1 siempre que no esté completado o no exista en el historial
+        (n.numero = 1 AND (h.estadoNivel IS NULL OR h.estadoNivel = 0))
         OR 
         -- Mostrar los niveles donde el jugador ha alcanzado el estado de completado
         (h.estadoNivel = TRUE)
@@ -34,11 +33,11 @@ if ($conn) {
               AND h_prev.estadoNivel = TRUE 
               AND h_prev.nivelId = n.id - 1
         ))
-    ORDER BY n.numero ASC;
+    ORDER BY n.numero ASC;    
     ";
 
     $stmt = $conn->prepare($query);
-    $stmt->bind_param("iii", $usuarioId,$usuarioId, $usuarioId);
+    $stmt->bind_param("ii", $usuarioId,$usuarioId);
     $stmt->execute();
     $result = $stmt->get_result();
 

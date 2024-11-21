@@ -1008,6 +1008,44 @@ nav {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+.menu-top {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+.menu-top ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.menu-top ul li {
+  margin: 10px 0;
+}
+.menu-top ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  display: block;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.menu-top ul li a:hover {
+  background-color: #575757;
+}
+.menu-top .dropdown {
+  cursor: pointer;
+}
+.menu-top .dropdown-content {
+  display: none;
+  padding-left: 20px;
+}
+.menu-top .dropdown.open .dropdown-content {
+  display: block;
+}
+.menu-top .dropdown.open > a {
+  background-color: #444;
+}
 
 @media (max-width: 768px) {
     #playButton {

@@ -17,7 +17,7 @@ if ($conn) {
         a.nombre AS avatarNombre,
         a.imagen AS avatarImagen,
         j.nombre AS juego,
-        hn.nivelId AS nivel,
+        n.numero AS nivel,
         hn.puntos,
         hn.tiempo,
         hn.monedas,
@@ -30,16 +30,18 @@ if ($conn) {
         juegos j ON hn.juegoId = j.id
     JOIN 
         avatares a ON u.avatarId = a.id
+    JOIN
+        niveles n ON hn.nivelId= n.id
     WHERE 
-        hn.estadoNivel = 1 AND j.id = ?
+        hn.estadoNivel = 1 
+        AND j.id = IFNULL(?, 2) -- Si no se proporciona un ID de juego, usa el juego con ID = 1
     ORDER BY 
         hn.puntos DESC
     LIMIT 10;
-
     ";
 
     $stmt = $conn->prepare($query);
-    // $stmt->bind_param("i", $);
+    $stmt->bind_param("i", $juego);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -50,7 +52,8 @@ if ($conn) {
                 'avatar' => $row['avatarImagen'],
                 'nickName' => $row['usuario'],
                 'puntos'=> $row['puntos'],
-                'tiempo'=>$row['tiempo']
+                'tiempo'=>$row['tiempo'],
+                'nivel' => $row['nivel']
             ];
         }
     } else {

@@ -73,25 +73,50 @@
         </div>
     </nav>
 <div class="modal fade" id="leaderboardModal" tabindex="-1" aria-labelledby="leaderboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="leaderboardModalLabel">Clasificaciones</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Jugador</th>
-                            <th>Puntuación</th>
-                        </tr>
-                    </thead>
-                    <tbody id="topGlobal">
-                        
-                    </tbody>
-                </table>
+                <div class="col-md-12 row">
+                    <div class="col-md-4">
+                        <nav class="menu-top">
+                            <ul>
+                              <li><a href="#">Home</a></li>
+                              <li><a href="#">About</a></li>
+                              <li><a href="#">Services</a></li>
+                              <li class="dropdown">
+                                <a href="javascript:void(0)">Dropdown</a>
+                                <ul class="dropdown-content">
+                                  <li><a href="#">Action</a></li>
+                                  <li><a href="#">Another Action</a></li>
+                                  <li><a href="#">Something Else</a></li>
+                                </ul>
+                              </li>
+                              <li><a href="#">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-md-8">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Jugador</th>
+                                    <th>Puntuación</th>
+                                    <th>Tiempo</th>
+                                    <th>Nivel</th>
+                                </tr>
+                            </thead>
+                            <tbody id="topGlobal">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
+            
         </div>
     </div>
 </div>
