@@ -153,11 +153,43 @@ const IniciarGame = () => {
     state.gameIniciar = true;
     selectors.Iniciar.classList.add('disabled');
 
+    state.totalTime = 4;
     state.loop = setInterval(() => {
-        state.totalTime++;
+        
         selectors.movimiento.innerText = `${state.totalFlips} movimientos`;
         selectors.tiempo.innerText = `tiempo: ${state.totalTime} segundos`;
+
+        state.totalTime --
+        if (state.totalTime <= -1){
+            clearInterval(state.loop)
+        }
+            ;
+
+         if (state.totalTime == -1){
+            
+            Swal.fire({
+             icon: "error",
+             title: "Oops...",
+             text: "¡se acabo el tiempo!",
+             showConfirmButton: false,
+             footer: `
+                 <div class="modal-footer">
+                     <button id="verPuntuacion" class="swal2-confirm swal2-styled">Ver Puntuación</button>
+                     <a href="../menu/index.html" class="salir swal2-styled">Salir</a>
+                 </div>
+                 `,
+                 didRender: () => {
+                    const verPuntuacionBtn = document.getElementById('verPuntuacion');
+                    verPuntuacionBtn.addEventListener('click', () => {
+                        Swal.close();
+                        endGame(50); // Pasar 50 puntos como puntuación por defecto
+                    });
+                }
+             });  
+         }
     }, 1000);
+
+      
 };
 
 // Función para voltear las cartas hacia atrás
@@ -409,10 +441,14 @@ const updateScoreTableInModal = () => {
 };
 
 // Función para terminar el juego
-const endGame = () => {
+const endGame = (roundScore = null) => {
     clearInterval(state.loop);
     document.querySelector('.board-container').classList.add('flipped');
-    const roundScore = calculateScore(state.totalFlips, state.totalTime);
+
+      // Si no se da una puntuación, calcular normalmente
+    if (roundScore === null) {
+        roundScore = calculateScore(state.totalFlips, state.totalTime);
+    }
     showScoreModal(roundScore);
 };
 
@@ -445,4 +481,7 @@ const initGame = async () => {
 };
 
 // Inicializar el juego
-initGame();
+initGame()
+
+
+

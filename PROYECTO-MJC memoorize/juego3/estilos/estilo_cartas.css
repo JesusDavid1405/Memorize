@@ -489,3 +489,24 @@ body {
     }
 }
 
+
+/*/////////////////////////////////////////////// CSS PARA EL JS*/
+
+/*BOTON SALIR*/
+.salir {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+.salir-exit:hover {
+    background-color: #c82333;
+}
