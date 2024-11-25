@@ -18,13 +18,16 @@ if ($conn) {
             p.id AS palabra_id,
             p.palabra,
             pn.nivelId AS nivel_id,
-            ps.pista
+            ps.pista,
+            n.tiempo
         FROM 
             palabra p
         JOIN 
             palabraNivel pn ON p.id = pn.palabraId
         JOIN 
             pista ps ON p.id = ps.palabraId
+        JOIN 
+            niveles n ON n.id = pn.nivelId
         WHERE 
             pn.nivelId = ?
         ORDER BY 
@@ -52,6 +55,7 @@ if ($conn) {
                     'palabra_id' => $palabraId,
                     'palabra' => $row['palabra'],
                     'nivel_id' => $row['nivel_id'],
+                    'tiempo' => $row['tiempo'],
                     'pistas' => []
                 ];
             }

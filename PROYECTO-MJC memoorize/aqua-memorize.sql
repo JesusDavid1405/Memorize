@@ -113,6 +113,7 @@ CREATE TABLE `imagenNivel` (
 	`imagenId` INTEGER NOT NULL,
 	`nivelId` INTEGER NOT NULL,
 	`area` INTEGER NOT NULL,
+	`movimientosMin` INTEGER NOT NULL,
 	PRIMARY KEY (`id`)
 );
 

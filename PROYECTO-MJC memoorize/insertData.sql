@@ -466,3 +466,6 @@ INSERT INTO `pista` (`palabraId`, `pista`) VALUES
     (80, 'Parte inferior de una embarcación, el casco.'),
     (80, 'Es la zona que está en contacto con el agua.'),
     (80, 'Debe ser resistente para soportar el peso y el movimiento.');
+
+INSERT INTO `imagen` (`nombre`,`url`) VALUES
+    (),

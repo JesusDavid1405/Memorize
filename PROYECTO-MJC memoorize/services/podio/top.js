@@ -32,7 +32,7 @@ function cargarTop(juegoId = 2) {
                 <tr>
                     <td>
                         <div class="player-info">
-                            <img src="../img/${element.avatar}" alt="${element.nickName}" class="avatar">
+                            <img src="../img/avatar/${element.avatar}" alt="${element.nickName}" class="avatar">
                             <span>${element.nickName}</span>
                         </div>
                     </td>
