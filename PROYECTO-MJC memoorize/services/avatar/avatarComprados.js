@@ -21,13 +21,13 @@ fetch('../resources/avatar/avatarComprado.php', {
         
             avatarComprado.innerHTML += `
             <div>
-                <img src="../img/${element.imagen}" class="avatar-option3" data-id="${element.avatarId}" alt="">
+                <img src="../img/avatar/${element.imagen}" class="avatar-option3" data-id="${element.avatarId}" alt="">
             </div>
             `;
 
             adquirido.innerHTML +=`
             <div class="producto1">
-                <img src="../img/${element.imagen}" alt="producto1" class="producto-img" >
+                <img src="../img/avatar/${element.imagen}" alt="producto1" class="producto-img" >
                 <h3 class="nombre-producto" id="nombre-producto1">${element.nombre}</h3>
                 <div class="info-producto">  
                     <p>adquirido</p>

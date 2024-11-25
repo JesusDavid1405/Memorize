@@ -19,13 +19,13 @@ fetch('../resources/avatar/avatar.php', {
         if (element.valor == 0) {
             perfilAvatar.innerHTML += `
             <div>
-                <img src="../img/${element.imagen}" class="avatar-option3" data-id="${element.id}" alt="">
+                <img src="../img/avatar/${element.imagen}" class="avatar-option3" data-id="${element.id}" alt="">
             </div>
             `;
         }else{
             avatarTienda.innerHTML +=`
             <div class="producto1">
-                <img src="../img/${element.imagen}" alt="producto1" class="producto-img" >
+                <img src="../img/avatar/${element.imagen}" alt="producto1" class="producto-img" >
                 <h3 class="nombre-producto" id="nombre-producto1">${element.nombre}</h3>
                 <div id="${element.id}" class="info-producto">  
                     <img src="../img/icon/moneda.png" alt="Icono de comprar" class="descripcion-producto-img" id="descripcion-producto1">${element.valor}
