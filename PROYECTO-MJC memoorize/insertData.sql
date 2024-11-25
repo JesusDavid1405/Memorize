@@ -468,4 +468,13 @@ INSERT INTO `pista` (`palabraId`, `pista`) VALUES
     (80, 'Debe ser resistente para soportar el peso y el movimiento.');
 
 INSERT INTO `imagen` (`nombre`,`url`) VALUES
-    (),
+    ('arrecife','arrecife.jpg'),
+    ('ballena','ballena.jpg'),
+    ('barco','barco.jpg'),
+    ('barcoDestruido','barcoDestruido.jpg'),
+    ('buseo','buseo.jpg'),
+    ('cangre','cangre.jpg'),
+    ('loro','loro.jpg'),
+    ('orca','orca.jpg'),
+    ('playa','playa.jpg'),
+    ('venecia','venecia.jpg'); 

@@ -1,8 +1,8 @@
 var images = [
-    { src: 'images/nuevo2.jpg', title: 'BARCO PIRATA' },
-    { src: 'images/ballena.jpg', title: 'CAZA DE BALLENA' },
-    { src: 'images/oe.jpg', title: 'BUCEO' },
-    { src: 'images/tib.jpg', title: 'BALLENA' },
+    { src: '../../../img/rompecabezas/arrecife.jpg', title: 'BARCO PIRATA' },
+    { src: '../../../img/rompecabezas/ballena.jpg', title: 'CAZA DE BALLENA' },
+    { src: '../../../img/rompecabezas/barco.jpg', title: 'BARCO' },
+    { src: '../../../img/rompecabezas/barco.jpg', title: 'BALLENA' },
     { src: 'images/arrecife.jpg', title: 'ARRECIFE' }
 ];
 
