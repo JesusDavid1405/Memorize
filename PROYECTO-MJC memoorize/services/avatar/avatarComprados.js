@@ -57,10 +57,14 @@ fetch('../resources/avatar/avatarComprado.php', {
             })
             .then(response => response.json())
             .then(data => {
+                var modal = new bootstrap.Modal(document.getElementById('modal'));
+                let pantalla = document.getElementById('response');
+
                 if(data.status){
-                    alert(data.mensaje)
+                    pantalla.innerHTML = data.mensaje;
+                    modal.show();
                 }
-                window.location.reload();
+                
             })
         })
     })

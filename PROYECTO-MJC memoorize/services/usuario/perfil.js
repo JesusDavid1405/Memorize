@@ -15,7 +15,7 @@ fetch('../resources/usuario/perfil.php', {
 .then(response => response.json())
 .then(data => {
     
-    avatar.src = `../img/${data.rutaImg}`;
+    avatar.src = `../img/avatar/${data.rutaImg}`;
     playerName.innerHTML = data.nickName;
     descripcionPlayer.innerHTML = data.descripcion;
     monedas.innerHTML= data.monedas
