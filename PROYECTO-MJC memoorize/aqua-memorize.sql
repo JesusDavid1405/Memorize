@@ -121,15 +121,25 @@ CREATE TABLE `imagen` (
 );
 
 
-CREATE TABLE `rondas` (
-	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
-	`salaId` INTEGER NOT NULL,
-	`numeroRondas` INTEGER NOT NULL,
-	`fechaInicio` DATETIME NOT NULL,
-	`fechaFin` DATETIME,
-	`resultado` JSON,
-	`estadoFinalizado` BOOLEAN NOT NULL,
-	PRIMARY KEY(`id`)
+CREATE TABLE rondas (
+	id INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	salaId INTEGER NOT NULL,
+	numeroRondas INTEGER NOT NULL,
+	fechaInicio DATETIME NOT NULL,
+	fechaFin DATETIME,
+	estadoFinalizado BOOLEAN NOT NULL,
+	PRIMARY KEY(id)
+);
+
+
+CREATE TABLE historialRonda (
+	id INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	rondaId INTEGER NOT NULL,
+	participanteId INTEGER NOT NULL,
+	tiempo TIME NOT NULL,
+	puntos BIGINT NOT NULL,
+	podio INTEGER NOT NULL,
+	PRIMARY KEY(id)
 );
 
 
