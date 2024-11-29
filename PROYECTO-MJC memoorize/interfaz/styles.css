@@ -7,6 +7,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    
     overflow: hidden;
     height: 100vh;
     animation: puffIn 1s ease-in-out
@@ -22,11 +23,12 @@ body {
     }
 }
 .container {
-    background: radial-gradient(circle, rgba(214, 214, 16, 0.578) 0%, rgba(16, 137, 250, 0.578) 100%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.441) 0%, rgba(16, 137, 250, 0.578) 100%);
     display: flex;
     align-items: center;
     font-family: 'Pirata One', cursive;
     padding: 20px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.3);
     width: 90%;
     border-radius: 10px;
 
@@ -86,7 +88,7 @@ button {
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-   
+    border: 2px solid rgba(255, 255, 255, 0.6);
     border-radius: 10%;
     display: inline-block;
     font-size: 20px;
@@ -103,6 +105,7 @@ button {
 button:hover {
     background-color: #3284f0;
     transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(50, 132, 240, 0.5);
 }
 
 @keyframes rise {

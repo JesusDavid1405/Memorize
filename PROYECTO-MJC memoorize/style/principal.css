@@ -7,6 +7,20 @@ body {
     overflow: hidden;
     animation: puffIn 1s ease-in-out
 }
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: gold;
+    border-radius: 50%;
+    animation: explode 1s ease-out;
+}
+
+@keyframes explode {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(3); opacity: 0; }
+}
+
 @keyframes puffIn {
     0% {
         opacity: 0;
@@ -16,6 +30,9 @@ body {
         opacity: 1;
         transform: scale(1);
     }
+}
+.imgLogo, .button2, #playButton {
+    transition: transform 0.3s ease-in-out;
 }
 .container-fluid {
     display: flex; 
@@ -56,6 +73,7 @@ body {
 
 
 }
+
 @keyframes swashIn {
     0% {
         opacity: 0;
@@ -86,15 +104,14 @@ body {
     animation: fadeIn 1s forwards;
     z-index: 20;
 }
-
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translate(-50%, -60%);
+        transform: translate(-50%, -60%) scale(0.9);
     }
     to {
         opacity: 1;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) scale(1);
     }
 }
 
@@ -116,12 +133,15 @@ body {
     position: relative;
     overflow: hidden; 
 }
+.btnTex:hover {
+    transition: color 0.3s ease-in-out;
+}
 
 .bubbles {
     position: absolute;
-    width: 100%;
+    width: 140%;
     bottom: 34px;
-    right: 0%;
+    right: -16%;
     height: 100%;
     overflow: hidden;
     pointer-events: none;
@@ -129,10 +149,24 @@ body {
 
 .bubble {
     position: absolute;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 90%;
-    opacity: 80;
+    width: 10px;
+    height: 10px;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
     pointer-events: none;
+    animation: bubble-rise 1.5s ease-out forwards;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4);
+    transform-origin: center;
+}
+@keyframes bubble-rise {
+    0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2) translateY(-100px) rotate(180deg);
+        opacity: 0;
+    }
 }
 
 @keyframes rise {

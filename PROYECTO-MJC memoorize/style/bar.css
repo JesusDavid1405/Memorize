@@ -7,20 +7,34 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: moveBackground 10s infinite linear;
     height: 100vh;
 
 }
 
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
 .center {
     text-align: center;
 }
 
 .logo {
     max-width: 100%; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: auto;
     margin-bottom: 10px; 
     animation: moveLogoVertical 2s infinite alternate ease-in-out;
 }
+.logo:hover {
+    transform: scale(1.2);
+}
+
 
 .loading-bar {
     position: relative;
@@ -28,6 +42,7 @@ body {
     height: 40px;
     max-width: 600px;
     border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     right: 10%;
     background-color: rgba(0, 0, 0, 0.2);
@@ -40,10 +55,17 @@ body {
     height: 100%;
     background: rgb(7, 146, 216);
     border-radius: 15px;
+    animation: moveWaves 4s infinite linear, waveGlow 2s infinite alternate;
     opacity: 0.6;
-    animation: moveWaves 4s infinite linear;
 }
-
+@keyframes waveGlow {
+    0% {
+        filter: brightness(1);
+    }
+    100% {
+        filter: brightness(1.5);
+    }
+}
 .wave1 {
     z-index: 3;
     animation-delay: 0s;
@@ -67,10 +89,28 @@ body {
     line-height: 40px; 
     right: 0%;
     z-index: 10;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(0, 150, 255, 0.8);
+    animation: pulseText 1.5s infinite;
     color: white; 
     font-weight: bold;
     font-size: 35px; 
 }
+
+@keyframes pulseText {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .logo {
     max-width: 100%; 
     height: auto;

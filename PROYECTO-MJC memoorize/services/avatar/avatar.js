@@ -104,5 +104,5 @@ fetch('../resources/avatar/avatar.php', {
 .catch(error => console.error('Error:', error));
 
 btnModal.addEventListener('click', () => {
-    window.location.reload();
+    window.location.reload(2000);
 });
