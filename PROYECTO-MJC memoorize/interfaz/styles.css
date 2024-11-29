@@ -7,6 +7,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    
     overflow: hidden;
     height: 100vh;
     animation: puffIn 1s ease-in-out
@@ -22,117 +23,34 @@ body {
     }
 }
 .container {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.441) 0%, rgba(16, 137, 250, 0.578) 100%);
     display: flex;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.1);
+    font-family: 'Pirata One', cursive;
     padding: 20px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
     border-radius: 10px;
-}
-.creature {
-    position: absolute;
-    background-size: contain;
-    background-repeat: no-repeat;
+
 }
 
-.fish {
-    width: 70px;
-    height: 50px;
-    background-image: url('img/1.png');
-    animation: swimHorizontal 15s linear infinite;
-    top: 20%; 
-    left: -100px; 
-}
-
-.turtle {
-    width: 80px;
-    height: 60px;
-    background-image: url('img/7.png');
-    animation: swimHorizontal 20s linear infinite;
-    top: 60%; 
-    left: -100px;
-}
-
-
-.jellyfish {
-    width: 80px;
-    height: 80px;
-    background-image: url('img/6.png');
-    animation: floatVertical 8s ease-in-out infinite;
-    top: 40%; 
-    left: 20%;
-}
-
-.seahorse {
-    width: 80px;
-    height: 80px;
-    background-image: url('img/4.png');
-    animation: floatVertical 10s ease-in-out infinite;
-    top: 70%;
-    left: 80%;
-}
-.payaso {
-    width: 100px;
-    height: 100px;
-    background-image: url('img/c6b2ee4acc1c3cc273a1d616ec712b89-Photoroom.png') ;
-    bottom: 70px;
-    left: 110px;
-    animation: floatVertical 8s ease-in-out infinite;
-}
-.pulpo{
-    width: 100px;
-    height: 100px;
-    background-image: url('img/pngtree-cute-cartoon-sea-animal-jellyfish-character-png-image_13000376-Photoroom.png') ;
-    bottom: 70px;
-    left: 110px;
-    animation: floatVertical 8s ease-in-out infinite; 
-}
-.lango{
-    width: 100px;
-    height: 100px;
-    background-image: url('img/1726608de2d2d50d116cfc2bd00e5908-Photoroom.png') ;
-    bottom: 70px;
-    left: 110px;
-    animation: floatVertical 8s ease-in-out infinite; 
-}
-
-.starfish {
-    width: 100px;
-    height: 100px;
-    background-image: url('img/3.png');
-    bottom: 20px;
-    left: 910px;
-    animation: floatVertical 8s ease-in-out infinite;
-}
-
-/* Animaciones */
-@keyframes swimHorizontal {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(120vw);
-    }
-}
-
-@keyframes floatVertical {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-30px); 
-    }
-}
 .porthole {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 200px;
     border-radius: 50%;
     background: url('../img/logo/aqua-Memorize.png') no-repeat center center;
-    background-size: contain; 
+    background-size: contain;
     border: 20px solid #c0c0c000;
     box-shadow: 0 0 20px rgba(0,0,0,0.5), inset 0 0 50px rgba(0,0,0,0.3);
     position: relative;
     overflow: hidden;
+    left: 4%;
+    
     animation: float 3s ease-in-out infinite;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 
 @keyframes float {
@@ -149,117 +67,45 @@ body {
 h1 {
     font-size: 4.5em;
     margin-bottom: 10px;   
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 2px; /* Espaciado entre letras para alargar el texto */
+    white-space: nowrap; /* Evita que el texto se baje a una nueva línea */
+    display: inline-block; /* Asegura que el texto ocupe solo el espacio necesario */
+    font-family: 'Pirata One', cursive;
 }
 
 p {
-    max-width: 300px;
-    font-size: 1.5em;
+    
+    font-size: 1.9em;
+    letter-spacing: 2px; /* Espaciado entre letras para alargar el texto */
+
+    display: inline-block; /* Asegura que el texto ocupe solo el espacio necesario */
 }
 
 button {
-    background-color: #0a607a;
+    background: radial-gradient(circle, rgba(228, 125, 8, 0.578) 0%, rgba(16, 176, 250, 0.856) 100%);
     border: none;
     color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 10%;
     display: inline-block;
-    font-size: 26px;
+    font-size: 20px;
     margin-top: 20px;
-    margin-left: 0%;
+    margin-left: 30%;
     cursor: pointer;
     transition: background-color 0.3s;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
 }
 
 button:hover {
     background-color: #3284f0;
-}
-
-.creature {
-    position: absolute;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.fish {
-    width: 70px;
-    height: 50px;
-    background-image: url('img/1.png');
-    animation: swim 15s linear infinite;
-}
-
-.jellyfish {
-    width: 80px;
-    height: 80px;
-    background-image: url('img/6.png');
-    animation: float 8s ease-in-out infinite;
-}
-
-.starfish {
-    width: 80px;
-    height: 80px;
-    background-image: url('img/3.png');
-    bottom: 20px;
-    left: 30px;
-}
-
-.seahorse {
-    width: 80px;
-    height: 80px;
-    background-image: url('img/4.png');
-    bottom: 40px;
-    right: 20px;
-    animation: sway 5s ease-in-out infinite;
-}
-
-.turtle {
-    width: 60px;
-    height: 40px;
-    background-image: url('img/7.png');
-    animation: swim 25s linear infinite;
-}
-
-.coral {
-    width: 10%;
-    height: 10px;
-    background-image: url('img/cora.png');
-    position: relative;
-    bottom: 0;
-    background-repeat: no-repeat;
-}
-
-.bubbles {
-    width: 100%;
-    height: 100%;
-    background-image: url('img/BIURBU.png');
-    position: absolute;
-    pointer-events: none;
-}
-
-.bubbles::before {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    
-    border-radius: 50%;
-    animation: rise 10s infinite;
-}
-
-@keyframes swim {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(400%); }
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-@keyframes sway {
-    0%, 100% { transform: rotate(0deg); }
-    50% { transform: rotate(5deg); }
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(50, 132, 240, 0.5);
 }
 
 @keyframes rise {
@@ -288,12 +134,14 @@ button:hover {
     /* Ajuste de tamaño y márgenes para el logo */
     .porthole {
         width: 150px;
-        height: 150px;
+        height: 130px;
         margin: 0 auto 20px;
-        margin-top: 8%;
+        margin-top: 30%;
         border: 15px solid #c0c0c000;
     }
-
+    p {
+        font-size: 1.3em;
+    }
     /* Ajustes de texto */
     .content h1 {
         font-size: 2em;
@@ -311,33 +159,12 @@ button:hover {
 
     /* Botón de acción */
     button {
-        font-size: 1.5em;
+        font-size: 1.2em;
         padding: 10px 15px;
-        width: 80%;
-        left: 33px;
+        width: 60%;
+        margin-bottom: 32%;
+        margin-left: 20px;
         
-    }
-
-    /* Ajuste de tamaño de criaturas */
-    .fish, .jellyfish, .seahorse, .turtle, .starfish, .payaso, .pulpo, .lango {
-        width: 60px;
-        height: 60px;
-        animation-duration: 12s; /* Aumenta la velocidad de las animaciones */
-    }
-
-    /* Ajuste de posiciones de criaturas */
-    .fish, .turtle {
-        left: -60px; /* Ajustar la posición inicial */
-    }
-
-    .seahorse, .jellyfish {
-        right: 15px; /* Ajustar la posición final */
-    }
-
-    /* Ajuste de animación de burbujas */
-    .bubbles::before {
-        width: 10px;
-        height: 10px;
     }
 
     /* Aumento de espaciado general */

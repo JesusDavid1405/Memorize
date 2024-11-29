@@ -1,5 +1,6 @@
 let perfilAvatar = document.getElementById("gratis");
 let avatarTienda= document.getElementById('tienda');
+let btnModal= document.getElementById('btn-modal');
 let avatarId;
 
 
@@ -14,18 +15,21 @@ fetch('../resources/avatar/avatar.php', {
 })
 .then(response => response.json())
 .then(data => {
+
+    var modal = new bootstrap.Modal(document.getElementById('modal'));
+    let pantalla = document.getElementById('response');
     // Crear el HTML para los avatares
     data.forEach(element => {
         if (element.valor == 0) {
             perfilAvatar.innerHTML += `
             <div>
-                <img src="../img/${element.imagen}" class="avatar-option3" data-id="${element.id}" alt="">
+                <img src="../img/avatar/${element.imagen}" class="avatar-option3" data-id="${element.id}" alt="">
             </div>
             `;
         }else{
             avatarTienda.innerHTML +=`
             <div class="producto1">
-                <img src="../img/${element.imagen}" alt="producto1" class="producto-img" >
+                <img src="../img/avatar/${element.imagen}" alt="producto1" class="producto-img" >
                 <h3 class="nombre-producto" id="nombre-producto1">${element.nombre}</h3>
                 <div id="${element.id}" class="info-producto">  
                     <img src="../img/icon/moneda.png" alt="Icono de comprar" class="descripcion-producto-img" id="descripcion-producto1">${element.valor}
@@ -55,9 +59,13 @@ fetch('../resources/avatar/avatar.php', {
             .then(response => response.json())
             .then(data => {
                 if(data.status){
-                    alert(data.mensaje)
+                    pantalla.innerHTML = data.mensaje;
+                    modal.show();
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000); 
                 }
-                window.location.reload();
+                
             })
         })
     })
@@ -80,16 +88,27 @@ fetch('../resources/avatar/avatar.php', {
             })
             .then(response => response.json())
             .then(data =>{
+                let modalTienda= document.getElementById('tiendaModal');
+
                 if(data.status){
-                    alert(data.mensaje)
-                    window.location.reload();
+                    pantalla.innerHTML = data.mensaje;
+                    
                 }else{
-                    alert(data.mensaje)
+                    pantalla.innerHTML = data.mensaje;
                 }
-            }) 
+                modalTienda.style.display = 'none';
+                modal.show();
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000); 
+            })
+         
         })
     })
 
 })
 .catch(error => console.error('Error:', error));
 
+btnModal.addEventListener('click', () => {
+    window.location.reload();
+});

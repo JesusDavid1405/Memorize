@@ -20,16 +20,16 @@ VALUES
 ('Bmo', 'pruebaxi.png', '300'), 
 ('Mark', 'pruebaz.png', '250');
 
-INSERT INTO `niveles` (`nombre`, `numero`) 
+INSERT INTO `niveles` (`nombre`, `numero`,`tiempo`) 
 VALUES 
-('nivel 1','1'),
-('nivel 2','2'),
-('nivel 3','3'),
-('nivel 4','4'),
-('nivel 5','5'),
-('nivel 6','6'),
-('nivel 7','7'),
-('nivel 8','8');
+('nivel 1','1',60),
+('nivel 2','2',50),
+('nivel 3','3',45),
+('nivel 4','4',40),
+('nivel 5','5',35),
+('nivel 6','6',40),
+('nivel 7','7',40),
+('nivel 8','8',40);
 
 INSERT INTO `palabra` (`palabra`) VALUES 
 ('arena'), ('marea'), ('barco'), ('brisa'), ('babor'), ('nadar'), ('timon'), ('costa'),
@@ -467,3 +467,14 @@ INSERT INTO `pista` (`palabraId`, `pista`) VALUES
     (80, 'Es la zona que está en contacto con el agua.'),
     (80, 'Debe ser resistente para soportar el peso y el movimiento.');
 
+INSERT INTO `imagen` (`nombre`,`url`) VALUES
+    ('arrecife','arrecife.jpg'),
+    ('ballena','ballena.jpg'),
+    ('barco','barco.jpg'),
+    ('barcoDestruido','barcoDestruido.jpg'),
+    ('buseo','buseo.jpg'),
+    ('cangre','cangre.jpg'),
+    ('loro','loro.jpg'),
+    ('orca','orca.jpg'),
+    ('playa','playa.jpg'),
+    ('venecia','venecia.jpg'); 

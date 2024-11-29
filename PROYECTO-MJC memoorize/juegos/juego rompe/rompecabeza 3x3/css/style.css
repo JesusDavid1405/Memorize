@@ -1,6 +1,6 @@
 ﻿/* Fondo y cuerpo */
 body {
-  background-image: url(../images/fondo4.gif);
+  background-image: url(../../../../img/fondo4.gif);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;

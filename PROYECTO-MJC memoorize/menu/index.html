@@ -72,6 +72,21 @@
             </ul>
         </div>
     </nav>
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bodyModal">
+                <div class="modal-body">
+                    <div id="response">
+                    
+                    </div>
+                </div>
+                <div class="modal-footer bordeNone">
+                   <!--   <button type="button" id="btn-modal" class="btn-secondary" data-bs-dismiss="modal">Cerrar</button> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
 <div class="modal fade" id="leaderboardModal" tabindex="-1" aria-labelledby="leaderboardModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -82,20 +97,9 @@
             <div class="modal-body">
                 <div class="col-md-12 row">
                     <div class="col-md-4">
-                        <nav class="menu-top">
-                            <ul>
-                              <li><a href="#">Home</a></li>
-                              <li><a href="#">About</a></li>
-                              <li><a href="#">Services</a></li>
-                              <li class="dropdown">
-                                <a href="javascript:void(0)">Dropdown</a>
-                                <ul class="dropdown-content">
-                                  <li><a href="#">Action</a></li>
-                                  <li><a href="#">Another Action</a></li>
-                                  <li><a href="#">Something Else</a></li>
-                                </ul>
-                              </li>
-                              <li><a href="#">Contact</a></li>
+                        <nav class="menu-top" >
+                            <ul id="juegosTop">
+
                             </ul>
                         </nav>
                     </div>
@@ -308,7 +312,6 @@
         </div>
     </div>
    <audio id="backgroundMusic" src="../audio/no-copyright-music-181373.mp3" loop></audio>
-
 
     <script src="../services/avatar/avatar.js"></script>
     <script src="../services/juego/juegos.js"></script>

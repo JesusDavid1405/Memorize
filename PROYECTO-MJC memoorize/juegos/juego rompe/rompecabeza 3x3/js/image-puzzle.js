@@ -1,4 +1,5 @@
-﻿var timerFunction;
+﻿var timeCont;
+var timeMax = 40;
 
 var imagePuzzle = {
     stepCount: 0,
@@ -11,11 +12,18 @@ var imagePuzzle = {
         this.startTime = new Date().getTime();
         this.tick();
     },
-    tick: function () {
-        var now = new Date().getTime();
-        var elapsedTime = parseInt((now - imagePuzzle.startTime) / 1000, 10);
-        helper.doc('timerPanel').textContent = elapsedTime;
-        timerFunction = setTimeout(imagePuzzle.tick, 1000);
+    tick: function () { 
+        var timeReducion = timeMax;
+        timeCont = setInterval(()=>{
+            timeReducion--
+            helper.doc('timerPanel').textContent = timeReducion;
+            
+            if(timeReducion <= 0){
+                clearInterval(timeCont)
+            } 
+
+        },1000)
+        
     },
     setImage: function (images) {
         var gridSize = 3;
@@ -122,10 +130,27 @@ var imagePuzzle = {
                     document.querySelector('.timeCount').textContent = (parseInt((now - imagePuzzle.startTime) / 1000, 10));
 
                     if (isSorted(vals)) {
-                        helper.doc('actualImageBox').innerHTML = helper.doc('gameOver').innerHTML;
-                        helper.doc('stepCount').textContent = imagePuzzle.stepCount;
+                        clearInterval(timeCont); // Detener el temporizador
+                    
+                        let tiempoRestante = parseInt(helper.doc('timerPanel').textContent, 10);
+                        let movimientosRealizados = imagePuzzle.stepCount;
+                    
+                        // Calcular la puntuación usando la función
+                        let puntos = calcularPuntuacion(tiempoRestante, movimientosRealizados);
+                    
+                        // Mostrar resultado al jugador
+                        helper.doc('actualImageBox').innerHTML = `
+                            <h2>¡Ganaste!</h2>
+                            <p>Movimientos: ${movimientosRealizados}</p>
+                            <p>Tiempo tomado: ${tiempoRestante}s</p>
+                            <p>Puntuación: ${puntos}</p>
+                        `;
+                        helper.doc('stepCount').textContent = movimientosRealizados;
+
                     }
+                    
                 }
+                
             };
             helper.doc('sortable').appendChild(li);
         }
@@ -144,4 +169,17 @@ var helper = {
             ul.appendChild(ul.children[Math.random() * i | 0]);
         }
     }
+}
+
+function calcularPuntuacion(tiempoRestante, movimientosRealizados) {
+    let maxPuntos = 2000;
+    let movimientosIdeales = 6
+    let tiempoTotal = timeMax;
+    let factorTiempo = Math.max(0, (tiempoRestante + 10) / tiempoTotal);
+    let factorMovimientos = Math.min(1, movimientosIdeales / movimientosRealizados); // Clamp entre 0 y 1
+
+    // Calcular puntuación final
+    let puntos = Math.round(maxPuntos * (factorTiempo + factorMovimientos) / 2);
+
+    return puntos;
 }

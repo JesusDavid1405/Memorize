@@ -29,13 +29,18 @@ fetch('../../../resources/wordle/palabras.php', {
     if (data.error) {
         alert(data.error);
     } else {
+        data.forEach(item =>{
+            tiempo = item.tiempo
+        });
+        tiempoContador= tiempo;
+
         const contadorTiempo = setInterval(() => {
-            tiempo--; 
-            document.getElementById('contador').innerHTML = formatoTiempo(tiempo); 
+            
+            tiempoContador--; 
+            document.getElementById('contador').innerHTML = formatoTiempo(tiempoContador); 
         
             if (tiempo <= 0) {
                 clearInterval(contadorTiempo);
-                estadoNivel = false; // Asegurar que el estado del nivel es falso al terminar el tiempo
                 mostrarModal("¡El tiempo ha terminado!");  // Mostrar el modal de fin de juego
             }
         }, 1000);
@@ -200,19 +205,19 @@ fetch('../../../resources/wordle/palabras.php', {
             var modal = new bootstrap.Modal(document.getElementById('miModal'));  
             var modalBody = document.querySelector('.modal-body');  
             
-            if (rowId >= 5) {
+            if (rowId >= 6) {
                 modalBody.innerHTML = `
                     <div class="">
                         <h1>Perdiste!</h1>
                         ${textMsg}
                         <div class="text">
-                            tiempo: ${formatoTiempo(tiempo)}
+                            tiempo: ${formatoTiempo(tiempoContador)}
                         </div>
                         <div class="text">
                             intentos: ${rowId}
                         </div>
                         <div class="text">
-                            puntos: ${puntacion(rowId,tiempo)}
+                            puntos: ${puntacion(rowId,tiempoContador)}
                         </div>
                     </div>
                     
@@ -221,27 +226,51 @@ fetch('../../../resources/wordle/palabras.php', {
                 estadoNivel = false; 
 
             } else {
-                modalBody.innerHTML = `
+                if(textMsg !== "¡El tiempo ha terminado!" ){
+                    modalBody.innerHTML = `
                     <div class="">
                         <h1>${textMsg}</h1>
                         <div class="text">
-                            tiempo: ${formatoTiempo(tiempo)}
+                            tiempo: ${formatoTiempo(tiempoContador)}
                         </div>
                         <div class="text">
                             intentos: ${rowId}
                         </div>
                         <div class="text">
-                            puntos: ${puntacion(rowId,tiempo)}
+                            puntos: ${puntacion(rowId,tiempoContador)}
                         </div>
                     </div>
 
-                `;
+                    `;
+
+                    estadoNivel = true;
+                }else{
+                    modalBody.innerHTML = `
+                    <div class="">
+                        <h1>${textMsg}</h1>
+                        <p>Inténtalo de nuevo, la palabra correcta era "${wordle.toUpperCase()}"</p>
+                        <div class="text">
+                            tiempo: ${formatoTiempo(tiempoContador)}
+                        </div>
+                        <div class="text">
+                            intentos: ${rowId}
+                        </div>
+                        <div class="text">
+                            puntos: ${puntacion(rowId,tiempoContador)}
+                        </div>
+                    </div>
+
+                    `;
+
+                    estadoNivel = false;
+                }
+                
 
                 // <button class="button">Reiniciar</button>
                 // <button class="button">Reiniciar</button>
                 // <button class="button" id="salir">Salir</button>
                 // Marcar estado como ganado
-                estadoNivel = true;
+                
         
                 // let returnSalir = document.querySelector("#salir");
                 // returnSalir.addEventListener('click', () => {
@@ -251,8 +280,8 @@ fetch('../../../resources/wordle/palabras.php', {
 
             console.log(estadoNivel)
             
-            let tiempoCliente = formatoTiempo(tiempo);
-            let puntosClientes = puntacion(rowId,tiempo);
+            let tiempoCliente = formatoTiempo(tiempoContador);
+            let puntosClientes = puntacion(rowId,tiempoContador);
 
             fetch('../../../resources/wordle/historialNivel.php', {
                 method: 'POST',
@@ -333,15 +362,15 @@ function formatoTiempo(segundos) {
 
     return tiempoPantalla; 
 }
-function puntacion(intentos, tiempo) {
+function puntacion(intentos, tiempoP) {
     const puntosMaximo = 1000;
-    const tiempoMaximo = 30;
+    const tiempoMaximo = tiempo;
 
     if (intentos < 1 || tiempo < 0 || tiempo > tiempoMaximo) {
         throw new Error("Parámetros inválidos: asegúrate de que intentos >= 1 y 0 <= tiempo <= tiempoMaximo.");
     }
 
-    if (tiempo === 0) {
+    if (tiempoP === 0) {
         return 0;
     }
 

@@ -6,9 +6,18 @@ body{
     overflow: hidden;
     height: 100vh;
     margin: 0;
+    background-position: center;
+    animation: parallaxEffect 23s infinite linear;
 
 }
-
+@keyframes parallaxEffect {
+    0% {
+        background-position: 50% 0%;
+    }
+    100% {
+        background-position: 50% 100%;
+    }
+}
 /*botones*/
 .btnLogin{
     width: 200px;
@@ -17,9 +26,12 @@ body{
     transition: 600ms;
     margin-bottom: 3%;
 }
-.btnLogin:hover{
-    transform: scale(0.9);
+.btnLogin:hover {
+    transform: scale(1.1) rotate(0deg);
+    background-color: #ffae00;
+    box-shadow: 0px 0px 15px rgba(255, 174, 0, 0.8);
 }
+
 #response{
     color: #000000;
     font-size: 1.0em; 
@@ -156,21 +168,39 @@ body{
     width: 15px;
     height: 15px;
 }
-input.input{    
-  padding-right: 2.5rem;
-  background-color: rgba(255, 255, 255, 0.427);
-  border: 1px solid#F28F16;
-  transition: 100ms;
+input.input {    
+    padding-right: 2.5rem;
+    background-color: rgba(255, 255, 255, 0.427);
+    border: 1px solid #F28F16;
+    border-radius: 5px;
+    transition: background-color 300ms ease, transform 200ms ease, box-shadow 200ms ease;
 }
-input.input:focus{
-    background-color: rgba(255, 255, 255, 0.77);
-    border: 1px solid black;
-    box-shadow: 0px 0px 5px#F28F16;
-}
+
 input.input:hover {  
     background-color: rgba(255, 255, 255, 0.692);
-    
+    border-image: linear-gradient(45deg, #ffae00, #33a8ff) 1;
+    transform: scale(1.03); /* Agranda ligeramente el campo */
+    box-shadow: 0 4px 10px rgba(242, 143, 22, 0.5); /* Sombra suave */
 }
+
+input.input:focus {
+    background-color: rgba(255, 255, 255, 0.77);
+    border: 1px solid black;
+    box-shadow: 0px 0px 10px #F28F16, 0px 0px 20px rgba(242, 143, 22, 0.5); /* Sombra brillante */
+    transform: scale(1.05); /* Efecto de enfoque más pronunciado */
+    animation: inputPulse 1s infinite alternate; /* Animación de "pulso" */
+}
+
+/* Animación personalizada para el enfoque */
+@keyframes inputPulse {
+    0% {
+        box-shadow: 0px 0px 10px #F28F16, 0px 0px 15px rgba(242, 143, 22, 0.3);
+    }
+    100% {
+        box-shadow: 0px 0px 20px #F28F16, 0px 0px 30px rgba(242, 143, 22, 0.5);
+    }
+}
+
 .text{
     color: #ffffff;
     text-align: center;
@@ -185,10 +215,12 @@ text:hover{
     color:#014d7d; 
     text-align: center;
     font-family: 'Pirata One', cursive; 
+    text-shadow: 0 0 10px rgba(255, 174, 0, 0.8), 0 0 20px rgba(242, 143, 22, 0.6);
     font-size: 40px;
 }
-.text2:hover{
-    color: rgb(54, 32, 225)
+.text2:hover {
+    color: #ca7815;
+    text-shadow: 0 0 10px rgba(255, 174, 0, 0.8), 0 0 20px rgba(242, 143, 22, 0.6);
 }
 
 /*sonido*/
@@ -209,8 +241,20 @@ text:hover{
     
 }
 #playButton:hover {
-    transform: scale(1.1);
+    animation: pulseSoundButton 1s infinite;
 }
+
+@keyframes pulseSoundButton {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(33, 148, 202, 0.5);
+    }
+    100% {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(33, 148, 202, 0.8);
+    }
+}
+
 .back-button {
     left: 2%;
     bottom: 79%;
