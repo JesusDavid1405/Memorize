@@ -1,6 +1,7 @@
 body{
     background-image: url(../../img/fondo4.gif);
     background-repeat: no-repeat;
+    font-family:'Pirata One', cursive;
     background-size: cover;
     background-attachment: fixed;
     overflow: hidden;
@@ -8,7 +9,41 @@ body{
     margin: 0;
     animation: puffIn 1s ease-in-out
 }
-
+#volumeControl {
+    width: 30%; 
+    margin-top: 15px;
+    margin-left: 0px;
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 5px; 
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    transition: all 0.3s ease;
+}
+#volumeControl:hover {
+    background: rgba(255, 255, 255, 0.4); 
+}
+#volumeControl::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 0%;
+    background: #f39c12; 
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+#volumeControl::-webkit-slider-thumb:hover {
+    background: #e67e22;
+}
+#volumeControl::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 0%;
+    background: #f39c12;
+    cursor: pointer;
+}
 /*botones de arriba*/
 .back-button {
     left: 2%;
@@ -121,8 +156,8 @@ body{
     text-shadow: 3px 3px 0px #ffffff00,   
     6px 6px 0px #8b451300; 
     border-radius: 30px; 
-    background: radial-gradient(circle, rgb(211, 211, 36) 0%, rgb(33, 148, 202) 100%);
-    box-shadow: 0 0 15px rgb(255, 166, 0),
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.9) 0%, rgba(41, 128, 185, 0.7) 100%);
+    box-shadow: 0 0 15px rgb(255, 225, 0),
     inset 0 0 10px rgb(44, 166, 227); 
 }
 .cerrar-sesion .btn {
@@ -381,16 +416,18 @@ body{
     font-family: 'Pirata One', cursive; 
     text-align: center;
     font-size: 5.0rem;
-    color: #ffd700; 
-    
-    text-shadow: 3px 3px 0px #000000,   
-                 6px 6px 0px #8b4513;  
+    color: #ff8400;  
+    text-shadow: 
+        3px 3px 0px rgba(0, 0, 0, 0.5),  /* Sombra suave oscura */
+        6px 6px 10px rgba(139, 69, 19, 0.7), /* Sombra con efecto difuso para profundidad */
+        0 0 15px rgba(255, 223, 0, 0.8);  /* Sombra dorada para darle un brillo */
     position: relative;
     padding: 0px;
-    animation: vanishIn 1s ease-in-out
+    letter-spacing: 0px;  /* Espaciado entre letras */
+    text-transform: uppercase;  
 }
 .menu-title:hover{
-    color: #e68900;
+    color: #ffca7a;
 }
 @keyframes vanishIn {
     0% {
@@ -476,19 +513,19 @@ ul.navbar-nav {
     border-radius: 10px;
     padding: 20px;
     width: 100%;
+    height: 100%;
     max-width: 350px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     position: relative;
     margin-bottom: 20px;
-    border: 5px solid #ffcc00; 
 }
 
 #editProfileButton {
     background-color: #ffca28;
     border: none;
     border-radius: 50px;
-    padding: 10px 20px;
+    padding: 6px 77px;
     font-size: 1rem;
     font-weight: bold;
     color: #333;
@@ -496,7 +533,6 @@ ul.navbar-nav {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     margin-top: 20px;
 }
-
 #editProfileButton:hover {
     background-color: #ffa726;
 }
@@ -641,7 +677,7 @@ img.imgSonido {
     background-color: #ffb300;
 }
 .player-details h3 {
-    font-family: 'Poppins', sans-serif;
+    font-family:'Pirata One', cursive; 
     font-weight: bold;
     text-align: center;
     font-size: 1.5rem;
@@ -652,11 +688,12 @@ img.imgSonido {
 .player-details p {
     font-size: 1.2rem;
     color: #333;
+    font-family:'Pirata One', cursive; 
 }
 #soundButton p {
     margin: 8px;
     font-size: 26px;
-    font-family:'Pirata One', cursive; ;
+    font-family:'Pirata One', cursive; 
     color: #012840;
 }
 .avatar {
@@ -784,7 +821,7 @@ img.imgSonido {
     background-color: #ffca28;
     border: none;
     border-radius: 30px; 
-    padding: 10px 20px; 
+
     font-size: 0.9rem;   
     font-weight: bold;
     color: #333;

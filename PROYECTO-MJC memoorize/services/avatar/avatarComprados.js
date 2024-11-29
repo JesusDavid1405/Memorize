@@ -63,6 +63,9 @@ fetch('../resources/avatar/avatarComprado.php', {
                 if(data.status){
                     pantalla.innerHTML = data.mensaje;
                     modal.show();
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000); 
                 }
                 
             })

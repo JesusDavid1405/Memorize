@@ -61,6 +61,9 @@ fetch('../resources/avatar/avatar.php', {
                 if(data.status){
                     pantalla.innerHTML = data.mensaje;
                     modal.show();
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000); 
                 }
                 
             })
@@ -95,6 +98,9 @@ fetch('../resources/avatar/avatar.php', {
                 }
                 modalTienda.style.display = 'none';
                 modal.show();
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000); 
             })
          
         })
@@ -104,5 +110,5 @@ fetch('../resources/avatar/avatar.php', {
 .catch(error => console.error('Error:', error));
 
 btnModal.addEventListener('click', () => {
-    window.location.reload(2000);
+    window.location.reload();
 });
