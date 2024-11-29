@@ -1,3 +1,20 @@
+// Lista de palabras groseras personalizadas
+const palabrasGroseras = [
+    'idiota', 'tonto', 'estúpido', 'imbécil', 'pendejo', 'cabrón', 'zorra', 'maldito',
+    'malnacido', 'desgraciado', 'hijo de puta', 'perra', 'zunga', 'culo', 'mierda',
+    'huevón', 'puto', 'joder', 'carajo', 'chingar','gonorrea','hp'
+];
+
+// Función para filtrar el mensaje
+function filtrarMensaje(mensaje) {
+    let mensajeFiltrado = mensaje;
+    palabrasGroseras.forEach(palabra => {
+        const regex = new RegExp(palabra, 'gi'); // Crea una expresión regular para buscar la palabra sin importar mayúsculas/minúsculas
+        mensajeFiltrado = mensajeFiltrado.replace(regex, '*'.repeat(palabra.length)); // Reemplaza la palabra por asteriscos
+    });
+    return mensajeFiltrado;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const chatToggle = document.getElementById('chat-toggle');
     const chatWindow = document.getElementById('chat-window');
@@ -34,8 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function sendMessage() {
-        const message = messageInput.value.trim();
+        let message = messageInput.value.trim();
         if (message) {
+            // Filtra el mensaje antes de enviarlo
+            message = filtrarMensaje(message);
+
             socket.send(JSON.stringify({
                 type: 'chat',
                 username: username,
@@ -43,6 +63,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }));
             messageInput.value = '';
         }
+    }
+
+    // Función para leer mensajes usando la API de SpeechSynthesis
+    function readMessage(message) {
+        const utterance = new SpeechSynthesisUtterance(message);
+        utterance.lang = 'es-ES'; // Puedes cambiar el idioma si es necesario
+        speechSynthesis.speak(utterance);
     }
 
     socket.onmessage = (event) => {
@@ -59,6 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     'mb-2', 
                     data.username === username ? 'text-blue-600' : 'text-gray-800'
                 );
+
+                // Leer el mensaje en voz alta
+                if (data.username !== username) { // Solo leer los mensajes de otros usuarios
+                    readMessage(`${data.username} dice: ${data.content}`);
+                }
                 break;
 
             case 'usuario-conectado':
