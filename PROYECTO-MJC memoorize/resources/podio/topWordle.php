@@ -20,6 +20,7 @@
         if ($conn) {
             $query = "
             SELECT 
+                ROW_NUMBER() OVER (ORDER BY hn.puntos DESC, hn.tiempo ASC) AS posicion,
                 hn.id AS historialId,
                 u.nickName AS usuario,
                 a.nombre AS avatarNombre,
@@ -39,12 +40,13 @@
             JOIN 
                 avatares a ON u.avatarId = a.id
             JOIN
-                niveles n ON hn.nivelId= n.id
+                niveles n ON hn.nivelId = n.id
             WHERE 
                 hn.estadoNivel = 1 
-                AND j.id = IFNULL(?, 2) -- Si no se proporciona un ID de juego, usa el juego con ID = 1
+                AND j.id = IFNULL(?, 2) -- Si no se proporciona un ID de juego, usa el juego con ID = 2
             ORDER BY 
-                hn.puntos DESC
+                hn.puntos DESC,
+                hn.tiempo ASC
             LIMIT 10;
             ";
 
@@ -57,6 +59,7 @@
 
                 while ($row = $result->fetch_assoc()) {
                     $response[]=[
+                        'posicion' => $row['posicion'],
                         'avatar' => $row['avatarImagen'],
                         'nickName' => $row['usuario'],
                         'puntos'=> $row['puntos'],

@@ -30,6 +30,7 @@ function cargarTop(juegoId = 2) {
         data.forEach(element => {
             displayTop.innerHTML += `
                 <tr>
+                    <td>${element.posicion}</td>
                     <td>
                         <div class="player-info">
                             <img src="../img/avatar/${element.avatar}" alt="${element.nickName}" class="avatar">

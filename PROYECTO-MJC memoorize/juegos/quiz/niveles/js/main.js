@@ -6,7 +6,7 @@ let mainContainer = document.querySelector('.main-container')
 let resultElement = document.querySelector(".result")
 let pistaIndex = 0; 
 let estadoNivel;
-
+let monedas;
 let tiempo = 30; 
     
 
@@ -278,6 +278,12 @@ fetch('../../../resources/wordle/palabras.php', {
                 // });
             }
 
+            if(estadoNivel){
+                monedas=50;
+            }else{
+                monedas=0;
+            }
+
             console.log(estadoNivel)
             
             let tiempoCliente = formatoTiempo(tiempoContador);
@@ -291,7 +297,8 @@ fetch('../../../resources/wordle/palabras.php', {
                 body: JSON.stringify({
                     estadoNivel,
                     tiempo: tiempoCliente,
-                    puntos: puntosClientes
+                    puntos: puntosClientes,
+                    monedas: monedas,
                 })
             })
             .then(response => {

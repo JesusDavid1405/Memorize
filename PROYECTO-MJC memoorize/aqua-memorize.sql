@@ -45,7 +45,7 @@ CREATE TABLE `historialNiveles` (
 	`nivelId` INTEGER NOT NULL,
 	`puntos` BIGINT NOT NULL,
 	`tiempo` TIME NOT NULL,
-	`monedas` BIGINT NOT NULL DEFAULT 50,
+	`monedas` BIGINT NOT NULL,
 	`estadoNivel` BOOLEAN NOT NULL,
 	PRIMARY KEY(`id`)
 );
