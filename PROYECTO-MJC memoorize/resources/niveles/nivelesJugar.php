@@ -51,7 +51,7 @@
                     AND n_next.numero = n.numero + 1
                 )
             )
-            AND n.juegoId = ? -- Filtrar por el juego en la tabla niveles
+            AND h.juegoId = ? -- Filtrar por el juego en la tabla niveles
         ORDER BY 
             n.numero ASC;
 

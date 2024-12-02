@@ -1,5 +1,4 @@
 let displayJuegos = document.getElementById('juegos');
-let juegoId=0;
 
 fetch('../resources/juegos/juegos.php', {
     method: 'POST',
@@ -29,7 +28,7 @@ fetch('../resources/juegos/juegos.php', {
     data.forEach(element => {
         const button = document.getElementById(`play-${element.id}`);
         button.addEventListener('click', (event) => {
-            juegoId=event.target.getAttribute('data-id');
+            let juegoId=event.target.getAttribute('data-id');
             fetch('../resources/juegos/juegoJugar.php', {
                 method: 'POST',
                 headers: {

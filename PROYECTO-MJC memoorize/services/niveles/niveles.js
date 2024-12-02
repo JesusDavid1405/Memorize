@@ -49,7 +49,6 @@ fetch('../../resources/niveles/nivelesJugar.php', {
         element.addEventListener('click', (event)=> {
 
             let nivelesJugar = event.target.getAttribute('data-id');
-            console.log(nivelesJugar)
 
             fetch('../../resources/niveles/nivelJugar.php',{
                 method: 'POST',
@@ -63,7 +62,9 @@ fetch('../../resources/niveles/nivelesJugar.php', {
 
             setTimeout(() => {
                 goToLevel(nivelesJugar);
-
+                setTimeout(() => {
+                    window.location.href = 'niveles/index.html';
+                }, 2000); 
             }, 100);
         });
     });
@@ -79,12 +80,4 @@ function goToLevel(level) {
     
     ship.style.top = topPosition;
     ship.style.left = leftPosition;
-
-    localStorage.setItem('selectedLevel', level);
-    localStorage.setItem('shipTop', topPosition);
-    localStorage.setItem('shipLeft', leftPosition);
-
-    setTimeout(() => {
-        window.location.href = 'niveles/index.html';
-    }, 2000); 
 }
