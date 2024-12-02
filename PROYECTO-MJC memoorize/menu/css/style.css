@@ -220,7 +220,7 @@ body{
 .modal-content {
     padding: 20px;
     font-family: 'Pirata One', cursive; 
-    font-size: 22px;
+    font-size: 18px;
     border: 5px solid #ffcc00; 
     text-shadow: 3px 3px 0px #ffffff00,   
     6px 6px 0px #8b451300; 
@@ -1334,6 +1334,70 @@ nav {
         margin-top: 20%;
         
     
+    }
+    .modal-dialog {
+        max-width: 85%; /* Ajusta el ancho total del modal */
+        margin: 20px;
+        
+    }
+
+    .modal-content {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-header {
+        text-align: center;
+        padding: 10px;
+        border-bottom: none; /* Elimina el borde inferior del encabezado */
+    }
+
+    .modal-title {
+        font-size: 1em;
+    }
+
+    .modal-body {
+        display: flex;
+        flex-direction: row; /* Elementos en una fila horizontal */
+        align-items: center;
+        justify-content: center;
+        gap: 0px; 
+        padding: 0px;
+        overflow-x: auto; /* Permite desplazamiento si el contenido es más grande */
+    }
+
+    .col-md-4, 
+    .col-md-8 {
+        flex: 0; /* Ajusta el ancho proporcionalmente */
+        max-width: 30%; /* Limita el ancho de cada columna */
+    }
+
+    .menu-top {
+        text-align: left;
+    }
+
+    #juegosTop {
+        list-style: none;
+        padding: 0;
+        font-size: 0.8em; /* Reduce el tamaño del texto */
+    }
+
+    .table {
+        font-size: 0.8em; /* Reduce el tamaño del texto de la tabla */
+        width: 100%;
+    }
+
+    .table th, 
+    .table td {
+        padding: 5px; /* Reduce el espacio en celdas */
+    }
+
+    .btn-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
     }
     
 }
