@@ -88,7 +88,7 @@ body{
     justify-content: center;
     background-color: #ffffff5f;
     border: 3px solid #3b2944;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+
     border-radius: 10px;
     padding: 8px 8px;
     right: 15vh;
@@ -452,7 +452,7 @@ li.nav-item {
     flex: 1;
     text-align: center;
     color: #ffffff;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+
     border-radius: 15px;
     background: radial-gradient(circle, rgb(231, 147, 68) 0%, rgba(228, 181, 53, 0.651) 100%);
     box-shadow: 20px 10px 40px rgb(221, 149, 55),
@@ -557,7 +557,7 @@ ul.navbar-nav {
     border: none;
     cursor: pointer;
     flex-direction: row;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+ 
     margin-top: 1%;
     transition: transform 200ms;
 }
@@ -566,7 +566,7 @@ ul.navbar-nav {
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+
     border: none;
     cursor: pointer;
     flex-direction: row;
@@ -599,7 +599,7 @@ ul.navbar-nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+
     justify-content: center;
     background-color: transparent;
     border: none;
@@ -638,7 +638,7 @@ img.imgSonido {
     justify-content: center;
     background-color: transparent;
     border: none;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+ 
     cursor: pointer;
     transition: transform 200ms;
     
