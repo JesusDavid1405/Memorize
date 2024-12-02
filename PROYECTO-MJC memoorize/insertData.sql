@@ -483,4 +483,96 @@ INSERT INTO `imagen` (`nombre`,`url`) VALUES
     ('loro','loro.jpg'),
     ('orca','orca.jpg'),
     ('playa','playa.jpg'),
-    ('venecia','venecia.jpg'); 
+    ('arrecife Nocturno','arrecifeNoche.jpg'), 
+    ('palmeras','palmeras.jpg'),
+    ('olas','olas.jpg'),
+    ('sirena','sirena.jpg'),
+    ('tornado','tornado.jpg'),
+    ('nube Bajo Agua','nubeBajoAgua.jpg'),
+    ('concha','concha.jpg'),
+    ('moustro','moustro.jpg'),
+    ('castillo','castillo.jpg'),
+    ('buso Profesional','busoProfesional.jpg'),
+    ('barco Pirata','barcoPirata.jpg'),
+    ('ballena Cosmica','ballenaCosmica.jpg'),
+    ('arrecifeNoche','arrecifeNoche.jpg'); 
+
+-- Nivel 1 (Área 3, 6 imágenes)
+INSERT INTO `imagenNivel` (`imagenId`, `nivelId`, `area`, `movimientosMin`)
+VALUES 
+(1, 1, 3, 15),
+(2, 1, 3, 15),
+(3, 1, 3, 15),
+(4, 1, 3, 15),
+(5, 1, 3, 15),
+(6, 1, 3, 15);
+
+-- Nivel 2 (Área 4, 6 imágenes)
+INSERT INTO `imagenNivel` (`imagenId`, `nivelId`, `area`, `movimientosMin`)
+VALUES 
+(7, 2, 4, 18),
+(8, 2, 4, 18),
+(9, 2, 4, 18),
+(10, 2, 4, 18),
+(11, 2, 4, 18),
+(12, 2, 4, 18);
+
+-- Nivel 3 (Área 4, 6 imágenes)
+INSERT INTO `imagenNivel` (`imagenId`, `nivelId`, `area`, `movimientosMin`)
+VALUES 
+(13, 3, 4, 20),
+(14, 3, 4, 20),
+(15, 3, 4, 20),
+(16, 3, 4, 20),
+(17, 3, 4, 20),
+(18, 3, 4, 20);
+
+-- Nivel 4 (Área 5, 6 imágenes)
+INSERT INTO `imagenNivel` (`imagenId`, `nivelId`, `area`, `movimientosMin`)
+VALUES 
+(19, 4, 5, 22),
+(20, 4, 5, 22),
+(21, 4, 5, 22),
+(1, 4, 5, 22),
+(2, 4, 5, 22),
+(3, 4, 5, 22);
+
+-- Nivel 5 (Área 5, 6 imágenes)
+INSERT INTO `imagenNivel` (`imagenId`, `nivelId`, `area`, `movimientosMin`)
+VALUES 
+(4, 5, 5, 25),
+(5, 5, 5, 25),
+(6, 5, 5, 25),
+(7, 5, 5, 25),
+(8, 5, 5, 25),
+(9, 5, 5, 25);
+
+-- Nivel 6 (Área 6, 6 imágenes)
+INSERT INTO `imagenNivel` (`imagenId`, `nivelId`, `area`, `movimientosMin`)
+VALUES 
+(10, 6, 6, 28),
+(11, 6, 6, 28),
+(12, 6, 6, 28),
+(13, 6, 6, 28),
+(14, 6, 6, 28),
+(15, 6, 6, 28);
+
+-- Nivel 7 (Área 6, 6 imágenes)
+INSERT INTO `imagenNivel` (`imagenId`, `nivelId`, `area`, `movimientosMin`)
+VALUES 
+(16, 7, 6, 30),
+(17, 7, 6, 30),
+(18, 7, 6, 30),
+(19, 7, 6, 30),
+(20, 7, 6, 30),
+(21, 7, 6, 30);
+
+-- Nivel 8 (Área 7, 6 imágenes)
+INSERT INTO `imagenNivel` (`imagenId`, `nivelId`, `area`, `movimientosMin`)
+VALUES 
+(1, 8, 7, 32),
+(2, 8, 7, 32),
+(3, 8, 7, 32),
+(4, 8, 7, 32),
+(5, 8, 7, 32),
+(6, 8, 7, 32);

@@ -1,4 +1,4 @@
-function goToLevel3(level) {
+function goToLevel(level) {
     const ship = document.getElementById('ship');
     const levelElement = document.querySelector(`.level.level-${level}`);
     
@@ -13,6 +13,15 @@ function goToLevel3(level) {
     localStorage.setItem('shipLeft', leftPosition);
 
     setTimeout(() => {
-        window.location.href = '../rompecabeza 5x5/index.html';
+        window.location.href = '../quiz/niveles/index.html';
     }, 2000); 
+}
+function showModal() {
+    const modal = document.getElementById('modal');
+    modal.style.display = 'flex';
+}
+
+function closeModal() {
+    const modal = document.getElementById('modal');
+    modal.style.display = 'none';
 }

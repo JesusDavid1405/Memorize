@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <title>Dificultad</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
+</head>
+<body>
+   
+    <div class="back-button">
+        <a href="../../menu/index.html"><img class="back-button-img" src="../../img/icon/back.png" alt="Icono de retroceder"></a>
+    </div>
+    <div class="menu" onclick="toggleButtons()">
+        <img src="../../img/icon/wenu-Photoroom.png" alt="Icono del menú" style="width: 40px; height: auto;">
+        <div class="button-container" style="display: none;">
+            <button id="musicButton">
+                <img class="imgSonido" src="../../img/musica.png" alt="Icono de sonido">
+            </button>
+        </div>
+    </div>
+
+    <div class="map-container" id="niveles">
+        
+        <h1 class="menu-title">Niveles</h1>
+        <div id="lineaRoja"></div>
+        <div class="chest" onclick="showModal()">
+            <img src="../../img/icon/cofre.png" alt="Cofre del tesoro" class="chest-img">
+        </div>
+        <img src="../../img/bar.png" alt="Barco pirata" class="ship" id="ship" style="top: 50px; left: 50px;">
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Oh no, aún no has terminado todos los niveles</p>
+        </div>
+    </div>
+
+    <audio id="backgroundMusic" src="../../audio/no-copyright-music-181373.mp3" loop></audio>
+    <script src="../../services/niveles/niveles.js"></script>
+    <script src="js/menu.js"></script>
+    <!-- <script src="js/barco.js"></script> -->
+    <script src="js/sonido.js"></script>
+    <script src="../../bootstrap/js/bootstrap.js"></script>
+    <script src="../../bootstrap/js/bootstrap.bundle.js"></script>
+        
+</body>
+  
+</html>

@@ -51,7 +51,7 @@ fetch('../../resources/niveles/nivelesJugar.php', {
             let nivelesJugar = event.target.getAttribute('data-id');
             console.log(nivelesJugar)
 
-            fetch('../../resources/wordle/nivelJugar.php',{
+            fetch('../../resources/niveles/nivelJugar.php',{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

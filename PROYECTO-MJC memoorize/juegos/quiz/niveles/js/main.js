@@ -289,7 +289,7 @@ fetch('../../../resources/wordle/palabras.php', {
             let tiempoCliente = formatoTiempo(tiempoContador);
             let puntosClientes = puntacion(rowId,tiempoContador);
 
-            fetch('../../../resources/wordle/historialNivel.php', {
+            fetch('../../../resources/niveles/historialNivel.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
