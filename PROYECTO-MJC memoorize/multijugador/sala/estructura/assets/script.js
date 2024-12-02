@@ -1,8 +1,21 @@
+// Modify the WebSocket connection
+const socket = new WebSocket('ws://localhost:8080');
+
+// Add error handling
+socket.onerror = (error) => {
+    console.error('WebSocket Error:', error);
+};
+
+socket.onopen = () => {
+    console.log('WebSocket connection established');
+};
+
+
 // Lista de palabras groseras personalizadas
 const palabrasGroseras = [
     'idiota', 'tonto', 'estúpido', 'imbécil', 'pendejo', 'cabrón', 'zorra', 'maldito',
     'malnacido', 'desgraciado', 'hijo de puta', 'perra', 'zunga', 'culo', 'mierda',
-    'huevón', 'puto', 'joder', 'carajo', 'chingar','gonorrea','hp'
+    'huevón', 'puto', 'joder', 'carajo', 'chingar','gonorrea','hp','sapa','pene','puchaina','vagina'
 ];
 
 // Función para filtrar el mensaje
