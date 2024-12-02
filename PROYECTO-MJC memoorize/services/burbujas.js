@@ -23,3 +23,19 @@ function createBubbles(event) {
         window.location.href = '../views/bar.html';
     }, 1400);
 }
+document.addEventListener("DOMContentLoaded", function () {
+    const texto = "JUGAR"
+    const velocidad = 700; // Velocidad de escritura en milisegundos
+    const elemento = document.getElementById("btnTex");
+    let index = 0;
+
+    function btnTex() {
+        if (index < texto.length) {
+            elemento.textContent += texto[index];
+            index++;
+            setTimeout(btnTex, velocidad);
+        }
+    }
+
+    btnTex();
+});

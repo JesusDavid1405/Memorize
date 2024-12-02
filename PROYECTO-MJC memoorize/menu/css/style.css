@@ -3,8 +3,10 @@ body{
     background-repeat: no-repeat;
     font-family:'Pirata One', cursive;
     background-size: cover;
+    
     background-attachment: fixed;
     overflow: hidden;
+    
     height: 0vh;
     margin: 0;
     animation: puffIn 1s ease-in-out
@@ -76,8 +78,8 @@ body{
 
 .tienda .tienda-text {
     font-weight: bold;
-    
-    font-size: 14px;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+    font-size: 18px;
 }
 .moneda {
     display: flex;
@@ -86,6 +88,7 @@ body{
     justify-content: center;
     background-color: #ffffff5f;
     border: 3px solid #3b2944;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
     border-radius: 10px;
     padding: 8px 8px;
     right: 15vh;
@@ -415,12 +418,9 @@ body{
 .menu-title {
     font-family: 'Pirata One', cursive; 
     text-align: center;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
     font-size: 5.0rem;
     color: #ff8400;  
-    text-shadow: 
-        3px 3px 0px rgba(0, 0, 0, 0.5),  /* Sombra suave oscura */
-        6px 6px 10px rgba(139, 69, 19, 0.7), /* Sombra con efecto difuso para profundidad */
-        0 0 15px rgba(255, 223, 0, 0.8);  /* Sombra dorada para darle un brillo */
     position: relative;
     padding: 0px;
     letter-spacing: 0px;  /* Espaciado entre letras */
@@ -452,8 +452,7 @@ li.nav-item {
     flex: 1;
     text-align: center;
     color: #ffffff;
-    text-shadow: 3px 3px 0px #ffffff00, 
-                 6px 6px 0px #8b451300; 
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
     border-radius: 15px;
     background: radial-gradient(circle, rgb(231, 147, 68) 0%, rgba(228, 181, 53, 0.651) 100%);
     box-shadow: 20px 10px 40px rgb(221, 149, 55),
@@ -558,6 +557,7 @@ ul.navbar-nav {
     border: none;
     cursor: pointer;
     flex-direction: row;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
     margin-top: 1%;
     transition: transform 200ms;
 }
@@ -566,6 +566,7 @@ ul.navbar-nav {
     align-items: center;
     justify-content: center;
     background-color: transparent;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
     border: none;
     cursor: pointer;
     flex-direction: row;
@@ -598,6 +599,7 @@ ul.navbar-nav {
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
     justify-content: center;
     background-color: transparent;
     border: none;
@@ -636,7 +638,7 @@ img.imgSonido {
     justify-content: center;
     background-color: transparent;
     border: none;
-    
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
     cursor: pointer;
     transition: transform 200ms;
     
@@ -931,6 +933,7 @@ nav {
     z-index: 1;
     right: 3%;
     color: inherit;
+    
     top: 20px;
     pointer-events: auto;
     font-size: 26px;
