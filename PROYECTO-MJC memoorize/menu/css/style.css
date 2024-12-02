@@ -418,7 +418,7 @@ body{
 .menu-title {
     font-family: 'Pirata One', cursive; 
     text-align: center;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+    text-shadow: 0 0 10px #eeff00, 0 0 20px #ffcc00, 0 0 30px #ff8800;
     font-size: 5.0rem;
     color: #ff8400;  
     position: relative;
@@ -426,9 +426,7 @@ body{
     letter-spacing: 0px;  /* Espaciado entre letras */
     text-transform: uppercase;  
 }
-.menu-title:hover{
-    color: #ffca7a;
-}
+
 @keyframes vanishIn {
     0% {
         opacity: 0;
