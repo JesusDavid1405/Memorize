@@ -39,7 +39,7 @@ fetch('../../../resources/wordle/palabras.php', {
             tiempoContador--; 
             document.getElementById('contador').innerHTML = formatoTiempo(tiempoContador); 
         
-            if (tiempo <= 0) {
+            if (tiempoContador <= 0) {
                 clearInterval(contadorTiempo);
                 mostrarModal("¡El tiempo ha terminado!");  // Mostrar el modal de fin de juego
             }

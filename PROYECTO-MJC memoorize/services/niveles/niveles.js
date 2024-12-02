@@ -62,11 +62,29 @@ fetch('../../resources/niveles/nivelesJugar.php', {
             })
 
             setTimeout(() => {
-
-                window.location.href = 'niveles/index.html';
+                goToLevel(nivelesJugar);
 
             }, 100);
         });
     });
 })
 .catch(error => console.error('Error:', error));
+
+function goToLevel(level) {
+    const ship = document.getElementById('ship');
+    const levelElement = document.querySelector(`.level.level-${level}`);
+    
+    const topPosition = levelElement.offsetTop + 'px';
+    const leftPosition = levelElement.offsetLeft + 'px';
+    
+    ship.style.top = topPosition;
+    ship.style.left = leftPosition;
+
+    localStorage.setItem('selectedLevel', level);
+    localStorage.setItem('shipTop', topPosition);
+    localStorage.setItem('shipLeft', leftPosition);
+
+    setTimeout(() => {
+        window.location.href = 'niveles/index.html';
+    }, 2000); 
+}
