@@ -88,7 +88,7 @@ body{
     justify-content: center;
     background-color: #ffffff5f;
     border: 3px solid #3b2944;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+
     border-radius: 10px;
     padding: 8px 8px;
     right: 15vh;
@@ -220,7 +220,7 @@ body{
 .modal-content {
     padding: 20px;
     font-family: 'Pirata One', cursive; 
-    font-size: 22px;
+    font-size: 18px;
     border: 5px solid #ffcc00; 
     text-shadow: 3px 3px 0px #ffffff00,   
     6px 6px 0px #8b451300; 
@@ -452,7 +452,7 @@ li.nav-item {
     flex: 1;
     text-align: center;
     color: #ffffff;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+
     border-radius: 15px;
     background: radial-gradient(circle, rgb(231, 147, 68) 0%, rgba(228, 181, 53, 0.651) 100%);
     box-shadow: 20px 10px 40px rgb(221, 149, 55),
@@ -557,7 +557,7 @@ ul.navbar-nav {
     border: none;
     cursor: pointer;
     flex-direction: row;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+ 
     margin-top: 1%;
     transition: transform 200ms;
 }
@@ -566,7 +566,7 @@ ul.navbar-nav {
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+
     border: none;
     cursor: pointer;
     flex-direction: row;
@@ -599,7 +599,7 @@ ul.navbar-nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+
     justify-content: center;
     background-color: transparent;
     border: none;
@@ -638,7 +638,7 @@ img.imgSonido {
     justify-content: center;
     background-color: transparent;
     border: none;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+ 
     cursor: pointer;
     transition: transform 200ms;
     
@@ -1334,6 +1334,70 @@ nav {
         margin-top: 20%;
         
     
+    }
+    .modal-dialog {
+        max-width: 85%; /* Ajusta el ancho total del modal */
+        margin: 20px;
+        
+    }
+
+    .modal-content {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-header {
+        text-align: center;
+        padding: 10px;
+        border-bottom: none; /* Elimina el borde inferior del encabezado */
+    }
+
+    .modal-title {
+        font-size: 1em;
+    }
+
+    .modal-body {
+        display: flex;
+        flex-direction: row; /* Elementos en una fila horizontal */
+        align-items: center;
+        justify-content: center;
+        gap: 0px; 
+        padding: 0px;
+        overflow-x: auto; /* Permite desplazamiento si el contenido es más grande */
+    }
+
+    .col-md-4, 
+    .col-md-8 {
+        flex: 0; /* Ajusta el ancho proporcionalmente */
+        max-width: 30%; /* Limita el ancho de cada columna */
+    }
+
+    .menu-top {
+        text-align: left;
+    }
+
+    #juegosTop {
+        list-style: none;
+        padding: 0;
+        font-size: 0.8em; /* Reduce el tamaño del texto */
+    }
+
+    .table {
+        font-size: 0.8em; /* Reduce el tamaño del texto de la tabla */
+        width: 100%;
+    }
+
+    .table th, 
+    .table td {
+        padding: 5px; /* Reduce el espacio en celdas */
+    }
+
+    .btn-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
     }
     
 }

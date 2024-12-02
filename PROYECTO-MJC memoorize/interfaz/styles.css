@@ -42,7 +42,7 @@ body {
 
 h1 {
     font-size: 4.5em;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+ 
     letter-spacing: 2px; /* Espaciado entre letras para alargar el texto */
     white-space: nowrap; /* Evita que el texto se baje a una nueva línea */
     display: inline-block; /* Asegura que el texto ocupe solo el espacio necesario */
@@ -64,7 +64,7 @@ p {
     font-size: 1.6em;
 }
 button {
-    background: linear-gradient(45deg, #00ffcc, #3284f0);
+    background: linear-gradient(45deg, #ffa600, #f0ba32);
     border: none;
     color: #ffffff;
     padding: 10px 20px;

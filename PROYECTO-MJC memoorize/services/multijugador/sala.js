@@ -24,7 +24,7 @@ btnCrearSala.addEventListener('click', function() {
     .then(data => {
         if(data.status){
             alert(data.mensaje);
-            window.location.href='../sala/index.html';
+            window.location.href='../../multijugador/sala/estructura/index.php';
         }
     })
     .catch(error => console.error('Error:', error));
