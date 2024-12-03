@@ -6,11 +6,11 @@ const dificultad = localStorage.getItem('dificultad');
 const playersContainer = document.getElementById('players');
 const rondas = localStorage.getItem('rondas');
 let configuraciones = `
-     <p><strong>Sala:</strong> ${nombreSala || 'No disponible'}</p>
-      <p><strong>codigo:</strong> ${codigoSala || 'No disponible'}</p>
-      <p><strong>Dificultad:</strong> ${dificultad || 'No disponible'}</p>
-      <p><strong>Rondas:</strong> ${rondas || 'No disponible'}</p>
-      <p><strong>Personas:</strong> ${numeroPersonas || 'No disponible'}</p>
+    <p><strong>Sala:</strong> ${nombreSala || 'No disponible'}</p>
+    <p><strong>codigo:</strong> ${codigoSala || 'No disponible'}</p>
+    <p><strong>Dificultad:</strong> ${dificultad || 'No disponible'}</p>
+    <p><strong>Rondas:</strong> ${rondas || 'No disponible'}</p>
+    <p><strong>Personas:</strong> ${numeroPersonas || 'No disponible'}</p>
 
 `;
 

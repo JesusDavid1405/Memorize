@@ -103,7 +103,7 @@
     <audio id="backgroundMusic" src="../../../../audio/no-copyright-music-181373.mp3" loop></audio>
     
 
-    <script src="js/sala.js"></script>
+    <script src="../../../services/multijugador/sala.js"></script>
     <script src="js/menu.js"></script>
     <script src="../../../bootstrap/js/bootstrap.js"></script>
     <script src="js/avatar.js"></script>

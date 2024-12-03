@@ -17,7 +17,7 @@
         ";
         
         $stmt= $conn->prepare($query);
-        $stmt->bind_param("isiisi",
+        $stmt->bind_param("ii",
             $creadorSala,
             $codigoSala
         );

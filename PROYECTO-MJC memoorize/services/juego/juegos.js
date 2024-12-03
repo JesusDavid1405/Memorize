@@ -29,6 +29,9 @@ fetch('../resources/juegos/juegos.php', {
         const button = document.getElementById(`play-${element.id}`);
         button.addEventListener('click', (event) => {
             let juegoId=event.target.getAttribute('data-id');
+
+            console.log(juegoId);
+
             fetch('../resources/juegos/juegoJugar.php', {
                 method: 'POST',
                 headers: {

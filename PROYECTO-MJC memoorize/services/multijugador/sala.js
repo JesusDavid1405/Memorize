@@ -1,41 +1,26 @@
-let btnCrearSala = document.getElementById('crearSala');
+let displaySala = document.getElementById('configuraciones');
 
-btnCrearSala.addEventListener('click', function() {
-    let nombreSala = document.getElementById('nombreSala').value; 
-    let numeroPersonas = parseInt(document.getElementById('numeroPersonas').value); 
-    let codigoSala = generateCode(); 
-    let dificultad = document.getElementById('dificultad').value;
-    let rondas = parseInt(document.getElementById('rondas').value);
-
-    fetch('../../resources/multijugador/crearSala.php',{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ 
-            nombreSala: nombreSala,
-            codigoSala: codigoSala,
-            capacidadSala: numeroPersonas,
-            dificultadSala: dificultad,
-            rondasSala: rondas
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if(data.status){
-            alert(data.mensaje);
-            window.location.href='../../multijugador/sala/estructura/index.php';
-        }
-    })
-    .catch(error => console.error('Error:', error));
-});
-
-function generateCode(){
-    let codigo;
-
-    let generate = Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000;
-
-    codigo = generate;
-
-    return codigo;
-}
+// Realizar la solicitud al backend
+fetch('../../../resources/multijugador/sala.php', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    }
+})
+.then(response => response.json())
+.then(data => {
+    if (Array.isArray(data) && data.length > 0) {
+        // Usar el primer resultado si es un array
+        const sala = data[0];
+        displaySala.innerHTML = `
+            <p><strong>Sala:</strong> ${sala.nombre || 'No disponible'}</p>
+            <p><strong>Código:</strong> ${sala.codigo || 'No disponible'}</p>
+            <p><strong>Dificultad:</strong> ${sala.dificultad || 'No disponible'}</p>
+            <p><strong>Rondas:</strong> ${sala.rondas || 'No disponible'}</p>
+            <p><strong>Personas:</strong> ${sala.personas || 'No disponible'}</p>
+        `;
+    } else {
+        displaySala.innerHTML = `<p>No existe ninguna sala disponible.</p>`;
+    }
+})
+.catch(error => console.error('Error:', error));

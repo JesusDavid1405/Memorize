@@ -1,6 +1,20 @@
 ﻿var timeCont;
 var timeMax = 40;
 
+fetch('../../../resources/rompecabezas/imagenes.php',{
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        id: ''
+    })
+})
+.then(response => response.json())
+.then(data => {
+    console.log(data)
+})
+
 var imagePuzzle = {
     stepCount: 0,
     startTime: new Date().getTime(),
