@@ -6,14 +6,15 @@ var images = [
     { src: '../../../img/rompecabezas/barco.jpg', title: 'BALLENA' },
     { src: 'images/arrecife.jpg', title: 'ARRECIFE' }
 ];
+var gridSize
 
 
 window.onload = function () {
-    var gridSize = document.querySelector('#levelPanel input[type="radio"]:checked').getAttribute('value');
+    gridSize = 3;
     imagePuzzle.startGame(images, gridSize);
 };
 function restart() {
-    var gridSize = document.querySelector('#levelPanel input[type="radio"]:checked').getAttribute('value');
+    gridSize = 3;
     imagePuzzle.startGame(images, gridSize);
 }
 

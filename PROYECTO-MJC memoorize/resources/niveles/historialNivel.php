@@ -6,6 +6,7 @@
 
     $usuarioId = $_SESSION['id'];
     $nivelId = $_SESSION['nivelId'];
+    $juegoId = $_SESSION['juegoId'];
 
     $input = file_get_contents('php://input');
     $data = json_decode($input, true);
@@ -18,7 +19,6 @@
         $tiempo = $data['tiempo'];
         $puntos = $data['puntos'];
         $monedasNivel= $data['monedas'];
-        $juegoId=2;
 
         $response=[
             $estadoNivel,
