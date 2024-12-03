@@ -42,7 +42,8 @@ INSERT INTO `palabra` (`palabra`) VALUES
 ('orilla'), ('muelle'), ('resaca'), ('marina'), ('ostras'),
 ('olas'), ('vela'), ('isla'), ('faro'), ('proa'), ('popa'), ('mapa'), ('nudo'), 
 ('lino'), ('azul'), ('boya'), ('cabo'), ('lago'), ('fosa'), ('este'), ('yate'),
-('remo'), ('lodo'), ('pico'), ('roca'), ('agua'), ('bojo');
+('remo'), ('lodo'), ('pico'), ('roca'), ('agua'), ('bojo')('Anclado'),
+('Barcaza'),('Caballa'),('Canibal'),('Galerna'),('Marisma'),('Sardina'),('Mareaos');
 
 -- Nivel 1 (5 letras)
 INSERT INTO `palabraNivel` (`palabraId`, `nivelId`) VALUES 
@@ -68,6 +69,9 @@ INSERT INTO `palabraNivel` (`palabraId`, `nivelId`) VALUES
 (11, 4), (12, 4), (13, 4), (14, 4), (15, 4), (16, 4), (17, 4), (18, 4), (19, 4), 
 (20, 4), (21, 4), (22, 4), (23, 4), (24, 4), (25, 4), (26, 4), (27, 4), (28, 4), 
 (29, 4), (30, 4), (31, 4), (32, 4);
+
+INSERT INTO `palabraNivel` (`palabraId`, `nivelId`) VALUES 
+(81, 5), (82, 5), (83, 5), (84, 5), (85, 5), (86, 5), (87, 5);
 
 
 INSERT INTO `pista` (`palabraId`, `pista`) VALUES

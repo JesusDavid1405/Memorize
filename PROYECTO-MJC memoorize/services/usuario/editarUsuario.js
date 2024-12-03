@@ -1,9 +1,11 @@
+
 let btnActualizar = document.getElementById('actualizar');
 
 btnActualizar.addEventListener('click', function() {
-    let personalInfo = document.getElementById('personalInfo').value; 
+    let personalInfo = document.getElementById('descripcion').value; 
+    console.log(personalInfo);
 
-    fetch('../../resourcers/usuario/editarPerfil.php',{
+    fetch('../resources/usuario/editarPerfil.php',{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -12,22 +14,9 @@ btnActualizar.addEventListener('click', function() {
             personalInfo: personalInfo
         })
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
-        if(data.status){
-            alert(data.mensaje);
-            document.getElementById('editProfileModal').modal('hide');
-        } else {
-            alert('Error: ' + data.mensaje);
-        }
+        alert(data.mensaje);
     })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('Hubo un problema al actualizar el perfil');
-    });
+    .catch(error => {'Error:', error});
 });
