@@ -18,12 +18,12 @@ body {
 }
 
 .porthole {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     border-radius: 50%;
     background: url('../img/logo/aqua-Memorize.png') no-repeat center center;
     background-size: contain;
-    border: 15px solid rgba(255, 255, 255, 0.3);
+    border: 15px solid rgba(255, 255, 255, 0);
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.7), inset 0 0 50px rgba(0, 255, 255, 0.3);
     animation: float 3s ease-in-out infinite;
 }
@@ -41,7 +41,7 @@ body {
 }
 
 h1 {
-    font-size: 4.5em;
+    font-size: 4.9em;
  
     letter-spacing: 2px; /* Espaciado entre letras para alargar el texto */
     white-space: nowrap; /* Evita que el texto se baje a una nueva línea */
@@ -61,7 +61,7 @@ h1 {
 
 p {
     max-width: 300px;
-    font-size: 1.6em;
+    font-size: 2.6em;
 }
 button {
     background: linear-gradient(45deg, #ffa600, #f0ba32);

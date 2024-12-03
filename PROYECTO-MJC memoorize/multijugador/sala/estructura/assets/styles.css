@@ -49,8 +49,6 @@ body {
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* Efecto al pasar el ratón sobre los inputs y botones */
 #login-section input:hover{
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
@@ -63,7 +61,7 @@ body {
     background-color: rgba(255, 164, 29, 0.7);
     box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
 }
-/* Estilo para los labels */
+
 #login-section label {
     display: block;
     margin: 10px 0;
@@ -79,33 +77,33 @@ body {
 
 #messages {
     background: radial-gradient(circle, rgba(214, 214, 16, 0.3) 0%, rgba(16, 137, 250, 0.5) 100%);
-    border-radius: 15px; /* Bordes más suaves */
+    border-radius: 15px;
     box-shadow: 0 0 40px rgba(0, 234, 255, 0.6), inset 0 0 40px rgba(0, 234, 255, 0.5), 0 0 50px rgba(0, 234, 255, 0.8);  /* Bordes LED sutiles con sombra */
     font-family: 'Pirata One', cursive;
-    color: #fff; /* Texto blanco para buen contraste */
+    color: #fff; 
     padding: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, padding 0.3s ease;
 }
 
 #messages::-webkit-scrollbar {
-    width: 8px; /* Ancho moderado para la barra de desplazamiento */
+    width: 8px; 
 }
 
 #messages::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.1); /* Fondo oscuro para el track */
+    background: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
 #messages::-webkit-scrollbar-thumb {
-    background: #00eaff; /* Color LED suave para el thumb */
+    background: #00eaff; 
     border-radius: 10px;
-    box-shadow: 0 0 6px rgba(0, 234, 255, 0.6); /* Resplandor leve para el thumb */
+    box-shadow: 0 0 6px rgba(0, 234, 255, 0.6);
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 #messages::-webkit-scrollbar-thumb:hover {
-    background: #00b3cc; /* Cambio de color al hacer hover */
-    box-shadow: 0 0 10px rgba(0, 234, 255, 0.8); /* Intensificación del resplandor */
+    background: #00b3cc; 
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.8); 
 }
 
 #login-modal {
@@ -300,8 +298,16 @@ body {
     align-items: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease; 
+    animation: girarRueda 5s linear infinite;
 }
-
+@keyframes girarRueda {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 .multiplayer-container::after {
     content: "";
     position: absolute;
@@ -516,8 +522,12 @@ h2 {
 }
 @media (max-width: 768px) {
     .avatar {
-        width: 60px;
-        height: 60px;
+        width: 10%;
+        height: 10%;
+    }
+    .avatars {
+        width: 10%;
+        height: 10%;
     }
     .back-button img {
         width: 50px;
@@ -552,7 +562,7 @@ h2 {
     .menu-title {
         font-size: 2.2rem;
         bottom: 45%;
-        margin-right: 10%;
+        left: 55%;
         
     }
     .imgSonido {
@@ -560,8 +570,8 @@ h2 {
     }
     .multiplayer-container {
         width: 340px;
-        left: -2%;
-        top: 10%;
+        left: -33%;
+        bottom: 25%;
         height: 70%;
     }  
     .avatar:nth-child(1) { transform: rotate(0deg) translate(143px); }
@@ -582,11 +592,29 @@ h2 {
     .avatar-name {
         font-size: 0.8em;
     }
+    #login-section {
+        width: 90%; /* Se ajusta al ancho del dispositivo */
+        padding: 15px; /* Menos espacio interior para dispositivos más pequeños */
+        font-size: 0.9rem; /* Reducir el tamaño de fuente */
+    }
+
+    #login-section h1 {
+        font-size: 1.5rem; /* Reducir el tamaño del encabezado */
+    }
+
+    #login-section input {
+        padding: 8px; /* Reducir el espacio interno de los inputs */
+        font-size: 0.9rem; /* Reducir el tamaño del texto */
+    }
+
+    #login-section button {
+        font-size: 0.9rem; /* Reducir el tamaño del botón */
+        padding: 8px; /* Ajustar el padding */
+    }
+
+    #messages {
+        padding: 10px; /* Reducir el padding del contenedor */
+        font-size: 0.85rem; /* Reducir el tamaño de la fuente */
+    }
 }
 
-img {
-    width: 300px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}

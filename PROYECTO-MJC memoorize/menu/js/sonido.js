@@ -37,3 +37,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    document.addEventListener("DOMContentLoaded", function () {
+        const texto = "Menu de juegos"
+        const velocidad = 180; // Velocidad de escritura en milisegundos
+        const elemento = document.getElementById("menutitle");
+        let index = 0;
+    
+        function menutitle () {
+            if (index < texto.length) {
+                elemento.textContent += texto[index];
+                index++;
+                setTimeout(menutitle, velocidad);
+            }
+        }
+    
+        menutitle ();
+    });
+    
