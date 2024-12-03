@@ -21,7 +21,7 @@
     </nav>
     <main>
         <div id="formulario" class="col-6">
-            <form action="" method="post" class="row g-3">
+            <form id="loginForm" method="POST" action="../lib/correo/correo.php">
                 <div class="logoForm col-md-6">
                     <center>
                         <img src="../../img/logo/aqua-Memorize.png" alt="">
@@ -31,7 +31,7 @@
 
 				<h5 class="text1">ingresa tu correo para validar la solicitud de cambio de contraseña</p>
                 <div class="col-md-11 inputIcon">
-                    <input type="email" class="form-control input" id="emailLogin" placeholder="Gmail" required>
+                    <input type="email" class="form-control input" id="recuperar"name="recuperar" placeholder="Gmail" required>
                     <span id="icon"> 
                         <img src="../../img/icon/user.png" alt="">
                     </span>
@@ -44,7 +44,7 @@
                         </button>
                         -->
                         <a href="../menu/bar.html" class="btn btnLogin">
-                            <h6 class="text">Enviar Solicitud</h6>
+                            <button type="submit" class="text">Restablecer Contraseña</button>
                         </a>
                     </center>
                 </div>

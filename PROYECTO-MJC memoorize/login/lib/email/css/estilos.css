@@ -1,0 +1,9 @@
+body {
+    background-image: url(../img/fondo4.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Pirata One', cursive; 
+    background-attachment: fixed;
+    overflow: hidden;
+    animation: puffIn 1s ease-in-out
+}
