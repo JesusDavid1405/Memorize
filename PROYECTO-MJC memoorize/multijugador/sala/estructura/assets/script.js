@@ -121,3 +121,20 @@ document.addEventListener('DOMContentLoaded', () => {
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
     };
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const texto = "Sala de espera"
+    const velocidad = 120; // Velocidad de escritura en milisegundos
+    const elemento = document.getElementById("menutitle");
+    let index = 0;
+
+
+function menutitle () {
+        if (index < texto.length) {
+            elemento.textContent += texto[index];
+            index++;
+            setTimeout(menutitle, velocidad);
+        }
+    }
+
+    menutitle ();
+});

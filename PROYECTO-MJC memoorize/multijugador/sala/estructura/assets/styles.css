@@ -203,26 +203,29 @@ body {
   border: none;
   transition: background-color 0.3s;
 }
-.menu-title {
+
+h1 {
     font-family: 'Pirata One', cursive;
     font-weight: bold;
     z-index: 10;
     text-transform: uppercase;
-    font-size: 3.0rem; /* Puede ajustarse según el tamaño deseado */
-    color: #ffd700;
-    text-shadow: 3px 3px 0px #000000,
-                 6px 6px 0px #8b4513;
+    font-size: 6.0em; /* Puede ajustarse según el tamaño deseado */
+    color: #ffd90000;
+    text-shadow: 3px 3px 0px #ffee00e1,
+                 0px 0px 0px #fdf500;
     position: relative;
     padding: 0px;
     left: 8%;
     animation: vanishIn 1s ease-in-out;
     letter-spacing: 2px; /* Espaciado entre letras para alargar el texto */
     white-space: nowrap; /* Evita que el texto se baje a una nueva línea */
-    display: inline-block; /* Asegura que el texto ocupe solo el espacio necesario */
+    display: inline-block;
 }
-
-
-.menu-title:hover {
+#h1::after {
+    content: "";
+    animation: blink 0.5s step-start infinite;
+}
+.menutitle:hover {
     transform: scale(1.1);
 }
 
@@ -559,7 +562,7 @@ h2 {
     
     }
 
-    .menu-title {
+    .menutitle {
         font-size: 2.2rem;
         bottom: 45%;
         left: 55%;
@@ -592,7 +595,7 @@ h2 {
     .avatar-name {
         font-size: 0.8em;
     }
-    #login-section {
+     #login-section {
         width: 90%; /* Se ajusta al ancho del dispositivo */
         padding: 15px; /* Menos espacio interior para dispositivos más pequeños */
         font-size: 0.9rem; /* Reducir el tamaño de fuente */
