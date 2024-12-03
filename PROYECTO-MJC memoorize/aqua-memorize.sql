@@ -66,7 +66,7 @@ CREATE TABLE `sala` (
 	`nombre` VARCHAR(50) NOT NULL,
 	`codigo` BIGINT NOT NULL,
 	`capacidad` INTEGER NOT NULL,
-	`dificultad` INTEGER NOT NULL,
+	`dificultad` VARCHAR(20) NOT NULL,
 	`rondas` INTEGER NOT NULL,
 	`rondaActual` INTEGER NOT NULL,
 	`estado` VARCHAR(50) NOT NULL DEFAULT 'abierta',

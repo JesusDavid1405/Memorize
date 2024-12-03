@@ -4,7 +4,8 @@ btnCrearSala.addEventListener('click', function() {
     let nombreSala = document.getElementById('nombreSala').value; 
     let numeroPersonas = parseInt(document.getElementById('numeroPersonas').value); 
     let codigoSala = generateCode(); 
-    let dificultad = document.getElementById('dificultad').value;
+    let dificultadSelect= document.getElementById('dificultad');
+    let dificultad= dificultadSelect.value;
     let rondas = parseInt(document.getElementById('rondas').value);
 
     fetch('../../resources/multijugador/crearSala.php',{
