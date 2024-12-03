@@ -576,3 +576,8 @@ VALUES
 (4, 8, 7, 32),
 (5, 8, 7, 32),
 (6, 8, 7, 32);
+
+/*alter usuarios*/
+ALTER TABLE usuarios
+ADD COLUMN reset_token VARCHAR(255),
+ADD COLUMN token_expiration DATETIME;
