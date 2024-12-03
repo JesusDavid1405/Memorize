@@ -49,7 +49,7 @@ fetch('../../resources/niveles/nivelesJugar.php', {
         element.addEventListener('click', (event)=> {
 
             let nivelesJugar = event.target.getAttribute('data-id');
-
+            console.log(nivelesJugar)
             fetch('../../resources/niveles/nivelJugar.php',{
                 method: 'POST',
                 headers: {
