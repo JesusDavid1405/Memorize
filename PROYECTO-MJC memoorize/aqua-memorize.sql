@@ -47,6 +47,7 @@ CREATE TABLE `historialNiveles` (
 	`tiempo` TIME NOT NULL,
 	`monedas` BIGINT NOT NULL,
 	`estadoNivel` BOOLEAN NOT NULL,
+	fechaInicio DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY(`id`)
 );
 
@@ -144,6 +145,7 @@ CREATE TABLE historialRonda (
 	tiempo TIME NOT NULL,
 	puntos BIGINT NOT NULL,
 	podio INTEGER NOT NULL,
+	fechaInicio DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY(id)
 );
 
@@ -154,6 +156,7 @@ CREATE TABLE historialSala (
 	tiempoPromedio TIME NOT NULL,
 	puntosTotal BIGINT NOT NULL,
 	podioFinal INTEGER NOT NULL,
+	fechaInicio DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY(id)
 );
 

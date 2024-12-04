@@ -29,7 +29,7 @@ if($data && isset($data['personalInfo'])){
 
                 $monedasUpdate = $monedasActual - 100;
 
-                if($monedasUpdate > 0){
+                if($monedasUpdate >= 0){
                     $queryMonedasUpdate= "UPDATE usuarios SET monedas=? WHERE id=?;";
                     $stmtMonedasUpdate= $conn->prepare($queryMonedasUpdate);
                     $stmtMonedasUpdate->bind_param("ii",
