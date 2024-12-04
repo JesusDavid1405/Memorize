@@ -477,6 +477,33 @@ INSERT INTO `pista` (`palabraId`, `pista`) VALUES
     (80, 'Es la zona que está en contacto con el agua.'),
     (80, 'Debe ser resistente para soportar el peso y el movimiento.');
 
+INSERT INTO pista (`palabraId`, `pista`) VALUES
+    (81, 'Está relacionado con un barco detenido.'),
+    (81, 'Es un estado fijo en el fondo marino.'),
+    (81, 'Necesita una cadena para mantenerse.'),
+    (82, 'Es una embarcación amplia y plana.'),
+    (82, 'Se usa frecuentemente para transportar carga.'),
+    (82, 'Suelen navegar en ríos y canales.'),
+    (83, 'Es un pez marino comestible.'),
+    (83, 'Tiene rayas negras en su lomo.'),
+    (83, 'Es popular en la dieta mediterránea.'),
+    (84, 'Puede ser una criatura marina que se come a su propia especie.'),
+    (84, 'Es un término asociado a piratas en historias antiguas.'),
+    (84, 'Se usa para describir comportamientos agresivos en el agua.'),
+    (85, 'Es un viento fuerte y repentino en la costa.'),
+    (85, 'Suele ser común en el mar Cantábrico.'),
+    (85, 'A menudo viene acompañado de tormenta.'),
+    (86, 'Es un ecosistema cerca de la costa.'),
+    (86, 'Mezcla agua dulce con salada.'),
+    (86, 'Es hogar de muchas aves migratorias.'),
+    (87, 'Es un pez pequeño y muy consumido.'),
+    (87, 'Se encuentra en grandes bancos en el mar.'),
+    (87, 'Suele ser enlatada o preparada a la parrilla.'),
+    (88, 'Es un estado que afecta a los pasajeros del mar.'),
+    (88, 'Ocurre por el movimiento de las olas.'),
+    (88, 'Se alivia al pisar tierra firme.');
+
+
 INSERT INTO `imagen` (`nombre`,`url`) VALUES
     ('arrecife','arrecife.jpg'),
     ('ballena','ballena.jpg'),
