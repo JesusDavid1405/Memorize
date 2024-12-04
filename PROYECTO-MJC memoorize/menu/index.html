@@ -128,7 +128,7 @@
 </div>
 <!-- Modal Estadísticas -->
 <div class="modal fade" id="statisticsModal" tabindex="-1" aria-labelledby="statisticsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         <div class="modal-body">
@@ -143,11 +143,19 @@
 
                 </div>
                 <div class="col" >
-                    <h5>Estadisticas:</h5>
-                    <p>Historial de partidas: <span id="averageScore">150</span></p>
-                    <p>Puntuación Máxima: <span id="maxScore">5000</span></p>
-                    <p>Puntuación Mínima: <span id="minScore">0</span></p>
-
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Jugador</th>
+                                <th>Puntuación</th>
+                                <th>Tiempo</th>
+                                <th>Nivel</th>
+                            </tr>
+                        </thead>
+                        <tbody id="topGlobal">
+                            
+                        </tbody>
+                    </table>
                 </div>
             </div>
           </div>
