@@ -14,14 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $sqlCorreo = "SELECT id FROM usuarios WHERE correo = :correoPersona";
     $valores = array(':correoPersona' => $correo);
-    
-    // Cambié consultaValor() por consulta()
+
+    // Realiza la consulta a la base de datos
     $resultado = $conectar->consulta($sqlCorreo, $valores);
 
-    // Comprobamos si se encontró el correo
+    // Verifica si se encontró el correo
     if ($resultado && count($resultado) > 0) {
         $idUsuario = $resultado[0]['id'];
-        
+
         // Almacena el ID en la sesión
         $_SESSION['id'] = $idUsuario;
 
@@ -33,45 +33,58 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->execute([$codigo, $expiration, $idUsuario]);
 
         try {
+            // Configuración del correo
             $mail = new PHPMailer(true);
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'aquacmemorize@gmail.com';
-            $mail->Password = 'cvyk cazn goes yhev'; // Reemplaza con tu contraseña de aplicación si es necesario
+            $mail->Username = 'aquacmemorize@gmail.com'; // Tu correo
+            $mail->Password = 'cvyk cazn goes yhev'; // Contraseña de aplicación (no la contraseña normal)
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
+            // Configuración del remitente y destinatario
             $mail->setFrom('aquacmemorize@gmail.com', 'Aquac Memorize');
             $mail->addAddress($correo);
 
-            $mail->isHTML(true);
+            // Configuración del contenido del correo
+            $mail->isHTML(true); // El contenido será HTML
+            $mail->CharSet = 'UTF-8'; // Configura UTF-8 para evitar problemas con caracteres especiales
             $mail->Subject = 'Número de restablecimiento de contraseña';
-            $mail->Body = "Hola,<br><br>Tu número de verificación para restablecer la contraseña es: <b>$codigo</b>.<br>Este código expirará en 1 hora.";
-            $mail->AltBody = "Tu número de verificación para restablecer la contraseña es: $codigo. Este código expirará en 1 hora.";
+            $mail->Body = "
+                <div style='font-family: Arial, sans-serif; line-height: 1.6; color: #333;'>
+                    <p>Hola,</p>
+                    <p>Tu número de verificación para restablecer la contraseña es:</p>
+                    <p style='font-size: 24px; font-weight: bold; color: #fff; background-color: #007BFF; padding: 10px 15px; border-radius: 5px; display: inline-block;'>
+                        $codigo
+                    </p>
+                    <p>Este código expirará en 1 hora.</p>
+                    <p>Si no solicitaste este cambio, ignora este correo.</p>
+                </div>
+            ";
+            $mail->AltBody = "Hola, Tu número de verificación para restablecer la contraseña es: $codigo. Este código expirará en 1 hora. Si no solicitaste este cambio, ignora este correo.";
 
+            // Enviar el correo
             $mail->send();
+
             $alertMessage = 'El código de restablecimiento ha sido enviado a tu correo.';
-            // Redirigir a enviarCodigo.php en caso de éxito
             echo "<script>
                     alert('$alertMessage');
                     window.location.href = '../email/enviarCodigo.php';
                   </script>";
         } catch (Exception $e) {
-            // Error al enviar el correo
+            // Manejar errores al enviar el correo
             $alertMessage = 'Error al enviar el correo: ' . $mail->ErrorInfo;
-            // Redirigir a enviarCorreo.php en caso de error
             echo "<script>
                     alert('$alertMessage');
                     window.location.href = '../recuperar/index.html';
                   </script>";
         }
     } else {
-        // El correo no está registrado
+        // Si el correo no está registrado
         $alertMessage = 'El correo ingresado no está registrado.';
         echo "<script>
                 alert('$alertMessage');
-                
               </script>";
     }
     exit();
