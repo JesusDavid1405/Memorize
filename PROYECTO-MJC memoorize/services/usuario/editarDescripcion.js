@@ -46,7 +46,7 @@ const palabrasGroseras = [
     'idiota', 'tonto', 'estúpido', 'imbécil', 'pendejo', 'cabrón', 'zorra', 'maldito',
     'malnacido', 'desgraciado', 'hijo de puta', 'perra', 'zunga', 'culo', 'mierda',
     'huevón', 'puto', 'joder', 'carajo', 'chingar','gonorrea','hp','sapa','pene','puchaina','vagina','verga',
-    'vergas','ano'
+    'vergas','ano','malparido','su papá','su mamá','chupelo','tripleijueputa','doblehijueputa','sexo','retrasado','burro','perro','marica','marica'
 ];
 
 function filtrarMensaje(mensaje) {

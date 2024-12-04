@@ -153,7 +153,7 @@ const IniciarGame = () => {
     state.gameIniciar = true;
     selectors.Iniciar.classList.add('disabled');
 
-    state.totalTime = 4;
+    state.totalTime = 40;
     state.loop = setInterval(() => {
         
         selectors.movimiento.innerText = `${state.totalFlips} movimientos`;
@@ -485,3 +485,11 @@ initGame()
 
 
 
+// state.gameIniciar = true;
+//     selectors.Iniciar.classList.add('disabled');
+//     if (state.dificultad = 'facil'){ 
+//     state.totalTime = 50;
+//     }else if(state.dificultad = 'medio'){
+//     state.totalTime = 45;
+//     }else
+//     state.totalTime = 35;
