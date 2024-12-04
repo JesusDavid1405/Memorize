@@ -42,7 +42,7 @@ INSERT INTO `palabra` (`palabra`) VALUES
 ('orilla'), ('muelle'), ('resaca'), ('marina'), ('ostras'),
 ('olas'), ('vela'), ('isla'), ('faro'), ('proa'), ('popa'), ('mapa'), ('nudo'), 
 ('lino'), ('azul'), ('boya'), ('cabo'), ('lago'), ('fosa'), ('este'), ('yate'),
-('remo'), ('lodo'), ('pico'), ('roca'), ('agua'), ('bojo')('Anclado'),
+('remo'), ('lodo'), ('pico'), ('roca'), ('agua'), ('bojo'),('Anclado'),
 ('Barcaza'),('Caballa'),('Canibal'),('Galerna'),('Marisma'),('Sardina'),('Mareaos');
 
 -- Nivel 1 (5 letras)
@@ -581,7 +581,3 @@ VALUES
 (5, 8, 7, 32),
 (6, 8, 7, 32);
 
-/*alter usuarios*/
-ALTER TABLE usuarios
-ADD COLUMN reset_token VARCHAR(255),
-ADD COLUMN token_expiration DATETIME;
