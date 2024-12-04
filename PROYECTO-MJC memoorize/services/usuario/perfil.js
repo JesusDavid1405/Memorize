@@ -16,8 +16,8 @@ fetch('../resources/usuario/perfil.php', {
 .then(data => {
     
     avatar.src = `../img/avatar/${data.rutaImg}`;
-    playerName.innerHTML = data.nickName;
-    descripcionPlayer.innerHTML = data.descripcion;
+    playerName.innerHTML = `${data.nickName} <i class="fa-solid fa-pen-to-square"></i> `;
+    descripcionPlayer.innerHTML = `${data.descripcion} <i class="fa-solid fa-pen-to-square"></i> `;
     monedas.innerHTML= data.monedas
 })
 .catch(error => console.error('Error:', error));

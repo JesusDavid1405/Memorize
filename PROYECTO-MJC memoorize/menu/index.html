@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../fontawesome/css/all.css">
     <title>Menu</title>
 </head>
 <body>
@@ -168,17 +169,18 @@
             </div>
             
             <div class="player-details">
-                <h3 id="playerName"></h3>
-                <div>
-                    <p id="personalInfo"></p>
-                                  
+                <div id="nickName" class="info">
+                    <h3 id="playerName"></h3>
                 </div>
-                <h6>Cambiar Avatar</h6>
+                <div id="descripcion" class="info">
+                    <h5 id="personalInfo"></h5>     
+                </div>
+                <h4 class="titlePerfil">Cambiar Avatar</h4>
                 
                 <div class="avatar-options2" id="gratis">
 
                 </div>
-                <h6>Avatars comprados</h6>
+                <h4 class="titlePerfil">Avatars comprados</h4>
                 <div class="avatar-options2" id="comprados">
 
                 </div>
@@ -191,34 +193,54 @@
                     Cerrar Sesión
                 </button>
             </div>
-            <button id="editProfileButton" data-bs-toggle="modal" data-bs-target="#editProfileModal">Editar Perfil</button>
         </div>
     </div>
     
 </div>
 
-<!-- Modal para Editar Perfil -->
-<div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+<!-- Modal para Editar descripcion -->
+<div class="modal fade" id="editarDescripcion" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editProfileModalLabel">Editar Perfil</h5>
+                <h3 class="modal-title" id="editProfileModalLabel">Editar descripcion</h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <p>actualizar la descripcion tiene un valor de 100 monedas, piensa bien que deseas poner</p>
                 <div class="mb-3">
-                    <label for="newUsername" class="form-label">Nuevo Nombre de Usuario:</label>
-                    <input type="text" class="form-control" id="newUsername" placeholder="Ingrese nuevo nombre">
-                </div>
-                <div class="mb-3">
-                    <label for="personalInfo" class="form-label">Información Personal:</label>
-                    <input type="text" id="descripcion" class="form-control" placeholder="Ingrese información personal">
+                    <h4>
+                        <label for="personalInfo" class="form-label">descripcion:</label>
+                    </h4>      
+                    <input type="text" id="descripcionIn" class="form-control" placeholder="Ingrese información personal">
                 </div>
             </div>
             <div class="modal-footer">
-            
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" id="actualizar">Guardar Cambios</button>
+                <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal" id="actualizar">Cambiar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Editar descripcion -->
+<div class="modal fade" id="editarNickName" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="editProfileModalLabel">Editar NickName</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>actualizar la descripcion tiene un valor de 100 monedas, piensa bien que deseas poner</p>
+                <div class="mb-3">
+                    <h4>
+                        <label for="nickNameIn" class="form-label">nickName:</label>
+                    </h4>      
+                    <input type="text" id="nickNameIn" class="form-control" placeholder="Ingrese información personal">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal" id="actualizarNickName">Cambiar</button>
             </div>
         </div>
     </div>
@@ -309,6 +331,7 @@
     <script src="../services/avatar/avatarComprados.js"></script>
     <script src="../services/usuario/perfil.js"></script>
     <script src="../services/usuario/editarDescripcion.js"></script>
+    <script src="../services/usuario/editarNickName.js"></script>
     <script src="../services/podio/top.js"></script>
     <script src="js/sonido.js"></script>
     <script src="js/icon.js"></script>

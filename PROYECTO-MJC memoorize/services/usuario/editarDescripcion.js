@@ -1,5 +1,46 @@
+let editarDescripcion = document.getElementById('descripcion');
+let btnActualizar=document.getElementById('actualizar');
 
-let btnActualizar = document.getElementById('actualizar');
+editarDescripcion.addEventListener('click', function() {
+
+    let modalEditar = new bootstrap.Modal(document.getElementById('editarDescripcion'));
+    modalEditar.show();
+
+});
+
+btnActualizar.addEventListener('click', function() {
+    let personalInfo = document.getElementById('descripcionIn').value; 
+    let infoFilter= filtrarMensaje(personalInfo);
+    var modal = new bootstrap.Modal(document.getElementById('modal'));
+    let pantalla = document.getElementById('response');
+    let modalEditarStyle= document.getElementById('editarDescripcion');
+
+    fetch('../resources/usuario/editarDescripcion.php',{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ 
+            personalInfo: infoFilter
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if(data.status){
+            pantalla.innerHTML=data.mensaje;
+        }else{
+            pantalla.innerHTML=data.mensaje
+        }
+         
+        modalEditarStyle.style.display = 'none';
+        modal.show();
+        setTimeout(() => {
+            window.location.reload();
+        }, 2000);
+    })
+    .catch(error => {'Error:', error});
+})
+
 
 const palabrasGroseras = [
     'idiota', 'tonto', 'estúpido', 'imbécil', 'pendejo', 'cabrón', 'zorra', 'maldito',
@@ -7,27 +48,6 @@ const palabrasGroseras = [
     'huevón', 'puto', 'joder', 'carajo', 'chingar','gonorrea','hp','sapa','pene','puchaina','vagina','verga',
     'vergas','ano'
 ];
-
-btnActualizar.addEventListener('click', function() {
-    let personalInfo = document.getElementById('descripcion').value; 
-
-    console.log(personalInfo);
-
-    fetch('../resources/usuario/editarPerfil.php',{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ 
-            personalInfo: filtrarMensaje(personalInfo)
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        alert(data.mensaje);
-    })
-    .catch(error => {'Error:', error});
-});
 
 function filtrarMensaje(mensaje) {
     let mensajeFiltrado = mensaje;
