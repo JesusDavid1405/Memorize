@@ -23,7 +23,7 @@ btnUnirseSala.addEventListener('click', function() {
         .then(data => {
             if(data.status === 'true') {
                 // Código de sala válido, redirigir
-                window.location.href = '../sala/estructura/index.php';
+                window.location.href = '../../multijugador/sala/estructura/index.php';
             } else {
                 // Mostrar mensaje de error
                 modalDisplay.innerHTML = data.mensaje;
