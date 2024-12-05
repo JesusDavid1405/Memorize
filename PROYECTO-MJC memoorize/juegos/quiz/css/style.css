@@ -12,7 +12,7 @@ body {
     position: relative;
     width: 890px;
     height: 620px;
-    margin-top: 5%;
+    margin-top: 2%;
     background-color: #8ce0d000; /* Color base estilo pergamino */
     background-image:
         url('../../../img/mapa.jpg'), /* Textura de papel envejecido */
@@ -278,6 +278,7 @@ body {
 }
 .back-button {
     left: 2%;
+    z-index: 10;
     bottom: 90%;
     position: fixed;
 }
