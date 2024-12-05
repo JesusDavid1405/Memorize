@@ -4,7 +4,7 @@ include('../conexion/conexion.php'); // Asegúrate de que la ruta sea correcta
 session_start();
 
 $response = [];
-$creadorSala = $_SESSION['id']; // ID del creador de la sala
+$creadorSala = $_SESSION['creadorId']; // ID del creador de la sala
 $codigoSala = $_SESSION['codigoSala']; // Código de la sala creada
 
 $database = new Database();

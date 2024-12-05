@@ -35,15 +35,50 @@
                 $dificultadSala,
                 $rondasSala
             );
-
-            $_SESSION['codigoSala']= $codigoSala;
-
             $stmt->execute();
 
-            $response=[
-                'status' => 'true',
-                'mensaje'=>'sala creada correctamente'
-            ];
+            $_SESSION['codigoSala']= $codigoSala;
+            $_SESSION['creadorId']=$creadorSala;
+
+            $querySala=" SELECT id FROM sala WHERE codigo= ? AND creadorId= ?;
+            ";
+            $stmtSala=$conn->prepare($querySala);
+            $stmtSala->bind_param("ii",
+                $codigoSala,
+                $creadorSala
+            );
+            $stmtSala->execute();
+
+            $resultSala= $stmtSala->get_result();
+            
+            if($resultSala->num_rows > 0){
+                $rowSala= $resultSala->fetch_assoc();
+
+                $salaId= $rowSala['id'];
+            
+            
+                $queryParticipante="
+                INSERT INTO participantes (salaId, usuarioId, evento)
+                VALUES (? ,? ,'adentro');
+                ";
+
+                $stmtParticipante=$conn->prepare($queryParticipante);
+                $stmtParticipante->bind_param("ii",
+                    $salaId,
+                    $creadorSala
+                );
+                $stmtParticipante->execute();
+
+                $response=[
+                    'status'=>'true',
+                    'mensaje'=>'ingresando a la sala'
+                ];
+
+                $response=[
+                    'status' => 'true',
+                    'mensaje'=>'sala creada correctamente'
+                ];
+            }
 
         }else{
             $response=['mensaje'=>"error al conectar a la base de datos"];

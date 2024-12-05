@@ -12,6 +12,7 @@
     $conn = $database->connect();
 
     if($conn){
+        
         $query="
         SELECT * FROM sala WHERE codigo= ?;
         ";
@@ -25,13 +26,37 @@
 
         if ($result) {
             while ($row = $result->fetch_assoc()) {
-                $response[] = [
-                    'nombre' => $row['nombre'],
-                    'codigo' => $row['codigo'],
-                    'dificultad' => $row['dificultad'],
-                    'rondas' => $row['rondas'],
-                    'capacidad'=> $row['capacidad']
-                ];
+
+                $salaId = $row['id'];
+
+                $queryCupo="
+                SELECT COUNT(*) AS totalEntradas
+                FROM participantes
+                WHERE evento = 'adentro' AND salaId = ?;
+                ";
+
+                $stmtCupo=$conn->prepare($queryCupo);
+                $stmtCupo->bind_param("i", 
+                    $salaId
+                );
+                $stmtCupo->execute();
+                $resultCupo= $stmtCupo->get_result();
+
+                if($resultCupo->num_rows > 0){
+
+                    $rowCupo= $resultCupo->fetch_assoc();
+
+                    $cupo= $rowCupo['totalEntradas'];
+
+                    $response[] = [
+                        'nombre' => $row['nombre'],
+                        'codigo' => $row['codigo'],
+                        'dificultad' => $row['dificultad'],
+                        'rondas' => $row['rondas'],
+                        'capacidad'=> $row['capacidad'],
+                        'cupo' => $cupo
+                    ];
+                }
             }
         } else {
             $response = [

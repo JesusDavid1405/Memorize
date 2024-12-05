@@ -44,7 +44,7 @@
                 } else {
                     
                     $_SESSION['codigoSala'] = $codigoSala;
-                    $_SESSION['sala_id'] = $sala['id'];
+                    $_SESSION['salaId'] = $sala['id'];
 
                     $response = [
                         'status' => 'true',

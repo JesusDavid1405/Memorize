@@ -12,20 +12,21 @@ btnUnirseSala.addEventListener('click', function() {
         // Enviar solicitud al servidor para validar código de sala
         fetch('../../resources/multijugador/compararCodigo.php', {
             method: 'POST',
-            body: JSON.stringify({
-                codigoSala: codigoSala
-            }),
             headers: {
                 'Content-Type': 'application/json'
-            }
+            },
+            body: JSON.stringify({
+                codigoSala: codigoSala
+            })
         })
         .then(response => response.json())
         .then(data => {
             if(data.status === 'true') {
-                // Código de sala válido, redirigir
+                
                 window.location.href = '../../multijugador/sala/estructura/index.php';
+
             } else {
-                // Mostrar mensaje de error
+                
                 modalDisplay.innerHTML = data.mensaje;
                 modalError.show();
             }

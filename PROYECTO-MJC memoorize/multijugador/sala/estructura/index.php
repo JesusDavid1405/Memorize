@@ -15,46 +15,7 @@
 <h1 id="menutitle"></h1>
 <div class="multiplayer-container">
         <div class="avatars" id="players">
-            <div class="avatar" title="Avatar 1">
-                <img src="../../../img/icon/avatar15.png" alt="Avatar 1">
-                <div class="avatar-name">Jugador 1</div>
-            </div>
-            <div class="avatar" title="Avatar 2">
-                <img src="../../../img/icon/avatar2.png" alt="Avatar 2">
-                <div class="avatar-name">Jugador 2</div>
-            </div>
-            <div class="avatar" title="Avatar 16">
-                <img src="../../../img/icon/avatar16.png" alt="Avatar 16">
-                <div class="avatar-name">Jugador 3</div>
-            </div>
-            <div class="avatar" title="Avatar 4">
-                <img src="../../../img/icon/avatar4.png" alt="Avatar 4">
-                <div class="avatar-name">Jugador 4</div>
-            </div>
-            <div class="avatar" title="Avatar 13">
-                <img src="../../../img/icon/avatar13.png" alt="Avatar 13">
-                <div class="avatar-name">Jugador 5</div>
-            </div>
-            <div class="avatar" title="Avatar 11">
-                <img src="../../../img/icon/avatar11.png" alt="Avatar 11">
-                <div class="avatar-name">Jugador 6</div>
-            </div>
-            <div class="avatar" title="Avatar 14">
-                <img src="../../../img/icon/avatar14.png" alt="Avatar 14">
-                <div class="avatar-name">Jugador 7</div>
-            </div>
-            <div class="avatar" title="Avatar 12">
-                <img src="../../../img/icon/avatar12.png" alt="Avatar 12">
-                <div class="avatar-name">Jugador 8</div>
-            </div>
-            <div class="avatar" title="Avatar 9">
-                <img src="../../../img/icon/avatar9.png" alt="Avatar 9">
-                <div class="avatar-name">Jugador 9</div>
-            </div>
-            <div class="avatar" title="Avatar 10">
-                <img src="../../../img/icon/avatar10.png" alt="Avatar 10">
-                <div class="avatar-name">Jugador 10</div>
-            </div>
+            
         </div>
         <div class="center-content">
             <div id="configuraciones"></div>
@@ -105,9 +66,7 @@
 
     <script src="../../../services/multijugador/sala.js"></script>
     <script src="assets/boton.js"></script>
-    <script src="js/menu.js"></script>
     <script src="../../../bootstrap/js/bootstrap.js"></script>
-    <script src="js/avatar.js"></script>
     <script src="../../../../bootstrap/js/bootstrap.bundle.js"></script>
     <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"></script>
     <script src="assets/script.js"></script>
