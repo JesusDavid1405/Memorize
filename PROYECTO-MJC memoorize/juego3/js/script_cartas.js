@@ -1,3 +1,17 @@
+// Configuración WebSocket
+const socket = new WebSocket('ws://localhost:8080/game');
+
+// Al recibir mensajes de otro jugador
+socket.onmessage = (event) => {
+    const message = JSON.parse(event.data);
+    handleIncomingMessage(message);
+};
+
+// Función para enviar mensajes al servidor WebSocket
+const sendMessage = (data) => {
+    socket.send(JSON.stringify(data));
+};
+
 // Objeto que contiene todas las referencias a elementos del DOM
 const selectors = {
     boardContainer: document.querySelector('.board-container'),
