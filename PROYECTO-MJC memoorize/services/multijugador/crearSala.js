@@ -7,7 +7,24 @@ btnCrearSala.addEventListener('click', function() {
     let dificultadSelect= document.getElementById('dificultad');
     let dificultad= dificultadSelect.value;
     let rondas = parseInt(document.getElementById('rondas').value);
+    let modalError = new bootstrap.Modal(document.getElementById('msgError'));
+    let modalBody = document.querySelector('#msgError .modal-body');
 
+    if (numeroPersonas > 10) {
+        modalBody.textContent = 'El número máximo de personas permitido es 10.';
+        modalError.show();
+        return; // Detener el flujo
+    }
+    if (rondas  > 5) {
+        modalBody.textContent = 'El número de rondas es 5.';
+        modalError.show();
+        return; // Detener el flujo
+    }
+    if (!nombreSala || isNaN(numeroPersonas) || isNaN(rondas) || !dificultad) {
+        modalBody.textContent = 'Debes ingresar todos los datos para crear tu sala.';
+        modalError.show();
+        return; // Detener el flujo
+    }
     fetch('../../resources/multijugador/crearSala.php',{
         method: 'POST',
         headers: {
@@ -23,12 +40,23 @@ btnCrearSala.addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
-        if(data.status){
-            alert(data.mensaje);
-            window.location.href='../../multijugador/sala/estructura/index.php';
+        if (data.status) {
+            modalBody.textContent = data.mensaje; 
+            modalError.show(); 
+            setTimeout(() => {
+                window.location.href = '../../multijugador/sala/estructura/index.php';
+            }, 2000);
+        } else {
+            modalBody.textContent = data.mensaje;
+            modalError.show();
         }
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => {
+        console.error('Error:', error);
+
+        modalBody.textContent = 'Ha ocurrido un error inesperado. Inténtalo nuevamente.';
+        modalError.show(); 
+    });
 });
 
 function generateCode(){

@@ -446,7 +446,7 @@ h1 {
     font-family: 'Pirata One', cursive; 
     text-align: center;
     text-shadow: 0 0 10px #eeff00, 0 0 20px #ffcc00, 0 0 30px #ff8800;
-    font-size: 5.0rem;
+    font-size: 4.7rem;
     color: #ff8400;  
     position: relative;
     padding: 0px;
@@ -909,7 +909,7 @@ nav {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 0px;
-    margin-top: 5%;
+    margin-top: 0%;
     
 
 }
@@ -1261,14 +1261,22 @@ nav {
         color: #ffffff00;
     }
     /*titulo*/
-    .menutitle {
+    .menu-title {
         margin-bottom: 0%;
-        font-size: 2.9em;
+        font-size: 12px;
         border-radius: 50px; 
         text-align:left;
         padding: 14px;
         
         
+    }
+    
+    .h1{
+        margin-bottom: 0%;
+        font-size: 12px;
+        border-radius: 50px; 
+        text-align:left;
+        padding: 14px;
     }
     .cerrar-sesion .btn {
         display: flex;

@@ -25,7 +25,7 @@ function createBubbles(event) {
 }
 document.addEventListener("DOMContentLoaded", function () {
     const texto = "JUGAR"
-    const velocidad = 600; // Velocidad de escritura en milisegundos
+    const velocidad = 200; // Velocidad de escritura en milisegundos
     const elemento = document.getElementById("btnTex");
     let index = 0;
 
