@@ -12,7 +12,7 @@
 </head>
 
 <body class="bg-gray-100">
-<h1 id="menutitle"></h1>
+<h1 class="menu-title">Sala de Espera</h1>
 <div class="multiplayer-container">
         <div class="avatars" id="players">
             <div class="avatar" title="Avatar 1">

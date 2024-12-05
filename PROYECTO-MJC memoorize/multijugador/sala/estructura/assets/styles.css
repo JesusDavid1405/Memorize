@@ -204,18 +204,19 @@ body {
   transition: background-color 0.3s;
 }
 
-h1 {
+.menu-title{
     font-family: 'Pirata One', cursive;
     font-weight: bold;
     z-index: 10;
     text-transform: uppercase;
-    font-size: 6.0em; /* Puede ajustarse según el tamaño deseado */
+    color: #ffa600;
+    font-size: 3.0em; /* Puede ajustarse según el tamaño deseado */
     color: #ffd90000;
-    text-shadow: 3px 3px 0px #ffee00e1,
+    text-shadow: 3px 3px 0px #ffee007c,
                  0px 0px 0px #fdf500;
     position: relative;
     padding: 0px;
-    left: 8%;
+    left: 12%;
     animation: vanishIn 1s ease-in-out;
     letter-spacing: 2px; /* Espaciado entre letras para alargar el texto */
     white-space: nowrap; /* Evita que el texto se baje a una nueva línea */
@@ -225,7 +226,7 @@ h1 {
     content: "";
     animation: blink 0.5s step-start infinite;
 }
-.menutitle:hover {
+.menu-title:hover {
     transform: scale(1.1);
 }
 
@@ -562,7 +563,7 @@ h2 {
     
     }
 
-    .menutitle {
+    .menu-title {
         font-size: 2.2rem;
         bottom: 45%;
         left: 55%;
