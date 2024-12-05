@@ -1,17 +1,94 @@
-// Configuración WebSocket
-const socket = new WebSocket('ws://localhost:8080/game');
+// Unified function to fetch room data and initialize game state
+const initializeGameState = async () => {
+    try {
+        const response = await fetch('../resources/llamarDatos/obtenerSala.php');
+        const data = await response.json();
 
-// Al recibir mensajes de otro jugador
-socket.onmessage = (event) => {
-    const message = JSON.parse(event.data);
-    handleIncomingMessage(message);
+        if (data.status === 'true') {
+            // Update global state with room configuration
+            state.dificultad = data.dificultad.toLowerCase();
+            state.maxRounds = parseInt(data.rondas);
+
+            // Configure card settings based on difficulty
+            switch (state.dificultad) {
+                case 'facil':
+                    state.baseCards = 8;
+                    state.cardsPerRound = 2;
+                    state.baseTime = 50;
+                    break;
+                case 'medio':
+                    state.baseCards = 12;
+                    state.cardsPerRound = 3;
+                    state.baseTime = 45;
+                    break;
+                case 'dificil':
+                    state.baseCards = 18;
+                    state.cardsPerRound = 4;
+                    state.baseTime = 35;
+                    break;
+                default:
+                    throw new Error('Dificultad no válida');
+            }
+
+            // Initialize WebSocket after state configuration
+            initializeWebSocket();
+
+            return true;
+        } else {
+            console.error("No se pudieron obtener los datos de la sala:", data.mensaje);
+            return false;
+        }
+    } catch (error) {
+        console.error("Error al inicializar el estado del juego:", error);
+        return false;
+    }
 };
 
-// Función para enviar mensajes al servidor WebSocket
-const sendMessage = (data) => {
-    socket.send(JSON.stringify(data));
+// WebSocket initialization function
+const initializeWebSocket = () => {
+    const socket = new WebSocket('ws://localhost:8080/game');
+
+    socket.onopen = () => {
+        console.log('WebSocket connection established');
+    };
+
+    socket.onmessage = (event) => {
+        const message = JSON.parse(event.data);
+        handleIncomingMessage(message);
+    };
+
+    socket.onerror = (error) => {
+        console.error('WebSocket error:', error);
+    };
+
+    // Attach send message method to global state
+    state.sendMessage = (data) => {
+        if (socket.readyState === WebSocket.OPEN) {
+            socket.send(JSON.stringify(data));
+        }
+    };
 };
 
+// Modified state object with consolidated properties
+const state = {
+    gameIniciar: false,
+    flippedCards: 0,
+    totalFlips: 0,
+    totalTime: 0,
+    loop: null,
+    currentRound: 1,
+    maxRounds: 6,
+    dificultad: 'facil',
+    scores: [],
+    basePoints: 1000,
+    timeMultiplier: 2,
+    moveMultiplier: 10,
+    currentPlayerName: '',
+    cumulativeScore: 0,
+    sendMessage: null  // Will be set by initializeWebSocket
+};
+
+// Función para actualizar los selectores del DOM
 // Objeto que contiene todas las referencias a elementos del DOM
 const selectors = {
     boardContainer: document.querySelector('.board-container'),
@@ -25,68 +102,90 @@ const selectors = {
     dificultad: document.getElementById('dificultad'),
 };
 
-// Estado global del juego
-const state = {
-    gameIniciar: false,
-    flippedCards: 0,
-    totalFlips: 0,
-    totalTime: 0,
-    loop: null,
-    currentRound: 1,
-    maxRounds: parseInt(localStorage.getItem('rondas')) || 6,
-    dificultad: localStorage.getItem('dificultad') || 'facil',
-    scores: [],
-    basePoints: 1000,
-    timeMultiplier: 2,
-    moveMultiplier: 10,
-    currentPlayerName: '',
-    cumulativeScore: 0,
-    baseCardsF: 8, // Número inicial de cartas para modo fácil (4 pares)
-    cardsPerRoundF: 2,  // Número de cartas adicionales por ronda (2 pares)
-    baseCardsM: 12, // Número inicial de cartas para modo fácil (6 pares)
-    cardsPerRoundM: 2,  // Número de cartas adicionales por ronda (2 pares)
-    baseCardsD: 16, // Número inicial de cartas para modo fácil (8 pares)
-    cardsPerRoundD: 2  // Número de cartas adicionales por ronda (2 pares)
-};
-
-// Función para actualizar los selectores del DOM
-const updateSelectors = () => {
-    selectors.boardContainer = document.querySelector('.board-container');
-    selectors.board = document.querySelector('.board');
-    selectors.movimiento = document.querySelector('.moves');
-    selectors.tiempo = document.querySelector('.timer');
-    selectors.Iniciar = document.querySelector('button');
-    selectors.win = document.querySelector('.win');
-    selectors.siguienteRonda = document.getElementById('siguienteRonda');
-    selectors.dificultad = document.getElementById('dificultad');
-};
-
-// Función para obtener el número de cartas según la ronda actual
-const getCardsForCurrentRound = () => {
-    if (state.dificultad === 'facil') {
-        return state.baseCardsF + (state.cardsPerRoundF * (state.currentRound - 1));
-    } else if (state.dificultad === 'medio') {
-        return state.baseCardsM + (state.cardsPerRoundM * (state.currentRound - 1));
-    } else { // dificil
-        return state.baseCardsD + (state.cardsPerRoundD * (state.currentRound - 1));
+// Función para inicializar el juego
+const initGame = async () => {
+    try {
+        const savedScores = JSON.parse(localStorage.getItem('memoryGameScores') || '[]');
+        state.scores = savedScores;
+        state.currentRound = 1;
+        state.dificultad = localStorage.getItem('dificultad') || 'facil';   
+        
+        // Wait for game state initialization
+        const initialized = await initializeGameState();
+        
+        if (initialized) {
+            await generateGame();
+            attachEventListeners();
+        }
+    } catch (error) {
+        console.error('Error al inicializar el juego:', error);
     }
-
-    
 };
+
+const getCardsForCurrentRound = () => {
+    return state.baseCards + (state.cardsPerRound * (state.currentRound - 1));
+};
+
+
+// Función para iniciar el juego
+const IniciarGame = () => {
+    clearInterval(state.loop);
+
+    state.gameIniciar = true;
+    selectors.Iniciar.classList.add('disabled');
+
+    state.totalTime = state.baseTime || 40;  // Fallback to 40 if baseTime not set
+    state.loop = setInterval(() => {
+        selectors.movimiento.innerText = `${state.totalFlips} movimientos`;
+        selectors.tiempo.innerText = `tiempo: ${state.totalTime} segundos`;
+
+        state.totalTime--;
+        if (state.totalTime <= -1) {
+            clearInterval(state.loop);
+            
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "¡se acabo el tiempo!",
+                showConfirmButton: false,
+                footer: `
+                    <div class="modal-footer">
+                        <button id="verPuntuacion" class="swal2-confirm swal2-styled">Ver Puntuación</button>
+                        <a href="../menu/index.html" class="salir swal2-styled">Salir</a>
+                    </div>
+                `,
+                didRender: () => {
+                    const verPuntuacionBtn = document.getElementById('verPuntuacion');
+                    verPuntuacionBtn.addEventListener('click', () => {
+                        Swal.close();
+                        endGame(50); // Pasar 50 puntos como puntuación por defecto
+                    });
+                }
+            });  
+        }
+    }, 1000);
+};
+
+// Initialize the game
+document.addEventListener('DOMContentLoaded', initGame);
+
+
+
+
+
 
 // Función para calcular las dimensiones del tablero
 const calculateBoardSize = () => {
     const totalCards = getCardsForCurrentRound();
-    
+
     let largo = Math.ceil(Math.sqrt(totalCards));
     let ancho = Math.ceil(totalCards / largo);
-    
+
     // Asegurarse de que el número total de celdas sea par
     if ((largo * ancho) % 2 !== 0) {
         ancho++;
     }
 
-    // Retornar el objeto con las dimensiones calculadas
     return { largo, ancho };
 };
 
@@ -136,7 +235,7 @@ const generateGame = async () => {
         const images = await loadImagenes();
         const picks = pickRandom(images, dimensions / 2);
         const items = shuffle([...picks, ...picks]);
-        
+
         const cards = `
             <div class="board" style="grid-template-columns: repeat(${largo}, auto)">
                 ${items.map(item => `   
@@ -149,62 +248,20 @@ const generateGame = async () => {
                 `).join('')}
             </div>
         `;
-        
+
         const boardContainer = document.querySelector('.board-container');
         boardContainer.innerHTML = cards;
-        
-        updateSelectors();
-        
+
+        updateSelectors(); // Asegúrate de que esta función esté definida
+
     } catch (error) {
         console.error('Error al generar el juego:', error);
     }
 };
 
+
 // Función para iniciar el juego
-const IniciarGame = () => {
-    clearInterval(state.loop);
 
-    state.gameIniciar = true;
-    selectors.Iniciar.classList.add('disabled');
-
-    state.totalTime = 40;
-    state.loop = setInterval(() => {
-        
-        selectors.movimiento.innerText = `${state.totalFlips} movimientos`;
-        selectors.tiempo.innerText = `tiempo: ${state.totalTime} segundos`;
-
-        state.totalTime --
-        if (state.totalTime <= -1){
-            clearInterval(state.loop)
-        }
-            ;
-
-         if (state.totalTime == -1){
-            
-            Swal.fire({
-             icon: "error",
-             title: "Oops...",
-             text: "¡se acabo el tiempo!",
-             showConfirmButton: false,
-             footer: `
-                 <div class="modal-footer">
-                     <button id="verPuntuacion" class="swal2-confirm swal2-styled">Ver Puntuación</button>
-                     <a href="../menu/index.html" class="salir swal2-styled">Salir</a>
-                 </div>
-                 `,
-                 didRender: () => {
-                    const verPuntuacionBtn = document.getElementById('verPuntuacion');
-                    verPuntuacionBtn.addEventListener('click', () => {
-                        Swal.close();
-                        endGame(50); // Pasar 50 puntos como puntuación por defecto
-                    });
-                }
-             });  
-         }
-    }, 1000);
-
-      
-};
 
 // Función para voltear las cartas hacia atrás
 const flipBackCards = () => {
@@ -481,18 +538,7 @@ const attachEventListeners = () => {
 };
 
 // Función para inicializar el juego
-const initGame = async () => {
-    try {
-        const savedScores = JSON.parse(localStorage.getItem('memoryGameScores') || '[]');
-        state.scores = savedScores;
-        state.currentRound = 1;
-        state.dificultad = localStorage.getItem('dificultad') || 'facil';   
-        await generateGame();
-        attachEventListeners();
-    } catch (error) {
-        console.error('Error al inicializar el juego:', error);
-    }
-};
+
 
 // Inicializar el juego
 initGame()

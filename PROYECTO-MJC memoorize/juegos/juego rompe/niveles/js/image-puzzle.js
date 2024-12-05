@@ -140,26 +140,22 @@ var imagePuzzle = {
 
                         estadoNivel=true;
                         
-                        if(estadoNivel){
-                            monedas=50;
-                            // Mostrar resultado al jugador
-                            helper.doc('actualImageBox').innerHTML = `
-                                <h2>¡Ganaste!</h2>
-                                <p>Movimientos: ${movimientosRealizados}</p>
-                                <p>Tiempo tomado: ${tiempoRestante}s</p>
-                                <p>Puntuación: ${puntos}</p>
-                            `;
+                        if (estadoNivel) {
+                            monedas = 50;
+                            mostrarModal("¡Ganaste!", `
+                                Movimientos realizados: ${movimientosRealizados}<br>
+                                Tiempo restante: ${tiempoRestante}s<br>
+                                Puntuación obtenida: ${puntos}
+                            `);
                             helper.doc('stepCount').textContent = movimientosRealizados;
                     
-                        }else{
-                            monedas=0;
-                            // Mostrar resultado al jugador
-                            helper.doc('actualImageBox').innerHTML = `
-                                <h2>Perdiste!</h2>
-                                <p>Movimientos: ${movimientosRealizados}</p>
-                                <p>Tiempo tomado: ${tiempoRestante}s</p>
-                                <p>Puntuación: ${puntos}</p>
-                            `;
+                        } else {
+                            monedas = 0;
+                            mostrarModal("¡Perdiste!", `
+                                Movimientos realizados: ${movimientosRealizados}<br>
+                                Tiempo restante: ${tiempoRestante}s<br>
+                                Puntuación obtenida: ${puntos}
+                            `);
                             helper.doc('stepCount').textContent = movimientosRealizados;
                         }
 
