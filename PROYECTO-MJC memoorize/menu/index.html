@@ -128,31 +128,31 @@
 </div>
 <!-- Modal Estadísticas -->
 <div class="modal fade" id="statisticsModal" tabindex="-1" aria-labelledby="statisticsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
       <div class="modal-content">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         <div class="modal-body">
           <div class="stats-container">
             <div class="row">
-                <div class="col">
-                    <h5>Información de los juegos:</h5>
-                    <p>Juegos Completados: <span id="gamesCompleted">20</span></p>
-                    <p>Tiempo Total Jugado: <span id="totalTimePlayed">12h 30m</span></p>
-                    <p>Niveles Completados: <span id="levelsCompleted">10</span></p>
-
-
+                <div class="col" id="estadísticas">
+                    
                 </div>
-                <div class="col" >
+                <div class="col-md-8" >
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Jugador</th>
-                                <th>Puntuación</th>
-                                <th>Tiempo</th>
-                                <th>Nivel</th>
+                                <th>juego</th>
+                                <th>nivel / Sala</th>
+                                <th>nombre</th>
+                                <th>puntos</th>
+                                <th>tiempo</th>
+                                <th>monedas</th>
+                                <th>fecha</th>
+                                <th>modalidad</th>
+                                <th>estado</th>
                             </tr>
                         </thead>
-                        <tbody id="topGlobal">
+                        <tbody id="historial">
                             
                         </tbody>
                     </table>
@@ -341,6 +341,7 @@
     <script src="../services/usuario/editarDescripcion.js"></script>
     <script src="../services/usuario/editarNickName.js"></script>
     <script src="../services/podio/top.js"></script>
+    <script src="../services/historial/historial.js"></script>
     <script src="js/sonido.js"></script>
     <script src="js/icon.js"></script>
     
