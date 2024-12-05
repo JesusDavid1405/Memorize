@@ -29,7 +29,8 @@
                     'nombre' => $row['nombre'],
                     'codigo' => $row['codigo'],
                     'dificultad' => $row['dificultad'],
-                    'rondas' => $row['rondas']
+                    'rondas' => $row['rondas'],
+                    'capacidad'=> $row['capacidad']
                 ];
             }
         } else {
