@@ -7,3 +7,230 @@ body {
     overflow: hidden;
     animation: puffIn 1s ease-in-out
 }
+.text3{
+    color:#000000; 
+    text-align: center;
+    font-family: 'Pirata One', cursive; 
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(242, 143, 22, 0.6);
+    font-size: 30px;
+    position: relative;
+    bottom: 20%;
+
+}
+.text1{
+    color:#ffffff; 
+    text-align: center;
+    font-family: 'Pirata One', cursive; 
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(242, 143, 22, 0.6);
+    font-size: 60px;
+    position: relative;
+    bottom: 20%;
+}
+.text1:hover {
+    color: #ffcd61;
+    transition: all 0.3s ease-in-out;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(242, 143, 22, 0.6);
+}
+.text{
+    background-color: #014d7d;
+    color: #ffffff;
+    text-align: center;
+    
+    font-size: 25px;
+    font-family: 'Pirata One', cursive; 
+}
+text:hover{
+    transform: scale(1.1);
+    
+}
+.back-button {
+    left: 2%;
+    bottom: 79%;
+    position: fixed;
+}
+.back-button:hover {
+    transform: scale(0.9);
+}
+.back-button-img{
+    width: 25%;
+    height: 25%;
+}
+.text2{
+    color:#014d7d; 
+    background-color: #ff9e20; 
+    text-align: center;
+    margin-top: 20%;
+    text-align: center;
+    margin-left: 23%;
+    padding: 10px 20px;
+    font-family: 'Pirata One', cursive; 
+    text-shadow: 0 0 10px rgba(255, 174, 0, 0.8), 0 0 20px rgba(242, 143, 22, 0.6);
+    font-size: 28px;
+    border-radius: 15px
+}
+.text2:hover {
+    color: #000000;
+    text-shadow: 0 0 10px rgba(255, 174, 0, 0.8), 0 0 20px rgba(242, 143, 22, 0.6);
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .restaurant-card {
+    background: rgba(34, 144, 195, 0.322);
+background: linear-gradient(0deg, rgba(34, 144, 195, 0.527) 23%, rgba(253, 222, 45, 0.568) 74%);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(70, 38, 135, 0.37);
+    padding: 6rem;
+    width: 200%;
+    height: 50%;
+    max-width: 350px;
+    animation: float 6s ease-in-out infinite;
+    position: relative;
+    
+  }
+  .form-control {
+    background-color: #f0f8ff;
+    border: 1px solid #1e3c72;
+    transition: all 0.3s ease;
+  }
+  .form-control:focus {
+    background-color: #e6f2ff;
+    box-shadow: 0 0 15px rgba(30, 60, 114, 0.2);
+  }
+  .btn-primary {
+    background: #FF5733;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  .btn-primary:hover {
+    background: #2a5298;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(31, 38, 135, 0.3);
+  }
+  .salida {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  .salida img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.2s ease;
+  }
+  .salida img:hover {
+    transform: scale(1.1);
+  }
+
+.mb-3 {
+    top: 320px;
+    position: absolute;
+    margin-left: 5%;
+    
+  }
+  
+ 
+  .mb-3 .form-label {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000; 
+
+    display: block;
+  }
+  .mb-3 .form-control {
+    border: 2px solid #ced4da; 
+    border-radius: 8px; 
+    padding: 10px 20px;
+    font-size: 22px;
+    background-color: #f8f9fa8a; 
+    transition: border-color 0.3s, box-shadow 0.3s; 
+  }
+
+  .mb-3 .form-control:focus {
+    border-color: #007bff; 
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25); 
+    background-color: #ffffff; 
+    outline: none; 
+  }
+
+  .mb-3 .form-control::placeholder {
+    color: #adb5bd; 
+    font-style: italic;
+  }
+  
+  .mb-3 .form-text {
+    font-size: 12px;
+    color: #6c757d; 
+    margin-top: 5px;
+  }
+
+  @media (max-width: 768px) {
+
+    .text1 {
+        font-size: 40px; /* Reduce el tamaño del texto */
+        bottom: 10%; /* Ajusta la posición vertical */
+    }
+
+    .restaurant-card {
+        padding: 3rem; /* Menos espacio interno */
+        right: 2%;
+        width: 70%; /* Ajusta el ancho al tamaño de la pantalla */
+        max-width: none; /* Elimina la restricción de ancho máximo */
+        margin: auto; /* Centra el contenedor */
+        height: auto; /* Deja que crezca dinámicamente */
+    }
+
+    .form-control {
+        font-size: 16px; /* Reduce el tamaño del texto del input */
+        padding: 8px 15px; /* Ajusta el padding */
+    }
+
+    .btn-primary {
+        font-size: 14px; /* Botones más pequeños */
+        padding: 10px 15px; /* Ajusta el relleno del botón */
+    }
+
+    .mb-3 {
+        top: initial; /* Elimina la posición absoluta */
+        margin-left: 0; /* Centra el input */
+    }
+    .back-button {
+        left: 2%;
+        bottom: 79%;
+        position: fixed;
+    }
+    .salida img{
+        width: 15%;
+        height: 15%;
+    }
+    .text2{
+        margin-top: 27%;
+        text-align: center;
+        margin-left: 20%;
+        padding: 10px 20px;
+        font-size: 26px;
+        border-radius: 15px
+    }
+    .mb-3 .form-control {
+        border: 2px solid #ced4da; 
+        border-radius: 8px; 
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #f8f9fa8a; 
+        transition: border-color 0.3s, box-shadow 0.3s; 
+      }
+      .text3{
+        color:#000000; 
+        text-align: center;
+        font-family: 'Pirata One', cursive; 
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(242, 143, 22, 0.6);
+        font-size: 25px;
+        position: relative;
+        bottom: 20%;
+    
+    }
+}
+
