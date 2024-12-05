@@ -33,7 +33,7 @@
         JOIN 
             juegos j ON hn.juegoId = j.id
         WHERE 
-            u.id = 1
+            u.id = ?
 
         UNION ALL
 
@@ -59,10 +59,10 @@
         JOIN 
             sala s ON hs.salaId = s.id
         WHERE 
-            u.id = 1
+            u.id = ?
         ORDER BY 
             fecha DESC
-        LIMIT 0, 25;
+        LIMIT 0, 15;
         ";
 
         $stmt= $conn->prepare($query);
@@ -75,7 +75,7 @@
         $result = $stmt->get_result();
             if ($result) {
                 while ($row = $result->fetch_assoc()) {
-                    $response+=[
+                    $response[]=[
                         'juego' => $row['juego'],
                         'nivelSalaId' => $row['nivelSalaId'],
                         'nombre' => $row['nombre'],

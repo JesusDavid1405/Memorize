@@ -13,12 +13,11 @@
 
     if($conn){
         $query="
-        SELECT * FROM sala WHERE creadorId = ? AND codigo= ?;
+        SELECT * FROM sala WHERE codigo= ?;
         ";
         
         $stmt= $conn->prepare($query);
-        $stmt->bind_param("ii",
-            $creadorSala,
+        $stmt->bind_param("i",
             $codigoSala
         );
         $stmt->execute();

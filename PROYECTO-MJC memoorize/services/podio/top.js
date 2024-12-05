@@ -28,20 +28,23 @@ function cargarTop(juegoId = 2) {
         }
 
         data.forEach(element => {
+            
             displayTop.innerHTML += `
-                <tr>
-                    <td>${element.posicion}</td>
-                    <td>
-                        <div class="player-info">
-                            <img src="../img/avatar/${element.avatar}" alt="${element.nickName}" class="avatar">
-                            <span>${element.nickName}</span>
-                        </div>
-                    </td>
-                    <td>${element.puntos}</td>
-                    <td>${element.tiempo}</td>
-                    <td>${element.nivel}</td>
-                </tr>
+            <tr>
+                <td>${element.posicion}</td>
+                <td>
+                    <div class="player-info">
+                        <img src="../img/avatar/${element.avatar}" alt="${element.nickName}" class="avatar">
+                        <span>${element.nickName}</span>
+                    </div>
+                </td>
+                <td>${element.puntos}</td>
+                <td>${element.tiempo}</td>
+                <td>${element.nivel}</td>
+            </tr>
             `;
+            
+            
         });
     })
     .catch(error => {

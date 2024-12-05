@@ -194,6 +194,12 @@ body{
     padding-bottom: 8px;
     padding-top: 8px;
 }
+.win{
+    color: rgb(34, 161, 41);
+}
+.false{
+    color: #c82333;
+}
 .titlePerfil{
     color: #1f1e1e;
 }

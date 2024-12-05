@@ -62,6 +62,9 @@ try {
     if($result->num_rows > 0){
         // Sala encontrada
         $sala = $result->fetch_assoc();
+
+        $_SESSION['codigoSala']= $sala['codigo'];
+
         
         // Validaciones adicionales
         if($sala['estado'] !== 'abierta'){
