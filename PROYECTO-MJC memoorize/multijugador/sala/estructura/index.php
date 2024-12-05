@@ -104,6 +104,7 @@
     
 
     <script src="../../../services/multijugador/sala.js"></script>
+    <script src="assets/boton.js"></script>
     <script src="js/menu.js"></script>
     <script src="../../../bootstrap/js/bootstrap.js"></script>
     <script src="js/avatar.js"></script>
