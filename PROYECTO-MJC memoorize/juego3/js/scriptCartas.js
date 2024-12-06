@@ -1,3 +1,5 @@
+//NO TOCAR ESTO ES LA FUNCIONALIDAD DE MULTIJUGADORRR
+
 // Configuración WebSocket
 const socket = new WebSocket('ws://localhost:8080/game');
 // Al recibir mensajes de otro jugador
