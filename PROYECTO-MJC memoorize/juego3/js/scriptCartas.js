@@ -1,4 +1,3 @@
-
 //NO TOCAR ESTO ES LA FUNCIONALIDAD DE MULTIJUGADORRR
 
 // Configuración WebSocket
@@ -12,6 +11,7 @@ socket.onmessage = (event) => {
 const sendMessage = (data) => {
     socket.send(JSON.stringify(data));
 };
+
 // Unified function to fetch room data and initialize game state
 const initializeGameState = async () => {
     try {
@@ -430,7 +430,7 @@ const showScoreModal = (roundScore) => {
 
                 ${state.currentRound < state.maxRounds ? `
                     <div class="countdown">
-                        <p>Ingresa tu nombre para pasar a la siguiente ronda en <span id="countdown">5</span> segundos...</p>
+                        <p>Siguiente ronda en <span id="countdown">5</span> segundos...</p>
                     </div>
                 ` : `
                     <div class="game-over-message">
