@@ -1,3 +1,6 @@
+
+//NO TOCAR ESTO ES LA FUNCIONALIDAD DE MULTIJUGADORRR
+
 // Configuración WebSocket
 const socket = new WebSocket('ws://localhost:8080/game');
 // Al recibir mensajes de otro jugador
@@ -9,10 +12,6 @@ socket.onmessage = (event) => {
 const sendMessage = (data) => {
     socket.send(JSON.stringify(data));
 };
-
-
-
-
 // Unified function to fetch room data and initialize game state
 const initializeGameState = async () => {
     try {
