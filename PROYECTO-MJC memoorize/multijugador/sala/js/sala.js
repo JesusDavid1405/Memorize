@@ -1,47 +1,67 @@
-const rol = localStorage.getItem('rol');
-const nombreSala = localStorage.getItem('nombreSala');
-const codigoSala = localStorage.getItem('codigoSala');
-const numeroPersonas = localStorage.getItem('numeroPersonas');
-const dificultad = localStorage.getItem('dificultad');
-const playersContainer = document.getElementById('players');
-const rondas = localStorage.getItem('rondas');
-let configuraciones = `
-     <p><strong>Nombre deSala:</strong> ${nombreSala || 'No disponible'}</p>
-      <p><strong>codigo:</strong> ${codigoSala || 'No disponible'}</p>
-      <p><strong>Dificultad:</strong> ${dificultad || 'No disponible'}</p>
-      <p><strong>Rondas:</strong> ${rondas || 'No disponible'}</p>
-      <p><strong>Personas:</strong> ${numeroPersonas || 'No disponible'}</p>
+let displaySala = document.getElementById('configuraciones');
 
-`;
+// Variable para almacenar el último valor de `cupo`
+let ultimoCupo = null;
 
-// Actualizar el contenido en el elemento configuraciones
-document.getElementById('configuraciones').innerHTML = configuraciones;
+// Función para obtener datos de la sala y detectar cambios
+function actualizarSala() {
+    fetch('../../../resources/multijugador/sala.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ 
+            id: '' // Envía el ID necesario para identificar la sala
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        const nuevoCupo = data[0].cupo; // Nuevo valor retornado del servidor
 
-// Función para iniciar la sala
-async function iniciarSala() {
-    return new Promise((resolve) => {
-        console.log('Iniciando la sala...');
-        setTimeout(() => {
-            console.log('Sala iniciada');
-            resolve();
-        }, 2000);
-    });
+        // Verifica si hay un cambio en el valor de `cupo`
+        if (nuevoCupo !== ultimoCupo) {
+            console.log(`Nuevo cupo detectado: ${nuevoCupo}`); // Imprime el nuevo valor
+            ultimoCupo = nuevoCupo; // Actualiza el valor almacenado
+
+            // Actualiza el contenido HTML
+            displaySala.innerHTML = `
+                <p><strong>Sala:</strong> ${data[0].nombre || 'No disponible'}</p>
+                <p><strong>código:</strong> ${data[0].codigo || 'No disponible'}</p>
+                <p><strong>Dificultad:</strong> ${data[0].dificultad || 'No disponible'}</p>
+                <p><strong>Rondas:</strong> ${data[0].rondas || 'No disponible'}</p>
+                <p><strong>Capacidad:</strong> ${nuevoCupo}/${data[0].capacidad || 'No disponible'}</p>
+            `;
+        }
+    })
+    .catch(error => console.error('Error:', error));
+
+    let displayParticipantes = document.getElementById('players')
+
+    fetch('../../../resources/multijugador/participantes.php',{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ 
+            id: '' // Envía el ID necesario para identificar la sala
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        displayParticipantes.innerHTML = '';
+        
+        data.forEach(element => {
+            displayParticipantes.innerHTML+=`
+            <div class="avatar" title="Avatar 1">
+                <img src="../../../img/avatar/${element.imagen}" alt="Avatar 1">
+                <div class="avatar-name">${element.nickName}</div>
+            </div>
+            `;
+        });
+    })
+    .catch(error => console.error('Error:', error));
 }
 
-window.onload = async () => {
-    await iniciarSala();
+setInterval(actualizarSala, 5000);
 
-    // Manejar el evento del botón "Jugar" solo si existe
-    const btnJugar = document.getElementById('jugar');
-    if (btnJugar) {
-        btnJugar.addEventListener('click', function() {
-            const message = document.getElementById('joiningMessage');
-            message.style.display = 'flex'; 
-
-            setTimeout(() => {
-                message.style.display = 'none';
-                window.location.href = '../../juego3/index.html'; 
-            }, 1000); 
-        });
-    }
-};
+actualizarSala();

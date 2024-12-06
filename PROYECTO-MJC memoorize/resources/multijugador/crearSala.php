@@ -1,4 +1,4 @@
- <?php
+<?php
 
     include('../conexion/conexion.php');
 
@@ -55,6 +55,8 @@
                 $rowSala= $resultSala->fetch_assoc();
 
                 $salaId= $rowSala['id'];
+                
+                $_SESSION['salaId']=$salaId;
             
             
                 $queryParticipante="
