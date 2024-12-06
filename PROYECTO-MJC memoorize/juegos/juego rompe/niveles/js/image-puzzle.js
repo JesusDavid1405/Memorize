@@ -14,16 +14,20 @@ var imagePuzzle = {
         this.startTime = new Date().getTime();
         this.tick();
     },
-    tick: function () { 
+    tick: function () {
         var timeReducion = timeMax;
         timeCont = setInterval(() => {
             timeReducion--;
             helper.doc('timerPanel').textContent = timeReducion;
-            
-            if(timeReducion <= 0){
+    
+            // Manejo de tiempo agotado
+            if (timeReducion <= 0) {
                 clearInterval(timeCont);
-                estadoNivel=false;
-            } 
+                estadoNivel = false;
+    
+                // Mostrar modal de derrota
+                mostrarModal("Perdiste", "El tiempo se ha agotado y no completaste el rompecabezas.");
+            }
         }, 1000);
     },
     setImage: function (images, gridSize) {

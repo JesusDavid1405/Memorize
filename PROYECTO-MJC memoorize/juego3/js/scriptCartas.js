@@ -1,3 +1,18 @@
+// Configuración WebSocket
+const socket = new WebSocket('ws://localhost:8080/game');
+// Al recibir mensajes de otro jugador
+socket.onmessage = (event) => {
+    const message = JSON.parse(event.data);
+    handleIncomingMessage(message);
+};
+// Función para enviar mensajes al servidor WebSocket
+const sendMessage = (data) => {
+    socket.send(JSON.stringify(data));
+};
+
+
+
+
 // Unified function to fetch room data and initialize game state
 const initializeGameState = async () => {
     try {
@@ -416,7 +431,7 @@ const showScoreModal = (roundScore) => {
 
                 ${state.currentRound < state.maxRounds ? `
                     <div class="countdown">
-                        <p>Siguiente ronda en <span id="countdown">5</span> segundos...</p>
+                        <p>Ingresa tu nombre para pasar a la siguiente ronda en <span id="countdown">5</span> segundos...</p>
                     </div>
                 ` : `
                     <div class="game-over-message">
